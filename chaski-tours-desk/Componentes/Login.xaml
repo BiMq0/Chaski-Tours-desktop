@@ -42,7 +42,7 @@
           Foreground="#FF6D5C4D"
           HorizontalAlignment="Center"
           Margin="0,20"/>
-                    <TextBlock Text="Usuario" 
+                    <TextBlock Text="Correo Electrónico" 
                    Foreground="#FF6D5C4D"
                    Margin="5,5,5,0"
                                FontSize="18"/>
@@ -83,14 +83,12 @@
                 Content="Ingresar"
                     FontSize="14"
                     Width="120" 
-                    Height="50" 
                 Background="Transparent"
                 BorderThickness="0"
                 Foreground="#FF5A4A3A"
                 FontWeight="Medium"
-                Cursor="Hand"
-                  >
-                        </Button>
+                Cursor="Hand" Click="btnLogin_Click"
+                  />
                     </Border>
                     <TextBlock 
                    HorizontalAlignment="Center"

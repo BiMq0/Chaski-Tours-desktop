@@ -167,21 +167,8 @@
                                     VerticalContentAlignment="Center"/>
                             </Border>
 
-                            <TextBlock Text="Nombre de usuario" 
-                                   Foreground="#FF6D5C4D"
-                                   Margin="5,15,5,0"
-                                   FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtUsernameTurista" 
-                                    Height="35" 
-                                    Padding="10,0"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    Foreground="#FF5A4A3A"
-                                    FontSize="15"
-                                    VerticalContentAlignment="Center"/>
-                            </Border>
-
+                           
+                            
                             <TextBlock Text="Correo electrónico" 
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
