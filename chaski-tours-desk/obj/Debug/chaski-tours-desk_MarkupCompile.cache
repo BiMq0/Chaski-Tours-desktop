@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\
 chaski_tours_desk
 none
 false
 DEBUG;TRACE
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
-1219584333
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\App.xaml
+3-522048534
 
-6-502434485
+7-552982772
 13-1310406943
-MainWindow.xaml;
+Componentes\Login.xaml;Componentes\SignUp.xaml;MainWindow.xaml;
 
-True
+False
 

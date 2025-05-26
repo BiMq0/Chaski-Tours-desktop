@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="chaski_tours_desk.Componentes.Dashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="320">
+    <StackPanel Background="#BF0A30">
+        <Label Content="Chaski Tours" Margin="0, 30" FontWeight="UltraBold" FontSize="35" Foreground="#F5F5F5" HorizontalAlignment="Center"/>
+        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
+        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
+        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
+        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
+    </StackPanel>
+</UserControl>

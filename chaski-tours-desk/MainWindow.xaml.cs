@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chaski_tours_desk.Componentes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,25 @@ namespace chaski_tours_desk
         public MainWindow()
         {
             InitializeComponent();
+            verLogSignUp();
+        }
+
+        private void verLogSignUp()
+        {
+            Login.btnSignup.Click += BtnSignup_Click;
+            Signup.btnLogin.Click += BtnLogin_Click;
+            
+            void BtnSignup_Click(object sender, RoutedEventArgs e)
+            {
+                Signup.Visibility = Visibility.Visible;
+                Login.Visibility = Visibility.Collapsed;
+            }
+
+            void BtnLogin_Click(object sender, RoutedEventArgs e)
+            {
+                Signup.Visibility = Visibility.Collapsed;
+                Login.Visibility = Visibility.Visible;
+            }
         }
     }
 }
