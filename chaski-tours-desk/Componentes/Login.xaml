@@ -47,7 +47,7 @@
                    Margin="5,5,5,0"
                                FontSize="18"/>
 
-                    <Border CornerRadius="20"                         Background="White">
+                    <Border CornerRadius="20"                         Background="White" x:Name="brdMail">
                         <TextBox x:Name="txtUsuario" 
                         Height="35" 
                         Padding="10,0"
@@ -66,7 +66,7 @@
                    Foreground="#FF6D5C4D"
                    Margin="5,15,5,0" FontSize="18"/>
 
-                    <Border CornerRadius="20"                         Background="White">
+                    <Border CornerRadius="20"                         Background="White" x:Name="brdPass">
                         <PasswordBox x:Name="txtPassword" 
              Height="35" 
              Padding="10,0"

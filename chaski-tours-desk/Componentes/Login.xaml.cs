@@ -30,25 +30,36 @@ namespace chaski_tours_desk.Componentes
             InitializeComponent();
         }
 
-        
-
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            async Task verificarUsuario(){
-                var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL+txtUsuario.Text);
+            try
+            {
+                async Task verificarUsuario()
+                {
+                    brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
+                    brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
 
-                MessageBox.Show(usuario[0].cod_visitante); 
-                MessageBox.Show(usuario[0].correo_electronico); 
-                MessageBox.Show(usuario[0].contrasenia); 
-                MessageBox.Show(usuario[0].documento.ToString()); 
-                MessageBox.Show(usuario[0].nombre); 
-                MessageBox.Show(usuario[0].ap_pat); 
-                MessageBox.Show(usuario[0].ap_mat); 
-                MessageBox.Show(usuario[0].nacionalidad);
-                MessageBox.Show(usuario[0].telefono);
+                    var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL + txtUsuario.Text);
+
+                    if (usuario[0].correo_electronico == txtUsuario.Text && usuario[0].contrasenia == txtPassword.Password)
+                    {
+                        MessageBox.Show("Bienvenido");
+                        FullLayout fullLayout = new FullLayout();
+                        fullLayout.Show();
+                        Window.GetWindow(this).Close();
+                    }
+                    else {
+                        brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+                        brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+                        MessageBox.Show("Correo o contraseña incorrectos UnU");
+                    }
+                }
+
+                await verificarUsuario();
             }
-
-            await verificarUsuario();
+            catch{
+                MessageBox.Show("Error al verificar el usuario, Intente nuevamente");
+            }
         }
     }
 }
