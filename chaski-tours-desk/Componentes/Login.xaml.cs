@@ -23,7 +23,10 @@ namespace chaski_tours_desk.Componentes
     /// </summary>
     public partial class Login : UserControl
     {
+        private FullLayout fullLayout = new FullLayout();
+
         private string URL = "http://localhost:8000/api/visitantes/turistas/";
+        
         private static readonly HttpClient cliente = new HttpClient();
         public Login()
         {
@@ -38,13 +41,11 @@ namespace chaski_tours_desk.Componentes
                 {
                     brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
                     brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
-                    
-                    var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL+txtUsuario.Text);
-                    MessageBox.Show(usuario.Count.ToString());
+
+                    var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL + txtUsuario.Text);
                     if (usuario[0].correo_electronico == txtUsuario.Text && usuario[0].contrasenia == txtPassword.Password)
                     {
                         MessageBox.Show("Bienvenido");
-                        FullLayout fullLayout = new FullLayout();
                         fullLayout.Show();
                         Window.GetWindow(this).Close();
                     }

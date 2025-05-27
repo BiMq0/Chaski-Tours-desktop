@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace chaski_tours_desk
 {
@@ -21,10 +22,25 @@ namespace chaski_tours_desk
     /// </summary>
     public partial class MainWindow : Window
     {
+        private FullLayout fullLayout = new FullLayout();
         public MainWindow()
         {
             InitializeComponent();
             verLogSignUp();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            comprobarLogin();
+        }
+
+        private void comprobarLogin()
+        {
+            if (File.Exists("F:\\3. AATercer Semestre\\ZZProyecto\\chaski-tours-desktop\\README.md"))
+            {
+                Close();
+                fullLayout.Show();
+            }
         }
 
         private void verLogSignUp()
@@ -44,5 +60,7 @@ namespace chaski_tours_desk
                 Login.Visibility = Visibility.Visible;
             }
         }
+
+        
     }
 }

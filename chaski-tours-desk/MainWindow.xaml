@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
     mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="720" Width="1280"
+        Loaded="Window_Loaded">
     <Grid>
         <componentes:Login x:Name="Login" Visibility="Visible"/>
         <componentes:SignUp x:Name="Signup" Visibility="Collapsed"/>
