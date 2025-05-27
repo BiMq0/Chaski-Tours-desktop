@@ -38,9 +38,9 @@ namespace chaski_tours_desk.Componentes
                 {
                     brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
                     brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
-
-                    var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL + txtUsuario.Text);
-
+                    
+                    var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL+txtUsuario.Text);
+                    MessageBox.Show(usuario.Count.ToString());
                     if (usuario[0].correo_electronico == txtUsuario.Text && usuario[0].contrasenia == txtPassword.Password)
                     {
                         MessageBox.Show("Bienvenido");
@@ -48,17 +48,23 @@ namespace chaski_tours_desk.Componentes
                         fullLayout.Show();
                         Window.GetWindow(this).Close();
                     }
-                    else {
-                        brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
-                        brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+                    else
+                    {
+                        usuario = null;
                         MessageBox.Show("Correo o contraseña incorrectos UnU");
                     }
                 }
 
                 await verificarUsuario();
             }
-            catch{
+            catch(Exception ex)
+            {
                 MessageBox.Show("Error al verificar el usuario, Intente nuevamente");
+                MessageBox.Show(ex.Message);
+            }
+            finally {
+                brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+                brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
             }
         }
     }

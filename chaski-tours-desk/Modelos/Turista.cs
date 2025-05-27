@@ -13,7 +13,7 @@ namespace chaski_tours_desk.Modelos
         public string cod_visitante { get; set; }
         public string correo_electronico { get; set; }
         public string contrasenia { get; set; }
-        public int documento { get; set; }
+        public string documento { get; set; }
         public string nombre { get; set; }
         public string ap_pat { get; set; }
         public string ap_mat { get; set; }
