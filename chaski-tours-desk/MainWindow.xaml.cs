@@ -22,45 +22,39 @@ namespace chaski_tours_desk
     /// </summary>
     public partial class MainWindow : Window
     {
-        private FullLayout fullLayout = new FullLayout();
         public MainWindow()
         {
             InitializeComponent();
-            verLogSignUp();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             comprobarLogin();
         }
 
         private void comprobarLogin()
         {
-            if (File.Exists("F:\\3. AATercer Semestre\\ZZProyecto\\chaski-tours-desktop\\README.md"))
+            if (!File.Exists("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt"))
             {
+                new LogSignWindow().Show();
                 Close();
-                fullLayout.Show();
+            }
+            else {
+                MessageBox.Show("Ya tiene una sesion iniciada");
+                //Carrito de reserva .show();
             }
         }
 
-        private void verLogSignUp()
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Login.btnSignup.Click += BtnSignup_Click;
-            Signup.btnLogin.Click += BtnLogin_Click;
-            
-            void BtnSignup_Click(object sender, RoutedEventArgs e)
+            try
             {
-                Signup.Visibility = Visibility.Visible;
-                Login.Visibility = Visibility.Collapsed;
+                if (File.Exists("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt")) File.Delete("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt");
+                else MessageBox.Show("No tiene una sesion iniciada");
             }
-
-            void BtnLogin_Click(object sender, RoutedEventArgs e)
-            {
-                Signup.Visibility = Visibility.Collapsed;
-                Login.Visibility = Visibility.Visible;
+            catch (Exception ex){
+                MessageBox.Show(ex.ToString());
             }
         }
-
-        
     }
 }

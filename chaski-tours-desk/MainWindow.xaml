@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
     mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280"
-        Loaded="Window_Loaded">
-    <Grid>
-        <componentes:Login x:Name="Login" Visibility="Visible"/>
-        <componentes:SignUp x:Name="Signup" Visibility="Collapsed"/>
-    </Grid>
+        Title="MainWindow" Height="720" Width="1280">
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="Images/conejo.jpg"
+                Stretch="UniformToFill"/>
+        </StackPanel.Background>
+
+        <Button Width="200" Height="100" Content="Login" FontSize="50" Click="Button_Click" ></Button>
+
+        <Button Width="200" Height="100" Content="Desloguear" FontSize="30" Click="Button_Click_1" ></Button>
+    </StackPanel>
 </Window>

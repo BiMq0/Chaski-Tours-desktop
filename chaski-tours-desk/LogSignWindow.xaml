@@ -1,15 +1,13 @@
-﻿<Window x:Class="chaski_tours_desk.FullLayout"
+﻿<Window x:Class="chaski_tours_desk.LogSignWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:chaski_tours_desk"
+        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
         mc:Ignorable="d"
-        Title="FullLayout" Height="450" Width="800">
+        Title="LogSignWindow" Height="720" Width="1280">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Images/conejo.jpg"
-                        Stretch="UniformToFill"/>
-        </Grid.Background>
+        <componentes:Login x:Name="Login" Visibility="Visible"/>
+        <componentes:SignUp x:Name="Signup" Visibility="Collapsed"/>
     </Grid>
 </Window>
