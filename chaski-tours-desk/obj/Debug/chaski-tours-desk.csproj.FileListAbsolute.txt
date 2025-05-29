@@ -108,7 +108,7 @@ F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\De
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\FullLayout.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\FullLayout.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.baml

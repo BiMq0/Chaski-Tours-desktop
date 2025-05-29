@@ -34,7 +34,7 @@ namespace chaski_tours_desk
 
         private void comprobarLogin()
         {
-            if (!File.Exists("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt"))
+            if (!File.Exists("Cookie/logueao.txt"))
             {
                 new LogSignWindow().Show();
                 Close();
@@ -49,7 +49,11 @@ namespace chaski_tours_desk
         {
             try
             {
-                if (File.Exists("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt")) File.Delete("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt");
+                if (File.Exists("Cookie/logueao.txt"))
+                {
+                    File.Delete("Cookie/logueao.txt");
+                    MessageBox.Show("Se cerro la sesion");
+                }
                 else MessageBox.Show("No tiene una sesion iniciada");
             }
             catch (Exception ex){

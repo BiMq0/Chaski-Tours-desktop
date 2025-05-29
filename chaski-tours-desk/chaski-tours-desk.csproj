@@ -152,7 +152,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Coockie uwu\" />
     <Folder Include="Ventanas\" />
   </ItemGroup>
   <ItemGroup>

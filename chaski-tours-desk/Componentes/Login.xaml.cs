@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http.Json;
 using chaski_tours_desk.Modelos;
+using chaski_tours_desk;
 using System.IO;
 
 namespace chaski_tours_desk.Componentes
@@ -46,7 +47,7 @@ namespace chaski_tours_desk.Componentes
                     if (usuario[0].correo_electronico == txtUsuario.Text && usuario[0].contrasenia == txtPassword.Password)
                     {
                         MessageBox.Show("Bienvenido");
-                        File.Create("D:\\Proyectos\\chaski-tours-desktop\\chaski-tours-desk\\Coockie uwu\\logueao.txt");
+                        File.Create("Cookie/logueao.txt");
                         mainWindow.Show();
                         Window.GetWindow(this).Close();
                     }

@@ -32,7 +32,6 @@ namespace chaski_tours_desk.Componentes
                 return;
             }
 
-
             if (cbTipoUsuario.SelectedIndex == 0)
             {
                 panelCamposTurista.Visibility = Visibility.Visible;
