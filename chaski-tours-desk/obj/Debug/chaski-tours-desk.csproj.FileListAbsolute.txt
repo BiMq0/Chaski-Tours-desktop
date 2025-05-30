@@ -117,3 +117,20 @@ D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\App.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.baml

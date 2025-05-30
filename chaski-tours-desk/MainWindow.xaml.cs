@@ -25,6 +25,78 @@ namespace chaski_tours_desk
         public MainWindow()
         {
             InitializeComponent();
+            Dashboard.cambiarVentana += cambiarVentanas;
         }
+
+        public void cambiarVentanas(int index)
+        {
+            switch (index) { 
+                case 0:
+                    Inicio.Visibility = Visibility.Visible;
+                    Reservas.Visibility = Visibility.Collapsed;
+                    Clientes.Visibility = Visibility.Collapsed;
+                    Tours.Visibility = Visibility.Collapsed;
+                    Sitios.Visibility = Visibility.Collapsed;
+                    Transportes.Visibility = Visibility.Collapsed;
+                    Alojamientos.Visibility = Visibility.Collapsed;
+                    break;
+                case 1:
+                    Inicio.Visibility = Visibility.Collapsed;
+                    Reservas.Visibility = Visibility.Visible;
+                    Clientes.Visibility = Visibility.Collapsed;
+                    Tours.Visibility = Visibility.Collapsed;
+                    Sitios.Visibility = Visibility.Collapsed;
+                    Transportes.Visibility = Visibility.Collapsed;
+                    Alojamientos.Visibility = Visibility.Collapsed;
+                    break;
+                case 2:
+                    Inicio.Visibility = Visibility.Collapsed;
+                    Reservas.Visibility = Visibility.Collapsed;
+                    Clientes.Visibility = Visibility.Visible;
+                    Tours.Visibility = Visibility.Collapsed;
+                    Sitios.Visibility = Visibility.Collapsed;
+                    Transportes.Visibility = Visibility.Collapsed;
+                    Alojamientos.Visibility = Visibility.Collapsed;
+                    break;
+                case 3:
+                    Inicio.Visibility = Visibility.Collapsed;
+                    Reservas.Visibility = Visibility.Collapsed;
+                    Clientes.Visibility = Visibility.Collapsed;
+                    Tours.Visibility = Visibility.Visible;
+                    Sitios.Visibility = Visibility.Collapsed;
+                    Transportes.Visibility = Visibility.Collapsed;
+                    Alojamientos.Visibility = Visibility.Collapsed;
+                    break;
+                case 4:
+                    Inicio.Visibility = Visibility.Collapsed;
+                    Reservas.Visibility = Visibility.Collapsed;
+                    Clientes.Visibility = Visibility.Collapsed;
+                    Tours.Visibility = Visibility.Collapsed;
+                    Sitios.Visibility = Visibility.Visible;
+                    Transportes.Visibility = Visibility.Collapsed;
+                    Alojamientos.Visibility = Visibility.Collapsed;
+                    break;
+                case 5:
+                    Inicio.Visibility = Visibility.Collapsed;
+                    Reservas.Visibility = Visibility.Collapsed;
+                    Clientes.Visibility = Visibility.Collapsed;
+                    Tours.Visibility = Visibility.Collapsed;
+                    Sitios.Visibility = Visibility.Collapsed;
+                    Transportes.Visibility = Visibility.Visible;
+                    Alojamientos.Visibility = Visibility.Collapsed;
+                    break;
+                case 6:
+                    Inicio.Visibility = Visibility.Collapsed;
+                    Reservas.Visibility = Visibility.Collapsed;
+                    Clientes.Visibility = Visibility.Collapsed;
+                    Tours.Visibility = Visibility.Collapsed;
+                    Sitios.Visibility = Visibility.Collapsed;
+                    Transportes.Visibility = Visibility.Collapsed;
+                    Alojamientos.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
+   
+
     }
 }

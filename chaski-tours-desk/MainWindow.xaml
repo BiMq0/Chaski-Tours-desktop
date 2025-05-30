@@ -6,8 +6,24 @@
         xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
     mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
-    <StackPanel Orientation="Horizontal">
-        <componentes:Dashboard />
-        <componentes:Inicio Width="1000" Visibility="Visible"/>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <componentes:Dashboard x:Name="Dashboard" Grid.Column="0"/>
+        <componentes:Inicio Visibility="Visible" x:Name="Inicio" Grid.Column="1"/>
+
+        <componentes:Reservas Visibility="Collapsed" x:Name="Reservas" Grid.Column="1"/>
+
+        <componentes:Clientes Visibility="Collapsed" x:Name="Clientes" Grid.Column="1"/>
+
+        <componentes:Tours Visibility="Collapsed" x:Name="Tours" Grid.Column="1"/>
+
+        <componentes:Sitios Visibility="Collapsed" x:Name="Sitios" Grid.Column="1"/>
+
+        <componentes:Transportes Visibility="Collapsed" x:Name="Transportes" Grid.Column="1"/>
+
+        <componentes:Alojamientos Visibility="Collapsed" x:Name="Alojamientos" Grid.Column="1"/>
+    </Grid>
 </Window>

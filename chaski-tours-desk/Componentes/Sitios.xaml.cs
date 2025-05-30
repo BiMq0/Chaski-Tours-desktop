@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace chaski_tours_desk.Componentes
 {
     /// <summary>
-    /// Lógica de interacción para Dashboard.xaml
+    /// Lógica de interacción para Sitios.xaml
     /// </summary>
-    public partial class Dashboard : UserControl
+    public partial class Sitios : UserControl
     {
-        public Dashboard()
+        public Sitios()
         {
             InitializeComponent();
         }
-
-        private void listaBtns_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            cambiarVentana.Invoke(listaBtns.SelectedIndex);
-        }
-
-        public event Action<int> cambiarVentana;
     }
 }
