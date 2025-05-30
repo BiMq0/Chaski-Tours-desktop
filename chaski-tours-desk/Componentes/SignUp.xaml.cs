@@ -43,5 +43,10 @@ namespace chaski_tours_desk.Componentes
                 panelCamposInstitucion.Visibility = Visibility.Visible;
             }
         }
+
+
+        private void registrarTurista() { 
+        
+        }
     }
 }

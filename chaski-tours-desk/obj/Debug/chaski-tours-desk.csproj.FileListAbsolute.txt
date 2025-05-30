@@ -112,3 +112,8 @@ D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.baml
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml

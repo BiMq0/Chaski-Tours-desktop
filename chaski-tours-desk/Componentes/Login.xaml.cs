@@ -44,10 +44,12 @@ namespace chaski_tours_desk.Componentes
                     brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
 
                     var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL + txtUsuario.Text);
+                    MessageBox.Show(usuario[0].correo_electronico);
+                    MessageBox.Show(usuario[0].contrasenia);
                     if (usuario[0].correo_electronico == txtUsuario.Text && usuario[0].contrasenia == txtPassword.Password)
                     {
                         MessageBox.Show("Bienvenido");
-                        File.Create("Cookie/logueao.txt");
+                        //File.Create("Cookie/logueao.txt");
                         mainWindow.Show();
                         Window.GetWindow(this).Close();
                     }

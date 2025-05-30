@@ -6,14 +6,8 @@
         xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
     mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
-    <StackPanel>
-        <StackPanel.Background>
-            <ImageBrush ImageSource="Images/conejo.jpg"
-                Stretch="UniformToFill"/>
-        </StackPanel.Background>
-
-        <Button Width="200" Height="100" Content="Login" FontSize="50" Click="Button_Click" ></Button>
-
-        <Button Width="200" Height="100" Content="Desloguear" FontSize="30" Click="Button_Click_1" ></Button>
+    <StackPanel Orientation="Horizontal">
+        <componentes:Dashboard />
+        <componentes:Inicio Width="1000" Visibility="Visible"/>
     </StackPanel>
 </Window>

@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:chaski_tours_desk"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Background" Value="#FAE4BC"/>
+            <Setter Property="Foreground" Value="#050505"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
     </Application.Resources>
 </Application>

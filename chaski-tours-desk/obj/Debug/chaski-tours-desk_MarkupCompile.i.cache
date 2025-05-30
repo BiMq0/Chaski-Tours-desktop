@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
-4-1835530873
+6-630563682
 
-10-1484655786
+12834679779
 25-1498790911
-Componentes\Login.xaml;Componentes\SignUp.xaml;LogSignWindow.xaml;MainWindow.xaml;
+Componentes\Dashboard.xaml;Componentes\Inicio.xaml;Componentes\Login.xaml;Componentes\SignUp.xaml;LogSignWindow.xaml;MainWindow.xaml;
 
-False
+True
 

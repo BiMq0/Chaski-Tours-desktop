@@ -5,12 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="320">
+             d:DesignHeight="720" d:DesignWidth="280">
     <StackPanel Background="#BF0A30">
-        <Label Content="Chaski Tours" Margin="0, 30" FontWeight="UltraBold" FontSize="35" Foreground="#F5F5F5" HorizontalAlignment="Center"/>
-        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
-        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
-        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
-        <Border CornerRadius="10" Background="#FAE4BC" Margin="20"><Button Content="Opcion 1" FontSize="20" Height="50" BorderThickness="0" Background="Transparent"/></Border>
+        <Label Content="CHASKI TOURS" FontSize="35" Margin="10, 40" FontWeight="Bold" Foreground="#FAE4AB"/>
+        <ListBox x:Name="listaBtns" HorizontalAlignment="Center" Width="250" Background="Transparent">
+            <ListBoxItem Content="Inicio"/>
+            <ListBoxItem Content="Reservas"/>
+            <ListBoxItem Content="Clientes"/>
+            <ListBoxItem Content="Tours" />
+            <ListBoxItem Content="Sitios"/>
+            <ListBoxItem Content="Transportes"/>
+            <ListBoxItem Content="Alojamientos"/>
+        </ListBox>
     </StackPanel>
 </UserControl>

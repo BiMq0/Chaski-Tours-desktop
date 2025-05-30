@@ -26,39 +26,5 @@ namespace chaski_tours_desk
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            comprobarLogin();
-        }
-
-        private void comprobarLogin()
-        {
-            if (!File.Exists("Cookie/logueao.txt"))
-            {
-                new LogSignWindow().Show();
-                Close();
-            }
-            else {
-                MessageBox.Show("Ya tiene una sesion iniciada");
-                //Carrito de reserva .show();
-            }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (File.Exists("Cookie/logueao.txt"))
-                {
-                    File.Delete("Cookie/logueao.txt");
-                    MessageBox.Show("Se cerro la sesion");
-                }
-                else MessageBox.Show("No tiene una sesion iniciada");
-            }
-            catch (Exception ex){
-                MessageBox.Show(ex.ToString());
-            }
-        }
     }
 }
