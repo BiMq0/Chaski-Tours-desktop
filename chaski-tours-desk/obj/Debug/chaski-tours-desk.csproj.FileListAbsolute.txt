@@ -134,3 +134,15 @@ F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\De
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.baml
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.baml
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.baml
