@@ -13,17 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 
-namespace chaski_tours_desk
+namespace chaski_tours_desk.Ventanas
 {
     /// <summary>
     /// Lógica de interacción para LogSignWindow.xaml
     /// </summary>
-    public partial class LogSignWindow : Window
+    public partial class LogSignWindow : UserControl
     {
         public LogSignWindow()
         {
             InitializeComponent();
-            verLogSignUp();
+            
         }
         private void verLogSignUp()
         {
@@ -41,6 +41,11 @@ namespace chaski_tours_desk
                 Signup.Visibility = Visibility.Collapsed;
                 Login.Visibility = Visibility.Visible;
             }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            verLogSignUp();
         }
     }
 }

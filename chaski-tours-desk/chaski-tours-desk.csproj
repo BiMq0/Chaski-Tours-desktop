@@ -110,6 +110,12 @@
     <Compile Include="Componentes\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\AdminLayout.xaml.cs">
+      <DependentUpon>AdminLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\UserLayout.xaml.cs">
+      <DependentUpon>UserLayout.xaml</DependentUpon>
+    </Compile>
     <Page Include="Componentes\Alojamientos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,7 +156,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LogSignWindow.xaml">
+    <Page Include="Ventanas\LogSignWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,13 +177,21 @@
     <Compile Include="Componentes\Transportes.xaml.cs">
       <DependentUpon>Transportes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LogSignWindow.xaml.cs">
+    <Compile Include="Ventanas\LogSignWindow.xaml.cs">
       <DependentUpon>LogSignWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Ventanas\AdminLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\UserLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelos\Turista.cs" />
@@ -208,9 +222,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ventanas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\user_generic_profile.png" />
   </ItemGroup>

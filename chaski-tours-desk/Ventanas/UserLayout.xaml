@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="chaski_tours_desk.Ventanas.UserLayout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Ventanas"
+        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
+        mc:Ignorable="d"
+         Height="620" Width="1280">
+    <Grid>
+        <Button x:Name="btnReservar" Content="Reserva ahora" FontWeight="Bold" Style="{StaticResource TertiaryButtonStyle}" HorizontalAlignment="Right" Width="160" Height="70" Margin="0,0,20,22" VerticalAlignment="Bottom" Click="btnReservar_Click"/>
+    </Grid>
+</UserControl>

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using chaski_tours_desk.Ventanas;
+using System.Runtime.Remoting.Messaging;
 
 namespace chaski_tours_desk.Componentes
 {
@@ -28,38 +30,10 @@ namespace chaski_tours_desk.Componentes
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            comprobarLogin();
-        }
 
-        private void comprobarLogin()
-        {
-            if (!File.Exists("Cookie/logueao.txt"))
-            {
-                new LogSignWindow().Show();
-                Window.GetWindow(this).Close();
-            }
-            else
-            {
-                MessageBox.Show("Ya tiene una sesion iniciada");
-                //Carrito de reserva .show();
-            }
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if (File.Exists("Cookie/logueao.txt"))
-                {
-                    File.Delete("Cookie/logueao.txt");
-                    MessageBox.Show("Se cerro la sesion");
-                }
-                else MessageBox.Show("No tiene una sesion iniciada");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
     }
 }

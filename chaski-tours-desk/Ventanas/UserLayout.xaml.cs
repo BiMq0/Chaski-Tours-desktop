@@ -1,5 +1,4 @@
-﻿using chaski_tours_desk.Componentes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,26 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
-using chaski_tours_desk.Ventanas;
 
-namespace chaski_tours_desk
+namespace chaski_tours_desk.Ventanas
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para UserLayout.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserLayout : UserControl
     {
-        public MainWindow()
+        public UserLayout()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void btnReservar_Click(object sender, RoutedEventArgs e)
         {
-            
         }
     }
 }
