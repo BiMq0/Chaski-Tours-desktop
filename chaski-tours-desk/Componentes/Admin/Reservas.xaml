@@ -11,13 +11,13 @@
         <ScrollViewer Margin="20 10" Height="420">
             <DataGrid x:Name="tbl_Reserva">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding id_reserva}" Width="70"/>
-                    <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="90"/>
-                    <DataGridTextColumn Header="Alojamiento" Binding="{Binding id_alojamiento}" Width="130"/>
-                    <DataGridTextColumn Header="Salida" Binding="{Binding id_salida}" Width="80"/>
-                    <DataGridTextColumn Header="Cant. Personas" Binding="{Binding cantidad_personas}" Width="150"/>
+                    <DataGridTextColumn Header="ID" Binding="{Binding id_reserva}" Width="*"/>
+                    <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="*"/>
+                    <DataGridTextColumn Header="Alojamiento" Binding="{Binding id_alojamiento}" Width="*"/>
+                    <DataGridTextColumn Header="Salida" Binding="{Binding id_salida}" Width="*"/>
+                    <DataGridTextColumn Header="Cantidad Personas" Binding="{Binding cantidad_personas}" Width="200"/>
                     <DataGridTextColumn Header="Costo Total" Binding="{Binding costo_total_reserva}" Width="*"/>
-                    <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="70" />
+                    <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
