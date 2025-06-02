@@ -7,9 +7,24 @@
         xmlns:ventanas="clr-namespace:chaski_tours_desk.Ventanas"
     mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280" Loaded="Window_Loaded">
-    <StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="Fondo" Source="Images/conejo.jpg" Stretch="UniformToFill"
+           VerticalAlignment="Center"/>
+        <Rectangle Fill="Black" Opacity=".5" />
+
         <ventanas:UserLayout x:Name="usuario" Visibility="Visible"/>
+        <ventanas:LogSignWindow x:Name="logSign" Visibility="Collapsed">
+        </ventanas:LogSignWindow>
         <ventanas:AdminLayout
     x:Name="admin" Visibility="Collapsed"/>
-    </StackPanel>
+
+        
+    </Grid>
 </Window>

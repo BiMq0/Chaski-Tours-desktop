@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using chaski_tours_desk.Componentes;
+using chaski_tours_desk.Componentes.Admin;
 
 namespace chaski_tours_desk.Ventanas
 {

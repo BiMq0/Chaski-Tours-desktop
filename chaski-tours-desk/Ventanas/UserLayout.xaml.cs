@@ -26,6 +26,9 @@ namespace chaski_tours_desk.Ventanas
 
         private void btnReservar_Click(object sender, RoutedEventArgs e)
         {
+            abrirAdmin.Invoke();
         }
+
+        public event Action abrirAdmin;
     }
 }

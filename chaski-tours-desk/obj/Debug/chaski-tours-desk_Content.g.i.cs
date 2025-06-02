@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("coockie%20uwu/logueao.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/fondologin.jpg")]
 
 

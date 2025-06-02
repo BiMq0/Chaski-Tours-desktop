@@ -30,7 +30,20 @@ namespace chaski_tours_desk
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            usuario.abrirAdmin += abrirLogin;
+        }
+
+        private void abrirLogin()
+        {
+            usuario.Visibility = Visibility.Collapsed;
+            logSign.Visibility = Visibility.Visible;
+
+            var bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri("Images/fondoLogin.jpg", UriKind.RelativeOrAbsolute);
+            bitmap.EndInit();
+
+            Fondo.Source = bitmap;
         }
     }
 }

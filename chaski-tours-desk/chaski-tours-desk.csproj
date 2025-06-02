@@ -89,22 +89,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Componentes\Alojamientos.xaml.cs">
+    <Compile Include="Componentes\Admin\Alojamientos.xaml.cs">
       <DependentUpon>Alojamientos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Clientes.xaml.cs">
+    <Compile Include="Componentes\Admin\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Dashboard.xaml.cs">
+    <Compile Include="Componentes\Admin\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Inicio.xaml.cs">
+    <Compile Include="Componentes\Admin\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
     <Compile Include="Componentes\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Reservas.xaml.cs">
+    <Compile Include="Componentes\Admin\Reservas.xaml.cs">
       <DependentUpon>Reservas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Componentes\SignUp.xaml.cs">
@@ -116,19 +116,19 @@
     <Compile Include="Ventanas\UserLayout.xaml.cs">
       <DependentUpon>UserLayout.xaml</DependentUpon>
     </Compile>
-    <Page Include="Componentes\Alojamientos.xaml">
+    <Page Include="Componentes\Admin\Alojamientos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Clientes.xaml">
+    <Page Include="Componentes\Admin\Clientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Dashboard.xaml">
+    <Page Include="Componentes\Admin\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Inicio.xaml">
+    <Page Include="Componentes\Admin\Inicio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,7 +136,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Reservas.xaml">
+    <Page Include="Componentes\Admin\Reservas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,15 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Sitios.xaml">
+    <Page Include="Componentes\Admin\Sitios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Tours.xaml">
+    <Page Include="Componentes\Admin\Tours.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Transportes.xaml">
+    <Page Include="Componentes\Admin\Transportes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,13 +168,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Componentes\Sitios.xaml.cs">
+    <Compile Include="Componentes\Admin\Sitios.xaml.cs">
       <DependentUpon>Sitios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Tours.xaml.cs">
+    <Compile Include="Componentes\Admin\Tours.xaml.cs">
       <DependentUpon>Tours.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Transportes.xaml.cs">
+    <Compile Include="Componentes\Admin\Transportes.xaml.cs">
       <DependentUpon>Transportes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\LogSignWindow.xaml.cs">
@@ -222,12 +222,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Componentes\User\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\user_generic_profile.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\conejo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fondoLogin.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

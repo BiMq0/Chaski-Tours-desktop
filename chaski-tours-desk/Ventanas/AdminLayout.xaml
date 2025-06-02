@@ -4,14 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Ventanas"
-        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
+        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes.Admin"
         mc:Ignorable="d"
-        Height="720" Width="1280" Loaded="Window_Loaded">
+        d:Height="720" d:Width="1280" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="280"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <componentes:Dashboard x:Name="Dashboard" Grid.Column="0"/>
         <componentes:Inicio Visibility="Visible" x:Name="Inicio" Grid.Column="1"/>
 

@@ -25,9 +25,8 @@ namespace chaski_tours_desk.Componentes
     /// </summary>
     public partial class Login : UserControl
     {
-        MainWindow mainWindow = new MainWindow();
         private string URL = "http://localhost:8000/api/visitantes/turistas/";
-        
+
         private static readonly HttpClient cliente = new HttpClient();
         public Login()
         {
@@ -36,41 +35,72 @@ namespace chaski_tours_desk.Componentes
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                async Task verificarUsuario()
-                {
-                    brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
-                    brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
+            try { await verificarUsuario(); }
+            catch (Exception ex) { 
+                MessageBox.Show("Error al verificar el usuario, Intente nuevamente"); 
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally { aclarar(); }
+        }
 
-                    var usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL + txtUsuario.Text);
-                    MessageBox.Show(usuario[0].correo_electronico);
-                    MessageBox.Show(usuario[0].contrasenia);
-                    if (usuario[0].correo_electronico == txtUsuario.Text && usuario[0].contrasenia == txtPassword.Password)
-                    {
-                        MessageBox.Show("Bienvenido");
-                        //File.Create("Cookie/logueao.txt");
-                        mainWindow.Show();
-                        Window.GetWindow(this).Close();
-                    }
-                    else
-                    {
-                        usuario = null;
-                        MessageBox.Show("Correo o contraseña incorrectos UnU");
-                    }
-                }
-
-                await verificarUsuario();
-            }
-            catch(Exception ex)
+        private async Task verificarUsuario()
+        {
+            oscurecer();
+            if (!entradasValidas()) return;
+            validarUsuario(await obtenerUsuario());
+        }
+        private bool entradasValidas()
+        {
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtPassword.Password))
             {
-                MessageBox.Show("Error al verificar el usuario, Intente nuevamente");
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return false;
             }
-            finally {
-                brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
-                brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+            return true;
+        }
+        private async Task<Turista> obtenerUsuario()
+        {
+            List<Turista> usuario = await cliente.GetFromJsonAsync<List<Turista>>(URL + txtUsuario.Text);
+            if (usuario.Count == 0) {
+                return null;
             }
+            return usuario[0];
+        }
+
+        private void validarUsuario(Turista usuario)
+        {
+            if (usuario != null && usuario.contrasenia == txtPassword.Password)
+            {
+                MessageBox.Show("Bienvenido");
+                redirigirUsuarios();
+            }
+            else {
+                MessageBox.Show("Correo o contraseña incorrectos");
+            }
+        }
+
+        private void redirigirUsuarios() {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            string[] correo = txtUsuario.Text.Split('@');
+            if (correo[1] == "chaskitours.com")
+            {
+                mainWindow.admin.Visibility = Visibility.Visible;
+                mainWindow.logSign.Visibility = Visibility.Collapsed;
+            }
+            else {
+                mainWindow.usuario.Visibility = Visibility.Visible;
+                mainWindow.logSign.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void oscurecer()
+        {
+            brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
+            brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
+        }
+
+        private void aclarar() {
+            brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+            brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
         }
     }
 }

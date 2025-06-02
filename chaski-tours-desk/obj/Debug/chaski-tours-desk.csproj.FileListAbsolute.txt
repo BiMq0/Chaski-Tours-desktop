@@ -106,30 +106,12 @@ F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\De
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\LogSignWindow.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\App.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.g.cs
@@ -150,3 +132,25 @@ D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.baml
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
