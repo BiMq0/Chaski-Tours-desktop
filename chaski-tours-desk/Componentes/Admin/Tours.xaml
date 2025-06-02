@@ -5,8 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Label Content="Tours Xd" FontSize="100"/>
+             d:DesignHeight="720" d:DesignWidth="1280" Loaded="Tours_Loaded">
+    <Grid  Background="#FAE4BC" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Tours" HorizontalContentAlignment="Center" FontSize="45" FontWeight="Bold" Margin="20"/>
+
+
+        <ScrollViewer Margin="20 10" Grid.Row="1">
+            <DataGrid x:Name="tbl_Tours">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Codigo" Binding="{Binding id_tour  }" Width="110"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding nombre_tour}" Width="*"/>
+                    <DataGridTextColumn Header="Costo" Binding="{Binding costo_tour}" Width="*"/>
+                    <DataGridTextColumn Header="Id_Inicio" Binding="{Binding id_sitio_inicio  }" Width="*" />
+                    <DataGridTextColumn Header="Id_Fin" Binding="{Binding id_sitio_fin }" Width="*" />
+                    <DataGridTextColumn Header="Duracion" Binding="{Binding duracion_dias}"
+                  Width="*" />
+                    <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Añadir" Style="{StaticResource TertiaryButtonStyle}"/>
+            <Button Content="Editar"
+    Style="{StaticResource SecondaryButtonStyle}"/>
+            <Button Content="Eliminar" Style="{StaticResource PrimaryButtonStyle}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

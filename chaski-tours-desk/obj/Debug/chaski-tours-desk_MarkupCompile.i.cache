@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\
-=======
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\
->>>>>>> 44da367fa7dfecd68e2ccf9b88fd68655d744cd0
+D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\
 chaski_tours_desk
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\App.xaml
+D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
 141617998971
 
-21-997833372
-251976024850
+25-979219411
+251920656234
 Componentes\Admin\Alojamientos.xaml;Componentes\Admin\Clientes.xaml;Componentes\Admin\Dashboard.xaml;Componentes\Admin\Inicio.xaml;Componentes\Login.xaml;Componentes\Admin\Reservas.xaml;Componentes\SignUp.xaml;Componentes\Admin\Sitios.xaml;Componentes\Admin\Tours.xaml;Componentes\Admin\Transportes.xaml;Ventanas\LogSignWindow.xaml;MainWindow.xaml;Ventanas\AdminLayout.xaml;Ventanas\UserLayout.xaml;
-=======
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
-14-1330597343
-
-23-718413523
-2567517104
-Componentes\Alojamientos.xaml;Componentes\Clientes.xaml;Componentes\Dashboard.xaml;Componentes\Inicio.xaml;Componentes\Login.xaml;Componentes\Reservas.xaml;Componentes\SignUp.xaml;Componentes\Sitios.xaml;Componentes\Tours.xaml;Componentes\Transportes.xaml;Ventanas\LogSignWindow.xaml;MainWindow.xaml;Ventanas\AdminLayout.xaml;Ventanas\UserLayout.xaml;
->>>>>>> 44da367fa7dfecd68e2ccf9b88fd68655d744cd0
 
 False
 

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using chaski_tours_desk.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +23,36 @@ namespace chaski_tours_desk.Componentes.Admin
     /// </summary>
     public partial class Sitios : UserControl
     {
+        private HttpClient cliente = new HttpClient();
+        private string URL = "http://localhost:8000/api/sitios/";
         public Sitios()
         {
             InitializeComponent();
+        }
+        private async Task obtenerSitios()
+        {
+            var sitios = await cliente.GetFromJsonAsync<List<Sitio>>(URL);
+
+
+            tbl_Sitios.ItemsSource = sitios;
+        }
+
+        private async void verSitios()
+        {
+            await obtenerSitios();
+        }
+
+        private void verDatos()
+        {
+            if (Window.GetWindow(this).Visibility == Visibility.Visible)
+            {
+                verSitios();
+            }
+        }
+
+        private void Sitios_Loaded(object sender, RoutedEventArgs e)
+        {
+            verDatos();
         }
     }
 }
