@@ -225,3 +225,19 @@ F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debu
 F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
 F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
 >>>>>>> 44da367fa7dfecd68e2ccf9b88fd68655d744cd0
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\
 chaski_tours_desk
 none
 false
 DEBUG;TRACE
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\App.xaml
+D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
 141617998971
 
 2273236161
-251976024850
+25-1498790911
 Componentes\Admin\Alojamientos.xaml;Componentes\Admin\Clientes.xaml;Componentes\Admin\Dashboard.xaml;Componentes\Admin\Inicio.xaml;Componentes\Login.xaml;Componentes\Admin\Reservas.xaml;Componentes\SignUp.xaml;Componentes\Admin\Sitios.xaml;Componentes\Admin\Tours.xaml;Componentes\Admin\Transportes.xaml;Ventanas\LogSignWindow.xaml;MainWindow.xaml;Ventanas\AdminLayout.xaml;Ventanas\UserLayout.xaml;
 
 False
