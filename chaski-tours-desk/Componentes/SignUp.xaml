@@ -20,7 +20,7 @@
             </Border.Effect>
 
             <StackPanel Orientation="Horizontal">
-                <!-- Panel de imagen (igual que en el login) -->
+                
                 <StackPanel Height="300" Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20, 0">
                     <Border CornerRadius="120" Width="300" Height="300">
                         <Image Source="../Images/user_generic_profile.png">
@@ -59,9 +59,9 @@
                         <ComboBoxItem Content="Institución"/>
                     </ComboBox>
 
-                    <!-- Contenedor para los campos dinámicos -->
+                    
                     <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                   x:Name="panelCamposTurista" Height="300" Margin="0, 10">
+                                   x:Name="panelCamposTurista" Height="300" >
 
                         <StackPanel
                             Visibility="Visible">
@@ -70,7 +70,7 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdDocumento" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtDocumento" 
                                     Height="35" 
                                     Padding="10,0"
@@ -85,7 +85,7 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdNombres" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtNombres" 
                                     Height="35" 
                                     Padding="10,0"
@@ -100,7 +100,8 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border
+                                x:Name="brdApPat" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtApellidoPaterno" 
                                     Height="35" 
                                     Padding="10,0"
@@ -115,7 +116,7 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdApMat" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtApellidoMaterno" 
                                     Height="35" 
                                     Padding="10,0"
@@ -156,7 +157,7 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdTelefono" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtTelefonoTurista" 
                                     Height="35" 
                                     Padding="10,0"
@@ -173,7 +174,7 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdCorreo" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtCorreoTurista" 
                                     Height="35" 
                                     Padding="10,0"
@@ -188,7 +189,7 @@
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
                                    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdPassword" CornerRadius="20" Background="White">
                                 <PasswordBox x:Name="txtPasswordTurista" 
                                        Height="35" 
                                        Padding="10,0"   VerticalContentAlignment="Center"
@@ -208,7 +209,7 @@
    Foreground="#FF6D5C4D"
    Margin="5,15,5,0"
    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdNomEmpresa" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtNombreEmpresa" 
     Height="35" 
     Padding="10,0"
@@ -238,7 +239,8 @@ Margin="0,5">
    Foreground="#FF6D5C4D"
    Margin="5,15,5,0"
    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border
+                                x:Name="brdTelEmpresa" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtTelefonoInstitucion" 
     Height="35" 
     Padding="10,0"
@@ -253,7 +255,7 @@ Margin="0,5">
    Foreground="#FF6D5C4D"
    Margin="5,15,5,0"
    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdCorreoEmpresa" CornerRadius="20" Background="White">
                                 <TextBox x:Name="txtCorreoInstitucion" 
     Height="35" 
     Padding="10,0"
@@ -268,7 +270,7 @@ Margin="0,5">
    Foreground="#FF6D5C4D"
    Margin="5,15,5,0"
    FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
+                            <Border x:Name="brdPassEmpresa" CornerRadius="20" Background="White">
                                 <PasswordBox x:Name="txtPasswordInstitucion" 
        Height="35" 
        Padding="10,0"
@@ -290,7 +292,7 @@ Margin="0,5">
                             BorderThickness="0"
                             Foreground="#FF5A4A3A"
                             FontWeight="Medium"
-                            Cursor="Hand"/>
+                            Cursor="Hand" Click="btnRegistrar_Click"/>
                     </Border>
 
                     <TextBlock 

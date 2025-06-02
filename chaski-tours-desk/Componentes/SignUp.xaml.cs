@@ -25,6 +25,23 @@ namespace chaski_tours_desk.Componentes
             InitializeComponent();
         }
 
+        private async void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+            try { await registrarCliente(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el cliente, Intente nuevamente");
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally { aclarar(); }
+        }
+
+        private async Task<bool> registrarCliente()
+        {
+            oscurecer();
+            return true;
+        }
+
         private void cbTipoUsuario_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (panelCamposTurista == null || panelCamposInstitucion == null)
@@ -44,9 +61,47 @@ namespace chaski_tours_desk.Componentes
             }
         }
 
+        private void oscurecer()
+        {
+            SolidColorBrush oscuro = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BB635968"));
+            if (cbTipoUsuario.SelectedIndex == 0)
+            {
+                brdDocumento.Background = oscuro;
+                brdNombres.Background = oscuro;
+                brdApPat.Background = oscuro;
+                brdApMat.Background = oscuro;
+                brdTelefono.Background =  oscuro;
+                brdCorreo.Background = oscuro;
+                brdPassword.Background = oscuro;
+            }
+            else {
+                brdNomEmpresa.Background = oscuro;
+                brdTelEmpresa.Background = oscuro;
+                brdCorreoEmpresa.Background = oscuro;
+                brdPassEmpresa.Background = oscuro;
+            }
+        }
 
-        private void registrarTurista() { 
-        
+        private void aclarar()
+        {
+            SolidColorBrush claro = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+            if (cbTipoUsuario.SelectedIndex == 0)
+            {
+                brdDocumento.Background = claro;
+                brdNombres.Background = claro;
+                brdApPat.Background = claro;
+                brdApMat.Background = claro;
+                brdTelefono.Background = claro;
+                brdCorreo.Background = claro;
+                brdPassword.Background = claro;
+            }
+            else
+            {
+                brdNomEmpresa.Background = claro;
+                brdTelEmpresa.Background = claro;
+                brdCorreoEmpresa.Background = claro;
+                brdPassEmpresa.Background = claro;
+            }
         }
     }
 }
