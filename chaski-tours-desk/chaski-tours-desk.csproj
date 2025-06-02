@@ -114,6 +114,7 @@
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\Sitio.cs" />
     <Compile Include="Modelos\Tour.cs" />
+    <Compile Include="Modelos\Transporte.cs" />
     <Compile Include="Ventanas\AdminLayout.xaml.cs">
       <DependentUpon>AdminLayout.xaml</DependentUpon>
     </Compile>

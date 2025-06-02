@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\
+=======
+C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\
+>>>>>>> 39596527e36afd93c49f220916df9e027a8cecd6
 chaski_tours_desk
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
 141617998971
 
 241102869207
 25-1498790911
+=======
+C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\App.xaml
+141617998971
+
+25761984542
+25-2071265962
+>>>>>>> 39596527e36afd93c49f220916df9e027a8cecd6
 Componentes\Admin\Alojamientos.xaml;Componentes\Admin\Clientes.xaml;Componentes\Admin\Dashboard.xaml;Componentes\Admin\Inicio.xaml;Componentes\Login.xaml;Componentes\Admin\Reservas.xaml;Componentes\SignUp.xaml;Componentes\Admin\Sitios.xaml;Componentes\Admin\Tours.xaml;Componentes\Admin\Transportes.xaml;Ventanas\LogSignWindow.xaml;MainWindow.xaml;Ventanas\AdminLayout.xaml;Ventanas\UserLayout.xaml;
 
 False

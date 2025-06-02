@@ -5,8 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+              d:DesignWidth="1500" Loaded="Transporte_Loaded"> 
+    <StackPanel  Background="#FAE4BC" Margin="20">
+        <Label Content="Transportes" HorizontalContentAlignment="Center" FontSize="45" FontWeight="Bold" Margin="20"/>
+        <ScrollViewer Margin="20 10" Height="420">
+            <DataGrid x:Name="tbl_Transportes">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding id_vehiculo}" Width="80"/>
+                    <DataGridTextColumn Header="Matrícula" Binding="{Binding matricula}" Width="250"/>
+                    <DataGridTextColumn Header="Marca" Binding="{Binding marca}" Width="*"/>
+                    <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}" Width="*"/>
+                    <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="*"/>
+                    <DataGridTextColumn Header="Año" Binding="{Binding año}" Width="*"/>
+                    <DataGridTextColumn Header="Disponible" Binding="{Binding DisponibleTexto}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Añadir" Style="{StaticResource TertiaryButtonStyle}"/>
+            <Button Content="Editar"
+ Style="{StaticResource SecondaryButtonStyle}"/>
+            <Button Content="Eliminar" Style="{StaticResource PrimaryButtonStyle}"/>
+        </StackPanel>
+    </StackPanel>
+
 </UserControl>
