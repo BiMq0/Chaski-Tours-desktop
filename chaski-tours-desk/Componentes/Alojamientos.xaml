@@ -12,7 +12,7 @@
             <DataGrid x:Name="tbl_Alojamientos">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre_aloj}" Width="250"/>
-                    <DataGridTextColumn Header="Estrellas" Binding="{Binding numero_estrellas}" Width="*"/>
+                    <DataGridTextColumn Header="Estrellas" Binding="{Binding nro_estrellas}" Width="*"/>
                     <DataGridTextColumn Header="Habitaciones" Binding="{Binding nro_habitaciones}" Width="*"/>
                     <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
                 </DataGrid.Columns>
