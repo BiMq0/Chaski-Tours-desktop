@@ -110,6 +110,8 @@
     <Compile Include="Componentes\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Alojamiento.cs" />
+    <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Ventanas\AdminLayout.xaml.cs">
       <DependentUpon>AdminLayout.xaml</DependentUpon>
     </Compile>
