@@ -26,7 +26,7 @@ namespace chaski_tours_desk.Componentes
     public partial class Alojamientos : UserControl
     {
         private HttpClient cliente = new HttpClient();
-        private string URL = "http://localhost:8000/api/alojamientos/";
+        private string URL = "http://localhost:8000/api/alojamientos";
         public Alojamientos()
         {
             InitializeComponent();
