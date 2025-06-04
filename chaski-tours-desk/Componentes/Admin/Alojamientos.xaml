@@ -19,11 +19,11 @@
         <Grid VerticalAlignment="Center" Margin="20, 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.7*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Alojamiento" Style="{StaticResource Titulo}" HorizontalAlignment="Left" />
+            <Label Content="Alojamientos" Style="{StaticResource Titulo}" HorizontalAlignment="Left" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
                 <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
             </Border>
@@ -35,9 +35,9 @@
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Clientes">
+            <DataGrid x:Name="tbl_Alojamientos">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding id_alojamiento}" Width="*" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding id_alojamiento}" Width="*" />
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre_aloj}" Width="*"/>
                     <DataGridTextColumn Header="Estrellas" Binding="{Binding nro_estrellas}" Width="*"/>
                     <DataGridTextColumn Header="Habitaciones" Binding="{Binding nro_habitaciones}" Width="*" />

@@ -35,10 +35,10 @@
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Clientes">
+            <DataGrid x:Name="tbl_Transportes">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding id_vehiculo}" Width="*" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*"/>
+                    <DataGridTextColumn Header="Matrícula" Binding="{Binding matricula}" Width="*"/>
                     <DataGridTextColumn Header="Marca" Binding="{Binding marca}" Width="*"/>
                     <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}" Width="*" />
                     <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="*" />

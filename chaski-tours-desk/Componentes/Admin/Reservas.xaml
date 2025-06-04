@@ -5,28 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
              mc:Ignorable="d" 
- d:DesignWidth="800" Loaded="Reserva_Loaded">
-    <StackPanel  Background="#FAE4BC" Margin="20">
-        <Label Content="Reservas" HorizontalContentAlignment="Center" FontSize="45" FontWeight="Bold" Margin="20"/>
-        <ScrollViewer Margin="20 10" Height="420">
+
+    d:DesignWidth="1280" d:Height="720" Loaded="Reserva_Loaded">
+    <Grid  Background="#FAE4BC" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid VerticalAlignment="Center" Margin="20, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Reservas" Style="{StaticResource Titulo}" HorizontalAlignment="Left" />
+            <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+            </Border>
+
+            <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
+                <Button Style="{StaticResource TertiaryButtonStyle}"/>
+            </Border>
+        </Grid>
+
+
+        <ScrollViewer Margin="20 10" Grid.Row="1">
             <DataGrid x:Name="tbl_Reserva">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding id_reserva}" Width="*"/>
-                    <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="*"/>
-                    <DataGridTextColumn Header="Alojamiento" Binding="{Binding id_alojamiento}" Width="*"/>
-                    <DataGridTextColumn Header="Salida" Binding="{Binding id_salida}" Width="*"/>
-                    <DataGridTextColumn Header="Cantidad Personas" Binding="{Binding cantidad_personas}" Width="200"/>
-                    <DataGridTextColumn Header="Costo Total" Binding="{Binding costo_total_reserva}" Width="*"/>
-                    <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding id_reservas}" Width="80"/>
+                    <DataGridTextColumn Header="Código de visitante" Binding="{Binding cod_visitante}" Width="*"/>
+                    <DataGridTextColumn Header="Nro. Alojamiento" Binding="{Binding id_alojamiento}" Width="*"/>
+                    <DataGridTextColumn Header="Nro. Salida" Binding="{Binding id_salida}" Width="150"/>
+                    <DataGridTextColumn Header="Cantidad de Personas" Binding="{Binding cantidad_personas}" Width="*"/>
+                    <DataGridTextColumn Header="Costo Total" Binding="{Binding costo_total_reserva}" Width="160"/>
+                    <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Width="150" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Añadir" Style="{StaticResource TertiaryButtonStyle}"/>
-            <Button Content="Editar"
-Style="{StaticResource SecondaryButtonStyle}"/>
-            <Button Content="Eliminar" Style="{StaticResource PrimaryButtonStyle}"/>
-        </StackPanel>
-    </StackPanel>
-
+    </Grid>
 </UserControl>
