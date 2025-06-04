@@ -16,6 +16,16 @@
         </Style>
         <Style TargetType="Border">
             <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="0" 
+  Color="#000"
+  Opacity="0.3" 
+  BlurRadius="15"
+  Direction="270"/>
+                   
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="#BF0A30"/>
