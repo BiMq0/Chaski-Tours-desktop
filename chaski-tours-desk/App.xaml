@@ -4,6 +4,20 @@
              xmlns:local="clr-namespace:chaski_tours_desk"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
+        <SolidColorBrush x:Key="BoliviaYellow" Color="#F9A825"/>
+        <SolidColorBrush x:Key="BoliviaDarkYellow" Color="#D68F10"/>
+        <SolidColorBrush x:Key="BoliviaGreen" Color="#2E7D32"/>
+        <SolidColorBrush x:Key="White" Color="#F5F5F5"/>
+        
+        <Style x:Key="Titulo" TargetType="Label">
+            <Setter Property="FontSize" Value="60"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+
+
         <Style TargetType="ListBoxItem">
             <Setter Property="Background" Value="#FAE4BC"/>
             <Setter Property="Foreground" Value="#050505"/>
@@ -13,20 +27,64 @@
             <Setter Property="Margin" Value="10"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
-        </Style>
-        <Style TargetType="Border">
-            <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect ShadowDepth="0" 
-  Color="#000"
-  Opacity="0.3" 
-  BlurRadius="15"
-  Direction="270"/>
-                   
+                    <DropShadowEffect Color="black" BlurRadius="10" />
                 </Setter.Value>
             </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Opacity="0"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Opacity="0"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
         </Style>
+        
+        <Style TargetType="Border" x:Key="BordeGeneral" >
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <Style x:Key="BordeBusqueda" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+
+        <Style x:Key="BordeBotones" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
+            <Setter Property="Background" Value="{StaticResource BoliviaGreen}"/>
+            <Setter Property="CornerRadius" Value="30"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="70"/>
+        </Style>
+
+        <Style x:Key="txbBusqueda" TargetType="TextBox">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="10, 0"/>
+        </Style>
+
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="#BF0A30"/>
             <Setter Property="Foreground" Value="White"/>
@@ -51,6 +109,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        Effect="{TemplateBinding Effect}"
                         CornerRadius="0" 
                             SnapsToDevicePixels="True">
                             <SelectiveScrollingGrid>
@@ -82,20 +141,14 @@
             <Setter Property="IsReadOnly" Value="True"/>
         </Style>
 
-        <!-- Paleta de colores  -->
-        <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
-        <SolidColorBrush x:Key="BoliviaYellow" Color="#F9A825"/>
-        <SolidColorBrush x:Key="BoliviaGreen" Color="#2E7D32"/>
-        <SolidColorBrush x:Key="White" Color="#F5F5F5"/>
 
-        <!-- Estilo para Botón Primario (Rojo) -->
+        
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource BoliviaRed}"/>
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{StaticResource White}"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="70"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -105,7 +158,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border 
                         Background="{TemplateBinding Background}"
-                        CornerRadius="4"
+                        CornerRadius="30"
                         SnapsToDevicePixels="True">
                             <ContentPresenter 
                             HorizontalAlignment="Center"
@@ -125,21 +178,23 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Estilo para Botón Secundario (Amarillo) -->
+        
         <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
-            <Setter Property="Background" Value="{StaticResource BoliviaYellow}"/>
-            <!-- Texto gris oscuro -->
+            <Setter Property="Background" Value="Transparent"/>
+            
+            
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#D68F10"/>
-                    <!-- Amarillo oscuro -->
+                    
                 </Trigger>
             </Style.Triggers>
         </Style>
 
-        <!-- Estilo para Botón Terciario (Verde) -->
+        
         <Style x:Key="TertiaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
-            <Setter Property="Background" Value="{StaticResource BoliviaGreen}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Content" Value="Añadir +"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#1B5E20"/>

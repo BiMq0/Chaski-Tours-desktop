@@ -10,29 +10,38 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <Label Content="Clientes" HorizontalContentAlignment="Center" FontSize="45" FontWeight="Bold" Margin="20"/>
-        
-        
-            <ScrollViewer Margin="20 10" Grid.Row="1">
-                <DataGrid x:Name="tbl_Clientes">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Codigo" Binding="{Binding cod_visitante}" Width="*"/>
-                        <DataGridTextColumn Header="Tipo de Visitante" Binding="{Binding tipo_visitante}" Width="*"/>
-                        <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding fecha_registro}" Width="*"/>
-                        <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </ScrollViewer>
-        
-        
-            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="Añadir" Style="{StaticResource TertiaryButtonStyle}"/>
-                <Button Content="Editar"
-            Style="{StaticResource SecondaryButtonStyle}"/>
-                <Button Content="Eliminar" Style="{StaticResource PrimaryButtonStyle}"/>
-            </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid VerticalAlignment="Center" Margin="20, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Clientes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" />
+            <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+            </Border>
+
+            <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
+                <Button Style="{StaticResource TertiaryButtonStyle}"/>
+            </Border>
         </Grid>
+
+
+        <ScrollViewer Margin="20 10" Grid.Row="1">
+            <DataGrid x:Name="tbl_Clientes">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Codigo" Binding="{Binding cod_visitante}" Width="*"/>
+                    <DataGridTextColumn Header="Tipo de Visitante" Binding="{Binding tipo_visitante}" Width="*"/>
+                    <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding fecha_registro}" Width="*"/>
+                    <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
 </UserControl>
