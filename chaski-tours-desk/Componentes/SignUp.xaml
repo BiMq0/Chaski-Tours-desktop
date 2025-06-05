@@ -20,7 +20,7 @@
             </Border.Effect>
 
             <StackPanel Orientation="Horizontal">
-                
+
                 <StackPanel Height="300" Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20, 0">
                     <Border CornerRadius="120" Width="300" Height="300">
                         <Image Source="../Images/user_generic_profile.png">
@@ -46,7 +46,7 @@
                          Foreground="#FF6D5C4D"
                          Margin="5,5,5,0"
                          FontSize="18"/>
-                    <ComboBox x:Name="cbTipoUsuario" 
+                    <ComboBox x:Name="cmbTipoUsuario" 
                         Height="35" 
                         Margin="0,5"
                         SelectedIndex="0"
@@ -59,7 +59,7 @@
                         <ComboBoxItem Content="Institución"/>
                     </ComboBox>
 
-                    
+
                     <ScrollViewer VerticalScrollBarVisibility="Auto"
                                    x:Name="panelCamposTurista" Height="300" >
 
@@ -168,8 +168,8 @@
                                     VerticalContentAlignment="Center"/>
                             </Border>
 
-                           
-                            
+
+
                             <TextBlock Text="Correo electrónico" 
                                    Foreground="#FF6D5C4D"
                                    Margin="5,15,5,0"
@@ -224,7 +224,7 @@
    Foreground="#FF6D5C4D"
    Margin="5,15,5,0"
    FontSize="18"/>
-                            <ComboBox x:Name="cbNacionalidadInstitucion" 
+                            <ComboBox x:Name="cmbNacionalidadInstitucion" 
 Height="35" 
 Margin="0,5">
                                 <ComboBoxItem Content="Perú"/>
@@ -278,6 +278,67 @@ Margin="0,5">
        FontSize="15"
        Background="Transparent"
        BorderThickness="0"/>
+                            </Border>
+
+
+                            <TextBlock Text="Nombre de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdNomRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNomRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Apellido de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdApRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Correo de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdEmailRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtEmailRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Teléfono de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdTelRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
                             </Border>
                         </StackPanel>
                     </ScrollViewer>

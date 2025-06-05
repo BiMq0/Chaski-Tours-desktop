@@ -8,6 +8,6 @@
         mc:Ignorable="d"
          d:Height="720" d:Width="1280">
     <Grid>
-        <Button x:Name="btnReservar" Content="Reserva ahora" FontWeight="Bold" Style="{StaticResource TertiaryButtonStyle}" HorizontalAlignment="Right" Width="140" Height="50" Margin="0,0,20,22" VerticalAlignment="Bottom" Click="btnReservar_Click"/>
+        <Button x:Name="btnReservar" Content="Reserva ahora" FontWeight="Bold" Style="{StaticResource SecondaryButtonStyle}" HorizontalAlignment="Right" Width="140" Height="50" Margin="0,0,20,22" VerticalAlignment="Bottom" Click="btnReservar_Click"/>
     </Grid>
 </UserControl>

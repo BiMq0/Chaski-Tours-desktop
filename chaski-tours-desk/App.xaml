@@ -6,6 +6,7 @@
     <Application.Resources>
 
         <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
+        <SolidColorBrush x:Key="BoliviaDarkRed" Color="#6F002B"/>
         <SolidColorBrush x:Key="BoliviaYellow" Color="#F9A825"/>
         <SolidColorBrush x:Key="BoliviaDarkYellow" Color="#D68F10"/>
         <SolidColorBrush x:Key="BoliviaGreen" Color="#2E7D32"/>
@@ -68,10 +69,11 @@
         </Style>
 
         <Style x:Key="BordeBotones" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
-            <Setter Property="Background" Value="{StaticResource BoliviaGreen}"/>
-            <Setter Property="CornerRadius" Value="30"/>
-            <Setter Property="Width" Value="170"/>
-            <Setter Property="Height" Value="70"/>
+            <Setter Property="Background" Value="{StaticResource BoliviaRed}"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="50"/>
         </Style>
 
         <Style x:Key="txbBusqueda" TargetType="TextBox">
@@ -142,13 +144,13 @@
         </Style>
 
 
-        
+
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{StaticResource White}"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Width" Value="170"/>
-            <Setter Property="Height" Value="70"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -178,26 +180,13 @@
             </Style.Triggers>
         </Style>
 
-        
+
         <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
             <Setter Property="Background" Value="Transparent"/>
-            
-            
+            <Setter Property="Content" Value="Agregar +"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#D68F10"/>
-                    
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        
-        <Style x:Key="TertiaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Content" Value="Añadir +"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#1B5E20"/>
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkRed}"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

@@ -46,6 +46,13 @@ namespace chaski_tours_desk.Ventanas
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             verLogSignUp();
+            Signup.volverLogin += MostrarLogin;
+        }
+
+        private void MostrarLogin()
+        {
+            Signup.Visibility = Visibility.Collapsed;
+            Login.Visibility = Visibility.Visible;
         }
     }
 }

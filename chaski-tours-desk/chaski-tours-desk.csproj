@@ -111,6 +111,7 @@
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Alojamiento.cs" />
+    <Compile Include="Modelos\Institucion.cs" />
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\Sitio.cs" />
     <Compile Include="Modelos\Tour.cs" />
