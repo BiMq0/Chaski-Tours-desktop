@@ -16,6 +16,7 @@ using chaski_tours_desk.Modelos;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Reflection;
 
 namespace chaski_tours_desk.Componentes
 {
@@ -61,19 +62,33 @@ namespace chaski_tours_desk.Componentes
 
         private async Task registrarInstitucion()
         {
+            if (!EsCorreoValido(txtCorreoInstitucion.Text.Trim()))
+            {
+                MessageBox.Show("Correo inválido, ingrese nuevamente");
+                return;
+            }
+
             Institucion nuevaInstitucion = new Institucion
             {
-                nombre = txtNombreEmpresa.Text,
-                correo_electronico = txtCorreoInstitucion.Text,
+                nombre = txtNombreEmpresa.Text.Trim(),
+                correo_electronico = txtCorreoInstitucion.Text.Trim(),
                 contrasenia = txtPasswordInstitucion.Password,
                 nacionalidad = (cmbNacionalidadInstitucion.SelectedItem as ComboBoxItem).Content.ToString(),
-                telefono = txtTelefonoInstitucion.Text,
-                nombre_represent = txtNomRep.Text,
-                ap_pat_represent = txtApRep.Text,
-                correo_electronico_represent = txtEmailRep.Text,
-                telefono_represent = txtTelRep.Text,
+                telefono = txtTelefonoInstitucion.Text.Trim(),
+                nombre_represent = txtNomRep.Text.Trim(),
+                ap_pat_represent = txtApRep.Text.Trim(),
+                correo_electronico_represent = txtEmailRep.Text.Trim(),
+                telefono_represent = txtTelRep.Text.Trim(),
             };
+
+            if (!EsEntradaValida(nuevaInstitucion))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
             var response = await client.PostAsJsonAsync(URL_Instituciones, nuevaInstitucion);
+            
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Institucion registrada correctamente");
@@ -87,18 +102,31 @@ namespace chaski_tours_desk.Componentes
 
         private async Task registrarTurista()
         {
+            if (!EsCorreoValido(txtCorreoTurista.Text.Trim()))
+            {
+                MessageBox.Show("Correo inválido, ingrese nuevamente");
+                return;
+            }
+
             Turista nuevoTurista = new Turista
             {
-                documento = txtDocumento.Text,
-                nombre = txtNombres.Text,
-                ap_pat = txtApellidoPaterno.Text,
-                ap_mat = txtApellidoMaterno.Text,
+                documento = txtDocumento.Text.Trim(),
+                nombre = txtNombres.Text.Trim(),
+                ap_pat = txtApellidoPaterno.Text.Trim(),
+                ap_mat = txtApellidoMaterno.Text.Trim(),
                 fecha_nac = dpFechaNacimiento.SelectedDate?.ToString("yyyy-MM-dd"),
                 nacionalidad = (cbNacionalidadTurista.SelectedItem as ComboBoxItem).Content.ToString(),
-                telefono = txtTelefonoTurista.Text,
-                correo_electronico = txtCorreoTurista.Text,
+                telefono = txtTelefonoTurista.Text.Trim(),
+                correo_electronico = txtCorreoTurista.Text.Trim(),
                 contrasenia = txtPasswordTurista.Password
             };
+
+            if (!EsEntradaValida(nuevoTurista))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
             var response = await client.PostAsJsonAsync(URL_Turista, nuevoTurista);
 
             if (response.IsSuccessStatusCode)
@@ -130,6 +158,31 @@ namespace chaski_tours_desk.Componentes
                 panelCamposTurista.Visibility = Visibility.Collapsed;
                 panelCamposInstitucion.Visibility = Visibility.Visible;
             }
+        }
+
+        private bool EsEntradaValida(object visitante)
+        {
+            if (visitante == null) return false;
+            
+            var props = visitante.GetType().GetProperties().Where(p => p.PropertyType == typeof(string)  && p.Name != "cod_visitante");
+            
+            foreach (var prop in props)
+            {
+                var valor = prop.GetValue(visitante)?.ToString();
+
+                if (valor == null || string.IsNullOrWhiteSpace(valor.ToString())) return false;
+            }
+            return true;
+        }
+
+        private bool EsCorreoValido(string correo)
+        {
+            string[] cadena = correo.Split('@');
+            string[] dominio = cadena[1].Split('.');
+            if (cadena[0].Length < 4 || dominio[0].Length < 4 || dominio[1].Length < 3) { 
+                return false;
+            }
+            return true;
         }
 
         private void oscurecer()

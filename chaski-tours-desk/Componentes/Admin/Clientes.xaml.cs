@@ -33,7 +33,6 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private async Task obtenerClientes() {
             var usuarios = await cliente.GetFromJsonAsync<List<Visitante>>(URL);
-            
             tbl_Clientes.ItemsSource = usuarios;
         }
 

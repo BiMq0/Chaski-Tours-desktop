@@ -38,7 +38,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="*"/>
                     <DataGridTextColumn Header="Tipo de Visitante" Binding="{Binding tipo_visitante}" Width="*"/>
-                    <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding fecha_registro}" Width="*"/>
+                    <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding created_at}" Width="*"/>
                     <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
