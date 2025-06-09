@@ -240,5 +240,10 @@
   <ItemGroup>
     <Resource Include="Images\fondoLogin.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icono.png" />
+    <Resource Include="Images\titulo.png" />
+    <Resource Include="Images\titulo_blanco.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
