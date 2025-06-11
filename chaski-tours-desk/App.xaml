@@ -11,9 +11,14 @@
         <SolidColorBrush x:Key="BoliviaDarkYellow" Color="#D68F10"/>
         <SolidColorBrush x:Key="BoliviaGreen" Color="#2E7D32"/>
         <SolidColorBrush x:Key="White" Color="#F5F5F5"/>
+        <SolidColorBrush x:Key="GeneralBackground" Color="#FAE4BC"/>
         
         <Style x:Key="Titulo" TargetType="Label">
-            <Setter Property="FontSize" Value="60"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="TituloTXB" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="50"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
@@ -28,6 +33,24 @@
             <Setter Property="Margin" Value="10"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value >
+                    <ControlTemplate TargetType="ListBoxItem" >
+                        <Border 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="10"  >
+                            <TextBlock Text="{TemplateBinding Content}"
+                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                               Foreground="{TemplateBinding Foreground}"
+                               FontWeight="{TemplateBinding FontWeight}"
+                               FontSize="{TemplateBinding FontSize}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="black" BlurRadius="10" />
@@ -37,6 +60,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Background" Value="{StaticResource BoliviaRed}"/>
                     <Setter Property="BorderThickness" Value="0"/>
                     <Setter Property="Effect">
                         <Setter.Value>
@@ -47,6 +71,8 @@
 
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkRed}"/>
+                    <Setter Property="Foreground" Value="{StaticResource White}"/>
                     <Setter Property="BorderThickness" Value="0"/>
                     <Setter Property="Effect">
                         <Setter.Value>
@@ -65,7 +91,7 @@
         <Style x:Key="BordeBusqueda" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
             <Setter Property="CornerRadius" Value="20"/>
             <Setter Property="Width" Value="400"/>
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="40"/>
         </Style>
 
         <Style x:Key="BordeBotones" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
@@ -78,12 +104,12 @@
 
         <Style x:Key="txbBusqueda" TargetType="TextBox">
             <Setter Property="Width" Value="400"/>
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="Padding" Value="10, 0"/>
         </Style>
 
@@ -102,7 +128,6 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="0 10"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -129,7 +154,16 @@
             <Setter Property="TextBlock.TextAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Margin" Value="10"/>
-            <Setter Property="Padding" Value="10"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                    <Setter Property="Foreground" Value="#050505"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkRed}"/>
+                    <Setter Property="Foreground" Value="{StaticResource White}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style TargetType="DataGrid">

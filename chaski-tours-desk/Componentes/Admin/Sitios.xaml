@@ -17,8 +17,8 @@
 
         <Grid VerticalAlignment="Center" Margin="20, 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
@@ -34,7 +34,7 @@
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Sitios">
+            <DataGrid x:Name="tbl_Sitios" MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Codigo" Binding="{Binding id_sitio }" Width="110"/>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*"/>

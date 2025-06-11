@@ -1,0 +1,52 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.Admin.Info.InfoSitio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin.Info"
+        mc:Ignorable="d"
+        Title="InfoSitio" Height="720" Width="1280">
+    <StackPanel Background="{StaticResource GeneralBackground}">
+        <TextBlock x:Name="txbNombreSitio" Style="{StaticResource TituloTXB}"/>
+        <TextBlock x:Name="txbDescConceptualSitio"
+        FontSize="24" 
+        FontWeight="Bold" 
+        HorizontalAlignment="Center" 
+        Margin="10"/>
+        <TextBlock x:Name="txbDescHistoricaSitio"
+        FontSize="24" 
+        FontWeight="Bold" 
+        HorizontalAlignment="Center" 
+        Margin="10"/>
+        <TextBlock x:Name="txbCostoSitio"
+        FontSize="24" 
+        FontWeight="Bold" 
+        HorizontalAlignment="Center" 
+        Margin="10"/>
+        <TextBlock x:Name="txbTemporadaSitio"
+        FontSize="24" 
+        FontWeight="Bold" 
+        HorizontalAlignment="Center" 
+        Margin="10"/>
+        <TextBlock x:Name="txbRecomendacionSitio"
+        FontSize="24" 
+        FontWeight="Bold" 
+        HorizontalAlignment="Center" 
+        Margin="10"/>
+        <TextBlock x:Name="txbAperturaSitio"
+FontSize="24" 
+FontWeight="Bold" 
+HorizontalAlignment="Center" 
+Margin="10"/>
+        <TextBlock x:Name="txbCierreSitio"
+FontSize="24" 
+FontWeight="Bold" 
+HorizontalAlignment="Center" 
+Margin="10"/>
+        <TextBlock x:Name="txbActivoSitio"
+FontSize="24" 
+FontWeight="Bold" 
+HorizontalAlignment="Center" 
+Margin="10"/>
+    </StackPanel>
+</Window>

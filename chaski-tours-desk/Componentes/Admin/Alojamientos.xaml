@@ -18,12 +18,12 @@
 
         <Grid VerticalAlignment="Center" Margin="20, 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Alojamientos" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400"/>
+            <Label Content="Alojamientos" Style="{StaticResource Titulo}" HorizontalAlignment="Left" Width="Auto"/>
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
                 <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
             </Border>

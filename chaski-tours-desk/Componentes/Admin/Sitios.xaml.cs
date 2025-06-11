@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using chaski_tours_desk.Componentes.Admin.Info;
 
 namespace chaski_tours_desk.Componentes.Admin
 {
@@ -33,8 +34,8 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             var sitios = await cliente.GetFromJsonAsync<List<Sitio>>(URL);
 
-
             tbl_Sitios.ItemsSource = sitios;
+            tbl_Sitios.SelectedValuePath = "id_sitio";
         }
 
         private async void verSitios()
@@ -53,6 +54,11 @@ namespace chaski_tours_desk.Componentes.Admin
         private void Sitios_Loaded(object sender, RoutedEventArgs e)
         {
             verDatos();
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            new InfoSitio(int.Parse(tbl_Sitios.SelectedValue.ToString())).Show();
         }
     }
 }
