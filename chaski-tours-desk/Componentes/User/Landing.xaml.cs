@@ -24,5 +24,29 @@ namespace chaski_tours_desk.Componentes.User
         {
             InitializeComponent();
         }
+
+        private void btnDerechaDep_Click(object sender, RoutedEventArgs e)
+        {
+            categoryScrollViewer.ScrollToHorizontalOffset(
+            Math.Max(0, categoryScrollViewer.HorizontalOffset - 140));
+        }
+
+        private void btnIzquierdaDep_Click(object sender, RoutedEventArgs e)
+        {
+            categoryScrollViewer.ScrollToHorizontalOffset(
+            Math.Max(0, categoryScrollViewer.HorizontalOffset - 140));
+        }
+
+        private void btnIzquierdaCat_Click(object sender, RoutedEventArgs e)
+        {
+            departamentoScrollViewer.ScrollToHorizontalOffset(
+            Math.Max(0, departamentoScrollViewer.HorizontalOffset - 140));
+        }
+
+        private void btnDerechaCat_Click(object sender, RoutedEventArgs e)
+        {
+            departamentoScrollViewer.ScrollToHorizontalOffset(
+            Math.Max(0, departamentoScrollViewer.HorizontalOffset - 140));
+        }
     }
 }
