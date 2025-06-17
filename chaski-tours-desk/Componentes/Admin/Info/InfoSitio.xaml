@@ -5,19 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin.Info"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="InfoSitio" Height="720" Width="1280">
-    <StackPanel Background="{StaticResource GeneralBackground}">
-        <StackPanel x:Name="mapa">
-            
-        </StackPanel>
-        <StackPanel>
+    <Grid Background="{StaticResource GeneralBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="mapa" Grid.Column="1"></StackPanel>
+        <StackPanel Grid.Column="0">
             <TextBlock x:Name="txbNombreSitio" Style="{StaticResource TituloTXB}"/>
-            <TextBlock x:Name="txbDescConceptualSitio"
+            <TextBlock x:Name="txbDescConceptual"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-            <TextBlock x:Name="txbDescHistoricaSitio"
+            <TextBlock x:Name="txbDescHistorica"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
@@ -27,12 +30,12 @@
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-            <TextBlock x:Name="txbTemporadaSitio"
+            <TextBlock x:Name="txbTemporada"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-            <TextBlock x:Name="txbRecomendacionSitio"
+            <TextBlock x:Name="txbRecomendacion"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
@@ -47,11 +50,11 @@ FontSize="24"
 FontWeight="Bold" 
 HorizontalAlignment="Center" 
 Margin="10"/>
-            <TextBlock x:Name="txbActivoSitio"
+            <TextBlock x:Name="txbActivo"
 FontSize="24" 
 FontWeight="Bold" 
 HorizontalAlignment="Center" 
 Margin="10"/>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Window>

@@ -32,6 +32,20 @@ namespace chaski_tours_desk.Componentes.Admin.Info
         {
             InitializeComponent();
             obtenerUbicacion(obtenerSitio(id_sitio));
+            cargarDatos(obtenerSitio(id_sitio));
+        }
+
+        private void cargarDatos(Sitio sitio)
+        {
+            txbNombreSitio.Text = sitio.nombre;
+            txbDescConceptual.Text = sitio.desc_conceptual_sitio;
+            txbDescHistorica.Text = sitio.desc_historica_sitio;
+            txbCostoSitio.Text = sitio.costo_sitio == 0 ? "Gratis" : "Bs." + sitio.costo_sitio.ToString();
+            txbTemporada.Text = sitio.temporada_recomendada;
+            txbRecomendacion.Text = sitio.recomendacion_climatica;
+            txbAperturaSitio.Text = sitio.horario_apertura;
+            txbCierreSitio.Text = sitio.horario_cierre;
+            txbActivo.Text = sitio.Activo == 1 ? "Activo" : "Inactivo";
         }
 
         private Sitio obtenerSitio(int id_sitio)
@@ -63,7 +77,8 @@ namespace chaski_tours_desk.Componentes.Admin.Info
             };
 
             mapControl.Children.Add(pushpin);
-            mapa.Children.Add(mapControl);
+            mapControl.Height = 1200;
+            mapa.Children.Add( mapControl);
         }
     }
 }
