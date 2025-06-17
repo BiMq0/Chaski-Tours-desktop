@@ -19,12 +19,18 @@
            VerticalAlignment="Center"/>
         <Rectangle Fill="Black" Opacity=".5" />
 
-        <ventanas:UserLayout x:Name="usuario" Visibility="Visible"/>
+        <!--<ventanas:UserLayout x:Name="usuario" Visibility="Visible"/>
         <ventanas:LogSignWindow x:Name="logSign" Visibility="Collapsed">
         </ventanas:LogSignWindow>
         <ventanas:AdminLayout
-    x:Name="admin" Visibility="Collapsed"/>
+    x:Name="admin" Visibility="Collapsed"/>-->
 
-        
+
+
+        <ventanas:UserLayout x:Name="usuario" Visibility="Collapsed"/>
+        <ventanas:LogSignWindow x:Name="logSign" Visibility="Collapsed">
+        </ventanas:LogSignWindow>
+        <ventanas:AdminLayout
+x:Name="admin" Visibility="Visible"/>
     </Grid>
 </Window>

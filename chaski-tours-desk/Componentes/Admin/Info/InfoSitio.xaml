@@ -7,46 +7,51 @@
         mc:Ignorable="d"
         Title="InfoSitio" Height="720" Width="1280">
     <StackPanel Background="{StaticResource GeneralBackground}">
-        <TextBlock x:Name="txbNombreSitio" Style="{StaticResource TituloTXB}"/>
-        <TextBlock x:Name="txbDescConceptualSitio"
+        <StackPanel x:Name="mapa">
+            
+        </StackPanel>
+        <StackPanel>
+            <TextBlock x:Name="txbNombreSitio" Style="{StaticResource TituloTXB}"/>
+            <TextBlock x:Name="txbDescConceptualSitio"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-        <TextBlock x:Name="txbDescHistoricaSitio"
+            <TextBlock x:Name="txbDescHistoricaSitio"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-        <TextBlock x:Name="txbCostoSitio"
+            <TextBlock x:Name="txbCostoSitio"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-        <TextBlock x:Name="txbTemporadaSitio"
+            <TextBlock x:Name="txbTemporadaSitio"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-        <TextBlock x:Name="txbRecomendacionSitio"
+            <TextBlock x:Name="txbRecomendacionSitio"
         FontSize="24" 
         FontWeight="Bold" 
         HorizontalAlignment="Center" 
         Margin="10"/>
-        <TextBlock x:Name="txbAperturaSitio"
+            <TextBlock x:Name="txbAperturaSitio"
 FontSize="24" 
 FontWeight="Bold" 
 HorizontalAlignment="Center" 
 Margin="10"/>
-        <TextBlock x:Name="txbCierreSitio"
+            <TextBlock x:Name="txbCierreSitio"
 FontSize="24" 
 FontWeight="Bold" 
 HorizontalAlignment="Center" 
 Margin="10"/>
-        <TextBlock x:Name="txbActivoSitio"
+            <TextBlock x:Name="txbActivoSitio"
 FontSize="24" 
 FontWeight="Bold" 
 HorizontalAlignment="Center" 
 Margin="10"/>
+        </StackPanel>
     </StackPanel>
 </Window>
