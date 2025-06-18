@@ -31,6 +31,8 @@
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
                 <Button Style="{StaticResource SecondaryButtonStyle}"/>
             </Border>
+            <CheckBox Grid.Column="2" Content="Activos" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Checked="CheckBox_Checked" FontSize="24"/>
+            <CheckBox Grid.Column="2" Content="Inactivo" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="CheckBox_Checked" FontSize="24"/>
         </Grid>
 
 
@@ -44,7 +46,7 @@
                     <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="*" />
                     <DataGridTextColumn Header="Año" Binding="{Binding año}" Width="*" />
                     <DataGridTextColumn Header="Disponibilidad" Binding="{Binding disponible}" Width="*" />
-                    
+
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>

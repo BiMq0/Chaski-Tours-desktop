@@ -24,19 +24,27 @@
 
             <Label Content="Clientes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400"/>
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
+            <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                <CheckBox x:Name="chkActivos" Content="Activos" Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
+                <CheckBox x:Name="chkInactivos" Content="Inactivos" Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
+                <CheckBox x:Name="chkTuristas" Content="Turistas" Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
+                <CheckBox x:Name="chkInstituciones" Content="Instituciones" Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
+            </StackPanel>
+
 
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Style="{StaticResource SecondaryButtonStyle}"/>
+                <Button Content="Agregar" Style="{StaticResource PrimaryButtonStyle}" Click="AbrirFormulario_Click"/>
             </Border>
         </Grid>
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Clientes">
+            <DataGrid x:Name="tbl_Clientes"  SelectionChanged="dgVisitantes_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="*"/>
+                    <DataGridTextColumn Header="Nombre del Cliente" Binding="{Binding NombreCompleto}" Width="*"/>
                     <DataGridTextColumn Header="Tipo de Visitante" Binding="{Binding tipo_visitante}" Width="*"/>
                     <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding created_at}" Width="*"/>
                     <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />

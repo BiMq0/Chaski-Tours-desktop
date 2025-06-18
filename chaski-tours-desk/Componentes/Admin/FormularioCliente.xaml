@@ -1,0 +1,90 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.Admin.FormularioCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
+        mc:Ignorable="d"
+        Title="Registro Cliente" Height="450" Width="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="20">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+
+                <!-- Tipo Visitante -->
+                <Label Content="Tipo de Visitante" />
+                <ComboBox x:Name="cbTipo" SelectionChanged="cbTipo_SelectionChanged" Margin="0,0,0,10">
+                    <ComboBoxItem Content="Turista"/>
+                    <ComboBoxItem Content="Institucion"/>
+                </ComboBox>
+
+                <!-- Panel TURISTA -->
+                <StackPanel x:Name="panelTurista" Visibility="Collapsed" Margin="0,10">
+                    <Label Content="Nombre" />
+                    <TextBox x:Name="txtNombre" Margin="0,5"/>
+
+                    <Label Content="Apellido Paterno" />
+                    <TextBox x:Name="txtApPat" Margin="0,5"/>
+
+                    <Label Content="Apellido Materno" />
+                    <TextBox x:Name="txtApMat" Margin="0,5"/>
+
+                    <Label Content="Correo Electrónico" />
+                    <TextBox x:Name="txtCorreo" Margin="0,5"/>
+
+                    <Label Content="Contraseña" />
+                    <PasswordBox x:Name="txtContrasenia" Margin="0,5"/>
+
+                    <Label Content="Documento de Identidad" />
+                    <TextBox x:Name="txtDocumento" Margin="0,5"/>
+
+                    <Label Content="Fecha de Nacimiento" />
+                    <DatePicker x:Name="dpFechaNac" Margin="0,5"/>
+
+                    <Label Content="Nacionalidad" />
+                    <ComboBox x:Name="cbNacionalidadTurista" Width="200" Margin="0,0,0,10"/>
+
+                    <Label Content="Teléfono" />
+                    <TextBox x:Name="txtTelefono" Margin="0,5"/>
+                    
+                </StackPanel>
+
+                <!-- Panel INSTITUCION -->
+                <StackPanel x:Name="panelInstitucion" Visibility="Collapsed" Margin="0,10">
+                    <Label Content="Nombre de la Institución" />
+                    <TextBox x:Name="txtNombreInst" Margin="0,5"/>
+
+                    <Label Content="Correo Electrónico de la Institución" />
+                    <TextBox x:Name="txtCorreoInst" Margin="0,5"/>
+
+                    <Label Content="Contraseña" />
+                    <PasswordBox x:Name="txtContraseniaInst" Margin="0,5"/>
+
+                    <Label Content="Nacionalidad" />
+                    <ComboBox x:Name="cbNacionalidadInstitucion" Width="200" Margin="0,0,0,10"/>
+
+                    <Label Content="Teléfono Institución" />
+                    <TextBox x:Name="txtTelefonoInst" Margin="0,5"/>
+
+                    <Label Content="Nombre del Representante" />
+                    <TextBox x:Name="txtNombreRepresent" Margin="0,5"/>
+
+                    <Label Content="Apellido Paterno del Representante" />
+                    <TextBox x:Name="txtApPatRepresent" Margin="0,5"/>
+
+                    <Label Content="Correo del Representante" />
+                    <TextBox x:Name="txtCorreoRepresent" Margin="0,5"/>
+
+                    <Label Content="Teléfono del Representante" />
+                    <TextBox x:Name="txtTelefonoRepresent" Margin="0,5"/>
+                </StackPanel>
+
+                <Button Content="Registrar" Background="#D97706" Foreground="White" Margin="0,15" Click="Registrar_Click" Padding="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button x:Name="btnEditar" Content="Editar" Margin="10" Click="btnEditar_Click" Visibility="Collapsed"/>
+                <Button x:Name="btnGuardar" Content="Guardar" Margin="10" Click="btnGuardar_Click" Visibility="Collapsed"/>
+                <Button x:Name="btnEliminar" Content="Eliminar" Margin="10" Click="btnEliminar_Click" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
