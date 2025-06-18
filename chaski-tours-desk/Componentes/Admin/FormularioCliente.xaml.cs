@@ -279,7 +279,7 @@ namespace chaski_tours_desk.Componentes.Admin
                     correo_electronico = txtCorreoInst.Text.Trim(),
                     contrasenia = txtContraseniaInst.Password.Trim(),
                     telefono = txtTelefonoInst.Text.Trim(),
-                    nacionalidad = cbNacionalidadInst.SelectedItem?.ToString()
+                    nacionalidad = cbNacionalidadInstitucion.SelectedItem?.ToString()
                     // otros campos
                 };
 
