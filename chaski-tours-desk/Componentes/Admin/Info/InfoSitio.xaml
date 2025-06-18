@@ -13,48 +13,63 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="mapa" Grid.Column="1"></StackPanel>
-        <StackPanel Grid.Column="0">
-            <TextBlock x:Name="txbNombreSitio" Style="{StaticResource TituloTXB}"/>
-            <TextBlock x:Name="txbDescConceptual"
-        FontSize="24" 
-        FontWeight="Bold" 
-        HorizontalAlignment="Center" 
-        Margin="10"/>
-            <TextBlock x:Name="txbDescHistorica"
-        FontSize="24" 
-        FontWeight="Bold" 
-        HorizontalAlignment="Center" 
-        Margin="10"/>
-            <TextBlock x:Name="txbCostoSitio"
-        FontSize="24" 
-        FontWeight="Bold" 
-        HorizontalAlignment="Center" 
-        Margin="10"/>
-            <TextBlock x:Name="txbTemporada"
-        FontSize="24" 
-        FontWeight="Bold" 
-        HorizontalAlignment="Center" 
-        Margin="10"/>
-            <TextBlock x:Name="txbRecomendacion"
-        FontSize="24" 
-        FontWeight="Bold" 
-        HorizontalAlignment="Center" 
-        Margin="10"/>
-            <TextBlock x:Name="txbAperturaSitio"
-FontSize="24" 
-FontWeight="Bold" 
-HorizontalAlignment="Center" 
-Margin="10"/>
-            <TextBlock x:Name="txbCierreSitio"
-FontSize="24" 
-FontWeight="Bold" 
-HorizontalAlignment="Center" 
-Margin="10"/>
-            <TextBlock x:Name="txbActivo"
-FontSize="24" 
-FontWeight="Bold" 
-HorizontalAlignment="Center" 
-Margin="10"/>
+        <StackPanel Grid.Column="0" Margin="30"  Background="AliceBlue">
+            <Border Background="AliceBlue" Padding="10" CornerRadius="20">
+                <TextBlock x:Name="txbNombreSitio" Style="{StaticResource TituloTXB}" />
+            </Border>
+            <TextBlock x:Name="hiddenId" Visibility="Hidden"/>
+            <TextBlock Text="Descripción Conceptual" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbDescConceptual" Style="{StaticResource TextoEditableTXB}"/>
+
+            <TextBlock Text="Descripción Histórica" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbDescHistorica" Style="{StaticResource TextoEditableTXB}" />
+
+            <TextBlock Text="Costo del Sitio" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbCostoSitio" Style="{StaticResource TextoEditableTXB}" />
+
+            <TextBlock Text="Temporada" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbTemporada" Style="{StaticResource TextoEditableTXB}" />
+
+            <TextBlock Text="Recomendaciones" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbRecomendacion" Style="{StaticResource TextoEditableTXB}" />
+
+            <TextBlock Text="Apertura del Sitio" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbAperturaSitio" Style="{StaticResource TextoEditableTXB}" />
+
+            <TextBlock Text="Cierre del Sitio" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbCierreSitio" Style="{StaticResource TextoEditableTXB}" IsEnabled="False"/>
+
+            <TextBlock Text="Estado" Style="{StaticResource SubtitleTXB}"/>
+            <TextBox x:Name="txbActivo" Style="{StaticResource TextoEditableTXB}" IsEnabled="False"/>
+            
+            
+            <StackPanel Orientation="Horizontal" Margin="0 20">
+                <Border x:Name="brdEditar"  Style="{StaticResource BordeBotonesSecundarios}" Margin="10 0">
+                    <Button x:Name="btnEditarSitio" 
+                             Style="{StaticResource TertiaryButtonStyle}" 
+        HorizontalAlignment="Left"
+        Content="Editar" 
+        Click="btnEditarSitio_Click"/>
+                </Border>
+
+                <Border Style="{StaticResource BordeBotones}" Margin="10 0">
+                    <Button x:Name="btnEliminarSitio" 
+        Style="{StaticResource SecondaryButtonStyle}" 
+        HorizontalAlignment="Left"
+        Content="Eliminar" 
+        Click="btnEliminarSitio_Click"/>
+                </Border>
+
+                <Border Style="{StaticResource BordeBotones}" Margin="10 0">
+                    <Button x:Name="btnVolver"
+        Style="{StaticResource SecondaryButtonStyle}"
+        HorizontalAlignment="Right"
+        Content="Volver" 
+        Click="btnCerrar_Click"
+        />
+                </Border>
+                
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

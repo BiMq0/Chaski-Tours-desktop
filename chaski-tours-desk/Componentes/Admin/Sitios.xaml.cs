@@ -43,12 +43,9 @@ namespace chaski_tours_desk.Componentes.Admin
             await obtenerSitios();
         }
 
-        private void verDatos()
+        public void verDatos()
         {
-            if (Window.GetWindow(this).Visibility == Visibility.Visible)
-            {
-                verSitios();
-            }
+            verSitios();
         }
 
         private void Sitios_Loaded(object sender, RoutedEventArgs e)
