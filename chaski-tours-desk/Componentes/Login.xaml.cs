@@ -85,6 +85,7 @@ namespace chaski_tours_desk.Componentes
             if (correo[1] == "chaskitours.com")
             {
                 mainWindow.admin.Visibility = Visibility.Visible;
+                mainWindow.admin.Inicio.titulo.Content = txtUsuario.Text;
                 mainWindow.logSign.Visibility = Visibility.Collapsed;
             }
             else {
