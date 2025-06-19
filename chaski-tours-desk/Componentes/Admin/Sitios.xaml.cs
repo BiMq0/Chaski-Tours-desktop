@@ -15,7 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using chaski_tours_desk.Componentes.Admin.Info;
+using chaski_tours_desk.Componentes.Admin.FormsInfo;
+using chaski_tours_desk.Componentes.Admin.FormsAgregar;
 
 namespace chaski_tours_desk.Componentes.Admin
 {
@@ -38,7 +39,7 @@ namespace chaski_tours_desk.Componentes.Admin
             tbl_Sitios.SelectedValuePath = "id_sitio";
         }
 
-        private async void verSitios()
+        public async void verSitios()
         {
             await obtenerSitios();
         }
@@ -55,7 +56,30 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            new InfoSitio(int.Parse(tbl_Sitios.SelectedValue.ToString())).Show();
+            try
+            {
+                new InfoSitio(int.Parse(tbl_Sitios.SelectedValue.ToString())).Show();
+            }
+            catch (Exception ex) {
+                MessageBox.Show("El sitio fue eliminado o no existe");
+                verSitios();
+            }
+        }
+
+        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var txt = txbBusqueda.Text.ToLower();
+            tbl_Sitios.Items.Filter = (item) =>
+            {
+                var sitio = item as Sitio;
+                if (sitio == null) return false;
+                return sitio.nombre.ToLower().Contains(txt);
+            };
+        }
+
+        private void AddSitio_Click(object sender, RoutedEventArgs e)
+        {
+            new AgregarSitio().Show();
         }
     }
 }

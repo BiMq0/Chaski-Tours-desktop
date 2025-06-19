@@ -7,10 +7,12 @@
 
         <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
         <SolidColorBrush x:Key="BoliviaDarkRed" Color="#6F002B"/>
+        <SolidColorBrush x:Key="BoliviaLightRed" Color="#FFEBEE"/>
         <SolidColorBrush x:Key="BoliviaYellow" Color="#F9A825"/>
         <SolidColorBrush x:Key="BoliviaDarkYellow" Color="#D68F10"/>
         <SolidColorBrush x:Key="BoliviaGreen" Color="#2E7D32"/>
         <SolidColorBrush x:Key="BoliviaDarkGreen" Color="#1A4B32"/>
+        <SolidColorBrush x:Key="BoliviaLightGreen" Color="#9BDA9E"/>
         <SolidColorBrush x:Key="White" Color="#F5F5F5"/>
         <SolidColorBrush x:Key="GeneralBackground" Color="#FAE4BC"/>
         
@@ -18,15 +20,35 @@
             <Setter Property="FontSize" Value="50"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        
         <Style x:Key="TituloTXB" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="UltraBold"/>
         </Style>
+        
         <Style x:Key="SubtitleTXB" TargetType="TextBlock" BasedOn="{StaticResource TituloTXB}">
-            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="{StaticResource BoliviaRed}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="10 5"/>
         </Style>
+
+        <Style x:Key="Selector" TargetType="ComboBox">
+            <Setter Property="Background" Value="{StaticResource White}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="TextoTXB" TargetType="TextBlock" BasedOn="{StaticResource TituloTXB}">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
@@ -38,9 +60,11 @@
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="5"/>
             <Setter Property="Margin" Value="10 5"/>
             <Setter Property="IsEnabled" Value="False"/>
             <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Background" Value="{StaticResource White}"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -69,8 +93,6 @@
             </Style.Triggers>
         </Style>
 
-
-
         <Style TargetType="ListBoxItem">
             <Setter Property="Background" Value="#FAE4BC"/>
             <Setter Property="Foreground" Value="#050505"/>
@@ -87,7 +109,7 @@
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="10"  >
+                CornerRadius="5"  >
                             <TextBlock Text="{TemplateBinding Content}"
                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -144,8 +166,9 @@
         <Style x:Key="BordeBotones" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
             <Setter Property="Background" Value="{StaticResource BoliviaRed}"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="10 0"/>
             <Setter Property="Height" Value="50"/>
         </Style>
 
@@ -154,6 +177,17 @@
             <Setter Property="CornerRadius" Value="15"/>
         </Style>
 
+        <Style x:Key="BordeForms" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
+            <Setter Property="Background" Value="{StaticResource White}"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="7" ShadowDepth="5" Opacity=".05" />
+                </Setter.Value>
+            </Setter>
+        </Style>
 
         <Style x:Key="BordeBotonesUser" TargetType="Border" BasedOn="{StaticResource BordeBotones}">
             <Setter Property="Background" Value="{StaticResource BoliviaGreen}"/>
@@ -298,6 +332,9 @@
             </Style.Triggers>
         </Style>
 
-        
+
+        <Style x:Key="StackInfo" TargetType="StackPanel">
+            <Setter Property="Background" Value="{StaticResource BoliviaLightRed}"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -24,11 +24,11 @@
 
             <Label Content="Sitios" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
 
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Style="{StaticResource SecondaryButtonStyle}"/>
+                <Button Style="{StaticResource SecondaryButtonStyle}" Click="AddSitio_Click"/>
             </Border>
         </Grid>
 
