@@ -187,7 +187,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             }
 
             // Validar campos numéricos
-            if (!decimal.TryParse(txbCostoSitio.Text, out decimal costo) || costo < 0)
+            if (!decimal.TryParse(txbCostoSitio.Text.Replace("Bs.", ""), out decimal costo) || costo < 0)
             {
                 MessageBox.Show("El costo debe ser un número válido y positivo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;

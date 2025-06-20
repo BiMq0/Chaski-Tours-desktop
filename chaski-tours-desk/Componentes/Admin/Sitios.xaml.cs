@@ -60,7 +60,7 @@ namespace chaski_tours_desk.Componentes.Admin
             {
                 new InfoSitio(int.Parse(tbl_Sitios.SelectedValue.ToString())).Show();
             }
-            catch (Exception ex) {
+            catch{
                 MessageBox.Show("El sitio fue eliminado o no existe");
                 verSitios();
             }
