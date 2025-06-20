@@ -29,5 +29,7 @@
         <componentes:Transportes Visibility="Collapsed" x:Name="Transportes" Grid.Column="1"/>
 
         <componentes:Alojamientos Visibility="Collapsed" x:Name="Alojamientos" Grid.Column="1"/>
+        
+        <componentes:Salidas Visibility="Collapsed" x:Name="Salidas" Grid.Column="1"/>
     </Grid>
 </UserControl>

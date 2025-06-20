@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin.FormsAgregar"
         mc:Ignorable="d"
-        Title="AgregarSitio" Height="960" Width="1832">
+        Title="AgregarSitio" Height="960" Width="1832" Background="{StaticResource BoliviaLightRed}">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>

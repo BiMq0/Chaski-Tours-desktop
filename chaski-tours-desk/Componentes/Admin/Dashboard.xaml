@@ -16,6 +16,7 @@
             <ListBoxItem Content="Sitios"/>
             <ListBoxItem Content="Transportes"/>
             <ListBoxItem Content="Alojamientos"/>
+            <ListBoxItem Content="Salidas"/>
         </ListBox>
     </StackPanel>
 </UserControl>
