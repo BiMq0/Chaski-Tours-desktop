@@ -26,7 +26,6 @@ namespace chaski_tours_desk.Componentes.Admin
             CargarDias();
         }
 
-        //<TextBlock Grid.Row="1" Grid.Column= "0" Style= "{StaticResource TituloTXB}" Text= "Domingo" HorizontalAlignment= "Center" VerticalAlignment= "Center" />
         private void CargarDias() { 
             List<string> dias = new List<string> { "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"};
             int cols = 0;
