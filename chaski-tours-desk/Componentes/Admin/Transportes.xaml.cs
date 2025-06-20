@@ -26,6 +26,7 @@ namespace chaski_tours_desk.Componentes.Admin
     {
         private HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/transporte";
+        private List<Transporte> todosLosTransportes = new List<Transporte>();
         public Transportes()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace chaski_tours_desk.Componentes.Admin
         private async Task obtenerTransportes()
         {
             var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
-
+            todosLosTransportes = transportes;
             tbl_Transportes.ItemsSource = transportes;
         }
 
@@ -83,6 +84,23 @@ namespace chaski_tours_desk.Componentes.Admin
             };
 
             crear.Show();
+        }
+
+        private void FiltrarTransportes(string texto)
+        {
+            if (todosLosTransportes == null) return;
+
+            var filtrados = todosLosTransportes
+                .Where(t => t.matricula != null &&
+                            t.matricula.ToLower().Contains(texto.ToLower()))
+                .ToList();
+
+            tbl_Transportes.ItemsSource = filtrados;
+        }
+
+        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FiltrarTransportes(txbBusqueda.Text);
         }
     }
 }

@@ -22,6 +22,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -63,14 +64,30 @@
      FontSize="15"
      VerticalContentAlignment="Center"
                      Margin="10,10"/>
+            <Label Content="MODELO:" 
+FontSize="30"
+HorizontalAlignment="Center"
+Grid.Row="2"
+Grid.Column="0"/>
+            <TextBox x:Name="txt_modelo" 
+Grid.Row="2"
+Grid.Column="1"
+Height="45" 
+Padding="10,0"
+Background="White"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"
+                Margin="10,10"/>
 
             <Label Content="CAPACIDAD:" 
      FontSize="30"
      HorizontalAlignment="Center"
-     Grid.Row="2"
+     Grid.Row="3"
      Grid.Column="0"/>
             <TextBox x:Name="txt_capacidad" 
-     Grid.Row="2"
+     Grid.Row="3"
      Grid.Column="1"
      Height="45" 
      Padding="10,0"
@@ -84,10 +101,10 @@
             <Label Content="AÑO:" 
      FontSize="30"
      HorizontalAlignment="Center"
-     Grid.Row="3"
+     Grid.Row="4"
      Grid.Column="0"/>
             <TextBox x:Name="txt_anio" 
-     Grid.Row="3"
+     Grid.Row="4"
      Grid.Column="1"
      Height="45" 
      Padding="10,0"
@@ -101,10 +118,10 @@
             <Label Content="DISPONIBLE:" 
      FontSize="30"
      HorizontalAlignment="Center"
-     Grid.Row="4"
+     Grid.Row="5"
      Grid.Column="0"/>
             <TextBox x:Name="txt_disponible" 
-     Grid.Row="4"
+     Grid.Row="5"
      Grid.Column="1"
      Height="45" 
      Padding="10,0"

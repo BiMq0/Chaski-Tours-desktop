@@ -25,7 +25,7 @@
 
             <Label Content="Transportes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
 
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
@@ -43,7 +43,7 @@
                     <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}" Width="*" />
                     
                     <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="*" />
-                    <DataGridTextColumn Header="Año" Binding="{Binding año}" Width="*" />
+                    <DataGridTextColumn Header="Año" Binding="{Binding anio}" Width="*" />
                     <DataGridTextColumn Header="Disponibilidad" Binding="{Binding disponible}" Width="*" />
                     
                     

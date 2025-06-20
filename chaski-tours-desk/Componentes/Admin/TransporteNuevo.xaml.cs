@@ -99,11 +99,11 @@ namespace chaski_tours_desk.Componentes.Admin
                 id_vehiculo = 0,
                 matricula = txt_matricula.Text,
                 marca = txt_marca.Text,
-                modelo = txt_marca.Text,
+                modelo = txt_modelo.Text,
                 capacidad = int.Parse(txt_capacidad.Text),
-                año = int.Parse(txt_anio.Text),
+                anio = txt_anio.Text,
                 disponible = int.Parse(txt_disponible.Text),
-                Activo = 1
+                activo = 1
             };
             string json = JsonSerializer.Serialize(transporte);
             MessageBox.Show(json);

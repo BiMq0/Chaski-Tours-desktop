@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,10 +39,11 @@ namespace chaski_tours_desk.Componentes.Admin
                 txt_id.Text = trans.id_vehiculo.ToString();
                 txt_matricula.Text = trans.matricula.ToString();
                 txt_marca.Text = trans.marca.ToString();
+                txt_modelo.Text = trans.modelo.ToString();
                 txt_capacidad.Text = trans.capacidad.ToString();
-                txt_anio.Text = trans.año.ToString();
+                txt_anio.Text = trans.anio.ToString();
                 txt_disponible.Text = trans.disponible.ToString();
-                txt_activo.Text = trans.Activo.ToString();
+                txt_activo.Text = trans.activo.ToString();
             
             
         }
@@ -83,6 +85,7 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             if (txt_matricula.Text == "" ||
             txt_marca.Text == "" ||
+            txt_modelo.Text == "" ||
             txt_capacidad.Text == "" ||
             txt_anio.Text == "" ||
             txt_disponible.Text == "")
@@ -129,12 +132,15 @@ namespace chaski_tours_desk.Componentes.Admin
                 id_vehiculo = int.Parse(txt_id.Text),
                 matricula = txt_matricula.Text,
                 marca = txt_marca.Text,
-                modelo = txt_marca.Text,
+                modelo = txt_modelo.Text,
                 capacidad = int.Parse(txt_capacidad.Text),
-                año = int.Parse(txt_anio.Text),
+                anio = txt_anio.Text,
                 disponible = int.Parse(txt_disponible.Text),
-                Activo = int.Parse(txt_activo.Text)
+                activo = int.Parse(txt_activo.Text)
             };
+            string json = JsonSerializer.Serialize(transporte);
+            MessageBox.Show(json);
+
             HttpResponseMessage response = await cliente.PutAsJsonAsync($"{URL}/{transporte.id_vehiculo}", transporte);
             if (response.IsSuccessStatusCode)
             {
