@@ -1,1 +1,5 @@
 .vs
+obj
+bin
+chaski-tours-desk/obj
+chaski-tours-desk/bin
