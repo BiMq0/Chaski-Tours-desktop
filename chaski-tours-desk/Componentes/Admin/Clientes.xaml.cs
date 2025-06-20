@@ -105,40 +105,57 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private void AbrirFormulario_Click(object sender, RoutedEventArgs e)
         {
-            var form = new FormularioCliente();
-            form.ShowDialog();
-            verClientes(); 
-        }
+            var formulario = new FormularioCliente();
+            formulario.Owner = Window.GetWindow(this); // Asigna la ventana padre
+            bool? resultado = formulario.ShowDialog();
 
-        //para hacer el crud de cadad cliente es decir veremos los detalles
-        private void tbl_Clientes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var clienteSeleccionado = (Visitante)tbl_Clientes.SelectedItem;
-            if (clienteSeleccionado != null)
+            // Si el registro fue exitoso (se cerró con DialogResult = true)
+            if (resultado == true)
             {
-                var formDetalle = new FormularioCliente(clienteSeleccionado);
-                formDetalle.ShowDialog();
-                // Después de cerrar, refresca la lista por si hubo cambios
-                _ = obtenerClientes();
-            }
-        }
-       
-        private void dgVisitantes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (tbl_Clientes.SelectedItem is Visitante visitanteSeleccionado)
-            {
-                var formulario = new FormularioCliente(visitanteSeleccionado);
-                formulario.ShowDialog();
-
-                // Deselecciona la fila para permitir abrir nuevamente el mismo visitante
-                tbl_Clientes.SelectedItem = null;
-
-                
+                // Vuelve a cargar los clientes
+                verClientes();
             }
         }
 
+        // ---------------------
+        
+        private async void tbl_Clientes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (tbl_Clientes.SelectedItem is Visitante selectedVisitante)
+            {
+                try
+                {
+                    if (selectedVisitante.tipo_visitante == "Turista")
+                    {
+                        // Obtener datos completos del turista
+                        var turista = await cliente.GetFromJsonAsync<Turista>(
+                            $"http://localhost:8000/api/visitantes/turistas/cod/{selectedVisitante.cod_visitante}");
 
+                        var formulario = new FormularioCliente();
+                        formulario.CargarDatosTurista(turista);
+                        formulario.Title = "Detalles del Turista";
+                        formulario.ShowDialog();
+                    }
+                    else if (selectedVisitante.tipo_visitante == "Institucion")
+                    {
+                        // Obtener datos completos de la institución
+                        var institucion = await cliente.GetFromJsonAsync<Institucion>(
+                            $"http://localhost:8000/api/visitantes/instituciones/{selectedVisitante.cod_visitante}");
 
-
+                        var formulario = new FormularioCliente();
+                        formulario.CargarDatosInstitucion(institucion);
+                        formulario.Title = "Detalles de la Institución";
+                        formulario.ShowDialog();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los datos: {ex.Message}", "Error",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+        
+        
     }
 }

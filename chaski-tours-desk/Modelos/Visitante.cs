@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace chaski_tours_desk.Modelos
 {
-    internal class Visitante
+    public class Visitante
     {
         public int id { get; set; }
         public string cod_visitante { get; set; }

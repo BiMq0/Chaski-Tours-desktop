@@ -5,86 +5,394 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
         mc:Ignorable="d"
-        Title="Registro Cliente" Height="450" Width="800">
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="20">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+        Title="Registro Cliente"
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        >
 
-                <!-- Tipo Visitante -->
-                <Label Content="Tipo de Visitante" />
-                <ComboBox x:Name="cbTipo" SelectionChanged="cbTipo_SelectionChanged" Margin="0,0,0,10">
-                    <ComboBoxItem Content="Turista"/>
-                    <ComboBoxItem Content="Institucion"/>
-                </ComboBox>
+    <Grid Background="#FFF5EDE0">
+        <Border CornerRadius="5"
+                BorderThickness="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"                     
+                Background="#FFF5EDE0"
+                Width="800" Height="550">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" 
+                                Color="#FF7D7D7D" 
+                                Opacity="0.3" 
+                                BlurRadius="15"
+                                Direction="270"/>
+            </Border.Effect>
 
-                <!-- Panel TURISTA -->
-                <StackPanel x:Name="panelTurista" Visibility="Collapsed" Margin="0,10">
-                    <Label Content="Nombre" />
-                    <TextBox x:Name="txtNombre" Margin="0,5"/>
-
-                    <Label Content="Apellido Paterno" />
-                    <TextBox x:Name="txtApPat" Margin="0,5"/>
-
-                    <Label Content="Apellido Materno" />
-                    <TextBox x:Name="txtApMat" Margin="0,5"/>
-
-                    <Label Content="Correo Electrónico" />
-                    <TextBox x:Name="txtCorreo" Margin="0,5"/>
-
-                    <Label Content="Contraseña" />
-                    <PasswordBox x:Name="txtContrasenia" Margin="0,5"/>
-
-                    <Label Content="Documento de Identidad" />
-                    <TextBox x:Name="txtDocumento" Margin="0,5"/>
-
-                    <Label Content="Fecha de Nacimiento" />
-                    <DatePicker x:Name="dpFechaNac" Margin="0,5"/>
-
-                    <Label Content="Nacionalidad" />
-                    <ComboBox x:Name="cbNacionalidadTurista" Width="200" Margin="0,0,0,10"/>
-
-                    <Label Content="Teléfono" />
-                    <TextBox x:Name="txtTelefono" Margin="0,5"/>
-                    
+            <StackPanel Orientation="Horizontal">
+                <!-- Panel de imagen -->
+                <StackPanel Height="400" Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20, 0">
+                    <Border CornerRadius="120" Width="300" Height="300">
+                        <Image Source="/Images/icono.png">
+                            <Image.Clip>
+                                <EllipseGeometry Center="150,150" RadiusX="150" RadiusY="150"/>
+                            </Image.Clip>
+                        </Image>
+                    </Border>
+                    <Image Source="/Images/titulo.png"/>
                 </StackPanel>
 
-                <!-- Panel INSTITUCION -->
-                <StackPanel x:Name="panelInstitucion" Visibility="Collapsed" Margin="0,10">
-                    <Label Content="Nombre de la Institución" />
-                    <TextBox x:Name="txtNombreInst" Margin="0,5"/>
+                <!-- Panel de formulario -->
+                <StackPanel VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Width="400" Height="500" Margin="20, 0">
+                    <TextBlock Text="Registro de Cliente"
+                              FontSize="30" 
+                              FontWeight="SemiBold"
+                              Foreground="#FF6D5C4D"
+                              HorizontalAlignment="Center"/>
 
-                    <Label Content="Correo Electrónico de la Institución" />
-                    <TextBox x:Name="txtCorreoInst" Margin="0,5"/>
+                    <!-- Selector de tipo de cliente -->
+                    <TextBlock Text="Tipo de Visitante" 
+                             Foreground="#FF6D5C4D"
+                             Margin="5,15,5,0"
+                             FontSize="18"/>
+                    <ComboBox x:Name="cbTipo" 
+                            Height="35" 
+                            Margin="0,5"
+                            FontSize="16"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Foreground="#FF6D5C4D"
+                            SelectionChanged="cbTipo_SelectionChanged">
+                        <ComboBoxItem Content="Turista"/>
+                        <ComboBoxItem Content="Institución"/>
+                    </ComboBox>
 
-                    <Label Content="Contraseña" />
-                    <PasswordBox x:Name="txtContraseniaInst" Margin="0,5"/>
+                    <!-- Panel TURISTA -->
+                    <ScrollViewer x:Name="panelTurista" 
+                                VerticalScrollBarVisibility="Auto"
+                                Height="300" 
+                                Visibility="Collapsed"
+                                Margin="0,10">
+                        <StackPanel>
+                            <TextBlock Text="Documento de Identidad" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtDocumento" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
 
-                    <Label Content="Nacionalidad" />
-                    <ComboBox x:Name="cbNacionalidadInstitucion" Width="200" Margin="0,0,0,10"/>
+                            <TextBlock Text="Nombre" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNombre" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
 
-                    <Label Content="Teléfono Institución" />
-                    <TextBox x:Name="txtTelefonoInst" Margin="0,5"/>
+                            <TextBlock Text="Apellido Paterno" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApPat" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
 
-                    <Label Content="Nombre del Representante" />
-                    <TextBox x:Name="txtNombreRepresent" Margin="0,5"/>
+                            <TextBlock Text="Apellido Materno" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApMat" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
 
-                    <Label Content="Apellido Paterno del Representante" />
-                    <TextBox x:Name="txtApPatRepresent" Margin="0,5"/>
+                            <TextBlock Text="Fecha de Nacimiento" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <DatePicker x:Name="dpFechaNac"
+                                     Height="35"
+                                     Margin="0,5"
+                                     BorderThickness="0"
+                                     Background="White"
+                                     Foreground="#FF5A4A3A"/>
 
-                    <Label Content="Correo del Representante" />
-                    <TextBox x:Name="txtCorreoRepresent" Margin="0,5"/>
+                            <TextBlock Text="Nacionalidad" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <ComboBox x:Name="cbNacionalidadTurista" 
+                                    Height="35" 
+                                    Margin="0,5"
+                                    Foreground="#FF5A4A3A">
+                                <ComboBoxItem Content="Perú"/>
+                                <ComboBoxItem Content="Argentina"/>
+                                <ComboBoxItem Content="Chile"/>
+                                <ComboBoxItem Content="Colombia"/>
+                                <ComboBoxItem Content="México"/>
+                                <ComboBoxItem Content="España"/>
+                            </ComboBox>
 
-                    <Label Content="Teléfono del Representante" />
-                    <TextBox x:Name="txtTelefonoRepresent" Margin="0,5"/>
+                            <TextBlock Text="Teléfono" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelefono" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Correo Electrónico" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtCorreo" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Contraseña" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <PasswordBox x:Name="txtContrasenia" 
+                                           Height="35" 
+                                           Padding="10,0"
+                                           VerticalContentAlignment="Center"
+                                           FontSize="15"
+                                           Background="Transparent"
+                                           BorderThickness="0"/>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <!-- Panel INSTITUCION -->
+                    <ScrollViewer x:Name="panelInstitucion" 
+                                 VerticalScrollBarVisibility="Auto"
+                                 Height="300" 
+                                 Visibility="Collapsed"
+                                 Margin="0,10">
+                        <StackPanel>
+                            <TextBlock Text="Nombre de la Institución" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNombreInst" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Nacionalidad" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <ComboBox x:Name="cbNacionalidadInstitucion" 
+                                    Height="35" 
+                                    Margin="0,5"
+                                    Foreground="#FF5A4A3A">
+                                <ComboBoxItem Content="Perú"/>
+                                <ComboBoxItem Content="Argentina"/>
+                                <ComboBoxItem Content="Chile"/>
+                                <ComboBoxItem Content="Colombia"/>
+                                <ComboBoxItem Content="México"/>
+                                <ComboBoxItem Content="España"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Teléfono Institución" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelefonoInst" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Correo Electrónico de la Institución" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtCorreoInst" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Contraseña" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <PasswordBox x:Name="txtContraseniaInst" 
+                                           Height="35" 
+                                           Padding="10,0"
+                                           VerticalContentAlignment="Center"
+                                           FontSize="15"
+                                           Background="Transparent"
+                                           BorderThickness="0"/>
+                            </Border>
+
+                            <TextBlock Text="Nombre del Representante" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNombreRepresent" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Apellido Paterno del Representante" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApPatRepresent" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Correo del Representante" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtCorreoRepresent" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Teléfono del Representante" 
+                                     Foreground="#FF6D5C4D"
+                                     Margin="5,15,5,0"
+                                     FontSize="18"/>
+                            <Border CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelefonoRepresent" 
+                                        Height="35" 
+                                        Padding="10,0"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="#FF5A4A3A"
+                                        FontSize="15"
+                                        VerticalContentAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <Border CornerRadius="15" Width="120" Height="50" Margin="0,15,0,0" Background="#E3D3C9">
+                        <Button x:Name="btnRegistrar" 
+                        Content="Registrar"
+                        Click="btnRegistrar_Click"
+                        FontSize="14"
+                        Width="120" 
+                        Height="50" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#FF5A4A3A"
+                        FontWeight="Medium"
+                        Cursor="Hand"/>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+                        <Border CornerRadius="15" Width="120" Height="50" Margin="0,0,10,0" Background="#E3D3C9">
+                            <Button x:Name="btnEditar" 
+                            Content="Editar"
+                            Click="btnEditar_Click"
+                            FontSize="14"
+                            Width="120" 
+                            Height="50" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#FF5A4A3A"
+                            FontWeight="Medium"
+                            Cursor="Hand"/>
+                        </Border>
+                        <Border CornerRadius="15" Width="120" Height="50" Background="#E3D3C9">
+                            <Button x:Name="btnGuardar" 
+                        Content="Guardar"
+                        Click="btnGuardar_Click"
+                        FontSize="14"
+                        Width="120" 
+                        Height="50" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#FF5A4A3A"
+                        FontWeight="Medium"
+                        Cursor="Hand"
+                        Visibility="Collapsed"/>
+                        </Border>
+                    </StackPanel>
                 </StackPanel>
-
-                <Button Content="Registrar" Background="#D97706" Foreground="White" Margin="0,15" Click="Registrar_Click" Padding="10"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button x:Name="btnEditar" Content="Editar" Margin="10" Click="btnEditar_Click" Visibility="Collapsed"/>
-                <Button x:Name="btnGuardar" Content="Guardar" Margin="10" Click="btnGuardar_Click" Visibility="Collapsed"/>
-                <Button x:Name="btnEliminar" Content="Eliminar" Margin="10" Click="btnEliminar_Click" Visibility="Collapsed"/>
-            </StackPanel>
-        </Grid>
-    </ScrollViewer>
+        </Border>
+    </Grid>
 </Window>

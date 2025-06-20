@@ -35,13 +35,13 @@
 
 
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Content="Agregar" Style="{StaticResource PrimaryButtonStyle}" Click="AbrirFormulario_Click"/>
+                <Button Content="Agregar" Style="{StaticResource PrimaryButtonStyle}" Click="AbrirFormulario_Click" Height="50" VerticalAlignment="Top"/>
             </Border>
         </Grid>
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Clientes"  SelectionChanged="dgVisitantes_SelectionChanged">
+            <DataGrid x:Name="tbl_Clientes" MouseDoubleClick="tbl_Clientes_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="*"/>
                     <DataGridTextColumn Header="Nombre del Cliente" Binding="{Binding NombreCompleto}" Width="*"/>
