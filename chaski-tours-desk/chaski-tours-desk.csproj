@@ -250,7 +250,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\fondoApp.jpeg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\user_generic_profile.png" />
   </ItemGroup>

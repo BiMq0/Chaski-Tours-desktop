@@ -4,10 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Ventanas"
-        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
+        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes.User"
         mc:Ignorable="d"
          d:Height="720" d:Width="1280">
     <Grid>
-        <Button x:Name="btnReservar" Content="Reserva ahora" FontWeight="Bold" Style="{StaticResource SecondaryButtonStyle}" HorizontalAlignment="Right" Width="140" Height="50" Margin="0,0,20,22" VerticalAlignment="Bottom" Click="btnReservar_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <componentes:Landing x:Name="landing" Grid.Column="1"/>
+
+        <Border Style="{StaticResource BordeBotonesUser}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 40 20" Width="150" Grid.Column="2">
+            <Button x:Name="btnReservar" Content="Reserva ahora!" Style="{StaticResource UserButtonStyle}" Width="150" Click="btnReservar_Click" FontWeight="Bold"/>
+        </Border>
     </Grid>
 </UserControl>

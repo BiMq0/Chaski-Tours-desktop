@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" d:Width="1280">
     <UserControl.Resources>
         <Style x:Key="CardSitio" TargetType="Border">
             <Setter Property="Background" Value="White"/>
             <Setter Property="CornerRadius" Value="12"/>
-            <Setter Property="Height" Value="160"/>
+            <Setter Property="Height" Value="250"/>
             <Setter Property="Margin" Value="0,0,0,20"/>
             <Setter Property="Effect">
                 <Setter.Value>
@@ -19,7 +19,7 @@
         </Style>
         <Style x:Key="CardCategoria" TargetType="Border">
             <Setter Property="Width" Value="120"/>
-            <Setter Property="Height" Value="120"/>
+            <Setter Property="Height" Value="220"/>
             <Setter Property="CornerRadius" Value="12"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="Margin" Value="10,5"/>
@@ -33,6 +33,7 @@
         <Style x:Key="CircleButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="#2E7D32"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -44,6 +45,12 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <DropShadowEffect x:Key="CardShadowEffect" 
@@ -64,18 +71,19 @@
         </Style>
         
     </UserControl.Resources>
-    <ScrollViewer>
-        <Grid Width="720" Background="#9BDA9E">
-            
-            <StackPanel Margin="20,50,20,20">
-                <StackPanel Height="220" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20, 0">
-                    <Image Source="/Images/icono.png" Width="150"/>
-                    <Image Source="/Images/titulo.png" Width="300"/>
+    
+    <!--Inicio de estilos y elementos-->
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+
+        <StackPanel >
+                <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Horizontal">
+                    <Image Source="/Images/icono.png" Width="250"/>
+                    <Image Source="/Images/titulo_blanco.png" Width="600"/>
                 </StackPanel>
                 <Grid Margin="0,0,0,30">
                     <Border CornerRadius="20" 
-                        Background="#2A6B3D"
-                        Padding="2" Width="450">
+                        Background="#AA1A4B32"
+                        Padding="2" Width="800" >
                         <Border.Effect>
                             <DropShadowEffect Color="Black" 
                          Opacity="0.75" 
@@ -98,25 +106,24 @@
                              HorizontalContentAlignment="Center"
                          />
                     </Border>
-                    <Border CornerRadius="15" HorizontalAlignment="Right" Width="50" Background="#2A6B3D" Margin="0,0,115,0">
-                        <Button 
+                    <Border CornerRadius="15" HorizontalAlignment="Right" Width="50" Margin="0,0,115,0" Style="{StaticResource BordeBotonesUser}">
+                    <Button 
                         x:Name="btnBuscar"
                         Content="🔍" 
-                        Width="40" 
-                        Foreground="White"
+                        Style="{StaticResource UserButtonStyle}"
+                        Width="50" 
                         FontSize="20"
                         Opacity="0.8"
                         HorizontalAlignment="Left"
-                        Background="Transparent"
                         />
-                    </Border>
+                </Border>
                 </Grid>
                 <StackPanel x:Name="spSitios" Margin="0,60,0,0">
                     <TextBlock Text="LOS SITIOS MEJOR VALORADOS" 
                            FontSize="24" 
                            FontWeight="Bold" 
                            HorizontalAlignment="Left" 
-                           Margin="0,20,0,30" Foreground="#2E7D32"/>
+                           Margin="0,20,0,30" Foreground="{StaticResource BoliviaLightGreen}"/>
                     <Border Style="{StaticResource CardSitio}">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -190,7 +197,7 @@
                        FontWeight="Bold" 
                        HorizontalAlignment="Right" 
                        Margin="0,20,0,30" 
-                       Foreground="#2E7D32"/>
+                       Foreground="{StaticResource BoliviaLightGreen}"/>
                     <Border Style="{StaticResource CardSitio}">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -260,7 +267,7 @@
                     <TextBlock Text="CATEGORÍAS" 
                           FontSize="22" 
                           FontWeight="Bold"
-                          Foreground="#2E7D32"
+                          Foreground="{StaticResource BoliviaLightGreen}"
                           Margin="20,0,20,15"/> 
 
                     <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
@@ -269,13 +276,13 @@
                                  HorizontalScrollBarVisibility="Hidden"
                                  VerticalScrollBarVisibility="Disabled"
                                  Width="460"  
-                                 Height="140">
+                                 Height="220">
 
                                 <ItemsControl ItemsSource="{Binding Categorias}">
                                     <ItemsControl.ItemContainerStyle>
                                         <Style TargetType="ContentPresenter">
                                             <Setter Property="Width" Value="120"/>
-                                            <Setter Property="Height" Value="120"/>
+                                            <Setter Property="Height" Value="220"/>
                                             <Setter Property="Margin" Value="10,5"/>
                                         </Style>
                                     </ItemsControl.ItemContainerStyle>
@@ -348,7 +355,7 @@
                     <TextBlock Text="DEPARTAMENTOS" 
                           FontSize="22" 
                           FontWeight="Bold"
-                          Foreground="#2E7D32"
+                          Foreground="{StaticResource BoliviaLightGreen}"
                           Margin="20,0,20,15"/>
 
                     <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
@@ -357,13 +364,13 @@
                                  HorizontalScrollBarVisibility="Hidden"
                                  VerticalScrollBarVisibility="Disabled"
                                  Width="460"  
-                                 Height="140">
+                                 Height="220">
 
                                 <ItemsControl ItemsSource="{Binding Categorias}">
                                     <ItemsControl.ItemContainerStyle>
                                         <Style TargetType="ContentPresenter">
                                             <Setter Property="Width" Value="120"/>
-                                            <Setter Property="Height" Value="120"/>
+                                            <Setter Property="Height" Value="220"/>
                                             <Setter Property="Margin" Value="10,5"/>
                                         </Style>
                                     </ItemsControl.ItemContainerStyle>
@@ -433,6 +440,5 @@
                     </Border>
                 </StackPanel>
             </StackPanel>   
-        </Grid>
     </ScrollViewer>
 </UserControl>

@@ -68,7 +68,7 @@
                             <Button x:Name="btnEditarSitio" 
                                 Content="Editar" 
                                 Style="{StaticResource TertiaryButtonStyle}"
-                                Click="btnEditarSitio_Click"
+                                
                                 Cursor="Hand"/>
                         </Border>
 
@@ -76,7 +76,7 @@
                             <Button x:Name="btnEliminarSitio" 
                                 Style="{StaticResource SecondaryButtonStyle}"
                                     Content="Eliminar"
-                                Click="btnEliminarSitio_Click"
+                                
                                 Cursor="Hand"/>
                         </Border>
 
