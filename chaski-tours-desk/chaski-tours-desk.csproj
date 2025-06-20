@@ -101,6 +101,12 @@
     <Compile Include="Componentes\Admin\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\Admin\TransporteAdmin.xaml.cs">
+      <DependentUpon>TransporteAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\TransporteNuevo.xaml.cs">
+      <DependentUpon>TransporteNuevo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -135,6 +141,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Componentes\Admin\Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\TransporteAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\TransporteNuevo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

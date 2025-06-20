@@ -55,5 +55,34 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             verDatos();
         }
+
+        private void tbl_Transportes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
+            {
+                TransporteAdmin editar = new TransporteAdmin(transporteSeleccionado);
+
+                editar.Closed += async (s, args) =>
+                {
+                    await obtenerTransportes();
+                };
+
+
+                editar.Show();
+            }
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            TransporteNuevo crear = new TransporteNuevo();
+            crear.Closed += async (s, args) =>
+            {
+                await obtenerTransportes();
+            };
+
+            crear.Show();
+        }
     }
 }

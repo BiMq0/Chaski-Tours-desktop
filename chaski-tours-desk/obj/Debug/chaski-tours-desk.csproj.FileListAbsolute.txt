@@ -393,3 +393,9 @@ C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-
 C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
 C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
 C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojaminetos_admin.g.cs
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojaminetos_admin.baml
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.g.cs
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.baml
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.g.cs
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.baml
