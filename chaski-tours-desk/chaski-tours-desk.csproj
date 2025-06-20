@@ -98,6 +98,12 @@
     <Compile Include="Componentes\Admin\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\Admin\FormsAgregar\AgregarTour.xaml.cs">
+      <DependentUpon>AgregarTour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\FormsInfo\InfoTour.xaml.cs">
+      <DependentUpon>InfoTour.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\Admin\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
@@ -119,6 +125,7 @@
     <Compile Include="Modelos\Sitio.cs" />
     <Compile Include="Modelos\Tour.cs" />
     <Compile Include="Modelos\Transporte.cs" />
+    <Compile Include="Modelos\Ubicacion.cs" />
     <Compile Include="Ventanas\AdminLayout.xaml.cs">
       <DependentUpon>AdminLayout.xaml</DependentUpon>
     </Compile>
@@ -134,6 +141,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Componentes\Admin\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\FormsAgregar\AgregarTour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\FormsInfo\InfoTour.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

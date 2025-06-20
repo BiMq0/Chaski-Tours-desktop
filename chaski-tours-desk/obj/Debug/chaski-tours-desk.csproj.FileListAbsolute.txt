@@ -393,3 +393,9 @@ C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-
 C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
 C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
 C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
+F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\FormsAgregar\AgregarTour.g.cs
+F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\FormsInfo\InfoTour.g.cs
+F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\User\Landing.g.cs
+F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\FormsAgregar\AgregarTour.baml
+F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\FormsInfo\InfoTour.baml
+F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\User\Landing.baml

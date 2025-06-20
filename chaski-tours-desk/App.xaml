@@ -4,20 +4,93 @@
              xmlns:local="clr-namespace:chaski_tours_desk"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
-        <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
+    <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
         <SolidColorBrush x:Key="BoliviaDarkRed" Color="#6F002B"/>
+        <SolidColorBrush x:Key="BoliviaLightRed" Color="#FFEBEE"/>
         <SolidColorBrush x:Key="BoliviaYellow" Color="#F9A825"/>
         <SolidColorBrush x:Key="BoliviaDarkYellow" Color="#D68F10"/>
         <SolidColorBrush x:Key="BoliviaGreen" Color="#2E7D32"/>
+        <SolidColorBrush x:Key="BoliviaDarkGreen" Color="#1A4B32"/>
+        <SolidColorBrush x:Key="BoliviaLightGreen" Color="#9BDA9E"/>
         <SolidColorBrush x:Key="White" Color="#F5F5F5"/>
+        <SolidColorBrush x:Key="GeneralBackground" Color="#FAE4BC"/>
         
         <Style x:Key="Titulo" TargetType="Label">
-            <Setter Property="FontSize" Value="60"/>
+            <Setter Property="FontSize" Value="50"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        
+        <Style x:Key="TituloTXB" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
+        </Style>
+        
+        <Style x:Key="SubtitleTXB" TargetType="TextBlock" BasedOn="{StaticResource TituloTXB}">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="{StaticResource BoliviaRed}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10 5"/>
+        </Style>
 
+        <Style x:Key="Selector" TargetType="ComboBox">
+            <Setter Property="Background" Value="{StaticResource White}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
 
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TextoTXB" TargetType="TextBlock" BasedOn="{StaticResource TituloTXB}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Margin" Value="10 5"/>
+        </Style>
+
+        <Style x:Key="TextoEditableTXB" TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="10 5"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Background" Value="{StaticResource White}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+
+                            <ScrollViewer 
+                        x:Name="PART_ContentHost"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                          IsEnabled="{TemplateBinding IsEnabled}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
         <Style TargetType="ListBoxItem">
             <Setter Property="Background" Value="#FAE4BC"/>
@@ -28,6 +101,24 @@
             <Setter Property="Margin" Value="10"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value >
+                    <ControlTemplate TargetType="ListBoxItem" >
+                        <Border 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5"  >
+                            <TextBlock Text="{TemplateBinding Content}"
+                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                               Foreground="{TemplateBinding Foreground}"
+                               FontWeight="{TemplateBinding FontWeight}"
+                               FontSize="{TemplateBinding FontSize}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="black" BlurRadius="10" />
@@ -37,6 +128,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Background" Value="{StaticResource BoliviaRed}"/>
                     <Setter Property="BorderThickness" Value="0"/>
                     <Setter Property="Effect">
                         <Setter.Value>
@@ -47,6 +139,8 @@
 
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkRed}"/>
+                    <Setter Property="Foreground" Value="{StaticResource White}"/>
                     <Setter Property="BorderThickness" Value="0"/>
                     <Setter Property="Effect">
                         <Setter.Value>
@@ -63,27 +157,50 @@
         </Style>
 
         <Style x:Key="BordeBusqueda" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
-            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="CornerRadius" Value="15"/>
             <Setter Property="Width" Value="400"/>
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="40"/>
         </Style>
 
         <Style x:Key="BordeBotones" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
             <Setter Property="Background" Value="{StaticResource BoliviaRed}"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="10 0"/>
             <Setter Property="Height" Value="50"/>
+        </Style>
+
+        <Style x:Key="BordeBotonesSecundarios" TargetType="Border" BasedOn="{StaticResource BordeBotones}">
+            <Setter Property="Background" Value="{StaticResource BoliviaYellow}"/>
+            <Setter Property="CornerRadius" Value="15"/>
+        </Style>
+
+        <Style x:Key="BordeForms" TargetType="Border" BasedOn="{StaticResource BordeGeneral}">
+            <Setter Property="Background" Value="{StaticResource White}"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="7" ShadowDepth="5" Opacity=".05" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="BordeBotonesUser" TargetType="Border" BasedOn="{StaticResource BordeBotones}">
+            <Setter Property="Background" Value="{StaticResource BoliviaGreen}"/>
+            <Setter Property="CornerRadius" Value="15"/>
         </Style>
 
         <Style x:Key="txbBusqueda" TargetType="TextBox">
             <Setter Property="Width" Value="400"/>
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="Padding" Value="10, 0"/>
         </Style>
 
@@ -102,7 +219,6 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="0 10"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -129,7 +245,16 @@
             <Setter Property="TextBlock.TextAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Margin" Value="10"/>
-            <Setter Property="Padding" Value="10"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                    <Setter Property="Foreground" Value="#050505"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkRed}"/>
+                    <Setter Property="Foreground" Value="{StaticResource White}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style TargetType="DataGrid">
@@ -160,7 +285,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border 
                         Background="{TemplateBinding Background}"
-                        CornerRadius="30"
+                        CornerRadius="15"
                         SnapsToDevicePixels="True">
                             <ContentPresenter 
                             HorizontalAlignment="Center"
@@ -182,13 +307,33 @@
 
 
         <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
-            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Content" Value="Agregar +"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="{StaticResource BoliviaDarkRed}"/>
                 </Trigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TertiaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkYellow}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="UserButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource BoliviaDarkGreen}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <Style x:Key="StackInfo" TargetType="StackPanel">
+            <Setter Property="Background" Value="{StaticResource BoliviaLightRed}"/>
         </Style>
     </Application.Resources>
 </Application>
