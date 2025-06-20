@@ -26,15 +26,16 @@ namespace chaski_tours_desk.Componentes.Admin
     {
         private HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/reservas";
+        private List<Reserva> todaslasreservas = new List<Reserva>();
         public Reservas()
         {
             InitializeComponent();
         }
         private async Task obtenerReserva()
         {
-            var usuarios = await cliente.GetFromJsonAsync<List<Reserva>>(URL);
-
-            tbl_Reserva.ItemsSource = usuarios;
+            var reservas = await cliente.GetFromJsonAsync<List<Reserva>>(URL);
+            todaslasreservas = reservas;
+            tbl_Reserva.ItemsSource = reservas;
         }
 
         private async void verReserva()
@@ -55,5 +56,47 @@ namespace chaski_tours_desk.Componentes.Admin
             verDatos();
         }
 
+        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FiltrarReservas(txbBusqueda.Text);
+        }
+        private void FiltrarReservas(string texto)
+        {
+            if (todaslasreservas == null) return;
+
+            var filtrados = todaslasreservas
+                .Where(t => t.cod_visitante != null &&
+                            t.cod_visitante.ToLower().Contains(texto.ToLower()))
+                .ToList();
+
+            tbl_Reserva.ItemsSource = filtrados;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ReservasNuevo crear = new ReservasNuevo();
+            crear.Closed += async (s, args) =>
+            {
+                await obtenerReserva();
+            };
+
+            crear.Show();
+        }
+
+        private void tbl_Reserva_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tbl_Reserva.SelectedItem is Reserva reservaseleccionada)
+            {
+                ReservasAdmin editar = new ReservasAdmin(reservaseleccionada);
+
+                editar.Closed += async (s, args) =>
+                {
+                    await obtenerReserva();
+                };
+
+
+                editar.Show();
+            }
+        }
     }
 }

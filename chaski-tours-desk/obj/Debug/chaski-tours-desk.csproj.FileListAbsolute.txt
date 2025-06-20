@@ -399,3 +399,7 @@ D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\T
 D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.baml
 D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.g.cs
 D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.baml
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasAdmin.g.cs
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasNuevo.g.cs
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasAdmin.baml
+D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasNuevo.baml

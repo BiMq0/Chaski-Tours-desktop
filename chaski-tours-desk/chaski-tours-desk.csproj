@@ -101,6 +101,12 @@
     <Compile Include="Componentes\Admin\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\Admin\ReservasAdmin.xaml.cs">
+      <DependentUpon>ReservasAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\ReservasNuevo.xaml.cs">
+      <DependentUpon>ReservasNuevo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\Admin\TransporteAdmin.xaml.cs">
       <DependentUpon>TransporteAdmin.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Componentes\Admin\Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\ReservasAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\ReservasNuevo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
