@@ -48,43 +48,46 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             if (txt_matricula.Text == "" ||
             txt_marca.Text == "" ||
+            txt_modelo.Text == "" ||
             txt_capacidad.Text == "" ||
             txt_anio.Text == "" ||
-            txt_disponible.Text == "" )
+            txt_disponible.Text == "")
             {
                 MessageBox.Show("llene todos los campos");
                 return false;
             }
+
             if (!int.TryParse(txt_capacidad.Text, out int capacidad) ||
                 !int.TryParse(txt_anio.Text, out int anio) ||
                 !int.TryParse(txt_disponible.Text, out int disponible))
             {
-                MessageBox.Show("Capacidad, Año, Disponible deben ser números válidos.");
+                MessageBox.Show("Los campos Capacidad, Año y Disponible deben ser números.");
                 return false;
             }
+
             int anioActual = DateTime.Now.Year;
+
             if (anio < 1950 || anio > anioActual + 1)
             {
                 MessageBox.Show($"El año debe estar entre 1950 y {anioActual + 1}.");
                 return false;
             }
-            if (txt_matricula.Text.Length>8)
+            if (txt_matricula.Text.Length > 8)
             {
-                MessageBox.Show("La matricula debe de ser valida");
+                MessageBox.Show("La matricula debe de ser de 8 caracteres");
                 return false;
             }
-            if (txt_capacidad.Text.Length > 3)
+            if (capacidad > 80 && capacidad < 0)
             {
-                MessageBox.Show("La capacidad debe de ser valida");
+                MessageBox.Show("El campo capacidad no debe ser mayor a 80 y menor a 0");
                 return false;
             }
-            if (txt_disponible.Text != "0" && txt_disponible.Text != "1")
+            if (disponible != 0 && disponible != 1)
             {
-                MessageBox.Show("La disponibilidad debe de ser 1 o 0");
+                MessageBox.Show("El campo disponible debe de ser 1 o 0");
                 return false;
             }
             
-
             return true;
         }
         private async void mandarTransporte()
@@ -103,7 +106,7 @@ namespace chaski_tours_desk.Componentes.Admin
                 capacidad = int.Parse(txt_capacidad.Text),
                 anio = txt_anio.Text,
                 disponible = int.Parse(txt_disponible.Text),
-                activo = 1
+                activo = int.Parse(txt_disponible.Text),
             };
             string json = JsonSerializer.Serialize(transporte);
             MessageBox.Show(json);
