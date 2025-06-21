@@ -37,14 +37,14 @@
         <ScrollViewer Margin="20 10" Grid.Row="1">
             <DataGrid x:Name="tbl_Transportes" SelectionChanged="tbl_Transportes_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding id_vehiculo}" Width="*" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Id" Binding="{Binding id_vehiculo}" Width="*" />
                     <DataGridTextColumn Header="Matrícula" Binding="{Binding matricula}" Width="*"/>
                     <DataGridTextColumn Header="Marca" Binding="{Binding marca}" Width="*"/>
-                    <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}" Width="*" />
-                    
-                    <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="*" />
+                    <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}" Width="*"/>
+                    <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="*"/>
                     <DataGridTextColumn Header="Año" Binding="{Binding anio}" Width="*" />
-                    <DataGridTextColumn Header="Disponibilidad" Binding="{Binding disponible}" Width="*" />
+                    <DataGridTextColumn Header="Disponible" Binding="{Binding disponible}" Width="*" />
+                    <DataGridTextColumn Header="Activo" Binding="{Binding activo}" Width="*" />
                     
                     
                 </DataGrid.Columns>
