@@ -54,9 +54,9 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
 
         private void obtenerUbicacion(Sitio sitio)
         {
-            var ubicacion = cliente.GetFromJsonAsync<List<Ubicacion>>(URL_Ubi + sitio.id_ubicacion).Result;
-            cargarMapa(ubicacion[0]);
-            cargarUbicacion(ubicacion[0]);
+            var ubicacion = cliente.GetFromJsonAsync<Ubicacion>(URL_Ubi + sitio.id_ubicacion).Result;
+            cargarMapa(ubicacion);
+            cargarUbicacion(ubicacion);
         }
 
         private void cargarUbicacion(Ubicacion ubicacion)
