@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace chaski_tours_desk.Modelos
 {
-    internal class Reserva
+    public class Reserva
     {
         public int id_reserva { get; set; }
         public string cod_visitante { get; set; }

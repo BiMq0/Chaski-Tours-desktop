@@ -26,6 +26,7 @@ namespace chaski_tours_desk.Componentes.Admin
     {
         private HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/transporte";
+        private List<Transporte> todosLosTransportes = new List<Transporte>();
         public Transportes()
         {
             InitializeComponent();
@@ -33,9 +34,15 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private async Task obtenerTransportes()
         {
+<<<<<<< HEAD
+            var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
+            todosLosTransportes = transportes;
+            tbl_Transportes.ItemsSource = transportes;
+=======
             // var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
 
             // tbl_Transportes.ItemsSource = transportes;
+>>>>>>> main
         }
 
         private async void verTransportes()
@@ -56,9 +63,57 @@ namespace chaski_tours_desk.Componentes.Admin
             verDatos();
         }
 
+<<<<<<< HEAD
+        private void tbl_Transportes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
+            {
+                TransporteAdmin editar = new TransporteAdmin(transporteSeleccionado);
+
+                editar.Closed += async (s, args) =>
+                {
+                    await obtenerTransportes();
+                };
+
+
+                editar.Show();
+            }
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            TransporteNuevo crear = new TransporteNuevo();
+            crear.Closed += async (s, args) =>
+            {
+                await obtenerTransportes();
+            };
+
+            crear.Show();
+        }
+
+        private void FiltrarTransportes(string texto)
+        {
+            if (todosLosTransportes == null) return;
+
+            var filtrados = todosLosTransportes
+                .Where(t => t.matricula != null &&
+                            t.matricula.ToLower().Contains(texto.ToLower()))
+                .ToList();
+
+            tbl_Transportes.ItemsSource = filtrados;
+        }
+
+        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FiltrarTransportes(txbBusqueda.Text);
+        }
+=======
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
         }
+>>>>>>> main
     }
 }
