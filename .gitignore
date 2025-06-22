@@ -1,4 +1,3 @@
 .vs
-chaski-tours-desk/[Oo]bj/
-chaski-tours-desk/[Bb]in/
-packages
+chaski-tours-desk/obj
+chaski-tours-desk/bin
