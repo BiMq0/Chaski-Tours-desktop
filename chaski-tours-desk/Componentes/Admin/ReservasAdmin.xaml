@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
         mc:Ignorable="d"
-        Title="ReservasAdmin"  Height="720" Width="1280">
+        Title="ReservasAdmin"  Height="720" Width="1280" Loaded="datos">
     <Grid  Background="#FAE4BC">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -14,160 +14,197 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
         <Label Content="Editar Reserva" Style="{StaticResource Titulo}" HorizontalAlignment="Center" MinWidth="400"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="ID:" 
-               FontSize="30"
-               HorizontalAlignment="Center"/>
-            <TextBox x:Name="txt_id" 
-        Grid.Row="0"
-        Grid.Column="1"
-        Height="45" 
-        Padding="10,0"
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center" 
-        IsReadOnly="True" 
-        Margin="10,10"
-        />
+            <Image Grid.Row="0"  Source="/Images/icono.png" Grid.Column="0" />
+            <Grid Grid.Column="1">
 
-            <Label Content="COD VISITANTE:" 
-        FontSize="30"
-        HorizontalAlignment="Center"
-        Grid.Row="1"
-        Grid.Column="0"/>
-            <TextBox x:Name="txt_codvisitante" 
-        Grid.Row="1"
-        Grid.Column="1"
-        Height="45" 
-        Padding="10,0"
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center"
-                     IsReadOnly="True" 
-                     Margin="10,10"/>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="450" >
+                    <StackPanel>
+                        <Label Content="ID" 
+                               FontSize="30"
+                               HorizontalAlignment="Center"/>
 
-            <Label Content="ID ALOJAMIENTO:" 
-        FontSize="30"
-        HorizontalAlignment="Center"
-        Grid.Row="2"
-        Grid.Column="0"/>
-            <TextBox x:Name="txt_idalojamiento" 
-        Grid.Row="2"
-        Grid.Column="1"
-        Height="45" 
-        Padding="10,0"
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center"
-                     IsReadOnly="True" 
-                     Margin="10,10"/>
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            
+                            <TextBox x:Name="txt_id" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 FontSize="25"
+                                Height="45" 
+                                Padding="10,0"
+                                Background="White"
+                                BorderThickness="0"
+                                Foreground="#FF5A4A3A"
+                                VerticalContentAlignment="Center" 
+                                IsReadOnly="True" 
+                                Margin="10,10"/>
+                            
+                            
+                        </Border>
 
-            <Label Content="ID SALIDA:" 
-FontSize="30"
-HorizontalAlignment="Center"
-Grid.Row="3"
-Grid.Column="0"/>
-            <TextBox x:Name="txt_idsalida" 
-Grid.Row="3"
-Grid.Column="1"
-Height="45" 
-Padding="10,0"
-Background="White"
-BorderThickness="0"
-Foreground="#FF5A4A3A"
-FontSize="15"
-VerticalContentAlignment="Center"
-             Margin="10,10"/>
+                        <Label Content="VISITANTE" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="1"
+                                Grid.Column="0"/>
 
-            <Label Content="CANTIDAD DE PERSONAS:" 
-        FontSize="30"
-        HorizontalAlignment="Center"
-        Grid.Row="4"
-        Grid.Column="0"/>
-            <TextBox x:Name="txt_cantidad" 
-        Grid.Row="4"
-        Grid.Column="1"
-        Height="45" 
-        Padding="10,0"
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center"
-                     Margin="10,10"/>
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <ComboBox x:Name="cmb_codvisitante" 
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  FontSize="25"
+                                  Height="45" 
+                                  Padding="10,0"
+                                  Background="White"
+                                  BorderThickness="0"
+                                  Foreground="#FF5A4A3A"
+                                  VerticalContentAlignment="Center" 
+                                  IsReadOnly="True" 
+                                  Margin="10,10"
+                                  Width="500"/>
+                        </Border>
 
-            <Label Content="COSTO TOTAL:" 
-        FontSize="30"
-        HorizontalAlignment="Center"
-        Grid.Row="5"
-        Grid.Column="0"/>
-            <TextBox x:Name="txt_costototal" 
-        Grid.Row="5"
-        Grid.Column="1"
-        Height="45" 
-        Padding="10,0"
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center"
-                     Margin="10,10"/>
+                        <Label Content="ALOJAMIENTO" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="2"
+                                Grid.Column="0"/>
 
-            <Label Content="ESTADO:" 
-        FontSize="30"
-        HorizontalAlignment="Center"
-        Grid.Row="6"
-        Grid.Column="0"/>
-            <TextBox x:Name="txt_estado" 
-        Grid.Row="6"
-        Grid.Column="1"
-        Height="45" 
-        Padding="10,0"
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center"
-                     Margin="10,10"/>
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <ComboBox x:Name="cmb_idalojamiento" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      FontSize="25"
+                                      Height="45" 
+                                      Padding="10,0"
+                                      Background="White"
+                                      BorderThickness="0"
+                                      Foreground="#FF5A4A3A"
+                                      VerticalContentAlignment="Center" 
+                                      IsReadOnly="True" 
+                                      Margin="10,10"
+                                      Width="500"/>
+                        </Border>
 
-            <Label Content="FECHA DE RESERVACION:" 
-        FontSize="30"
-        HorizontalAlignment="Center"
-        Grid.Row="7"
-        Grid.Column="0"/>
-            <TextBox x:Name="txt_fechadereservacion" 
-        Padding="10,0"
-        Grid.Row="7"
-        Grid.Column="1"
-        Height="45" 
-        Background="White"
-        BorderThickness="0"
-        Foreground="#FF5A4A3A"
-        FontSize="15"
-        VerticalContentAlignment="Center"
-                     Margin="10,10"/>
+                        <Label Content="ID SALIDA:" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="3"
+                                Grid.Column="0"/>
+
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <ComboBox x:Name="cmb_idsalida" 
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  FontSize="25"
+                                  Height="45" 
+                                  Padding="10,0"
+                                  Background="White"
+                                  BorderThickness="0"
+                                  Foreground="#FF5A4A3A"
+                                  VerticalContentAlignment="Center" 
+                                  IsReadOnly="True" 
+                                  Margin="10,10"
+                                  Width="500"/>
+                        </Border>
+
+                        <Label Content="CANTIDAD DE PERSONAS:" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="4"
+                                Grid.Column="0"/>
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <TextBox x:Name="txt_cantidad" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 FontSize="25"
+                                Height="45" 
+                                Padding="10,0"
+                                Background="White"
+                                BorderThickness="0"
+                                Foreground="#FF5A4A3A"
+                                VerticalContentAlignment="Center"
+                                Margin="10,10"
+                                     Width="500"/>
+                        </Border>
+
+                        <Label Content="COSTO TOTAL:" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="5"
+                                Grid.Column="0"/>
+
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <TextBox x:Name="txt_costototal" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 FontSize="25"
+                                Height="45" 
+                                Padding="10,0"
+                                Background="White"
+                                BorderThickness="0"
+                                Foreground="#FF5A4A3A"
+                                VerticalContentAlignment="Center"  
+                                Margin="10,10"
+                                     Width="500"/>
+                        </Border>
+
+                        <Label Content="ESTADO:" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="6"
+                                Grid.Column="0"/>
+
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <ComboBox x:Name="cmb_estados" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      FontSize="25"
+                                      Height="45" 
+                                      Padding="10,0"
+                                      Background="White"
+                                      BorderThickness="0"
+                                      Foreground="#FF5A4A3A"
+                                      VerticalContentAlignment="Center" 
+                                      IsReadOnly="True" 
+                                      Margin="10,10"
+                                      Width="500"/>
+                        </Border>
+
+                        <Label Content="FECHA DE RESERVACION:" 
+                                FontSize="30"
+                                HorizontalAlignment="Center"
+                                Grid.Row="7"
+                                Grid.Column="0"/>
+
+                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="7" Width="500">
+                            <TextBox x:Name="txt_fechadereservacion" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 FontSize="25"
+                                Height="45" 
+                                Padding="10,0"
+                                Background="White"
+                                BorderThickness="0"
+                                Foreground="#FF5A4A3A"
+                                VerticalContentAlignment="Center"
+                                Margin="10,10"
+                                     Width="500"/>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
 
             <Grid Grid.Row="9" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
@@ -187,16 +224,7 @@ VerticalContentAlignment="Center"
                 <Border Grid.Column="2" Style="{StaticResource BordeBotones}" HorizontalAlignment="Center" Width="197">
                     <Button x:Name="Eliminar" HorizontalAlignment="Center" Content="Eliminar" Style="{StaticResource SecondaryButtonStyle}" Click="Eliminar_Click"  />
                 </Border>
-
             </Grid>
-
-
-
-
-
-
         </Grid>
-
-
     </Grid>
 </Window>

@@ -24,30 +24,143 @@ namespace chaski_tours_desk.Componentes.Admin
     public partial class ReservasAdmin : Window
     {
         private HttpClient cliente = new HttpClient();
-        private string URL = "http://localhost:8000/api/reservas";
+        private string URLRes = "http://localhost:8000/api/reservas";
+        private string URLTuristas = "http://localhost:8000/api/visitantes/turistas/";
+        private string URLInsttituciones = "http://localhost:8000/api/visitantes/instituciones/";
+        private string URLAlojas = "http://localhost:8000/api/alojamientos";
+        private string URLCalendarios = "http://localhost:8000/api/calendario";
         public Reserva res;
+        List<Turista> tur;
+        List<Institucion> instituciones;
+        List<Alojamiento> alojamientos;
+        List<CalendarioSalida> calendario;
+        List<string> estados = new List<string> { "Pendiente", "Confirmada", "Cancelada", "Completada" };
         public ReservasAdmin(Reserva x)
         {
-            
             InitializeComponent();
             res = x;
+        }
+
+        //obtener todos los datos al cargar la ventana
+        private async void datos(object sender, RoutedEventArgs e)
+        {
+            await cargardatos();
+        }
+        private async Task cargardatos()
+        {
+            await obtenerAlojamiento();
+            await obtenerClientes();
+            await obtenerCalendarios();
             configurardatos();
         }
+        //optener la lista de los alojamientos
 
-        private void configurardatos()
+        private async Task obtenerAlojamiento()
         {
+            alojamientos = await cliente.GetFromJsonAsync<List<Alojamiento>>(URLAlojas);
 
-            txt_id.Text = res.id_reserva.ToString();
-            txt_codvisitante.Text = res.cod_visitante.ToString();
-            txt_idalojamiento.Text = res.id_alojamiento.ToString();
-            txt_idsalida.Text = res.id_salida.ToString();
-            txt_cantidad.Text = res.cantidad_personas.ToString();
-            txt_costototal.Text = res.costo_total_reserva.ToString("F2"); 
-            txt_estado.Text = res.estado.ToString();
-            txt_fechadereservacion.Text = res.fecha_reservacion.ToString(); 
-
+            foreach (var item in alojamientos)
+            {
+                cmb_idalojamiento.Items.Add(item.nombre_aloj);
+            }
 
         }
+        //obtener lista de los clientes
+        private async Task obtenerClientes()
+        {
+            tur = await cliente.GetFromJsonAsync<List<Turista>>(URLTuristas);
+            instituciones = await cliente.GetFromJsonAsync<List<Institucion>>(URLInsttituciones);
+            foreach (var item in tur)
+            {
+                cmb_codvisitante.Items.Add(item.nombre);
+            }
+            foreach (var item in instituciones)
+            {
+                cmb_codvisitante.Items.Add(item.nombre);
+            }
+        }
+        //obtener la lista de los calendarios
+
+        private async Task obtenerCalendarios()
+        {
+            calendario = await cliente.GetFromJsonAsync<List<CalendarioSalida>>(URLCalendarios);
+
+            foreach (var item in calendario)
+            {
+                cmb_idsalida.Items.Add(item.fecha_salida);
+            }
+            foreach (var item in estados)
+            {
+                cmb_estados.Items.Add(item);
+            }
+        }
+       
+        //configurar datos de la reserva
+        private void configurardatos()
+        {
+            
+            txt_id.Text = res.id_reserva.ToString();
+
+            //obtener el nombre del visitante ya sea turista o institucion por el codigo
+            
+            if (res.cod_visitante.Contains("TUR"))
+            {
+                
+                foreach (var item in tur)
+                {
+                    if (item.cod_visitante == res.cod_visitante)
+                    {
+                        cmb_codvisitante.Text = item.nombre;
+                    }
+                }
+                
+            }
+            if (res.cod_visitante.Contains("INS"))
+            {
+                
+                foreach (var item in instituciones)
+                {
+                    if (item.cod_visitante == res.cod_visitante)
+                    {
+                        cmb_codvisitante.Text = item.nombre;
+                    }
+                }
+            }
+
+            //obtener el nombre del alojamiento por el id
+
+
+            foreach (var item in alojamientos)
+            {
+                if (item.id_alojamiento == res.id_alojamiento)
+                {
+                    cmb_idalojamiento.Text = item.nombre_aloj;
+                }
+            }
+
+
+            //obtener la fecha de salida por el id
+
+            foreach (var item in calendario)
+            {
+                if (item.id_salida == res.id_salida)
+                {
+                    cmb_idsalida.Text = item.fecha_salida;
+                }
+            }
+
+            //cargar datos propios de la reserva
+
+            txt_cantidad.Text = res.cantidad_personas.ToString();
+            txt_costototal.Text = res.costo_total_reserva.ToString("F2"); 
+            cmb_estados.Text = res.estado.ToString();
+            txt_fechadereservacion.Text = res.fecha_reservacion.ToString(); 
+        }
+
+
+        
+
+        //condigurar la funcionalidad de los botones
 
         private void Cerrar_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +183,7 @@ namespace chaski_tours_desk.Componentes.Admin
         public async Task EliminarReserva()
         {
             int id = int.Parse(txt_id.Text);
-            HttpResponseMessage response = await cliente.DeleteAsync($"{URL}/{id}");
+            HttpResponseMessage response = await cliente.DeleteAsync($"{URLRes}/{id}");
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Reserva borrada correctamente");
@@ -82,6 +195,8 @@ namespace chaski_tours_desk.Componentes.Admin
             }
         }
 
+
+
         private void Actualizar_Click(object sender, RoutedEventArgs e)
         {
             if (validar())
@@ -92,10 +207,13 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private bool validar()
         {
-            if (txt_cantidad.Text == "" ||
-            txt_costototal.Text == "" ||
-            txt_estado.Text == "" ||
-            txt_fechadereservacion.Text == "")
+            if (cmb_codvisitante.Text == "" ||
+                cmb_idalojamiento.Text == "" ||
+                cmb_idsalida.Text == "" ||
+                txt_cantidad.Text == "" ||
+                txt_costototal.Text == "" ||
+                cmb_estados.Text== "" ||
+                txt_fechadereservacion.Text == "")
             {
                 MessageBox.Show("Por favor, complete todos los campos");
                 return false;
@@ -103,9 +221,26 @@ namespace chaski_tours_desk.Componentes.Admin
             if (!int.TryParse(txt_cantidad.Text, out int cantidad) ||
                  !double.TryParse(txt_costototal.Text, out double costo))
             {
-                MessageBox.Show("CANTIDAD, COSTO deben ser números válidos.");
+                MessageBox.Show("los campos CANTIDAD y COSTO deben ser números válidos.");
                 return false;
             }
+            if(cantidad>250 || cantidad < 1)
+            {
+                MessageBox.Show("debe ingresar una cantidad valida entre 1 y 250");
+                return false;
+            }
+            if (costo > 1000000 || costo < 0)
+            {
+                MessageBox.Show("debe ingresar un costo  valido entre 1000000 y 0");
+                return false;
+            }
+            if (!DateTime.TryParse(txt_fechadereservacion.Text, out DateTime fechaReservacion))
+            {
+                MessageBox.Show("la fecha de reservacion debe de ser correcta en el siguiente formato (yyyy-MM-dd HH:mm:ss)");
+                return false;
+            }
+
+
             return true;
         }
         private async void mandarReserva()
@@ -114,21 +249,61 @@ namespace chaski_tours_desk.Componentes.Admin
         }
         public async Task ActualizarReserva()
         {
-            Reserva res = new Reserva
+            res.id_reserva = int.Parse(txt_id.Text);
+
+            //mandar el codigo del visitante por el nombre
+
+            int flag1 = 0;
+            foreach (var item in tur)
             {
-                id_reserva = int.Parse( txt_id.Text) ,
-                cod_visitante = txt_codvisitante.Text ,
-                id_alojamiento = int.Parse(txt_idalojamiento.Text),
-                id_salida = int.Parse(txt_idsalida.Text),
-                cantidad_personas = int.Parse( txt_cantidad.Text),
-                costo_total_reserva =double.Parse( txt_costototal.Text),
-                estado = txt_estado.Text,
-                fecha_reservacion = txt_fechadereservacion.Text 
-            };
+                if (item.nombre == cmb_codvisitante.Text)
+                {
+                    res.cod_visitante = item.cod_visitante;
+                    flag1 = 1;
+                }
+            }
+            if (flag1 == 0)
+            {
+                foreach (var item in instituciones)
+                {
+                    if (item.nombre == cmb_codvisitante.Text)
+                    {
+                        res.cod_visitante = item.cod_visitante;
+                        flag1 = 1;
+                    }
+                }
+            }
+
+            //mandar el codigo del alojamineto por el nombre
+
+            foreach (var item in alojamientos)
+            {
+                if (item.nombre_aloj == cmb_idalojamiento.Text)
+                {
+                    res.id_alojamiento = item.id_alojamiento;
+                }
+            }
+
+            //mandar el id de la salida por la fecha
+
+            foreach (var item in calendario)
+            {
+                if (item.fecha_salida == cmb_idsalida.Text)
+                {
+                    res.id_salida = item.id_salida;
+                }
+            }
+
+            
+            res.cantidad_personas = int.Parse(txt_cantidad.Text);
+            res.costo_total_reserva = double.Parse(txt_costototal.Text);
+            res.estado = cmb_estados.Text;
+            res.fecha_reservacion = txt_fechadereservacion.Text;
+
             string json = JsonSerializer.Serialize(res);
             MessageBox.Show(json);
 
-            HttpResponseMessage response = await cliente.PutAsJsonAsync($"{URL}/{res.id_reserva}", res);
+            HttpResponseMessage response = await cliente.PutAsJsonAsync($"{URLRes}/{res.id_reserva}", res);
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Reserva actualizada correctamente");
