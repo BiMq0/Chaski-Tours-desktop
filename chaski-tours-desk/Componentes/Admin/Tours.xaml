@@ -24,11 +24,11 @@
 
             <Label Content="Tours" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
 
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Style="{StaticResource SecondaryButtonStyle}"/>
+                <Button x:Name="AddTour" Style="{StaticResource SecondaryButtonStyle}" Click="AddTour_Click"/>
             </Border>
         </Grid>
 

@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:chaski_tours_desk"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
-        <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
+    <SolidColorBrush x:Key="BoliviaRed" Color="#BF0A3B"/>
         <SolidColorBrush x:Key="BoliviaDarkRed" Color="#6F002B"/>
         <SolidColorBrush x:Key="BoliviaLightRed" Color="#FFEBEE"/>
         <SolidColorBrush x:Key="BoliviaYellow" Color="#F9A825"/>

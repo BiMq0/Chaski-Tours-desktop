@@ -8,14 +8,8 @@
     mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280" Loaded="Window_Loaded">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Image x:Name="Fondo" Source="Images/conejo.jpg" Stretch="UniformToFill"
+        <Image x:Name="Fondo" Source="/Images/fondoApp.jpeg" Stretch="UniformToFill"
            VerticalAlignment="Center"/>
         <Rectangle Fill="Black" Opacity=".5" />
 

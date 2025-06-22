@@ -1,4 +1,6 @@
-﻿using chaski_tours_desk.Modelos;
+﻿using chaski_tours_desk.Componentes.Admin.FormsAgregar;
+using chaski_tours_desk.Componentes.Admin.FormsInfo;
+using chaski_tours_desk.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +56,34 @@ namespace chaski_tours_desk.Componentes.Admin
         private void Tours_Loaded(object sender, RoutedEventArgs e)
         {
             verDatos();
+        }
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                new InfoTour(int.Parse(tbl_Tours.SelectedValue.ToString())).Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El sitio fue eliminado o no existe");
+                verTours();
+            }
+        }
+
+        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var txt = txbBusqueda.Text.ToLower();
+            tbl_Tours.Items.Filter = (item) =>
+            {
+                var tour = item as Tour;
+                if (tour == null) return false;
+                return tour.nombre_tour.ToLower().Contains(txt);
+            };
+        }
+
+        private void AddTour_Click(object sender, RoutedEventArgs e)
+        {
+            new AgregarTour().Show();
         }
     }
 }
