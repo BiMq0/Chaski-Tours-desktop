@@ -14,7 +14,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Ingresar Nuevo Transporte" Style="{StaticResource Titulo}" HorizontalAlignment="Center" MinWidth="400"/>
+        <Label Content="Ingresar una nueva Reserva" Style="{StaticResource Titulo}" HorizontalAlignment="Center" MinWidth="400"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="4*"/>
@@ -176,7 +176,8 @@
                         Foreground="#FF5A4A3A"
                         VerticalContentAlignment="Center"
                         Margin="10,10"
-                             Width="500"/>
+                             Width="500"
+                             IsReadOnly="True"/>
                         </Border>
                     </StackPanel>
                 </ScrollViewer>
