@@ -28,17 +28,24 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         private string URLRes = "http://localhost:8000/api/reservas/crear";
         private string URLTuristas = "http://localhost:8000/api/visitantes/turistas/";
         private string URLInsttituciones = "http://localhost:8000/api/visitantes/instituciones/";
-        private string URLAlojas = "http://localhost:8000/api/alojamientos";
         private string URLCalendarios = "http://localhost:8000/api/calendario";
         public Reserva res;
         List<Turista> tur;
         List<Institucion> instituciones;
-        List<Alojamiento> alojamientos;
         List<CalendarioSalida> calendario;
         List<string> estados = new List<string> { "Pendiente", "Confirmada", "Cancelada", "Completada" };
         public ReservasNuevo()
         {
             InitializeComponent();
+            habilitar(true);
+        }
+        private void habilitar(bool valor)
+        {
+            cmb_codvisitante.IsEnabled = valor;
+            cmb_idsalida.IsEnabled = valor;
+            txt_cantidad.IsEnabled = valor;
+            txt_costototal.IsEnabled = valor;
+            cmb_estados.IsEnabled = valor;
         }
 
         private void Cerrar_Click(object sender, RoutedEventArgs e)
@@ -53,22 +60,12 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         }
         private async Task cargardatos()
         {
-            await obtenerAlojamiento();
             await obtenerClientes();
             await obtenerCalendarios();
         }
         //optener la lista de los alojamientos
 
-        private async Task obtenerAlojamiento()
-        {
-            alojamientos = await cliente.GetFromJsonAsync<List<Alojamiento>>(URLAlojas);
 
-            foreach (var item in alojamientos)
-            {
-                cmb_idalojamiento.Items.Add(item.nombre_aloj);
-            }
-
-        }
         //obtener lista de los clientes
         private async Task obtenerClientes()
         {
@@ -97,7 +94,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             {
                 cmb_estados.Items.Add(item);
             }
-            txt_fechadereservacion.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         private void Enviar_Click_1(object sender, RoutedEventArgs e)
@@ -116,7 +112,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         {
 
             //mandar el codigo del visitante por el nombre
-            string codigo="";
+            string codigo = "";
             int flag1 = 0;
             foreach (var item in tur)
             {
@@ -138,15 +134,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 }
             }
 
-            //mandar el codigo del alojamineto por el nombre
-            int aloja= 0;
-            foreach (var item in alojamientos)
-            {
-                if (item.nombre_aloj == cmb_idalojamiento.Text)
-                {
-                    aloja= item.id_alojamiento;
-                }
-            }
 
             //mandar el id de la salida por la fecha
             int fecha = 0;
@@ -158,6 +145,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 }
             }
 
+
             var res = new Reserva
             {
                 id_reserva = 0,
@@ -166,7 +154,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 cantidad_personas = int.Parse(txt_cantidad.Text),
                 costo_total_reserva = double.Parse(txt_costototal.Text),
                 estado = cmb_estados.Text
-        };
+            };
             string json = JsonSerializer.Serialize(res);
             MessageBox.Show(json);
             HttpResponseMessage response = await cliente.PostAsJsonAsync(URLRes, res);
@@ -185,12 +173,10 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         private bool validar()
         {
             if (cmb_codvisitante.Text == "" ||
-                cmb_idalojamiento.Text == "" ||
                 cmb_idsalida.Text == "" ||
                 txt_cantidad.Text == "" ||
                 txt_costototal.Text == "" ||
-                cmb_estados.Text == "" ||
-                txt_fechadereservacion.Text == "")
+                cmb_estados.Text == "")
             {
                 MessageBox.Show("Por favor, complete todos los campos");
                 return false;
@@ -209,11 +195,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             if (costo > 1000000 || costo < 0)
             {
                 MessageBox.Show("debe ingresar un costo  valido entre 1000000 y 0");
-                return false;
-            }
-            if (!DateTime.TryParse(txt_fechadereservacion.Text, out DateTime fechaReservacion))
-            {
-                MessageBox.Show("la fecha de reservacion debe de ser correcta en el siguiente formato (yyyy-MM-dd HH:mm:ss)");
                 return false;
             }
 

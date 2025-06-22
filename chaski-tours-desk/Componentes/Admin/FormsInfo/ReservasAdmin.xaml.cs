@@ -27,18 +27,25 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
         private string URLRes = "http://localhost:8000/api/reservas";
         private string URLTuristas = "http://localhost:8000/api/visitantes/turistas/";
         private string URLInsttituciones = "http://localhost:8000/api/visitantes/instituciones/";
-        private string URLAlojas = "http://localhost:8000/api/alojamientos";
         private string URLCalendarios = "http://localhost:8000/api/calendario";
         public Reserva res;
         List<Turista> tur;
         List<Institucion> instituciones;
-        List<Alojamiento> alojamientos;
         List<CalendarioSalida> calendario;
         List<string> estados = new List<string> { "Pendiente", "Confirmada", "Cancelada", "Completada" };
         public ReservasAdmin(Reserva x)
         {
             InitializeComponent();
             res = x;
+            habilitar(true);
+        }
+        private void habilitar(bool valor)
+        {
+            cmb_codvisitante.IsEnabled = valor;
+            cmb_idsalida.IsEnabled = valor;
+            txt_cantidad.IsEnabled = valor;
+            txt_costototal.IsEnabled = valor;
+            cmb_estados.IsEnabled = valor;
         }
 
         //obtener todos los datos al cargar la ventana
@@ -81,18 +88,17 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                 cmb_estados.Items.Add(item);
             }
         }
-       
+
         //configurar datos de la reserva
         private void configurardatos()
         {
-            
-            txt_id.Text = res.id_reserva.ToString();
+
 
             //obtener el nombre del visitante ya sea turista o institucion por el codigo
-            
+
             if (res.cod_visitante.Contains("TUR"))
             {
-                
+
                 foreach (var item in tur)
                 {
                     if (item.cod_visitante == res.cod_visitante)
@@ -100,11 +106,11 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                         cmb_codvisitante.Text = item.nombre;
                     }
                 }
-                
+
             }
             if (res.cod_visitante.Contains("INS"))
             {
-                
+
                 foreach (var item in instituciones)
                 {
                     if (item.cod_visitante == res.cod_visitante)
@@ -128,12 +134,12 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             //cargar datos propios de la reserva
 
             txt_cantidad.Text = res.cantidad_personas.ToString();
-            txt_costototal.Text = res.costo_total_reserva.ToString("F2"); 
+            txt_costototal.Text = res.costo_total_reserva.ToString("F2");
             cmb_estados.Text = res.estado.ToString();
         }
 
 
-        
+
 
         //condigurar la funcionalidad de los botones
 
@@ -141,7 +147,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
         {
             Close();
         }
-        
+
 
         private void Eliminar_Click(object sender, RoutedEventArgs e)
         {
@@ -153,12 +159,11 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
         {
             await EliminarReserva();
         }
-        
+
 
         public async Task EliminarReserva()
         {
-            int id = int.Parse(txt_id.Text);
-            HttpResponseMessage response = await cliente.DeleteAsync($"{URLRes}/{id}");
+            HttpResponseMessage response = await cliente.DeleteAsync($"{URLRes}/{res.id_reserva}");
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Reserva borrada correctamente");
@@ -186,7 +191,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                 cmb_idsalida.Text == "" ||
                 txt_cantidad.Text == "" ||
                 txt_costototal.Text == "" ||
-                cmb_estados.Text== "" )
+                cmb_estados.Text == "")
             {
                 MessageBox.Show("Por favor, complete todos los campos");
                 return false;
@@ -197,7 +202,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                 MessageBox.Show("los campos CANTIDAD y COSTO deben ser números válidos.");
                 return false;
             }
-            if(cantidad>250 || cantidad < 1)
+            if (cantidad > 250 || cantidad < 1)
             {
                 MessageBox.Show("debe ingresar una cantidad valida entre 1 y 250");
                 return false;
@@ -217,7 +222,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
         }
         public async Task ActualizarReserva()
         {
-            res.id_reserva = int.Parse(txt_id.Text);
 
             //mandar el codigo del visitante por el nombre
 
@@ -253,7 +257,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                 }
             }
 
-            
             res.cantidad_personas = int.Parse(txt_cantidad.Text);
             res.costo_total_reserva = double.Parse(txt_costototal.Text);
             res.estado = cmb_estados.Text;
@@ -273,6 +276,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             }
 
         }
-        
+
     }
 }

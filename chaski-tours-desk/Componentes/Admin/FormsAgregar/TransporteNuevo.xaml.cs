@@ -29,6 +29,17 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         public TransporteNuevo()
         {
             InitializeComponent();
+            habilitar(true);
+        }
+        private void habilitar(bool valor)
+        {
+            txt_matricula.IsEnabled = valor;
+            txt_marca.IsEnabled = valor;
+            txt_modelo.IsEnabled = valor;
+            txt_capacidad.IsEnabled = valor;
+            txt_anio.IsEnabled = valor;
+            cmbDisponible.IsEnabled = valor;
+            cmbActivo.IsEnabled = valor;
         }
 
         private void Cerrar_Click(object sender, RoutedEventArgs e)
@@ -42,7 +53,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             {
                 mandarTransporte();
             }
-            
+
         }
         private bool validar()
         {
@@ -51,17 +62,17 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             txt_modelo.Text == "" ||
             txt_capacidad.Text == "" ||
             txt_anio.Text == "" ||
-            txt_disponible.Text == "")
+            cmbDisponible.Text == "" ||
+            cmbActivo.Text == "")
             {
                 MessageBox.Show("llene todos los campos");
                 return false;
             }
 
             if (!int.TryParse(txt_capacidad.Text, out int capacidad) ||
-                !int.TryParse(txt_anio.Text, out int anio) ||
-                !int.TryParse(txt_disponible.Text, out int disponible))
+                !int.TryParse(txt_anio.Text, out int anio))
             {
-                MessageBox.Show("Los campos Capacidad, Año y Disponible deben ser números.");
+                MessageBox.Show("Los campos Capacidad y Año  deben ser números.");
                 return false;
             }
 
@@ -82,12 +93,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 MessageBox.Show("El campo capacidad no debe ser mayor a 80 y menor a 0");
                 return false;
             }
-            if (disponible != 0 && disponible != 1)
-            {
-                MessageBox.Show("El campo disponible debe de ser 1 o 0");
-                return false;
-            }
-            
+
             return true;
         }
         private async void mandarTransporte()
@@ -96,6 +102,16 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         }
         public async Task CrearTransporteAsync()
         {
+            int dispo = 0;
+            if (cmbDisponible.Text == "Disponible")
+            {
+                dispo = 1;
+            }
+            int act = 0;
+            if (cmbActivo.Text == "Activo")
+            {
+                act = 1;
+            }
 
             var transporte = new Transporte
             {
@@ -105,8 +121,8 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 modelo = txt_modelo.Text,
                 capacidad = int.Parse(txt_capacidad.Text),
                 año = txt_anio.Text,
-                disponible = int.Parse(txt_disponible.Text),
-                activo = int.Parse(txt_disponible.Text),
+                disponible = dispo,
+                activo = act
             };
             string json = JsonSerializer.Serialize(transporte);
             MessageBox.Show(json);
@@ -124,6 +140,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
 
         }
 
-        
+
     }
 }

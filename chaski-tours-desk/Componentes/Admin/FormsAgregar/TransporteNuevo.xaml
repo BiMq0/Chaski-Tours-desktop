@@ -5,171 +5,146 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
         mc:Ignorable="d"
-        Title="TransporteNuevo" Height="720" Width="1280">
-    <Grid  Background="#FAE4BC">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
-        </Grid.RowDefinitions>
+        WindowState="Maximized"
+        Title="TransporteNuevo" Height="960" Width="1832" Background="{StaticResource BoliviaLightRed}">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Ingresa Un Nuevo Transporte" Style="{StaticResource Titulo}" HorizontalAlignment="Center" MinWidth="400"/>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="1.5*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Image Grid.Row="0"  Source="/Images/icono.png" Grid.Column="0" />
-
-            <Grid Grid.Column="1">
-
-                <ScrollViewer VerticalScrollBarVisibility="Auto"
-                    x:Name="panelCamposTurista" Height="450" >
-                    <StackPanel>
-                        <Label Content="MATRICULA:" 
-                             FontSize="30"
-                             HorizontalAlignment="Center"/>
-
-                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Width="500">
+        <Border Style="{StaticResource BordeForms}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border Background="#D32F2F" CornerRadius="10" Padding="15" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Matricula del Transporte"
+                                       Style="{StaticResource TituloTXB}"
+                                       Foreground="White" Padding="10"/>
                             <TextBox x:Name="txt_matricula" 
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     FontSize="25"
-                                     Height="45" 
-                                     Padding="10,0"
-                                     Background="White"
-                                     BorderThickness="0"
-                                     Foreground="#FF5A4A3A"
-                                     VerticalContentAlignment="Center"
-                                     Margin="10,10"
-                                     Width="500"/>
-                        </Border>
-
-                        <Label Content="MARCA:" 
-                         FontSize="30"
-                         HorizontalAlignment="Center"/>
-
-                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="1" Width="500" >
+                                       Style="{StaticResource TextoEditableTXB}"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#F44336" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Marca del Transporte" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
                             <TextBox x:Name="txt_marca" 
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     FontSize="25"
-                                     Height="45" 
-                                     Padding="10,0"
-                                     Background="White"
-                                     BorderThickness="0"
-                                     Foreground="#FF5A4A3A"
-                                     VerticalContentAlignment="Center"
-                                     Margin="10,10"
-                                     Width="500"/>
-                        </Border>
+                                     Style="{StaticResource TextoEditableTXB}"
+                                     MinHeight="80"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#F44336" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Modelo del Transporte" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                            <TextBox x:Name="txt_modelo" 
+                                     Style="{StaticResource TextoEditableTXB}"
+                                     MinHeight="80"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#F44336" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Capacidad del Transporte" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                            <TextBox x:Name="txt_capacidad" 
+                                     Style="{StaticResource TextoEditableTXB}"
+                                     MinHeight="80"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#F44336" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Año del Modelo" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                            <TextBox x:Name="txt_anio" 
+                                     Style="{StaticResource TextoEditableTXB}"
+                                     MinHeight="80"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
 
-                        <Label Content="MODELO:" 
-                        FontSize="30"
-                        HorizontalAlignment="Center"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
 
-                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="2" Width="500" >
-                            <TextBox x:Name="txt_modelo"
-                                     HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    FontSize="25"
-                                    Height="45" 
-                                    Padding="10,0"
-                                    Background="White"
-                                    BorderThickness="0"
-                                    Foreground="#FF5A4A3A"
-                                    VerticalContentAlignment="Center"
-                                    Margin="10,10"
-                                     Width="500"/>
-                        </Border>
+        <Border Grid.Column="1" 
+                Style="{StaticResource BordeForms}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" 
+                        Background="#D32F2F" 
+                        CornerRadius="10" 
+                        Padding="15"
+                        Margin="0,0,0,15">
+                    <TextBlock Text="Detalles de Disponibilidad" 
+                               Foreground="White"
+                               Style="{StaticResource TituloTXB}"/>
+                </Border>
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Disponible" 
+                                            Style="{StaticResource SubtitleTXB}"/>
+                                <ComboBox x:Name="cmbDisponible" 
+                                        Style="{StaticResource Selector}" Margin="10 0">
+                                    <ComboBoxItem Content="Disponible"/>
+                                    <ComboBoxItem Content="No Disponible"/>
+                                </ComboBox>
+                            </StackPanel>
 
-                        <Label Content="CAPACIDAD:" 
-                         FontSize="30"
-                         HorizontalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Text="Activo" 
+                                     Style="{StaticResource SubtitleTXB}"/>
+                                <ComboBox x:Name="cmbActivo" 
+                                    Style="{StaticResource Selector}" Margin="10 0">
+                                    <ComboBoxItem Content="Activo"/>
+                                    <ComboBoxItem Content="Inactivo"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="3" Width="500">
-                            <TextBox x:Name="txt_capacidad"
-                                      HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        FontSize="25"
-                                        Height="45" 
-                                        Padding="10,0"
-                                        Background="White"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        VerticalContentAlignment="Center"
-                                        Margin="10,10"
-                                         Width="500"/>
-                        </Border>
 
-                        <Label Content="AÑO:" 
-                         FontSize="30"
-                         HorizontalAlignment="Center"/>
+                            <Border x:Name="brdEditar" Style="{StaticResource BordeBotonesUser}">
+                                <Button x:Name="btnGuardarSitio" 
+                                         Content="Enviar" 
+                                         Style="{StaticResource UserButtonStyle}"
+                                         Click="Enviar_Click"
+                                         Cursor="Hand"/>
+                            </Border>
 
-                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="4" Width="500" >
-                            <TextBox x:Name="txt_anio"
-                                     HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    FontSize="25"
-                                     Height="45" 
-                                     Padding="10,0"
-                                     Background="White"
-                                     BorderThickness="0"
-                                     Foreground="#FF5A4A3A"
-                                     VerticalContentAlignment="Center"
-                                     Margin="10,10"
-                                     Width="500"/>
-                        </Border>
+                            <Border x:Name="brdBtnVolver" Style="{StaticResource BordeBotones}" 
+                                    >
+                                <Button x:Name="Cerrar" 
+                                        Content="Cancelar" 
+                                        Style="{StaticResource SecondaryButtonStyle}"
+                                        Click="Cerrar_Click"
+                                        Cursor="Hand"/>
+                            </Border>
 
-                        <Label Content="DISPONIBLE:" 
-                                    FontSize="30"
-                                    HorizontalAlignment="Center"/>
-
-                        <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}" HorizontalAlignment="Center" Grid.Row="5" Width="500">
-                            <TextBox x:Name="txt_disponible" 
-                                     HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    FontSize="25"
-                                    Height="45" 
-                                    Padding="10,0"
-                                    Background="White"
-                                    BorderThickness="0"
-                                    Foreground="#FF5A4A3A"
-                                    VerticalContentAlignment="Center"
-                                    Margin="10,10"
-                                     Width="500"/>
-                        </Border>
-
+                        </StackPanel>
                     </StackPanel>
-
                 </ScrollViewer>
 
             </Grid>
-
-            <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="0" Style="{StaticResource BordeBotones}" HorizontalAlignment="Center" Width="197">
-                    <Button x:Name="Cerrar" HorizontalAlignment="Center" Content="Cancelar" Style="{StaticResource SecondaryButtonStyle}" Height="50" VerticalAlignment="Top" Click="Cerrar_Click"  />
-                </Border>
-
-                <Border Grid.Column="2" Style="{StaticResource BordeBotones}" HorizontalAlignment="Center" Width="197">
-                    <Button x:Name="Enviar" HorizontalAlignment="Center" Content="Enviar" Style="{StaticResource SecondaryButtonStyle}" Click="Enviar_Click"  />
-                </Border>
-
-            </Grid>
-
-        </Grid>
-
-
+        </Border>
     </Grid>
 </Window>

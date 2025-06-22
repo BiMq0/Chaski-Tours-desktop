@@ -23,6 +23,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
     /// </summary>
     public partial class TransporteAdmin : Window
     {
+
         private HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/transporte";
         public Transporte trans;
@@ -31,18 +32,45 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             InitializeComponent();
             trans = x;
             configurardatos();
+            habilitar(true);
+        }
+        private void habilitar(bool valor)
+        {
+            txt_matricula.IsEnabled = valor;
+            txt_marca.IsEnabled = valor;
+            txt_modelo.IsEnabled = valor;
+            txt_capacidad.IsEnabled = valor;
+            txt_anio.IsEnabled = valor;
+            cmbDisponible.IsEnabled = valor;
+            cmbActivo.IsEnabled = valor;
         }
 
         private void configurardatos()
         {
-            txt_id.Text = trans.id_vehiculo.ToString();
             txt_matricula.Text = trans.matricula.ToString();
             txt_marca.Text = trans.marca.ToString();
             txt_modelo.Text = trans.modelo.ToString();
             txt_capacidad.Text = trans.capacidad.ToString();
             txt_anio.Text = trans.anio.ToString();
-            txt_disponible.Text = trans.disponible.ToString();
-            txt_activo.Text = trans.activo.ToString();
+
+
+            if (trans.disponible == 1)
+            {
+                cmbDisponible.Text = "Disponible";
+            }
+            else
+            {
+                cmbDisponible.Text = "No Disponible";
+            }
+
+            if (trans.activo == 1)
+            {
+                cmbActivo.Text = "Activo";
+            }
+            else
+            {
+                cmbActivo.Text = "Inactivo";
+            }
         }
 
 
@@ -51,14 +79,14 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             await EliminarTransporteAsync();
         }
         private void Eliminar_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             BorrarTransporte();
         }
 
         public async Task EliminarTransporteAsync()
         {
-            int id = int.Parse(txt_id.Text);
-            HttpResponseMessage response = await cliente.DeleteAsync($"{URL}/{id}");
+
+            HttpResponseMessage response = await cliente.DeleteAsync($"{URL}/{trans.id_vehiculo}");
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Transporte borrado correctamente");
@@ -72,7 +100,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
 
         private void Actualizar_Click(object sender, RoutedEventArgs e)
         {
-            if(validar())
+            if (validar())
             {
                 mandarTransporte();
             }
@@ -85,19 +113,17 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             txt_modelo.Text == "" ||
             txt_capacidad.Text == "" ||
             txt_anio.Text == "" ||
-            txt_disponible.Text == ""||
-            txt_activo.Text=="")
+            cmbDisponible.Text == "" ||
+            cmbActivo.Text == "")
             {
                 MessageBox.Show("llene todos los campos");
                 return false;
             }
 
             if (!int.TryParse(txt_capacidad.Text, out int capacidad) ||
-                !int.TryParse(txt_anio.Text, out int anio) ||
-                !int.TryParse(txt_disponible.Text, out int disponible) ||
-                !int.TryParse(txt_activo.Text, out int activo))
+                !int.TryParse(txt_anio.Text, out int anio))
             {
-                MessageBox.Show("Los campos Capacidad, Año, Disponible y Activo deben ser números.");
+                MessageBox.Show("Los campos Capacidad y Año deben ser números.");
                 return false;
             }
 
@@ -118,16 +144,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                 MessageBox.Show("El campo capacidad no debe ser mayor a 80 y menor a 0");
                 return false;
             }
-            if (disponible != 0 && disponible != 1)
-            {
-                MessageBox.Show("El campo disponible debe de ser 1 o 0");
-                return false;
-            }
-            if (activo != 0 && activo != 1)
-            {
-                MessageBox.Show("El campo activo debe de ser 1 o 0");
-                return false;
-            }
 
 
             return true;
@@ -140,26 +156,24 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
 
         public async Task ActualizarTransporteAsync()
         {
-            //Transporte transporte = new Transporte
-            //{
-            //    id_vehiculo = int.Parse(txt_id.Text),
-            //    matricula = txt_matricula.Text,
-            //    marca = txt_marca.Text,
-            //    modelo = txt_modelo.Text,
-            //    capacidad = int.Parse(txt_capacidad.Text),
-            //    anio = txt_anio.Text,
-            //    disponible = int.Parse(txt_disponible.Text),
-            //    activo = int.Parse(txt_activo.Text)
-            //};
+            int dispo = 0;
+            if (cmbDisponible.Text == "Disponible")
+            {
+                dispo = 1;
+            }
+            int act = 0;
+            if (cmbActivo.Text == "Activo")
+            {
+                act = 1;
+            }
 
-            trans.id_vehiculo =int.Parse(txt_id.Text);
             trans.matricula = txt_matricula.Text;
             trans.marca = txt_marca.Text;
             trans.modelo = txt_modelo.Text;
             trans.capacidad = int.Parse(txt_capacidad.Text);
             trans.año = txt_anio.Text;
-            trans.disponible = int.Parse(txt_disponible.Text);
-            trans.activo = int.Parse(txt_activo.Text);
+            trans.disponible = dispo;
+            trans.activo = act;
 
             string json = JsonSerializer.Serialize(trans);
 
