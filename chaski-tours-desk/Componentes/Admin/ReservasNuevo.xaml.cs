@@ -162,12 +162,10 @@ namespace chaski_tours_desk.Componentes.Admin
             {
                 id_reserva = 0,
                 cod_visitante = codigo,
-                id_alojamiento = aloja,
                 id_salida = fecha,
                 cantidad_personas = int.Parse(txt_cantidad.Text),
                 costo_total_reserva = double.Parse(txt_costototal.Text),
-                estado = cmb_estados.Text,
-                fecha_reservacion = txt_fechadereservacion.Text
+                estado = cmb_estados.Text
         };
             string json = JsonSerializer.Serialize(res);
             MessageBox.Show(json);

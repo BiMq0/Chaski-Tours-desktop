@@ -35,7 +35,7 @@
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Transportes" SelectionChanged="tbl_Transportes_SelectionChanged">
+            <DataGrid x:Name="tbl_Transportes" MouseDoubleClick="tbl_Transportes_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding id_vehiculo}" Width="*" />
                     <DataGridTextColumn Header="Matrícula" Binding="{Binding matricula}" Width="*"/>

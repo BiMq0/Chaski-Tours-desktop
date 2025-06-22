@@ -57,23 +57,6 @@ namespace chaski_tours_desk.Componentes.Admin
             verDatos();
         }
 
-        private void tbl_Transportes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
-            {
-                TransporteAdmin editar = new TransporteAdmin(transporteSeleccionado);
-
-                editar.Closed += async (s, args) =>
-                {
-                    await obtenerTransportes();
-                };
-
-
-                editar.Show();
-            }
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
@@ -101,6 +84,22 @@ namespace chaski_tours_desk.Componentes.Admin
         private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
         {
             FiltrarTransportes(txbBusqueda.Text);
+        }
+
+        private void tbl_Transportes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
+            {
+                TransporteAdmin editar = new TransporteAdmin(transporteSeleccionado);
+
+                editar.Closed += async (s, args) =>
+                {
+                    await obtenerTransportes();
+                };
+
+
+                editar.Show();
+            }
         }
     }
 }

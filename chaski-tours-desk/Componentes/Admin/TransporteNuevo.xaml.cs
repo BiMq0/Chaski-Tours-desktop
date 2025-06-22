@@ -104,7 +104,7 @@ namespace chaski_tours_desk.Componentes.Admin
                 marca = txt_marca.Text,
                 modelo = txt_modelo.Text,
                 capacidad = int.Parse(txt_capacidad.Text),
-                anio = txt_anio.Text,
+                año = txt_anio.Text,
                 disponible = int.Parse(txt_disponible.Text),
                 activo = int.Parse(txt_disponible.Text),
             };

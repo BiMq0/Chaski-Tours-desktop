@@ -1,66 +1,3 @@
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.AssemblyReference.cache
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\Componentes\Login.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\Componentes\SignUp.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\Componentes\Login.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\Componentes\SignUp.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\App.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.cache
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe.config
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\bin\Debug\chaski-tours-desk.pdb
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\MainWindow.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\MainWindow.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk.g.resources
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski_tours_desk.Properties.Resources.resources
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.GenerateResource.cache
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.CoreCompileInputs.cache
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\GeneratedInternalTypeHelper.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desk\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.lref
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe.config
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.pdb
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.AssemblyReference.cache
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.cache
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.lref
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.g.resources
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski_tours_desk.Properties.Resources.resources
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.GenerateResource.cache
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.CoreCompileInputs.cache
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.dll
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.xml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.SuggestedBindingRedirects.cache
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe.config
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe.config
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.pdb
@@ -91,14 +28,45 @@ F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\De
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe.config
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.baml
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasAdmin.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasNuevo.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\App.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\GeneratedInternalTypeHelper.g.cs
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.cache
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.lref
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\App.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasAdmin.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasNuevo.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
+F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.g.resources
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski_tours_desk.Properties.Resources.resources
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.GenerateResource.cache
@@ -106,300 +74,3 @@ F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\De
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
 F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\App.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
-<<<<<<< HEAD
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
-F:\3. AATercer Semestre\ZZProyecto\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
-=======
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe.config
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.pdb
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.dll
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.xml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.AssemblyReference.cache
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.SuggestedBindingRedirects.cache
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe.config
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\GeneratedInternalTypeHelper.g.cs
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.cache
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.lref
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Alojamientos.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Clientes.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Dashboard.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Inicio.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Reservas.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Sitios.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Tours.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Transportes.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.g.resources
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski_tours_desk.Properties.Resources.resources
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.GenerateResource.cache
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.CoreCompileInputs.cache
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
-F:\Universidad\3er\PROYECTOFINAL\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
->>>>>>> 44da367fa7dfecd68e2ccf9b88fd68655d744cd0
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
-D:\Proyectos\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
-F:\Universidad\3er\PROYECTOFINAL\chaski-tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe.config
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.pdb
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.dll
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.xml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.AssemblyReference.cache
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.SuggestedBindingRedirects.cache
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe.config
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.cache
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.lref
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.g.resources
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski_tours_desk.Properties.Resources.resources
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.GenerateResource.cache
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.CoreCompileInputs.cache
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
-D:\proyecto\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe.config
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.exe
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\chaski-tours-desk.pdb
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.dll
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Buffers.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.IO.Pipelines.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Memory.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Net.Http.Json.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Text.Json.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\bin\Debug\System.ValueTuple.xml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.AssemblyReference.cache
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.SuggestedBindingRedirects.cache
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe.config
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Login.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\SignUp.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.cache
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk_MarkupCompile.lref
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\App.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojamientos.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Clientes.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Dashboard.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Inicio.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Reservas.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Sitios.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Tours.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Transportes.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\LogSignWindow.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\MainWindow.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\AdminLayout.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Ventanas\UserLayout.baml
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.g.resources
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski_tours_desk.Properties.Resources.resources
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.GenerateResource.cache
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.csproj.CoreCompileInputs.cache
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-t.0D7F78E2.Up2Date
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.exe
-C:\Users\Jhael\OneDrive\Escritorio\ProyectoUnivalle\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\chaski-tours-desk.pdb
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojaminetos_admin.g.cs
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\Alojaminetos_admin.baml
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.g.cs
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteAdmin.baml
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.g.cs
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\TransporteNuevo.baml
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasAdmin.g.cs
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasNuevo.g.cs
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasAdmin.baml
-D:\PROYECTO\Chaski-Tours-desktop\chaski-tours-desk\obj\Debug\Componentes\Admin\ReservasNuevo.baml

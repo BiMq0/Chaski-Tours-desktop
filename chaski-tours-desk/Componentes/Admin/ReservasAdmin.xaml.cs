@@ -48,22 +48,9 @@ namespace chaski_tours_desk.Componentes.Admin
         }
         private async Task cargardatos()
         {
-            await obtenerAlojamiento();
             await obtenerClientes();
             await obtenerCalendarios();
             configurardatos();
-        }
-        //optener la lista de los alojamientos
-
-        private async Task obtenerAlojamiento()
-        {
-            alojamientos = await cliente.GetFromJsonAsync<List<Alojamiento>>(URLAlojas);
-
-            foreach (var item in alojamientos)
-            {
-                cmb_idalojamiento.Items.Add(item.nombre_aloj);
-            }
-
         }
         //obtener lista de los clientes
         private async Task obtenerClientes()
@@ -127,17 +114,6 @@ namespace chaski_tours_desk.Componentes.Admin
                 }
             }
 
-            //obtener el nombre del alojamiento por el id
-
-
-            foreach (var item in alojamientos)
-            {
-                if (item.id_alojamiento == res.id_alojamiento)
-                {
-                    cmb_idalojamiento.Text = item.nombre_aloj;
-                }
-            }
-
 
             //obtener la fecha de salida por el id
 
@@ -154,7 +130,6 @@ namespace chaski_tours_desk.Componentes.Admin
             txt_cantidad.Text = res.cantidad_personas.ToString();
             txt_costototal.Text = res.costo_total_reserva.ToString("F2"); 
             cmb_estados.Text = res.estado.ToString();
-            txt_fechadereservacion.Text = res.fecha_reservacion.ToString(); 
         }
 
 
@@ -208,12 +183,10 @@ namespace chaski_tours_desk.Componentes.Admin
         private bool validar()
         {
             if (cmb_codvisitante.Text == "" ||
-                cmb_idalojamiento.Text == "" ||
                 cmb_idsalida.Text == "" ||
                 txt_cantidad.Text == "" ||
                 txt_costototal.Text == "" ||
-                cmb_estados.Text== "" ||
-                txt_fechadereservacion.Text == "")
+                cmb_estados.Text== "" )
             {
                 MessageBox.Show("Por favor, complete todos los campos");
                 return false;
@@ -232,11 +205,6 @@ namespace chaski_tours_desk.Componentes.Admin
             if (costo > 1000000 || costo < 0)
             {
                 MessageBox.Show("debe ingresar un costo  valido entre 1000000 y 0");
-                return false;
-            }
-            if (!DateTime.TryParse(txt_fechadereservacion.Text, out DateTime fechaReservacion))
-            {
-                MessageBox.Show("la fecha de reservacion debe de ser correcta en el siguiente formato (yyyy-MM-dd HH:mm:ss)");
                 return false;
             }
 
@@ -274,15 +242,6 @@ namespace chaski_tours_desk.Componentes.Admin
                 }
             }
 
-            //mandar el codigo del alojamineto por el nombre
-
-            foreach (var item in alojamientos)
-            {
-                if (item.nombre_aloj == cmb_idalojamiento.Text)
-                {
-                    res.id_alojamiento = item.id_alojamiento;
-                }
-            }
 
             //mandar el id de la salida por la fecha
 
@@ -298,7 +257,6 @@ namespace chaski_tours_desk.Componentes.Admin
             res.cantidad_personas = int.Parse(txt_cantidad.Text);
             res.costo_total_reserva = double.Parse(txt_costototal.Text);
             res.estado = cmb_estados.Text;
-            res.fecha_reservacion = txt_fechadereservacion.Text;
 
             string json = JsonSerializer.Serialize(res);
             MessageBox.Show(json);

@@ -64,10 +64,7 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             if (todaslasreservas == null) return;
 
-            var filtrados = todaslasreservas
-                .Where(t => t.fecha_reservacion != null &&
-                            t.fecha_reservacion.ToLower().Contains(texto.ToLower()))
-                .ToList();
+            var filtrados = todaslasreservas;
 
             tbl_Reserva.ItemsSource = filtrados;
         }

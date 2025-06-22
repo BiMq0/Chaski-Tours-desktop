@@ -157,7 +157,7 @@ namespace chaski_tours_desk.Componentes.Admin
             trans.marca = txt_marca.Text;
             trans.modelo = txt_modelo.Text;
             trans.capacidad = int.Parse(txt_capacidad.Text);
-            trans.anio = txt_anio.Text;
+            trans.año = txt_anio.Text;
             trans.disponible = int.Parse(txt_disponible.Text);
             trans.activo = int.Parse(txt_activo.Text);
 
