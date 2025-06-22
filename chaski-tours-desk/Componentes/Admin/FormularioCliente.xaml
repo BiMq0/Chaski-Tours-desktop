@@ -6,390 +6,428 @@
         xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
         mc:Ignorable="d"
         Title="Registro Cliente"
-        Height="600" Width="900"
+        Height="750" Width="900"
         WindowStartupLocation="CenterScreen"
-        >
+        MinWidth="900" MinHeight="650"
+        Background="#FFF5EDE0">
 
-    <Grid Background="#FFF5EDE0">
-        <Border CornerRadius="5"
-                BorderThickness="0"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"                     
-                Background="#FFF5EDE0"
-                Width="800" Height="550">
-            <Border.Effect>
-                <DropShadowEffect ShadowDepth="0" 
-                                Color="#FF7D7D7D" 
-                                Opacity="0.3" 
-                                BlurRadius="15"
-                                Direction="270"/>
-            </Border.Effect>
+    <!-- Contenedor principal con sombra -->
+    <Border CornerRadius="5"
+            BorderThickness="0"
+            Background="#FFF5EDE0"
+            Margin="20"
+            VerticalAlignment="Stretch">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0" 
+                            Color="#FF7D7D7D" 
+                            Opacity="0.3" 
+                            BlurRadius="15"
+                            Direction="270"/>
+        </Border.Effect>
 
-            <StackPanel Orientation="Horizontal">
-                <!-- Panel de imagen -->
-                <StackPanel Height="400" Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20, 0">
-                    <Border CornerRadius="120" Width="300" Height="300">
-                        <Image Source="/Images/icono.png">
-                            <Image.Clip>
-                                <EllipseGeometry Center="150,150" RadiusX="150" RadiusY="150"/>
-                            </Image.Clip>
-                        </Image>
-                    </Border>
-                    <Image Source="/Images/titulo.png"/>
-                </StackPanel>
+        <!-- Grid de dos columnas -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <!-- Panel de formulario -->
-                <StackPanel VerticalAlignment="Center" 
-                            HorizontalAlignment="Center" 
-                            Width="400" Height="500" Margin="20, 0">
-                    <TextBlock Text="Registro de Cliente"
-                              FontSize="30" 
+            <!-- Panel izquierdo (imagen) -->
+            <StackPanel Grid.Column="0"
+                        VerticalAlignment="Center"
+                        Margin="10">
+                <Border CornerRadius="120" 
+                        Width="250" 
+                        Height="250"
+                        HorizontalAlignment="Center">
+                    <Image Source="/Images/icono.png">
+                        <Image.Clip>
+                            <EllipseGeometry Center="125,125" RadiusX="125" RadiusY="125"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+                <Image Source="/Images/titulo.png" 
+                       Margin="0,20,0,0" 
+                       Stretch="Uniform" 
+                       Width="250"/>
+            </StackPanel>
+
+            <!-- Panel derecho (formulario con scroll) -->
+            <ScrollViewer Grid.Column="1"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled"
+                          Padding="10,0,20,20">
+                <StackPanel>
+                    <!-- Título -->
+                    <TextBlock Text="Registro Cliente"
+                              FontSize="26" 
                               FontWeight="SemiBold"
                               Foreground="#FF6D5C4D"
-                              HorizontalAlignment="Center"/>
+                              HorizontalAlignment="Center"
+                              Margin="0,10,0,20"/>
 
-                    <!-- Selector de tipo de cliente -->
-                    <TextBlock Text="Tipo de Visitante" 
-                             Foreground="#FF6D5C4D"
-                             Margin="5,15,5,0"
-                             FontSize="18"/>
-                    <ComboBox x:Name="cbTipo" 
-                            Height="35" 
-                            Margin="0,5"
-                            FontSize="16"
-                            VerticalContentAlignment="Center"
-                            HorizontalContentAlignment="Center"
-                            Foreground="#FF6D5C4D"
-                            SelectionChanged="cbTipo_SelectionChanged">
-                        <ComboBoxItem Content="Turista"/>
-                        <ComboBoxItem Content="Institución"/>
-                    </ComboBox>
+                    <!-- Selector de tipo -->
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="Tipo de Visitante" 
+                                 Foreground="#FF6D5C4D"
+                                 Margin="5,0,5,5"
+                                 FontSize="18"/>
+                        <ComboBox x:Name="cbTipo" 
+                                Height="35"
+                                FontSize="16"
+                                VerticalContentAlignment="Center"
+                                Foreground="#FF5A4A3A"
+                                SelectionChanged="cbTipo_SelectionChanged">
+                            <ComboBoxItem Content="Turista"/>
+                            <ComboBoxItem Content="Institución"/>
+                        </ComboBox>
+                    </StackPanel>
 
-                    <!-- Panel TURISTA -->
-                    <ScrollViewer x:Name="panelTurista" 
-                                VerticalScrollBarVisibility="Auto"
-                                Height="300" 
-                                Visibility="Collapsed"
-                                Margin="0,10">
-                        <StackPanel>
-                            <TextBlock Text="Documento de Identidad" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtDocumento" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                    <!-- Paneles de formulario -->
+                    <Grid MinHeight="400">
+                        <!-- Panel TURISTA -->
+                        <ScrollViewer x:Name="panelTurista" 
+                                    VerticalScrollBarVisibility="Auto"
+                                    Visibility="Collapsed">
+                            <StackPanel>
+                                <!-- Documento -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Documento de Identidad" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtDocumento" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Nombre" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtNombre" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <!-- Nombre -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Nombre" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtNombre" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Apellido Paterno" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtApPat" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <!-- Apellidos -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Apellido Paterno" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtApPat" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Apellido Materno" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtApMat" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Apellido Materno" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtApMat" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Fecha de Nacimiento" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <DatePicker x:Name="dpFechaNac"
-                                     Height="35"
-                                     Margin="0,5"
-                                     BorderThickness="0"
-                                     Background="White"
-                                     Foreground="#FF5A4A3A"/>
+                                <!-- Fecha Nacimiento -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Fecha de Nacimiento" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <DatePicker x:Name="dpFechaNac"
+                                             Height="35"
+                                             BorderThickness="0"
+                                             Background="White"
+                                             Foreground="#FF5A4A3A"/>
+                                </StackPanel>
 
-                            <TextBlock Text="Nacionalidad" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <ComboBox x:Name="cbNacionalidadTurista" 
-                                    Height="35" 
-                                    Margin="0,5"
-                                    Foreground="#FF5A4A3A">
-                                
-                            </ComboBox>
+                                <!-- Nacionalidad -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Nacionalidad" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <ComboBox x:Name="cbNacionalidadTurista" 
+                                            Height="35" 
+                                            Foreground="#FF5A4A3A"/>
+                                </StackPanel>
 
-                            <TextBlock Text="Teléfono" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtTelefono" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <!-- Teléfono -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Teléfono" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtTelefono" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Correo Electrónico" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtCorreo" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <!-- Correo -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Correo Electrónico" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtCorreo" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Contraseña" 
-                               Foreground="#FF6D5C4D"
-                               Margin="5,15,5,0"
-                               FontSize="18"/>
+                                <!-- Contraseña -->
+                                <StackPanel Margin="0,0,0,15">
+                                    <TextBlock Text="Contraseña" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <Grid>
+                                            <PasswordBox x:Name="txtContrasenia"
+                                                     Height="35"
+                                                     Padding="10,0"
+                                                     FontSize="15"
+                                                     Background="Transparent"
+                                                     BorderThickness="0"
+                                                     Visibility="Visible"/>
+                                            <TextBox x:Name="txtContraseniaVisible"
+                                                     Height="35"
+                                                     Padding="10,0"
+                                                     FontSize="15"
+                                                     Background="Transparent"
+                                                     BorderThickness="0"
+                                                     Visibility="Collapsed"/>
+                                        </Grid>
+                                    </Border>
+                                    <CheckBox x:Name="chkVerContrasenia"
+                                          Content="Mostrar contraseña"
+                                          Margin="5,5,0,0"
+                                          Checked="chkVerContrasenia_Checked"
+                                          Unchecked="chkVerContrasenia_Unchecked"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
 
-                            <Border CornerRadius="20" Background="White" Margin="0,5,0,0">
-                                <Grid>
-                                    <!-- PasswordBox oculto -->
-                                    <PasswordBox x:Name="txtContrasenia"
-                                     Height="35"
-                                     Padding="10,0"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="15"
-                                     Background="Transparent"
-                                     BorderThickness="0"
-                                     Visibility="Visible"/>
+                        <!-- Panel INSTITUCIÓN -->
+                        <ScrollViewer x:Name="panelInstitucion" 
+                                     VerticalScrollBarVisibility="Auto"
+                                     Visibility="Collapsed">
+                            <StackPanel>
+                                <!-- Nombre Institución -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Nombre de la Institución" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtNombreInst" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                                    <!-- TextBox visible (por si se quiere mostrar la contraseña) -->
-                                    <TextBox x:Name="txtContraseniaVisible"
-                                     Height="35"
-                                     Padding="10,0"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="15"
-                                     Background="Transparent"
-                                     BorderThickness="0"
-                                     Visibility="Collapsed"/>
-                                </Grid>
-                             </Border>
+                                <!-- Nacionalidad -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Nacionalidad" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <ComboBox x:Name="cbNacionalidadInstitucion" 
+                                            Height="35" 
+                                            Foreground="#FF5A4A3A">
+                                        <ComboBoxItem Content="Perú"/>
+                                        <ComboBoxItem Content="Argentina"/>
+                                        <ComboBoxItem Content="Chile"/>
+                                        <ComboBoxItem Content="Colombia"/>
+                                        <ComboBoxItem Content="México"/>
+                                        <ComboBoxItem Content="España"/>
+                                    </ComboBox>
+                                </StackPanel>
 
-                            <CheckBox x:Name="chkVerContrasenia"
-                                Content="Mostrar contraseña"
-                                Margin="0,5,0,10"
-                                Checked="chkVerContrasenia_Checked"
-                                Unchecked="chkVerContrasenia_Unchecked"/>
-                        </StackPanel>
-                    </ScrollViewer>
+                                <!-- Teléfono Institución -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Teléfono Institución" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtTelefonoInst" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                    <!-- Panel INSTITUCION -->
-                    <ScrollViewer x:Name="panelInstitucion" 
-                                 VerticalScrollBarVisibility="Auto"
-                                 Height="300" 
-                                 Visibility="Collapsed"
-                                 Margin="0,10">
-                        <StackPanel>
-                            <TextBlock Text="Nombre de la Institución" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtNombreInst" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <!-- Correo Institución -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Correo Electrónico de la Institución" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtCorreoInst" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Nacionalidad" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <ComboBox x:Name="cbNacionalidadInstitucion" 
-                                    Height="35" 
-                                    Margin="0,5"
-                                    Foreground="#FF5A4A3A">
-                                <ComboBoxItem Content="Perú"/>
-                                <ComboBoxItem Content="Argentina"/>
-                                <ComboBoxItem Content="Chile"/>
-                                <ComboBoxItem Content="Colombia"/>
-                                <ComboBoxItem Content="México"/>
-                                <ComboBoxItem Content="España"/>
-                            </ComboBox>
+                                <!-- Contraseña Institución -->
+                                <StackPanel Margin="0,0,0,15">
+                                    <TextBlock Text="Contraseña" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <Grid>
+                                            <PasswordBox x:Name="txtContraseniaInst"
+                                                     Height="35"
+                                                     Padding="10,0"
+                                                     FontSize="15"
+                                                     Background="Transparent"
+                                                     BorderThickness="0"
+                                                     Visibility="Visible"/>
+                                            <TextBox x:Name="txtContraseniaInstVisible"
+                                                     Height="35"
+                                                     Padding="10,0"
+                                                     FontSize="15"
+                                                     Background="Transparent"
+                                                     BorderThickness="0"
+                                                     Visibility="Collapsed"/>
+                                        </Grid>
+                                    </Border>
+                                    <CheckBox x:Name="chkVerContraseniaInst"
+                                          Content="Mostrar contraseña"
+                                          Margin="5,5,0,0"
+                                          Checked="chkVerContrasenia_CheckedInst"
+                                          Unchecked="chkVerContrasenia_UncheckedInst"/>
+                                </StackPanel>
 
-                            <TextBlock Text="Teléfono Institución" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtTelefonoInst" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
+                                <!-- Representante -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Nombre del Representante" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtNombreRepresent" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <TextBlock Text="Correo Electrónico de la Institución" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtCorreoInst" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
-                            <TextBlock Text="Contraseña" 
-                               Foreground="#FF6D5C4D"
-                               Margin="5,15,5,0"
-                               FontSize="18"/>
+                                <!-- Apellido Representante -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Apellido Paterno del Representante" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtApPatRepresent" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                            <Border CornerRadius="20" Background="White" Margin="0,5,0,0">
-                                <Grid>
-                                    <!-- PasswordBox (oculto por defecto si se quiere mostrar) -->
-                                    <PasswordBox x:Name="txtContraseniaInst"
-                                     Height="35"
-                                     Padding="10,0"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="15"
-                                     Background="Transparent"
-                                     BorderThickness="0"
-                                     Visibility="Visible"/>
+                                <!-- Correo Representante -->
+                                <StackPanel Margin="0,0,0,10">
+                                    <TextBlock Text="Correo del Representante" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtCorreoRepresent" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
 
-                                    <!-- TextBox visible para mostrar contraseña -->
-                                    <TextBox x:Name="txtContraseniaInstVisible"
-                                     Height="35"
-                                     Padding="10,0"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="15"
-                                     Background="Transparent"
-                                     BorderThickness="0"
-                                     Visibility="Collapsed"/>
-                                 </Grid>
-                            </Border>
+                                <!-- Teléfono Representante -->
+                                <StackPanel Margin="0,0,0,15">
+                                    <TextBlock Text="Teléfono del Representante" 
+                                             Foreground="#FF6D5C4D"
+                                             Margin="5,0,5,5"
+                                             FontSize="18"/>
+                                    <Border CornerRadius="20" Background="White">
+                                        <TextBox x:Name="txtTelefonoRepresent" 
+                                                Height="35" 
+                                                Padding="10,0"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Foreground="#FF5A4A3A"
+                                                FontSize="15"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
 
-                            <CheckBox x:Name="chkVerContraseniaInst"
-                              Content="Mostrar contraseña"
-                              Margin="0,5,0,10"
-                              Checked="chkVerContrasenia_CheckedInst"
-                              Unchecked="chkVerContrasenia_UncheckedInst"/>
-
-
-
-
-                            <TextBlock Text="Nombre del Representante" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtNombreRepresent" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
-
-                            <TextBlock Text="Apellido Paterno del Representante" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtApPatRepresent" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
-
-                            <TextBlock Text="Correo del Representante" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtCorreoRepresent" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
-
-                            <TextBlock Text="Teléfono del Representante" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <TextBox x:Name="txtTelefonoRepresent" 
-                                        Height="35" 
-                                        Padding="10,0"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Foreground="#FF5A4A3A"
-                                        FontSize="15"
-                                        VerticalContentAlignment="Center"/>
-                            </Border>
-                        </StackPanel>
-                    </ScrollViewer>
-                    <!-- seccion de botones-->
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-                        <!-- 1. Primero se definen los Resources (recursos) -->
+                    <!-- Botones -->
+                    <StackPanel Orientation="Horizontal" 
+                               HorizontalAlignment="Center"
+                               Margin="0,20">
                         <StackPanel.Resources>
                             <Style x:Key="RoundedButtonStyle" TargetType="Button">
                                 <Setter Property="Width" Value="120"/>
@@ -411,46 +449,40 @@
                             </Style>
                         </StackPanel.Resources>
 
-                        <!-- 2. Luego vienen los botones que usan el Style -->
-                        <!-- Botón Registrar -->
                         <Button x:Name="btnRegistrar" 
-                        Content="Registrar"
-                        Click="btnRegistrar_Click"
-                        Background="#E3D3C9" 
-                        Foreground="#FF5A4A3A"
-                        Style="{StaticResource RoundedButtonStyle}"
-                        Visibility="Collapsed"/>
+                                Content="Registrar"
+                                Click="btnRegistrar_Click"
+                                Background="#E3D3C9" 
+                                Foreground="#FF5A4A3A"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Visibility="Collapsed"/>
 
-                        <!-- Botón Editar -->
                         <Button x:Name="btnEditar" 
-                        Content="Editar"
-                        Click="btnEditar_Click"
-                        Background="#E3D3C9" 
-                        Foreground="#FF5A4A3A"
-                        Style="{StaticResource RoundedButtonStyle}"
-                        Visibility="Collapsed"/>
+                                Content="Editar"
+                                Click="btnEditar_Click"
+                                Background="#E3D3C9" 
+                                Foreground="#FF5A4A3A"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Visibility="Collapsed"/>
 
-                        <!-- Botón Guardar -->
                         <Button x:Name="btnGuardar" 
-                        Content="Guardar"
-                        Click="btnGuardar_Click"
-                        Background="#E3D3C9" 
-                        Foreground="#FF5A4A3A"
-                        Style="{StaticResource RoundedButtonStyle}"
-                        Visibility="Collapsed"/>
+                                Content="Guardar"
+                                Click="btnGuardar_Click"
+                                Background="#E3D3C9" 
+                                Foreground="#FF5A4A3A"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Visibility="Collapsed"/>
 
-                        <!-- Botón Eliminar -->
                         <Button x:Name="btnEliminar"
-                        Content="Eliminar"
-                        Click="btnEliminar_Click"
-                        Background="Red"
-                        Foreground="White"
-                        Style="{StaticResource RoundedButtonStyle}"
-                        Visibility="Collapsed"/>
+                                Content="Eliminar"
+                                Click="btnEliminar_Click"
+                                Background="Red"
+                                Foreground="White"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Visibility="Collapsed"/>
                     </StackPanel>
-
                 </StackPanel>
-            </StackPanel>
-        </Border>
-    </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
 </Window>

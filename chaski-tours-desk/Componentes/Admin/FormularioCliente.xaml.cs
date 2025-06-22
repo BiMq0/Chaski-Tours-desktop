@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Windows.Media;
 using System.Linq;
 
+
 namespace chaski_tours_desk.Componentes.Admin
 {
     public partial class FormularioCliente : Window
@@ -381,7 +382,6 @@ namespace chaski_tours_desk.Componentes.Admin
             cbTipo.SelectedIndex = 0; // Turista
             // Mostrar el panel Turista
             panelTurista.Visibility = Visibility.Visible;
-
             // çragar de nuevo nacionalidades
             await CargarNacionalidades();
             cbNacionalidadTurista.SelectedItem = cbNacionalidadTurista.Items
@@ -418,7 +418,6 @@ namespace chaski_tours_desk.Componentes.Admin
 
             panelTurista.Visibility = Visibility.Collapsed;
             panelInstitucion.Visibility = Visibility.Visible;
-
             await CargarNacionalidades();
 
             // Seleccionar nacionalidad 
@@ -472,15 +471,17 @@ namespace chaski_tours_desk.Componentes.Admin
             // ComboBox tipo solo deshabilitado si se están viendo datos ya cargados
             cbTipo.IsEnabled = !ModoVisualizacion;
 
-            // Mostrar botones correctamente según el contexto
+            //botones 
             btnRegistrar.Visibility = Visibility.Collapsed;
             btnEditar.Visibility = Visibility.Collapsed;
             btnGuardar.Visibility = Visibility.Collapsed;
+            btnEliminar.Visibility = Visibility.Collapsed;
 
             if (ModoVisualizacion && !habilitar)
             {
                 // Mostrando datos, pero no en edición
                 btnEditar.Visibility = Visibility.Visible;
+                btnEliminar.Visibility = Visibility.Visible; 
             }
             else if (ModoVisualizacion && habilitar)
             {
@@ -492,6 +493,7 @@ namespace chaski_tours_desk.Componentes.Admin
                 // Registro nuevo
                 btnRegistrar.Visibility = Visibility.Visible;
             }
+
 
             // Cambiar estilo visual de campos
             foreach (var control in FindVisualChildren<TextBox>(this))
@@ -531,6 +533,8 @@ namespace chaski_tours_desk.Componentes.Admin
             btnEditar.Visibility = Visibility.Collapsed;
             btnGuardar.Visibility = Visibility.Visible;
             btnRegistrar.Visibility = Visibility.Collapsed;
+            btnEliminar.Visibility = Visibility.Collapsed;
+
 
             // Cambiar título según el tipo
             Title = tipoClienteActual == "Turista"
@@ -697,5 +701,56 @@ namespace chaski_tours_desk.Componentes.Admin
             }
             return true;
         }
+        // ----------------- borrado logico ----------------------
+        private async Task<bool> DesactivarVisitante()
+        {
+            try
+            {
+                var request = new HttpRequestMessage(new HttpMethod("PATCH"),
+                    $"http://localhost:8000/api/visitante/desactivar{codigoClienteActual}");
+
+                request.Content = null; 
+
+                var response = await httpClient.SendAsync(request);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Visitante eliminado (desactivado) correctamente.", "Éxito",
+                                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    return true;
+                }
+                else
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Error al eliminar visitante: {error}", "Error",
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Excepción al eliminar: {ex.Message}", "Error",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+        }
+
+        private async void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            var resultado = MessageBox.Show("¿Está seguro que desea eliminar este visitante?", "Confirmar eliminación",
+                                            MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (resultado == MessageBoxResult.Yes)
+            {
+                bool exito = await DesactivarVisitante();
+                if (exito)
+                {
+                    this.DialogResult = true;
+                    this.Close(); // Cierra el formulario para que se recargue la tabla principal
+                }
+            }
+        }
+
+
     }
 }
