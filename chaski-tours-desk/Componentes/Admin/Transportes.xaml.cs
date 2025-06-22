@@ -37,6 +37,7 @@ namespace chaski_tours_desk.Componentes.Admin
             var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
             todosLosTransportes = transportes;
             tbl_Transportes.ItemsSource = transportes;
+
         }
 
         private async void verTransportes()
@@ -57,9 +58,10 @@ namespace chaski_tours_desk.Componentes.Admin
             verDatos();
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             TransporteNuevo crear = new TransporteNuevo();
             crear.Closed += async (s, args) =>
             {
