@@ -38,6 +38,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.6, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.6\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -98,6 +101,9 @@
     <Compile Include="Componentes\Admin\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\Admin\FormularioAlojamiento.xaml.cs">
+      <DependentUpon>FormularioAlojamiento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\Admin\FormularioCliente.xaml.cs">
       <DependentUpon>FormularioCliente.xaml</DependentUpon>
     </Compile>
@@ -114,6 +120,8 @@
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Alojamiento.cs" />
+    <Compile Include="Modelos\CrearAlojamientoResponse.cs" />
+    <Compile Include="Modelos\Habitacion.cs" />
     <Compile Include="Modelos\Institucion.cs" />
     <Compile Include="Modelos\Nacionalidad.cs" />
     <Compile Include="Modelos\Reserva.cs" />
@@ -135,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Componentes\Admin\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\FormularioAlojamiento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

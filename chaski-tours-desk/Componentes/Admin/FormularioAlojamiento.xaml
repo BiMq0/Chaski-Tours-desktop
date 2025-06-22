@@ -1,0 +1,208 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.Admin.FormularioAlojamiento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
+        mc:Ignorable="d"
+        Title="Registro de Alojamiento" 
+        Height="550" 
+        Width="850"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF5EDE0">
+
+    <Grid Margin="20" Background="#FFF5EDE0">
+        <Border CornerRadius="5"
+                Background="White"
+                Padding="15"
+                >
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <TextBlock Text="Registro de Alojamiento" 
+                           FontSize="24" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF5A4A3A"
+                           HorizontalAlignment="Left" 
+                           Margin="64,0,0,20" Grid.Column="1"/>
+
+                <!-- Contenido principal -->
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <!-- Datos del Alojamiento -->
+                    <GroupBox Header="Datos del Alojamiento" 
+                              FontWeight="SemiBold"
+                              Foreground="#FF5A4A3A"
+                              Margin="0,0,0,15">
+                        <StackPanel Margin="10">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <TextBlock Text="Nombre:" 
+                                           Width="150" 
+                                           VerticalAlignment="Center"
+                                           Foreground="#FF5A4A3A"/>
+                                <Border CornerRadius="15" Background="#FFF5EDE0">
+                                    <TextBox x:Name="txtNombreAlojamiento" 
+                                             Width="300"
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             Padding="10,5"
+                                             Foreground="#FF5A4A3A"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Nro. Estrellas:" 
+                                           Width="150" 
+                                           VerticalAlignment="Center"
+                                           Foreground="#FF5A4A3A"/>
+                                <Border CornerRadius="15" Background="#FFF5EDE0" Width="100">
+                                    <TextBox x:Name="txtNroEstrellas" 
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             Padding="10,5"
+                                             Foreground="#FF5A4A3A"
+                                             HorizontalContentAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- Selección de Habitaciones -->
+                    <GroupBox Header="Tipos de Habitaciones"
+                              FontWeight="SemiBold"
+                              Foreground="#FF5A4A3A">
+                        <StackPanel Margin="10">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <CheckBox x:Name="chkIndividual" 
+                                          Content="Individual" 
+                                          Width="150"
+                                          Foreground="#FF5A4A3A"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,5,0"
+                                           Foreground="#FF5A4A3A"/>
+                                <Border CornerRadius="15" Background="#FFF5EDE0" Width="80">
+                                    <TextBox x:Name="txtCantidadIndividual" 
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             Padding="10,5"
+                                             Foreground="#FF5A4A3A"
+                                             HorizontalContentAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <CheckBox x:Name="chkDoble" 
+                                          Content="Doble" 
+                                          Width="150"
+                                          Foreground="#FF5A4A3A"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,5,0"
+                                           Foreground="#FF5A4A3A"/>
+                                <Border CornerRadius="15" Background="#FFF5EDE0" Width="80">
+                                    <TextBox x:Name="txtCantidadDoble" 
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             Padding="10,5"
+                                             Foreground="#FF5A4A3A"
+                                             HorizontalContentAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <CheckBox x:Name="chkSuite" 
+                                          Content="Suite" 
+                                          Width="150"
+                                          Foreground="#FF5A4A3A"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,5,0"
+                                           Foreground="#FF5A4A3A"/>
+                                <Border CornerRadius="15" Background="#FFF5EDE0" Width="80">
+                                    <TextBox x:Name="txtCantidadSuite" 
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             Padding="10,5"
+                                             Foreground="#FF5A4A3A"
+                                             HorizontalContentAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox x:Name="chkFamiliar" 
+                                          Content="Familiar" 
+                                          Width="150"
+                                          Foreground="#FF5A4A3A"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,5,0"
+                                           Foreground="#FF5A4A3A"/>
+                                <Border CornerRadius="15" Background="#FFF5EDE0" Width="80">
+                                    <TextBox x:Name="txtCantidadFamiliar" 
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             Padding="10,5"
+                                             Foreground="#FF5A4A3A"
+                                             HorizontalContentAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Botones -->
+                <StackPanel Grid.Row="2" 
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            Margin="0,20,0,0" Grid.Column="1">
+                    <StackPanel.Resources>
+                        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+                            <Setter Property="Width" Value="120"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <Rectangle RadiusX="15" RadiusY="15" Fill="{TemplateBinding Background}"/>
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <Button x:Name="btnRegistrar" 
+                            Content="Registrar" 
+                            Click="btnRegistrar_Click"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Background="#E3D3C9"
+                            Foreground="#FF5A4A3A"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="ShadowEffect" 
+                          ShadowDepth="0" 
+                          Color="#FF7D7D7D" 
+                          Opacity="0.3" 
+                          BlurRadius="15"
+                          Direction="270"/>
+    </Window.Resources>
+</Window>

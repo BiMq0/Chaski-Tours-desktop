@@ -190,5 +190,19 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <!-- Estilo para los CheckBox de filtro -->
+        <Style x:Key="CheckBoxFiltro" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#333"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+        </Style>
+
+        <!-- Estilo para mostrar el CheckBox en el DataGrid -->
+        <Style x:Key="ActivoCheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
     </Application.Resources>
 </Application>

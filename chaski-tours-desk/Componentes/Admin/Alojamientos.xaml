@@ -5,42 +5,45 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
              mc:Ignorable="d" 
-              d:DesignWidth="1280" d:Height="720"
+             d:DesignWidth="1280" d:Height="720"
              Loaded="Alojamiento_Loaded">
-    <Grid  Background="#FAE4BC" Margin="20">
+    <Grid Background="#FAE4BC" Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Grid VerticalAlignment="Center" Margin="20, 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <!-- Filtros superiores -->
+        <StackPanel Orientation="Horizontal" Margin="20,0" VerticalAlignment="Center">
+            <Label Content="Alojamientos" Style="{StaticResource Titulo}" MinWidth="400"/>
 
-            <Label Content="Alojamientos" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400"/>
-            <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+            <!-- CheckBoxes de estado -->
+            <StackPanel Orientation="Horizontal" Margin="20,0" VerticalAlignment="Center">
+                <CheckBox x:Name="chkActivos" Content="Activos" Style="{StaticResource CheckBoxFiltro}" IsChecked="True" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
+                <CheckBox x:Name="chkInactivos" Content="Inactivos" Style="{StaticResource CheckBoxFiltro}" Margin="10,0,0,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
+            </StackPanel>
+
+            <!-- Barra de búsqueda -->
+            <Border Style="{StaticResource BordeBusqueda}" Margin="20,0">
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" 
+         TextChanged="txbBusqueda_TextChanged"/>
             </Border>
 
-            <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Style="{StaticResource SecondaryButtonStyle}"/>
+            <!-- Botón agregar -->
+            <Border Style="{StaticResource BordeBotones}">
+                <Button Style="{StaticResource SecondaryButtonStyle}" Click="AbrirFormulario_Click"/>
             </Border>
-        </Grid>
+        </StackPanel>
 
-
-        <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Alojamientos">
+        <!-- DataGrid -->
+        <ScrollViewer Margin="20,10,20,0" Grid.Row="1">
+            <DataGrid x:Name="tbl_Alojamientos" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding id_alojamiento}" Width="*" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding id_alojamiento}" Width="*"/>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre_aloj}" Width="*"/>
                     <DataGridTextColumn Header="Estrellas" Binding="{Binding nro_estrellas}" Width="*"/>
-                    <DataGridTextColumn Header="Habitaciones" Binding="{Binding nro_habitaciones}" Width="*" />
+                    <DataGridTextColumn Header="Habitaciones" Binding="{Binding nro_habitaciones}" Width="*"/>
+                    <DataGridCheckBoxColumn Header="Activo" Binding="{Binding Activo}" Width="*" ElementStyle="{StaticResource ActivoCheckBoxStyle}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
