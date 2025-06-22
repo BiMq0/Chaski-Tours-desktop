@@ -6,7 +6,61 @@
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
              mc:Ignorable="d" 
              d:DesignWidth="1280" d:Height="720" Loaded="Cliente_Loaded">
-    <Grid  Background="#FAE4BC" Margin="20">
+    <UserControl.Resources>
+        <!-- Estilo para el CheckBox con marca redondeada -->
+        <Style x:Key="RoundCheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#FF3F51B5"/>
+            <!-- Color del texto -->
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <!-- Parte visual del Check (redondeado) -->
+                            <Border x:Name="border" 
+                                Width="20" 
+                                Height="20" 
+                                CornerRadius="10" 
+                                BorderThickness="2" 
+                                BorderBrush="#FF1B1C1D"
+                                Background="Transparent"
+                                Margin="0,0,5,0" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-3.093"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Path x:Name="checkMark"
+                                  Width="12"
+                                  Height="12"
+                                  Stretch="Fill"
+                                  Fill="Transparent"
+                                  Data="M 0 6 L 6 12 L 12 0"
+                                  Stroke="#FF050505"
+                                  StrokeThickness="2"/>
+                            </Border>
+                            <!-- Texto del CheckBox -->
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <!-- Triggers para estados -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="checkMark" Property="Fill" Value="#FF3F51B5"/>
+                                <Setter TargetName="border" Property="Background" Value="#FFE8EAF6"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF5C6BC0"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#FAE4BC" Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5*"/>
@@ -24,19 +78,40 @@
 
             <Label Content="Clientes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400"/>
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
 
-            <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Style="{StaticResource SecondaryButtonStyle}"/>
+            <!-- Contenedor de CheckBox reorganizado -->
+            <Grid Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <CheckBox x:Name="chkActivos" Content="Activos" Style="{StaticResource RoundCheckBoxStyle}" 
+              Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed" Foreground="Black"/>
+                    <CheckBox x:Name="chkInactivos" Content="Inactivos" Style="{StaticResource RoundCheckBoxStyle}" 
+              Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,5,0,0">
+                    <CheckBox x:Name="chkTuristas" Content="Turistas" Style="{StaticResource RoundCheckBoxStyle}" 
+              Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed" Foreground="#FF161616"/>
+                    <CheckBox x:Name="chkInstituciones" Content="Instituciones" Style="{StaticResource RoundCheckBoxStyle}" 
+              Margin="5,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed" Foreground="Black"/>
+                </StackPanel>
+            </Grid>
+
+            <Border Grid.Column="2" Style="{StaticResource BordeBotones}" HorizontalAlignment="Right">
+                <Button Content="Agregar" Style="{StaticResource PrimaryButtonStyle}" 
+                        Click="AbrirFormulario_Click" Height="50" VerticalAlignment="Top"/>
             </Border>
         </Grid>
 
-
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Clientes">
+            <DataGrid x:Name="tbl_Clientes" MouseDoubleClick="tbl_Clientes_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Código" Binding="{Binding cod_visitante}" Width="*"/>
+                    <DataGridTextColumn Header="Nombre del Cliente" Binding="{Binding NombreCompleto}" Width="*"/>
                     <DataGridTextColumn Header="Tipo de Visitante" Binding="{Binding tipo_visitante}" Width="*"/>
                     <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding created_at}" Width="*"/>
                     <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
