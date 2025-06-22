@@ -210,15 +210,14 @@
                                      Background="Transparent"
                                      BorderThickness="0"
                                      Visibility="Collapsed"/>
-                                                    </Grid>
-                                                </Border>
+                                </Grid>
+                             </Border>
 
-                                    <CheckBox x:Name="chkVerContrasenia"
-                                    Content="Mostrar contraseña"
-                                    Margin="0,5,0,10"
-                                    Checked="chkVerContrasenia_Checked"
-                                    Unchecked="chkVerContrasenia_Unchecked"/>
-
+                            <CheckBox x:Name="chkVerContrasenia"
+                                Content="Mostrar contraseña"
+                                Margin="0,5,0,10"
+                                Checked="chkVerContrasenia_Checked"
+                                Unchecked="chkVerContrasenia_Unchecked"/>
                         </StackPanel>
                     </ScrollViewer>
 
@@ -388,55 +387,66 @@
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
-
+                    <!-- seccion de botones-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+                        <!-- 1. Primero se definen los Resources (recursos) -->
+                        <StackPanel.Resources>
+                            <Style x:Key="RoundedButtonStyle" TargetType="Button">
+                                <Setter Property="Width" Value="120"/>
+                                <Setter Property="Height" Value="50"/>
+                                <Setter Property="Margin" Value="5"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Medium"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <Rectangle RadiusX="15" RadiusY="15" Fill="{TemplateBinding Background}"/>
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <!-- 2. Luego vienen los botones que usan el Style -->
                         <!-- Botón Registrar -->
-                        <Border CornerRadius="15" Width="120" Height="50" Margin="5" Background="#E3D3C9">
-                            <Button x:Name="btnRegistrar" 
-                            Content="Registrar"
-                            Click="btnRegistrar_Click"
-                            FontSize="14"
-                            Width="120" 
-                            Height="50" 
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Foreground="#FF5A4A3A"
-                            FontWeight="Medium"
-                            Cursor="Hand"
-                            Visibility="Collapsed"/>
-                        </Border>
+                        <Button x:Name="btnRegistrar" 
+                        Content="Registrar"
+                        Click="btnRegistrar_Click"
+                        Background="#E3D3C9" 
+                        Foreground="#FF5A4A3A"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Visibility="Collapsed"/>
 
                         <!-- Botón Editar -->
-                        <Border CornerRadius="15" Width="120" Height="50" Margin="5" Background="#E3D3C9">
-                            <Button x:Name="btnEditar" 
-                            Content="Editar"
-                            Click="btnEditar_Click"
-                            FontSize="14"
-                            Width="120" 
-                            Height="50" 
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Foreground="#FF5A4A3A"
-                            FontWeight="Medium"
-                            Cursor="Hand"
-                            Visibility="Collapsed"/>
-                        </Border>
+                        <Button x:Name="btnEditar" 
+                        Content="Editar"
+                        Click="btnEditar_Click"
+                        Background="#E3D3C9" 
+                        Foreground="#FF5A4A3A"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Visibility="Collapsed"/>
 
                         <!-- Botón Guardar -->
-                        <Border CornerRadius="15" Width="120" Height="50" Margin="5" Background="#E3D3C9">
-                            <Button x:Name="btnGuardar" 
-                            Content="Guardar"
-                            Click="btnGuardar_Click"
-                            FontSize="14"
-                            Width="120" 
-                            Height="50" 
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Foreground="#FF5A4A3A"
-                            FontWeight="Medium"
-                            Cursor="Hand"
-                            Visibility="Collapsed"/>
-                        </Border>
+                        <Button x:Name="btnGuardar" 
+                        Content="Guardar"
+                        Click="btnGuardar_Click"
+                        Background="#E3D3C9" 
+                        Foreground="#FF5A4A3A"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Visibility="Collapsed"/>
+
+                        <!-- Botón Eliminar -->
+                        <Button x:Name="btnEliminar"
+                        Content="Eliminar"
+                        Click="btnEliminar_Click"
+                        Background="Red"
+                        Foreground="White"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Visibility="Collapsed"/>
                     </StackPanel>
 
                 </StackPanel>

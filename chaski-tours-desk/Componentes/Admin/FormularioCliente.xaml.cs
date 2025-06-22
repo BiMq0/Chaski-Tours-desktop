@@ -185,9 +185,6 @@ namespace chaski_tours_desk.Componentes.Admin
                 return false;
             }
         }
-
-
-
         private bool ValidarTelefono(string telefono)
         {
             
@@ -278,14 +275,14 @@ namespace chaski_tours_desk.Componentes.Admin
         private async Task RegistrarInstitucion()
         {
             // Validar contraseña
-            if (!ValidarContrasenia(txtContrasenia.Password))
+            if (!ValidarContrasenia(txtContraseniaInst.Password))
             {
                 MessageBox.Show("La contraseña debe tener:\n- Mínimo 8 caracteres\n- 1 mayúscula\n- 1 minúscula\n- 1 carácter especial",
                               "Contraseña inválida", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             // Validar email
-            if (!ValidarEmail(txtCorreo.Text))
+            if (!ValidarEmail(txtCorreoInst.Text) && !ValidarEmail(txtCorreoRepresent.Text))
             {
                 MessageBox.Show("Por favor ingrese un correo electrónico válido",
                               "Correo inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -293,20 +290,13 @@ namespace chaski_tours_desk.Componentes.Admin
             }
 
             // Validar teléfono
-            if (!ValidarTelefono(txtTelefono.Text))
+            if (!ValidarTelefono(txtTelefonoInst.Text) && !ValidarTelefono(txtTelefonoRepresent.Text))
             {
                 MessageBox.Show("Por favor ingrese un número de teléfono válido",
                               "Teléfono inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Validar fecha de nacimiento
-            if (dpFechaNac.SelectedDate == null)
-            {
-                MessageBox.Show("Por favor seleccione una fecha de nacimiento",
-                              "Fecha requerida", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
             try
             {
                 var institucionData = new
@@ -624,7 +614,6 @@ namespace chaski_tours_desk.Componentes.Admin
                 return false;
             }
 
-            await CargarNacionalidades(); 
             var turistaData = new
             {
                 correo_electronico = txtCorreo.Text,
@@ -660,14 +649,15 @@ namespace chaski_tours_desk.Componentes.Admin
             ? txtContraseniaInstVisible.Text
             : txtContraseniaInst.Password;
 
-            if (!ValidarContrasenia(contrasenia))
+            // Validar contraseña
+            if (!ValidarContrasenia(txtContraseniaInst.Password))
             {
                 MessageBox.Show("La contraseña debe tener:\n- Mínimo 8 caracteres\n- 1 mayúscula\n- 1 minúscula\n- 1 carácter especial",
                               "Contraseña inválida", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
             // Validar email
-            if (!ValidarEmail(txtCorreo.Text))
+            if (!ValidarEmail(txtCorreoInst.Text) && !ValidarEmail(txtCorreoRepresent.Text))
             {
                 MessageBox.Show("Por favor ingrese un correo electrónico válido",
                               "Correo inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -675,21 +665,13 @@ namespace chaski_tours_desk.Componentes.Admin
             }
 
             // Validar teléfono
-            if (!ValidarTelefono(txtTelefono.Text))
+            if (!ValidarTelefono(txtTelefonoInst.Text) && !ValidarTelefono(txtTelefonoRepresent.Text))
             {
                 MessageBox.Show("Por favor ingrese un número de teléfono válido",
                               "Teléfono inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
-
-            // Validar fecha de nacimiento
-            if (dpFechaNac.SelectedDate == null)
-            {
-                MessageBox.Show("Por favor seleccione una fecha de nacimiento",
-                              "Fecha requerida", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
-            }
-            await CargarNacionalidades();
+            
             var institucionData = new
             {
                 nombre = txtNombreInst.Text,

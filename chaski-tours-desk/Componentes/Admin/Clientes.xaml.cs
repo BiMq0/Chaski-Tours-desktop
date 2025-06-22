@@ -119,7 +119,7 @@ namespace chaski_tours_desk.Componentes.Admin
         }
 
         // ---------------------
-        
+
         private async void tbl_Clientes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (tbl_Clientes.SelectedItem is Visitante selectedVisitante)
@@ -128,25 +128,33 @@ namespace chaski_tours_desk.Componentes.Admin
                 {
                     if (selectedVisitante.tipo_visitante == "Turista")
                     {
-                        // Obtener datos completos del turista
                         var turista = await cliente.GetFromJsonAsync<Turista>(
                             $"http://localhost:8000/api/visitantes/turistas/cod/{selectedVisitante.cod_visitante}");
 
                         var formulario = new FormularioCliente();
                         formulario.CargarDatosTurista(turista);
                         formulario.Title = "Detalles del Turista";
-                        formulario.ShowDialog();
+
+                        bool? resultado = formulario.ShowDialog(); 
+                        if (resultado == true)
+                        {
+                            verClientes(); 
+                        }
                     }
                     else if (selectedVisitante.tipo_visitante == "Institucion")
                     {
-                        // Obtener datos completos de la institución
                         var institucion = await cliente.GetFromJsonAsync<Institucion>(
                             $"http://localhost:8000/api/visitantes/instituciones/{selectedVisitante.cod_visitante}");
 
                         var formulario = new FormularioCliente();
                         formulario.CargarDatosInstitucion(institucion);
                         formulario.Title = "Detalles de la Institución";
-                        formulario.ShowDialog();
+
+                        bool? resultado = formulario.ShowDialog(); 
+                        if (resultado == true)
+                        {
+                            verClientes(); 
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -156,7 +164,8 @@ namespace chaski_tours_desk.Componentes.Admin
                 }
             }
         }
-        
-        
+
+
+
     }
 }
