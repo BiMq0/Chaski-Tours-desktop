@@ -34,9 +34,15 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private async Task obtenerTransportes()
         {
+<<<<<<< HEAD
             var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
             todosLosTransportes = transportes;
             tbl_Transportes.ItemsSource = transportes;
+=======
+            // var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
+
+            // tbl_Transportes.ItemsSource = transportes;
+>>>>>>> main
         }
 
         private async void verTransportes()
@@ -57,6 +63,7 @@ namespace chaski_tours_desk.Componentes.Admin
             verDatos();
         }
 
+<<<<<<< HEAD
         private void tbl_Transportes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
@@ -102,5 +109,11 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             FiltrarTransportes(txbBusqueda.Text);
         }
+=======
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+>>>>>>> main
     }
 }
