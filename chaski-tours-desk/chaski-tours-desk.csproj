@@ -110,6 +110,18 @@
     <Compile Include="Componentes\Admin\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\Admin\ReservasAdmin.xaml.cs">
+      <DependentUpon>ReservasAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\ReservasNuevo.xaml.cs">
+      <DependentUpon>ReservasNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\TransporteAdmin.xaml.cs">
+      <DependentUpon>TransporteAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\TransporteNuevo.xaml.cs">
+      <DependentUpon>TransporteNuevo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -120,8 +132,12 @@
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Alojamiento.cs" />
+<<<<<<< HEAD
     <Compile Include="Modelos\CrearAlojamientoResponse.cs" />
     <Compile Include="Modelos\Habitacion.cs" />
+=======
+    <Compile Include="Modelos\CalendarioSalida.cs" />
+>>>>>>> fed0fb370f7ba41f71a126cdf6ad67c0e210615c
     <Compile Include="Modelos\Institucion.cs" />
     <Compile Include="Modelos\Nacionalidad.cs" />
     <Compile Include="Modelos\Reserva.cs" />
@@ -155,6 +171,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Componentes\Admin\Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\ReservasAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\ReservasNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\TransporteAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\TransporteNuevo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
