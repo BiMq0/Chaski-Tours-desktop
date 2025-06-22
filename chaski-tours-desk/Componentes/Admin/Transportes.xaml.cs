@@ -16,6 +16,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using chaski_tours_desk.Modelos;
+using chaski_tours_desk.Componentes.Admin.FormsAgregar;
+using chaski_tours_desk.Componentes.Admin.FormsInfo;
 
 namespace chaski_tours_desk.Componentes.Admin
 {

@@ -130,7 +130,7 @@
     <Compile Include="Componentes\Admin\FormsInfo\InfoSitio.xaml.cs">
       <DependentUpon>InfoSitio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Admin\FormularioCliente.xaml.cs">
+    <Compile Include="Componentes\Admin\FormsAgregar\FormularioCliente.xaml.cs">
       <DependentUpon>FormularioCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Componentes\Admin\FormsAgregar\AgregarTour.xaml.cs">
@@ -142,16 +142,16 @@
     <Compile Include="Componentes\Admin\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Admin\ReservasAdmin.xaml.cs">
+    <Compile Include="Componentes\Admin\FormsInfo\ReservasAdmin.xaml.cs">
       <DependentUpon>ReservasAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Admin\ReservasNuevo.xaml.cs">
+    <Compile Include="Componentes\Admin\FormsAgregar\ReservasNuevo.xaml.cs">
       <DependentUpon>ReservasNuevo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Admin\TransporteAdmin.xaml.cs">
+    <Compile Include="Componentes\Admin\FormsInfo\TransporteAdmin.xaml.cs">
       <DependentUpon>TransporteAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Componentes\Admin\TransporteNuevo.xaml.cs">
+    <Compile Include="Componentes\Admin\FormsAgregar\TransporteNuevo.xaml.cs">
       <DependentUpon>TransporteNuevo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Componentes\Admin\Salidas.xaml.cs">
@@ -169,6 +169,8 @@
     <Compile Include="Componentes\User\Landing.xaml.cs">
       <DependentUpon>Landing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\User\ListaDE\LDE.cs" />
+    <Compile Include="Componentes\User\ListaDE\Nodo.cs" />
     <Compile Include="Modelos\Alojamiento.cs" />
     <Compile Include="Modelos\CalendarioSalida.cs" />
     <Compile Include="Modelos\Institucion.cs" />
@@ -204,7 +206,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Admin\FormularioCliente.xaml">
+    <Page Include="Componentes\Admin\FormsAgregar\FormularioCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,19 +222,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Admin\ReservasAdmin.xaml">
+    <Page Include="Componentes\Admin\FormsInfo\ReservasAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Admin\ReservasNuevo.xaml">
+    <Page Include="Componentes\Admin\FormsAgregar\ReservasNuevo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Admin\TransporteAdmin.xaml">
+    <Page Include="Componentes\Admin\FormsInfo\TransporteAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Componentes\Admin\TransporteNuevo.xaml">
+    <Page Include="Componentes\Admin\FormsAgregar\TransporteNuevo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -350,6 +352,32 @@
     <Resource Include="Images\icono.png" />
     <Resource Include="Images\titulo.png" />
     <Resource Include="Images\titulo_blanco.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Images_Categorias\arqueologico.jpg" />
+    <Resource Include="Images\Images_Categorias\arquitectonico.jpg" />
+    <Resource Include="Images\Images_Categorias\batalla.png" />
+    <Resource Include="Images\Images_Categorias\colonial.jpg" />
+    <Resource Include="Images\Images_Categorias\cultural.jpg" />
+    <Resource Include="Images\Images_Categorias\historico.jpg" />
+    <Resource Include="Images\Images_Categorias\historico_natural.jpg" />
+    <Resource Include="Images\Images_Categorias\hito.jpeg" />
+    <Resource Include="Images\Images_Categorias\industrial.png" />
+    <Resource Include="Images\Images_Categorias\museo.jpg" />
+    <Resource Include="Images\Images_Categorias\patrimonial.jpg" />
+    <Resource Include="Images\Images_Categorias\religioso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Images_Departamentos\Beni.jpg" />
+    <Resource Include="Images\Images_Departamentos\Chuquisaca.jpg" />
+    <Resource Include="Images\Images_Departamentos\Cochabamba.png" />
+    <Resource Include="Images\Images_Departamentos\LaPaz.jpg" />
+    <Resource Include="Images\Images_Departamentos\Oruro.jpg" />
+    <Resource Include="Images\Images_Departamentos\Pando.jpg" />
+    <Resource Include="Images\Images_Departamentos\Potosi.jpg" />
+    <Resource Include="Images\Images_Departamentos\SantaCruz.jpg" />
+    <Resource Include="Images\Images_Departamentos\Tarija.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

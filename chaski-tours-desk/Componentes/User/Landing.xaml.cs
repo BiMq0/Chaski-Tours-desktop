@@ -1,6 +1,8 @@
-﻿using System;
+﻿using chaski_tours_desk.Componentes.User.ListaDE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +22,33 @@ namespace chaski_tours_desk.Componentes.User
     /// </summary>
     public partial class Landing : UserControl
     {
+        HttpClient client = new HttpClient();
+        LDE lstDECategorias = new LDE();
+        LDE lstDEDepartamentos = new LDE();
         public Landing()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            cargarListasDE();
+        }
+
+        private void cargarListasDE()
+        {
+            cargarListaDECategorias();
+            cargarListaDEDepartamentos();
+        }
+
+        private void cargarListaDECategorias()
+        {
+            
+        }
+
+        private void cargarListaDEDepartamentos()
+        {
+            
         }
 
         private void btnDerechaDep_Click(object sender, RoutedEventArgs e)
@@ -39,14 +65,12 @@ namespace chaski_tours_desk.Componentes.User
 
         private void btnIzquierdaCat_Click(object sender, RoutedEventArgs e)
         {
-            departamentoScrollViewer.ScrollToHorizontalOffset(
-            Math.Max(0, departamentoScrollViewer.HorizontalOffset - 140));
+            
         }
 
         private void btnDerechaCat_Click(object sender, RoutedEventArgs e)
         {
-            departamentoScrollViewer.ScrollToHorizontalOffset(
-            Math.Max(0, departamentoScrollViewer.HorizontalOffset - 140));
+            
         }
     }
 }
