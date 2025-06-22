@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
+<!--s-->
             <Label Content="Transportes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
                 <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
