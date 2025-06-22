@@ -8,6 +8,7 @@ using System.Net.Http.Json;
 using chaski_tours_desk.Modelos;
 using System.Collections.Generic;
 using System.Windows.Media;
+using System.Linq;
 
 namespace chaski_tours_desk.Componentes.Admin
 {
@@ -30,7 +31,10 @@ namespace chaski_tours_desk.Componentes.Admin
             // Configuración inicial
             panelTurista.Visibility = Visibility.Collapsed;
             panelInstitucion.Visibility = Visibility.Collapsed;
+
             btnRegistrar.Visibility = Visibility.Collapsed;
+            btnEditar.Visibility = Visibility.Collapsed;
+            btnGuardar.Visibility = Visibility.Collapsed;
         }
 
         private async void cbTipo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,10 +43,12 @@ namespace chaski_tours_desk.Componentes.Admin
 
             tipoSeleccionado = (cbTipo.SelectedItem as ComboBoxItem)?.Content.ToString();
 
-            // Ocultar paneles primero
+            // Ocultar todo inicialmente
             panelTurista.Visibility = Visibility.Collapsed;
             panelInstitucion.Visibility = Visibility.Collapsed;
             btnRegistrar.Visibility = Visibility.Collapsed;
+            btnEditar.Visibility = Visibility.Collapsed;
+            btnGuardar.Visibility = Visibility.Collapsed;
 
             if (tipoSeleccionado == "Turista")
             {
@@ -55,8 +61,11 @@ namespace chaski_tours_desk.Componentes.Admin
                 await CargarNacionalidades();
             }
 
-            btnRegistrar.Visibility = Visibility.Visible;
+            // Mostrar registrar solo si NO estás en modo visualización
+            if (!ModoVisualizacion)
+                btnRegistrar.Visibility = Visibility.Visible;
         }
+
 
         private async Task CargarNacionalidades()
         {
@@ -132,6 +141,11 @@ namespace chaski_tours_desk.Componentes.Admin
             {
                 await RegistrarInstitucion();
             }
+            // En caso de mantener la ventana abierta después:
+            // btnRegistrar.Visibility = Visibility.Collapsed;
+            // btnEditar.Visibility = Visibility.Visible;
+            // cbTipo.IsEnabled = false;
+
         }
         // Método para validar contraseña
         private bool ValidarContrasenia(string contrasenia)
@@ -156,8 +170,13 @@ namespace chaski_tours_desk.Componentes.Admin
         }
         private bool ValidarEmail(string email)
         {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
             try
             {
+                email = email.Trim(); // IMPORTANTE
+
                 var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
             }
@@ -166,6 +185,9 @@ namespace chaski_tours_desk.Componentes.Admin
                 return false;
             }
         }
+
+
+
         private bool ValidarTelefono(string telefono)
         {
             
@@ -253,7 +275,6 @@ namespace chaski_tours_desk.Componentes.Admin
                               MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         private async Task RegistrarInstitucion()
         {
             // Validar contraseña
@@ -263,15 +284,6 @@ namespace chaski_tours_desk.Componentes.Admin
                               "Contraseña inválida", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            // Validar documento
-            if (txtDocumento.Text.Length < 7)
-            {
-                MessageBox.Show("El documento debe tener al menos 7 caracteres",
-                              "Documento inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
             // Validar email
             if (!ValidarEmail(txtCorreo.Text))
             {
@@ -336,9 +348,39 @@ namespace chaski_tours_desk.Componentes.Admin
                               MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        //parte contrasenas
+        private void chkVerContrasenia_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContraseniaVisible.Text = txtContrasenia.Password;
+            txtContrasenia.Visibility = Visibility.Collapsed;
+            txtContraseniaVisible.Visibility = Visibility.Visible;
+        }
+
+        private void chkVerContrasenia_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtContrasenia.Password = txtContraseniaVisible.Text;
+            txtContraseniaVisible.Visibility = Visibility.Collapsed;
+            txtContrasenia.Visibility = Visibility.Visible;
+        }
+        private void chkVerContrasenia_CheckedInst(object sender, RoutedEventArgs e)
+        {
+            txtContraseniaInstVisible.Text = txtContraseniaInst.Password;
+            txtContraseniaInst.Visibility = Visibility.Collapsed;
+            txtContraseniaInstVisible.Visibility = Visibility.Visible;
+        }
+
+        private void chkVerContrasenia_UncheckedInst(object sender, RoutedEventArgs e)
+        {
+            txtContraseniaInst.Password = txtContraseniaInstVisible.Text;
+            txtContraseniaInstVisible.Visibility = Visibility.Collapsed;
+            txtContraseniaInst.Visibility = Visibility.Visible;
+        }
+
+
         // ---------------------------registro fin de tipo de cliente -----------------------------------
         // Método para cargar datos de turista
-        public void CargarDatosTurista(Turista turista)
+        public async void CargarDatosTurista(Turista turista)
         {
             //parte de put
             // Guardar datos originales
@@ -347,6 +389,14 @@ namespace chaski_tours_desk.Componentes.Admin
             // Configurar modo visualización
             ModoVisualizacion = true;
             cbTipo.SelectedIndex = 0; // Turista
+            // Mostrar el panel Turista
+            panelTurista.Visibility = Visibility.Visible;
+
+            // çragar de nuevo nacionalidades
+            await CargarNacionalidades();
+            cbNacionalidadTurista.SelectedItem = cbNacionalidadTurista.Items
+            .Cast<string>()
+            .FirstOrDefault(item => item.Equals(turista.nacionalidad, StringComparison.OrdinalIgnoreCase));
 
             // Llenar campos
             txtDocumento.Text = turista.documento;
@@ -356,31 +406,36 @@ namespace chaski_tours_desk.Componentes.Admin
             dpFechaNac.SelectedDate = DateTime.Parse(turista.fecha_nac);
             txtTelefono.Text = turista.telefono;
             txtCorreo.Text = turista.correo_electronico;
-            
-
-            // Seleccionar nacionalidad
-            cbNacionalidadTurista.SelectedItem = turista.nacionalidad;
+            txtContrasenia.Password = turista.contrasenia;
+            txtContraseniaVisible.Text = turista.contrasenia;
 
             // Deshabilitar controles
             HabilitarControles(false);
 
             //para editicion
-            btnEditar.Visibility = Visibility.Visible;
             btnRegistrar.Visibility = Visibility.Collapsed;
+            btnGuardar.Visibility = Visibility.Collapsed;
+            btnEditar.Visibility = Visibility.Visible;
         }
 
         // Método para cargar datos de institución
-        public void CargarDatosInstitucion(Institucion institucion)
+        public async void CargarDatosInstitucion(Institucion institucion)
         {
-            //parte de put
-            // Guardar datos originales
             codigoClienteActual = institucion.cod_visitante;
-            tipoClienteActual = "Institucion";
-            // Configurar modo visualización
+            tipoClienteActual = "Institución";
             ModoVisualizacion = true;
-            cbTipo.SelectedIndex = 1; // Institución
+            cbTipo.SelectedIndex = 1;
 
-            // Llenar campos
+            panelTurista.Visibility = Visibility.Collapsed;
+            panelInstitucion.Visibility = Visibility.Visible;
+
+            await CargarNacionalidades();
+
+            // Seleccionar nacionalidad 
+            cbNacionalidadInstitucion.SelectedItem = cbNacionalidadInstitucion.Items
+                .Cast<string>()
+                .FirstOrDefault(item => item.Equals(institucion.nacionalidad, StringComparison.OrdinalIgnoreCase));
+
             txtNombreInst.Text = institucion.nombre;
             txtCorreoInst.Text = institucion.correo_electronico;
             txtTelefonoInst.Text = institucion.telefono;
@@ -389,16 +444,21 @@ namespace chaski_tours_desk.Componentes.Admin
             txtCorreoRepresent.Text = institucion.correo_electronico_represent;
             txtTelefonoRepresent.Text = institucion.telefono_represent;
 
-            // Seleccionar nacionalidad
-            cbNacionalidadInstitucion.SelectedItem = institucion.nacionalidad;
+            txtContraseniaInst.Password = institucion.contrasenia;
+            txtContraseniaInstVisible.Text = institucion.contrasenia;
 
-            // Deshabilitar controles
             HabilitarControles(false);
+            btnRegistrar.Visibility = Visibility.Collapsed;
+            btnGuardar.Visibility = Visibility.Collapsed;
+            btnEditar.Visibility = Visibility.Visible;
         }
 
+
+        /*txtContrasenia.Password = institucion.contrasenia;
+            txtContraseniaVisible.Text = institucion.contrasenia;*/
         private void HabilitarControles(bool habilitar)
         {
-            // Deshabilitar todos los controles de entrada
+            // Habilitar/Deshabilitar todos los campos
             txtDocumento.IsEnabled = habilitar;
             txtNombre.IsEnabled = habilitar;
             txtApPat.IsEnabled = habilitar;
@@ -408,6 +468,7 @@ namespace chaski_tours_desk.Componentes.Admin
             txtTelefono.IsEnabled = habilitar;
             txtCorreo.IsEnabled = habilitar;
             txtContrasenia.IsEnabled = habilitar;
+
             txtNombreInst.IsEnabled = habilitar;
             cbNacionalidadInstitucion.IsEnabled = habilitar;
             txtTelefonoInst.IsEnabled = habilitar;
@@ -418,36 +479,38 @@ namespace chaski_tours_desk.Componentes.Admin
             txtCorreoRepresent.IsEnabled = habilitar;
             txtTelefonoRepresent.IsEnabled = habilitar;
 
-            // Ocultar botón de registro en modo visualización
-            btnRegistrar.Visibility = habilitar ? Visibility.Visible : Visibility.Collapsed;
+            // ComboBox tipo solo deshabilitado si se están viendo datos ya cargados
+            cbTipo.IsEnabled = !ModoVisualizacion;
 
-            // Deshabilitar el ComboBox de tipo
-            cbTipo.IsEnabled = false;
-            // Mostrar u ocultar botones según el modo
-            btnEditar.Visibility = !habilitar ? Visibility.Visible : Visibility.Collapsed;
-            btnGuardar.Visibility = habilitar ? Visibility.Visible : Visibility.Collapsed;
-            btnRegistrar.Visibility = Visibility.Collapsed; // Siempre oculto en este contexto
+            // Mostrar botones correctamente según el contexto
+            btnRegistrar.Visibility = Visibility.Collapsed;
+            btnEditar.Visibility = Visibility.Collapsed;
+            btnGuardar.Visibility = Visibility.Collapsed;
 
-            // Cambiar estilo visual en modo edición
-            if (habilitar)
+            if (ModoVisualizacion && !habilitar)
             {
-                // Estilo para campos editables
-                foreach (var control in FindVisualChildren<TextBox>(this))
-                {
-                    control.Background = Brushes.White;
-                    control.BorderThickness = new Thickness(1);
-                }
+                // Mostrando datos, pero no en edición
+                btnEditar.Visibility = Visibility.Visible;
             }
-            else
+            else if (ModoVisualizacion && habilitar)
             {
-                // Estilo para campos readonly
-                foreach (var control in FindVisualChildren<TextBox>(this))
-                {
-                    control.Background = Brushes.Transparent;
-                    control.BorderThickness = new Thickness(0);
-                }
+                // Está en modo edición
+                btnGuardar.Visibility = Visibility.Visible;
+            }
+            else if (!ModoVisualizacion && habilitar)
+            {
+                // Registro nuevo
+                btnRegistrar.Visibility = Visibility.Visible;
+            }
+
+            // Cambiar estilo visual de campos
+            foreach (var control in FindVisualChildren<TextBox>(this))
+            {
+                control.Background = habilitar ? Brushes.White : Brushes.Transparent;
+                control.BorderThickness = habilitar ? new Thickness(1) : new Thickness(0);
             }
         }
+
 
         // Método auxiliar para encontrar controles
         private static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
@@ -477,6 +540,7 @@ namespace chaski_tours_desk.Componentes.Admin
             HabilitarControles(true);
             btnEditar.Visibility = Visibility.Collapsed;
             btnGuardar.Visibility = Visibility.Visible;
+            btnRegistrar.Visibility = Visibility.Collapsed;
 
             // Cambiar título según el tipo
             Title = tipoClienteActual == "Turista"
@@ -488,23 +552,29 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             try
             {
+                bool actualizado = false;
+
                 if (tipoClienteActual == "Turista")
                 {
-                    await ActualizarTurista();
+                    actualizado = await ActualizarTurista();
                 }
                 else
                 {
-                    await ActualizarInstitucion();
+                    actualizado = await ActualizarInstitucion();
+                }
+
+                if (!actualizado)
+                {
+                    return;
                 }
 
                 MessageBox.Show("Datos actualizados correctamente", "Éxito",
                               MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Volver a modo visualización
                 modoEdicion = false;
                 HabilitarControles(false);
-                btnGuardar.Visibility = Visibility.Collapsed;
-                btnEditar.Visibility = Visibility.Visible;
+                this.DialogResult = true;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -512,8 +582,49 @@ namespace chaski_tours_desk.Componentes.Admin
                               MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private async Task ActualizarTurista()
+
+        private async Task<bool> ActualizarTurista()
         {
+            string contrasenia = chkVerContrasenia.IsChecked == true
+                ? txtContraseniaVisible.Text
+                : txtContrasenia.Password;
+
+            if (!ValidarContrasenia(contrasenia))
+            {
+                MessageBox.Show("La contraseña debe tener:\n- Mínimo 8 caracteres\n- 1 mayúscula\n- 1 minúscula\n- 1 carácter especial",
+                              "Contraseña inválida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            if (txtDocumento.Text.Length < 7)
+            {
+                MessageBox.Show("El documento debe tener al menos 7 caracteres",
+                              "Documento inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            if (!ValidarEmail(txtCorreo.Text))
+            {
+                MessageBox.Show("Por favor ingrese un correo electrónico válido",
+                              "Correo inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            if (!ValidarTelefono(txtTelefono.Text))
+            {
+                MessageBox.Show("Por favor ingrese un número de teléfono válido",
+                              "Teléfono inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            if (dpFechaNac.SelectedDate == null)
+            {
+                MessageBox.Show("Por favor seleccione una fecha de nacimiento",
+                              "Fecha requerida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            await CargarNacionalidades(); 
             var turistaData = new
             {
                 correo_electronico = txtCorreo.Text,
@@ -523,7 +634,8 @@ namespace chaski_tours_desk.Componentes.Admin
                 ap_mat = txtApMat.Text,
                 fecha_nac = dpFechaNac.SelectedDate?.ToString("yyyy-MM-dd"),
                 nacionalidad = cbNacionalidadTurista.SelectedItem?.ToString(),
-                telefono = txtTelefono.Text
+                telefono = txtTelefono.Text,
+                contrasenia = contrasenia
             };
 
             var response = await httpClient.PutAsJsonAsync(
@@ -534,11 +646,50 @@ namespace chaski_tours_desk.Componentes.Admin
             if (!response.IsSuccessStatusCode)
             {
                 var errorContent = await response.Content.ReadAsStringAsync();
-                throw new Exception(errorContent);
+                MessageBox.Show($"Error del servidor: {errorContent}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
             }
+
+            return true;
         }
-        private async Task ActualizarInstitucion()
+
+        private async Task<bool> ActualizarInstitucion()
         {
+            // Validar contraseña
+             string contrasenia = chkVerContrasenia.IsChecked == true
+            ? txtContraseniaInstVisible.Text
+            : txtContraseniaInst.Password;
+
+            if (!ValidarContrasenia(contrasenia))
+            {
+                MessageBox.Show("La contraseña debe tener:\n- Mínimo 8 caracteres\n- 1 mayúscula\n- 1 minúscula\n- 1 carácter especial",
+                              "Contraseña inválida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            // Validar email
+            if (!ValidarEmail(txtCorreo.Text))
+            {
+                MessageBox.Show("Por favor ingrese un correo electrónico válido",
+                              "Correo inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            // Validar teléfono
+            if (!ValidarTelefono(txtTelefono.Text))
+            {
+                MessageBox.Show("Por favor ingrese un número de teléfono válido",
+                              "Teléfono inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            // Validar fecha de nacimiento
+            if (dpFechaNac.SelectedDate == null)
+            {
+                MessageBox.Show("Por favor seleccione una fecha de nacimiento",
+                              "Fecha requerida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            await CargarNacionalidades();
             var institucionData = new
             {
                 nombre = txtNombreInst.Text,
@@ -548,7 +699,8 @@ namespace chaski_tours_desk.Componentes.Admin
                 nombre_represent = txtNombreRepresent.Text,
                 ap_pat_represent = txtApPatRepresent.Text,
                 correo_electronico_represent = txtCorreoRepresent.Text,
-                telefono_represent = txtTelefonoRepresent.Text
+                telefono_represent = txtTelefonoRepresent.Text,
+                contrasenia = txtContraseniaInst.Password
             };
 
             var response = await httpClient.PutAsJsonAsync(
@@ -561,6 +713,7 @@ namespace chaski_tours_desk.Componentes.Admin
                 var errorContent = await response.Content.ReadAsStringAsync();
                 throw new Exception(errorContent);
             }
+            return true;
         }
     }
 }

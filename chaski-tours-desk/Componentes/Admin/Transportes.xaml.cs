@@ -33,9 +33,9 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private async Task obtenerTransportes()
         {
-            var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
+            // var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
 
-            tbl_Transportes.ItemsSource = transportes;
+            // tbl_Transportes.ItemsSource = transportes;
         }
 
         private async void verTransportes()

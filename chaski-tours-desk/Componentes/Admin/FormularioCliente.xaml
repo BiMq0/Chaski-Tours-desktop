@@ -151,12 +151,7 @@
                                     Height="35" 
                                     Margin="0,5"
                                     Foreground="#FF5A4A3A">
-                                <ComboBoxItem Content="Perú"/>
-                                <ComboBoxItem Content="Argentina"/>
-                                <ComboBoxItem Content="Chile"/>
-                                <ComboBoxItem Content="Colombia"/>
-                                <ComboBoxItem Content="México"/>
-                                <ComboBoxItem Content="España"/>
+                                
                             </ComboBox>
 
                             <TextBlock Text="Teléfono" 
@@ -190,18 +185,40 @@
                             </Border>
 
                             <TextBlock Text="Contraseña" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <PasswordBox x:Name="txtContrasenia" 
-                                           Height="35" 
-                                           Padding="10,0"
-                                           VerticalContentAlignment="Center"
-                                           FontSize="15"
-                                           Background="Transparent"
-                                           BorderThickness="0"/>
-                            </Border>
+                               Foreground="#FF6D5C4D"
+                               Margin="5,15,5,0"
+                               FontSize="18"/>
+
+                            <Border CornerRadius="20" Background="White" Margin="0,5,0,0">
+                                <Grid>
+                                    <!-- PasswordBox oculto -->
+                                    <PasswordBox x:Name="txtContrasenia"
+                                     Height="35"
+                                     Padding="10,0"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="15"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Visibility="Visible"/>
+
+                                    <!-- TextBox visible (por si se quiere mostrar la contraseña) -->
+                                    <TextBox x:Name="txtContraseniaVisible"
+                                     Height="35"
+                                     Padding="10,0"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="15"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Visibility="Collapsed"/>
+                                                    </Grid>
+                                                </Border>
+
+                                    <CheckBox x:Name="chkVerContrasenia"
+                                    Content="Mostrar contraseña"
+                                    Margin="0,5,0,10"
+                                    Checked="chkVerContrasenia_Checked"
+                                    Unchecked="chkVerContrasenia_Unchecked"/>
+
                         </StackPanel>
                     </ScrollViewer>
 
@@ -272,20 +289,43 @@
                                         FontSize="15"
                                         VerticalContentAlignment="Center"/>
                             </Border>
-
                             <TextBlock Text="Contraseña" 
-                                     Foreground="#FF6D5C4D"
-                                     Margin="5,15,5,0"
-                                     FontSize="18"/>
-                            <Border CornerRadius="20" Background="White">
-                                <PasswordBox x:Name="txtContraseniaInst" 
-                                           Height="35" 
-                                           Padding="10,0"
-                                           VerticalContentAlignment="Center"
-                                           FontSize="15"
-                                           Background="Transparent"
-                                           BorderThickness="0"/>
+                               Foreground="#FF6D5C4D"
+                               Margin="5,15,5,0"
+                               FontSize="18"/>
+
+                            <Border CornerRadius="20" Background="White" Margin="0,5,0,0">
+                                <Grid>
+                                    <!-- PasswordBox (oculto por defecto si se quiere mostrar) -->
+                                    <PasswordBox x:Name="txtContraseniaInst"
+                                     Height="35"
+                                     Padding="10,0"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="15"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Visibility="Visible"/>
+
+                                    <!-- TextBox visible para mostrar contraseña -->
+                                    <TextBox x:Name="txtContraseniaInstVisible"
+                                     Height="35"
+                                     Padding="10,0"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="15"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Visibility="Collapsed"/>
+                                 </Grid>
                             </Border>
+
+                            <CheckBox x:Name="chkVerContraseniaInst"
+                              Content="Mostrar contraseña"
+                              Margin="0,5,0,10"
+                              Checked="chkVerContrasenia_CheckedInst"
+                              Unchecked="chkVerContrasenia_UncheckedInst"/>
+
+
+
 
                             <TextBlock Text="Nombre del Representante" 
                                      Foreground="#FF6D5C4D"
@@ -349,21 +389,25 @@
                         </StackPanel>
                     </ScrollViewer>
 
-                    <Border CornerRadius="15" Width="120" Height="50" Margin="0,15,0,0" Background="#E3D3C9">
-                        <Button x:Name="btnRegistrar" 
-                        Content="Registrar"
-                        Click="btnRegistrar_Click"
-                        FontSize="14"
-                        Width="120" 
-                        Height="50" 
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Foreground="#FF5A4A3A"
-                        FontWeight="Medium"
-                        Cursor="Hand"/>
-                    </Border>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-                        <Border CornerRadius="15" Width="120" Height="50" Margin="0,0,10,0" Background="#E3D3C9">
+                        <!-- Botón Registrar -->
+                        <Border CornerRadius="15" Width="120" Height="50" Margin="5" Background="#E3D3C9">
+                            <Button x:Name="btnRegistrar" 
+                            Content="Registrar"
+                            Click="btnRegistrar_Click"
+                            FontSize="14"
+                            Width="120" 
+                            Height="50" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#FF5A4A3A"
+                            FontWeight="Medium"
+                            Cursor="Hand"
+                            Visibility="Collapsed"/>
+                        </Border>
+
+                        <!-- Botón Editar -->
+                        <Border CornerRadius="15" Width="120" Height="50" Margin="5" Background="#E3D3C9">
                             <Button x:Name="btnEditar" 
                             Content="Editar"
                             Click="btnEditar_Click"
@@ -374,23 +418,27 @@
                             BorderThickness="0"
                             Foreground="#FF5A4A3A"
                             FontWeight="Medium"
-                            Cursor="Hand"/>
+                            Cursor="Hand"
+                            Visibility="Collapsed"/>
                         </Border>
-                        <Border CornerRadius="15" Width="120" Height="50" Background="#E3D3C9">
+
+                        <!-- Botón Guardar -->
+                        <Border CornerRadius="15" Width="120" Height="50" Margin="5" Background="#E3D3C9">
                             <Button x:Name="btnGuardar" 
-                        Content="Guardar"
-                        Click="btnGuardar_Click"
-                        FontSize="14"
-                        Width="120" 
-                        Height="50" 
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Foreground="#FF5A4A3A"
-                        FontWeight="Medium"
-                        Cursor="Hand"
-                        Visibility="Collapsed"/>
+                            Content="Guardar"
+                            Click="btnGuardar_Click"
+                            FontSize="14"
+                            Width="120" 
+                            Height="50" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#FF5A4A3A"
+                            FontWeight="Medium"
+                            Cursor="Hand"
+                            Visibility="Collapsed"/>
                         </Border>
                     </StackPanel>
+
                 </StackPanel>
             </StackPanel>
         </Border>

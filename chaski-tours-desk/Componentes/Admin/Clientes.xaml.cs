@@ -36,6 +36,7 @@ namespace chaski_tours_desk.Componentes.Admin
             /*todosLosClientes = await cliente.GetFromJsonAsync<List<Visitante>>(URL);
             AplicarFiltros();*/
             todosLosClientes = await cliente.GetFromJsonAsync<List<Visitante>>(URL);
+                
             AplicarFiltros();
         }
 
