@@ -68,7 +68,6 @@ namespace chaski_tours_desk.Componentes.User
             verSitios();
             verTours();
             cargarListasDE();
-
         }
 
         private void cargarDatosaCarts()

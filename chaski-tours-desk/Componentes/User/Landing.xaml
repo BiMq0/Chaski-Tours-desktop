@@ -143,18 +143,13 @@
 
                         <Image Source="/Images/Images_Categorias/batalla.png"
                        Stretch="Fill"
-                       Opacity="0.8"/>
-                        <Rectangle Fill="White" Opacity="0.3"/>
+                       />
+                        <Rectangle Fill="Black" Opacity="0.2"/>
                         <StackPanel VerticalAlignment="Bottom" Margin="50">
                             <TextBlock x:Name="tbx_nombresitio1"
-                                        FontSize="30" 
-                                        FontWeight="Bold" 
-                                        Foreground="Black"/>
+                                        Style="{StaticResource TituloTXB}" Foreground="White"/>
                             <TextBlock x:Name="tbx_descripcionsitio1"
-                                        FontSize="24" 
-                                        Foreground="Black"
-                                        TextWrapping="Wrap" 
-                                        MaxWidth="500"/>
+                                        Style="{StaticResource TextoTXB}" Foreground="White"/>
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -163,18 +158,14 @@
 
                         <Image Source="/Images/Images_Departamentos/Chuquisaca.jpg"
                            Stretch="Fill"
-                           Opacity="0.8"/>
-                        <Rectangle Fill="White" Opacity="0.3"/>
+                           />
+                        <Rectangle Fill="Black" Opacity="0.2"/>
                         <StackPanel VerticalAlignment="Bottom" Margin="50">
                             <TextBlock x:Name="tbx_nombresitio2"
-                    FontSize="30" 
-                    FontWeight="Bold" 
-                    Foreground="Black"/>
+                                        Style="{StaticResource TituloTXB}" Foreground="White"/>
+                            
                             <TextBlock x:Name="tbx_descripcionsitio2"
-                    FontSize="24" 
-                    Foreground="Black"
-                    TextWrapping="Wrap" 
-                    MaxWidth="500"/>
+                    Style="{StaticResource TextoTXB}" Foreground="White"/>
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -194,18 +185,13 @@
 
                         <Image Source="/Images/Images_Departamentos/Cochabamba.png"
                            Stretch="Fill"
-                           Opacity="0.8"/>
-                        <Rectangle Fill="White" Opacity="0.3"/>
+                           />
+                        <Rectangle Fill="Black" Opacity="0.2"/>
                         <StackPanel VerticalAlignment="Bottom" Margin="50">
                             <TextBlock x:Name="tbx_nombretour1"
-                                        FontSize="30" 
-                                        FontWeight="Bold" 
-                                        Foreground="Black"/>
+                                        Style="{StaticResource TituloTXB}" Foreground="White"/>
                             <TextBlock x:Name="tbx_descripciontour1"
-                                        FontSize="24" 
-                                        Foreground="Black"
-                                        TextWrapping="Wrap" 
-                                        MaxWidth="500"/>
+                                        Style="{StaticResource TextoTXB}" Foreground="White"/>
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -213,19 +199,14 @@
                     <Grid MouseLeftButtonDown="Grid4_MouseLeftButtonDown">
 
                         <Image Source="/Images/Images_Departamentos/SantaCruz.jpg"
-                               Stretch="Fill"
-                               Opacity="0.8"/>
-                        <Rectangle Fill="White" Opacity="0.3"/>
+                               Stretch="UniformToFill" VerticalAlignment="Center"
+                               Opacity="1"/>
+                        <Rectangle Fill="Black" Opacity="0.2"/>
                         <StackPanel VerticalAlignment="Bottom" Margin="50">
                             <TextBlock x:Name="tbx_nombretour2"
-                                FontSize="30" 
-                                FontWeight="Bold" 
-                                Foreground="Black"/>
+                                Style="{StaticResource TituloTXB}" Foreground="White"/>
                             <TextBlock x:Name="tbx_descripciontour2"
-                                FontSize="24" 
-                                Foreground="Black"
-                                TextWrapping="Wrap" 
-                                MaxWidth="500"/>
+                                Style="{StaticResource TextoTXB}" Foreground="White"/>
                         </StackPanel>
                     </Grid>
                 </Border>
