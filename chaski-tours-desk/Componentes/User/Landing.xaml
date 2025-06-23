@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
              mc:Ignorable="d" d:Width="1280" Loaded="UserControl_Loaded">
+
     <UserControl.Resources>
+
+
         <Style x:Key="CardSitio" TargetType="Border">
             <Setter Property="Background" Value="White"/>
             <Setter Property="CornerRadius" Value="12"/>
@@ -69,29 +72,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
     </UserControl.Resources>
-    
+
     <!--Inicio de estilos y elementos-->
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
 
         <StackPanel >
-                <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Horizontal">
-                    <Image Source="/Images/icono.png" Width="250"/>
-                    <Image Source="/Images/titulo_blanco.png" Width="600"/>
-                </StackPanel>
-                <Grid Margin="0,0,0,30">
-                    <Border CornerRadius="20" 
+            <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Horizontal">
+                <Image Source="/Images/icono.png" Width="250"/>
+                <Image Source="/Images/titulo_blanco.png" Width="600"/>
+            </StackPanel>
+            <Grid Margin="0,0,0,30">
+                <Border CornerRadius="20" 
                         Background="#AA1A4B32"
                         Padding="2" Width="800" >
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" 
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" 
                          Opacity="0.75" 
                          BlurRadius="20" 
                          ShadowDepth="4" 
                          Direction="270"/>
-                        </Border.Effect>
-                        <TextBox x:Name="txtBuscar" 
+                    </Border.Effect>
+                    <TextBox x:Name="txtBuscar" 
                              Height="40"
                              Width="450"
                              Padding="10"
@@ -105,8 +108,8 @@
                              Opacity="0.8"
                              HorizontalContentAlignment="Center"
                          />
-                    </Border>
-                    <Border CornerRadius="15" HorizontalAlignment="Right" Width="50" Margin="0,0,115,0" Style="{StaticResource BordeBotonesUser}">
+                </Border>
+                <Border CornerRadius="15" HorizontalAlignment="Right" Width="50" Margin="0,0,115,0" Style="{StaticResource BordeBotonesUser}">
                     <Button 
                         x:Name="btnBuscar"
                         Content="🔍" 
@@ -117,191 +120,155 @@
                         HorizontalAlignment="Left"
                         />
                 </Border>
-                </Grid>
-                <StackPanel x:Name="spSitios" Margin="0,60,0,0">
-                    <TextBlock Text="LOS SITIOS MEJOR VALORADOS" 
-                           FontSize="24" 
-                           FontWeight="Bold" 
-                           HorizontalAlignment="Left" 
-                           Margin="0,20,0,30" Foreground="{StaticResource BoliviaLightGreen}"/>
-                    <Border Style="{StaticResource CardSitio}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="180"/>
-                            </Grid.ColumnDefinitions>
+            </Grid>
 
-                            <StackPanel Grid.Column="0" 
-                                        Margin="20" 
-                                        VerticalAlignment="Center">
-                                <TextBlock Text="{Binding nombre}" 
-                                  FontSize="20"
-                                  FontWeight="SemiBold"
-                                  Foreground="#333"
-                                  Margin="0,0,0,8"/>
-                                <TextBlock Text="{Binding desc_historica_sitio}"
-                                  FontSize="14"
-                                  Foreground="#666"
-                                  TextWrapping="Wrap"
-                                  MaxHeight="60"
-                                  TextTrimming="CharacterEllipsis"
-                                  LineHeight="20"/> 
-                            </StackPanel>
-                            <Border Grid.Column="1"
-                                    CornerRadius="0,12,12,0"
-                                    Background="#F5F5F5">
-                            <Image Source="{Binding id_img}"
-                                  Stretch="UniformToFill"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
-                            </Border>
-                        </Grid>
-                    </Border>
-                    <Border Style="{StaticResource CardSitio}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="180"/>
-                            </Grid.ColumnDefinitions>
-                            
-                            <StackPanel Grid.Column="0" 
-                                        Margin="20" 
-                                        VerticalAlignment="Center">
-                                <TextBlock Text="{Binding nombre}" 
-                                  FontSize="20"
-                                  FontWeight="SemiBold"
-                                  Foreground="#333"
-                                  Margin="0,0,0,8"/>
-                                <TextBlock Text="{Binding desc_historica_sitio}"
-                                  FontSize="14"
-                                  Foreground="#666"
-                                  TextWrapping="Wrap"
-                                  MaxHeight="60"
-                                  TextTrimming="CharacterEllipsis"
-                                  LineHeight="20"/>
-                            </StackPanel>
-                            <Border Grid.Column="1"
-                                CornerRadius="0,12,12,0"
-                                Background="#F5F5F5">
-                            <Image Source="{Binding id_img}"
-                                  Stretch="UniformToFill"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
-                            </Border>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-                <StackPanel x:Name="spTours" Margin="0,60,0,0">
-                    <TextBlock Text="TOURS SOBRECOTIZADOS POR LOS GRINGOS" 
+
+
+
+
+
+
+            <StackPanel x:Name="spSitios" Margin="0,60,0,0">
+                <TextBlock Text="LOS SITIOS MEJOR VALORADOS" 
+                        FontSize="24" 
+                        FontWeight="Bold" 
+                        HorizontalAlignment="Left" 
+                        Margin="0,20,0,30" Foreground="{StaticResource BoliviaLightGreen}"/>
+
+
+
+
+                <Border Style="{StaticResource CardSitio}" >
+                    <Grid MouseLeftButtonDown="Grid1_MouseLeftButtonDown">
+
+                        <Image Source="/Images/Images_Categorias/batalla.png"
+                       Stretch="Fill"
+                       Opacity="0.8"/>
+                        <Rectangle Fill="White" Opacity="0.3"/>
+                        <StackPanel VerticalAlignment="Bottom" Margin="50">
+                            <TextBlock x:Name="tbx_nombresitio1"
+                                        FontSize="30" 
+                                        FontWeight="Bold" 
+                                        Foreground="Black"/>
+                            <TextBlock x:Name="tbx_descripcionsitio1"
+                                        FontSize="24" 
+                                        Foreground="Black"
+                                        TextWrapping="Wrap" 
+                                        MaxWidth="500"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource CardSitio}">
+                    <Grid MouseLeftButtonDown="Grid2_MouseLeftButtonDown">
+
+                        <Image Source="/Images/Images_Departamentos/Chuquisaca.jpg"
+                           Stretch="Fill"
+                           Opacity="0.8"/>
+                        <Rectangle Fill="White" Opacity="0.3"/>
+                        <StackPanel VerticalAlignment="Bottom" Margin="50">
+                            <TextBlock x:Name="tbx_nombresitio2"
+                    FontSize="30" 
+                    FontWeight="Bold" 
+                    Foreground="Black"/>
+                            <TextBlock x:Name="tbx_descripcionsitio2"
+                    FontSize="24" 
+                    Foreground="Black"
+                    TextWrapping="Wrap" 
+                    MaxWidth="500"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+
+
+
+            <StackPanel x:Name="spTours" Margin="0,60,0,0">
+                <TextBlock Text="TOURS SOBRECOTIZADOS POR LOS GRINGOS" 
                        FontSize="24" 
                        FontWeight="Bold" 
                        HorizontalAlignment="Right" 
                        Margin="0,20,0,30" 
                        Foreground="{StaticResource BoliviaLightGreen}"/>
-                    <Border Style="{StaticResource CardSitio}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="180"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0"
-                                CornerRadius="12,0,0,12" 
-                                Background="#F5F5F5">
-                                <Image Source="{Binding id_img_tour}"
-                                  Stretch="UniformToFill"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
-                            </Border>
-                            <StackPanel Grid.Column="1" 
-                                   Margin="20" 
-                                   VerticalAlignment="Center">
-                                <TextBlock Text="{Binding nombre_tour}" 
-                                      FontSize="20"
-                                      FontWeight="SemiBold"
-                                      Foreground="#333"
-                                      Margin="0,0,0,8"/>
-                                <TextBlock Text="{Binding descripcion_tour}"
-                                  FontSize="14"
-                                  Foreground="#666"
-                                  TextWrapping="Wrap"
-                                  MaxHeight="60"
-                                  TextTrimming="CharacterEllipsis"
-                                  LineHeight="20"/>
-                            </StackPanel>
-                        </Grid>
-                    </Border>
-                    <Border Style="{StaticResource CardSitio}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="180"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0"
-                                CornerRadius="12,0,0,12" 
-                                Background="#F5F5F5">
-                                <Image Source="{Binding id_img_tour}"
-                                  Stretch="UniformToFill"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
-                            </Border>
-                            <StackPanel Grid.Column="1" 
-                                   Margin="20" 
-                                   VerticalAlignment="Center">
-                                <TextBlock Text="{Binding nombre_tour}" 
-                                      FontSize="20"
-                                      FontWeight="SemiBold"
-                                      Foreground="#333"
-                                      Margin="0,0,0,8"/>
-                                <TextBlock Text="{Binding descripcion_tour}"
-                                  FontSize="14"
-                                  Foreground="#666"
-                                  TextWrapping="Wrap"
-                                  MaxHeight="60"
-                                  TextTrimming="CharacterEllipsis"
-                                  LineHeight="20"/>
-                            </StackPanel>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-                <StackPanel x:Name="spDepartamentos" Margin="0,60,0,40">
-                    <TextBlock Text="CATEGORÍAS" 
+                <Border Style="{StaticResource CardSitio}">
+                    <Grid MouseLeftButtonDown="Grid3_MouseLeftButtonDown">
+
+                        <Image Source="/Images/Images_Departamentos/Cochabamba.png"
+                           Stretch="Fill"
+                           Opacity="0.8"/>
+                        <Rectangle Fill="White" Opacity="0.3"/>
+                        <StackPanel VerticalAlignment="Bottom" Margin="50">
+                            <TextBlock x:Name="tbx_nombretour1"
+                                        FontSize="30" 
+                                        FontWeight="Bold" 
+                                        Foreground="Black"/>
+                            <TextBlock x:Name="tbx_descripciontour1"
+                                        FontSize="24" 
+                                        Foreground="Black"
+                                        TextWrapping="Wrap" 
+                                        MaxWidth="500"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource CardSitio}">
+                    <Grid MouseLeftButtonDown="Grid4_MouseLeftButtonDown">
+
+                        <Image Source="/Images/Images_Departamentos/SantaCruz.jpg"
+                               Stretch="Fill"
+                               Opacity="0.8"/>
+                        <Rectangle Fill="White" Opacity="0.3"/>
+                        <StackPanel VerticalAlignment="Bottom" Margin="50">
+                            <TextBlock x:Name="tbx_nombretour2"
+                                FontSize="30" 
+                                FontWeight="Bold" 
+                                Foreground="Black"/>
+                            <TextBlock x:Name="tbx_descripciontour2"
+                                FontSize="24" 
+                                Foreground="Black"
+                                TextWrapping="Wrap" 
+                                MaxWidth="500"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <StackPanel x:Name="spDepartamentos" Margin="0,60,0,40">
+                <TextBlock Text="CATEGORÍAS" 
                           FontSize="22" 
                           FontWeight="Bold"
                           Foreground="{StaticResource BoliviaLightGreen}"
-                          Margin="20,0,20,15"/> 
+                          Margin="20,0,20,15"/>
 
-                    <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
-                        <Grid>
-                            <ScrollViewer x:Name="categoryScrollViewer"
+                <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
+                    <Grid>
+                        <ScrollViewer x:Name="categoryScrollViewer"
                                  HorizontalScrollBarVisibility="Hidden"
                                  VerticalScrollBarVisibility="Disabled"
                                  Width="460"  
                                  Height="220">
 
-                                <ItemsControl ItemsSource="{Binding Categorias}">
-                                    <ItemsControl.ItemContainerStyle>
-                                        <Style TargetType="ContentPresenter">
-                                            <Setter Property="Width" Value="120"/>
-                                            <Setter Property="Height" Value="220"/>
-                                            <Setter Property="Margin" Value="10,5"/>
-                                        </Style>
-                                    </ItemsControl.ItemContainerStyle>
+                            <ItemsControl ItemsSource="{Binding Categorias}">
+                                <ItemsControl.ItemContainerStyle>
+                                    <Style TargetType="ContentPresenter">
+                                        <Setter Property="Width" Value="120"/>
+                                        <Setter Property="Height" Value="220"/>
+                                        <Setter Property="Margin" Value="10,5"/>
+                                    </Style>
+                                </ItemsControl.ItemContainerStyle>
 
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
 
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border CornerRadius="10"
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="10"
                                                     Background="White"
-                                                    Effect="{StaticResource CardShadowEffect}">     
-                                                <Button Style="{StaticResource TransparentButtonStyle}"
+                                                    Effect="{StaticResource CardShadowEffect}">
+                                            <Button Style="{StaticResource TransparentButtonStyle}"
                                                         Padding="0">
-                                                    <StackPanel>
-                                                        <Border Width="50" 
+                                                <StackPanel>
+                                                    <Border Width="50" 
                                                                Height="50"
                                                                CornerRadius="25"
                                                                Background="#E8F5E9"
@@ -313,9 +280,9 @@
                                                               Foreground="#2E7D32"
                                                               HorizontalAlignment="Center"
                                                               VerticalAlignment="Center"/>
-                                                        </Border>
+                                                    </Border>
 
-                                                        <TextBlock Text="{Binding nombre_categoria}"
+                                                    <TextBlock Text="{Binding nombre_categoria}"
                                                               HorizontalAlignment="Center"
                                                               TextWrapping="Wrap"
                                                               TextAlignment="Center"
@@ -323,15 +290,15 @@
                                                               FontWeight="SemiBold"
                                                               MaxWidth="100"
                                                               Margin="5,0,5,10"/>
-                                                    </StackPanel>
-                                                </Button>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
+                                                </StackPanel>
+                                            </Button>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
 
-                            <Button x:Name="btnIzquierdaCat" 
+                        <Button x:Name="btnIzquierdaCat" 
                                Content="❮"
                                Width="40"
                                Height="40"
@@ -340,7 +307,7 @@
                                Style="{StaticResource CircleButtonStyle}" Click="btnIzquierdaCat_Click"
                                />
 
-                            <Button x:Name="btnDerechaCat" 
+                        <Button x:Name="btnDerechaCat" 
                                Content="❯"
                                Width="40"
                                Height="40"
@@ -348,62 +315,62 @@
                                VerticalAlignment="Center"
                                Style="{StaticResource CircleButtonStyle}" Click="btnDerechaCat_Click"
                                />
-                        </Grid>
-                    </Border>
-                </StackPanel>
-                <StackPanel x:Name="spCategorias" Margin="0,60,0,40">
-                    <TextBlock Text="DEPARTAMENTOS" 
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <StackPanel x:Name="spCategorias" Margin="0,60,0,40">
+                <TextBlock Text="DEPARTAMENTOS" 
                           FontSize="22" 
                           FontWeight="Bold"
                           Foreground="{StaticResource BoliviaLightGreen}"
                           Margin="20,0,20,15"/>
 
-                    <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
-                        <Grid>
-                            <ScrollViewer x:Name="departamentoScrollViewer"
+                <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
+                    <Grid>
+                        <ScrollViewer x:Name="departamentoScrollViewer"
                                  HorizontalScrollBarVisibility="Hidden"
                                  VerticalScrollBarVisibility="Disabled"
                                  Width="460"  
                                  Height="220">
 
-                                <ItemsControl ItemsSource="{Binding Categorias}">
-                                    <ItemsControl.ItemContainerStyle>
-                                        <Style TargetType="ContentPresenter">
-                                            <Setter Property="Width" Value="120"/>
-                                            <Setter Property="Height" Value="220"/>
-                                            <Setter Property="Margin" Value="10,5"/>
-                                        </Style>
-                                    </ItemsControl.ItemContainerStyle>
+                            <ItemsControl ItemsSource="{Binding Categorias}">
+                                <ItemsControl.ItemContainerStyle>
+                                    <Style TargetType="ContentPresenter">
+                                        <Setter Property="Width" Value="120"/>
+                                        <Setter Property="Height" Value="220"/>
+                                        <Setter Property="Margin" Value="10,5"/>
+                                    </Style>
+                                </ItemsControl.ItemContainerStyle>
 
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
 
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border CornerRadius="10"
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="10"
                                                     Background="White"
                                                     Effect="{StaticResource CardShadowEffect}">
-                                                <Button Style="{StaticResource TransparentButtonStyle}"
+                                            <Button Style="{StaticResource TransparentButtonStyle}"
                                                         Padding="0">
-                                                    <StackPanel>
-                                                        <Border Width="50" 
+                                                <StackPanel>
+                                                    <Border Width="50" 
                                                                Height="50"
                                                                CornerRadius="25"
                                                                Background="#E8F5E9"
                                                                Margin="0,10,0,5"
                                                                HorizontalAlignment="Center">
-                                                            <TextBlock Text="{Binding nombre_categoria, StringFormat={}{0:0}}"
+                                                        <TextBlock Text="{Binding nombre_categoria, StringFormat={}{0:0}}"
                                                               FontSize="20"
                                                               FontWeight="Bold"
                                                               Foreground="#2E7D32"
                                                               HorizontalAlignment="Center"
                                                               VerticalAlignment="Center"/>
-                                                        </Border>
+                                                    </Border>
 
-                                                        <TextBlock Text="{Binding nombre_categoria}"
+                                                    <TextBlock Text="{Binding nombre_categoria}"
                                                               HorizontalAlignment="Center"
                                                               TextWrapping="Wrap"
                                                               TextAlignment="Center"
@@ -411,15 +378,15 @@
                                                               FontWeight="SemiBold"
                                                               MaxWidth="100"
                                                               Margin="5,0,5,10"/>
-                                                    </StackPanel>
-                                                </Button>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
+                                                </StackPanel>
+                                            </Button>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
 
-                            <Button x:Name="btnIzquierdaDep" 
+                        <Button x:Name="btnIzquierdaDep" 
                                Content="❮"
                                Width="40"
                                Height="40"
@@ -428,7 +395,7 @@
                                Style="{StaticResource CircleButtonStyle}" Click="btnIzquierdaDep_Click"
                               />
 
-                            <Button x:Name="btnDerechaDep" 
+                        <Button x:Name="btnDerechaDep" 
                                Content="❯"
                                Width="40"
                                Height="40"
@@ -436,9 +403,9 @@
                                VerticalAlignment="Center"
                                Style="{StaticResource CircleButtonStyle}" Click="btnDerechaDep_Click"
                               />
-                        </Grid>
-                    </Border>
-                </StackPanel>
-            </StackPanel>   
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
     </ScrollViewer>
 </UserControl>
