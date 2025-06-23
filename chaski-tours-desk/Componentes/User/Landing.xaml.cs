@@ -33,45 +33,19 @@ namespace chaski_tours_desk.Componentes.User
         LDE lstDEDepartamentos = new LDE();
         private string URL_Sitios = "http://localhost:8000/api/sitios/";
         private string URL_Tours = "http://localhost:8000/api/tour/";
-        
-        List<Sitio> sitios = new List<Sitio>();
-        List<Tour> tours = new List<Tour>();
         public Landing()
         {
             InitializeComponent();
         }
-        private async Task obtenerSitios()
-        {
-            sitios = await client.GetFromJsonAsync<List<Sitio>>(URL_Sitios);
-        }
 
-        public async void verSitios()
+        private async void cargarDatosaCarts()
         {
-            await obtenerSitios();
-        }
-
-        private async Task obtenerTours()
-        {
+            List<Tour> tours = new List<Tour>();
             tours = await client.GetFromJsonAsync<List<Tour>>(URL_Tours);
-            cargarDatosaCarts();
-        }
 
-        public async void verTours()
-        {
-            await obtenerTours();
-        }
+            List<Sitio> sitios = new List<Sitio>();
+            sitios = await client.GetFromJsonAsync<List<Sitio>>(URL_Sitios);
 
-
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            verSitios();
-            verTours();
-            cargarListasDE();
-        }
-
-        private void cargarDatosaCarts()
-        {
             tbx_nombresitio1.Text = sitios[1].nombre;
             tbx_descripcionsitio1.Text = sitios[1].desc_conceptual_sitio;
             tbx_nombresitio2.Text = sitios[2].nombre;
@@ -83,11 +57,17 @@ namespace chaski_tours_desk.Componentes.User
             tbx_descripciontour2.Text = tours[2].descripcion_tour;
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            cargarDatosaCarts();
+            cargarListasDE();
+        }
+
 
         //estos nenes se dedican a entregar acciones a las imagenes
         private void Grid1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MessageBox.Show("imagen1");
         }
         private void Grid2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
