@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace chaski_tours_desk.Componentes.User.ListaDE
 {
@@ -19,16 +20,20 @@ namespace chaski_tours_desk.Componentes.User.ListaDE
 
         public void crearListaDE(List<object> listaObj) { 
             Nodo nodoInicio = new Nodo(listaObj[0]);
-            Nodo nodoFin = new Nodo(listaObj.LastOrDefault());
+            Nodo nodoFin = new Nodo(listaObj[listaObj.Count-1]);
             
-            listaObj.RemoveAt(listaObj.Count-1);
             listaObj.RemoveAt(0);
+            listaObj.RemoveAt(listaObj.Count - 1);
 
             Inicio = nodoInicio;
             Fin = nodoFin;
 
+            Inicio.Siguiente = Fin;
             Inicio.Anterior = Fin;
+
             Fin.Siguiente = Inicio;
+            Fin.Anterior = Inicio;
+
 
             agregarNodosRestantes(listaObj);
 
@@ -39,10 +44,13 @@ namespace chaski_tours_desk.Componentes.User.ListaDE
             foreach (var item in lstNodosRestantes)
             {
                 Nodo nuevoNodo = new Nodo(item);
+
                 nuevoNodo.Anterior = Fin;
                 nuevoNodo.Siguiente = Inicio;
+
                 Fin.Siguiente = nuevoNodo;
                 Inicio.Anterior = nuevoNodo;
+
                 Fin = nuevoNodo;
             }
         }
@@ -55,7 +63,18 @@ namespace chaski_tours_desk.Componentes.User.ListaDE
             }
             else
             {
-                Actual = Inicio; // Volver al inicio si no hay siguiente
+                Actual = Inicio;
+            }
+        }
+
+        public void pasarAnterior() {
+            if (Actual.Anterior != null)
+            {
+                Actual = Actual.Anterior;
+            }
+            else
+            {
+                Actual = Fin; 
             }
         }
     }

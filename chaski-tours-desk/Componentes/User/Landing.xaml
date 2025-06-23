@@ -184,7 +184,7 @@
                                 CornerRadius="0,12,12,0"
                                 Background="#F5F5F5">
                             <Image Source="{Binding id_img}"
-                                  Stretch="UniformToFill"
+                                  Stretch="None"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"/>
                             </Border>
@@ -263,78 +263,27 @@
                         </Grid>
                     </Border>
                 </StackPanel>
-                <StackPanel x:Name="spDepartamentos" Margin="0,60,0,40">
+                <StackPanel x:Name="spCategorias" Margin="0,60,0,40" >
                     <TextBlock Text="CATEGORÍAS" 
                           FontSize="22" 
                           FontWeight="Bold"
                           Foreground="{StaticResource BoliviaLightGreen}"
                           Margin="20,0,20,15"/> 
 
-                    <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
-                        <Grid>
-                            <ScrollViewer x:Name="categoryScrollViewer"
-                                 HorizontalScrollBarVisibility="Hidden"
-                                 VerticalScrollBarVisibility="Disabled"
-                                 Width="460"  
-                                 Height="220">
+                    <Border CornerRadius="10" Padding="5" Height="400" Background="#A1000000" BorderBrush="Transparent" BorderThickness="0">
+                    <Grid>
+                        <Image x:Name="imgCategorias" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
+                        <Rectangle Fill="#000" Opacity="0.25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
-                                <ItemsControl ItemsSource="{Binding Categorias}">
-                                    <ItemsControl.ItemContainerStyle>
-                                        <Style TargetType="ContentPresenter">
-                                            <Setter Property="Width" Value="120"/>
-                                            <Setter Property="Height" Value="220"/>
-                                            <Setter Property="Margin" Value="10,5"/>
-                                        </Style>
-                                    </ItemsControl.ItemContainerStyle>
-
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border CornerRadius="10"
-                                                    Background="White"
-                                                    Effect="{StaticResource CardShadowEffect}">     
-                                                <Button Style="{StaticResource TransparentButtonStyle}"
-                                                        Padding="0">
-                                                    <StackPanel>
-                                                        <Border Width="50" 
-                                                               Height="50"
-                                                               CornerRadius="25"
-                                                               Background="#E8F5E9"
-                                                               Margin="0,10,0,5"
-                                                               HorizontalAlignment="Center">
-                                                        <TextBlock Text="{Binding nombre_categoria, StringFormat={}{0:0}}"
-                                                              FontSize="20"
-                                                              FontWeight="Bold"
-                                                              Foreground="#2E7D32"
-                                                              HorizontalAlignment="Center"
-                                                              VerticalAlignment="Center"/>
-                                                        </Border>
-
-                                                        <TextBlock Text="{Binding nombre_categoria}"
-                                                              HorizontalAlignment="Center"
-                                                              TextWrapping="Wrap"
-                                                              TextAlignment="Center"
-                                                              FontSize="13"
-                                                              FontWeight="SemiBold"
-                                                              MaxWidth="100"
-                                                              Margin="5,0,5,10"/>
-                                                    </StackPanel>
-                                                </Button>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-
-                            <Button x:Name="btnIzquierdaCat" 
+                        <TextBlock x:Name="nomCategorias" Style="{StaticResource TituloTXB}" FontSize="40" Foreground="White" Margin="100 50"/>
+                        <Border Style="{StaticResource BordeBotonesUser}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Margin="20">
+                            <Button Content="Explorar Categoria" Width="220" Style="{StaticResource UserButtonStyle}" x:Name="btnVerCategoria"/>
+                        </Border>
+                        <Button x:Name="btnIzquierdaCat" 
                                Content="❮"
                                Width="40"
                                Height="40"
+                                Margin="20"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
                                Style="{StaticResource CircleButtonStyle}" Click="btnIzquierdaCat_Click"
@@ -344,6 +293,7 @@
                                Content="❯"
                                Width="40"
                                Height="40"
+                                    Margin="20"
                                HorizontalAlignment="Right"
                                VerticalAlignment="Center"
                                Style="{StaticResource CircleButtonStyle}" Click="btnDerechaCat_Click"
@@ -351,94 +301,44 @@
                         </Grid>
                     </Border>
                 </StackPanel>
-                <StackPanel x:Name="spCategorias" Margin="0,60,0,40">
+                <StackPanel x:Name="spDepartamentos" Margin="0,60,0,40">
                     <TextBlock Text="DEPARTAMENTOS" 
                           FontSize="22" 
                           FontWeight="Bold"
                           Foreground="{StaticResource BoliviaLightGreen}"
                           Margin="20,0,20,15"/>
 
-                    <Border Background="#F7F7F7" CornerRadius="12" Padding="5">
-                        <Grid>
-                            <ScrollViewer x:Name="departamentoScrollViewer"
-                                 HorizontalScrollBarVisibility="Hidden"
-                                 VerticalScrollBarVisibility="Disabled"
-                                 Width="460"  
-                                 Height="220">
+                <Border CornerRadius="10" Padding="5" Height="400" Background="#A1000000" BorderBrush="Transparent" BorderThickness="0">
+                    <Grid>
+                        <Image x:Name="imgDepartamentos" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
+                        <Rectangle Fill="#000" Opacity="0.25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
-                                <ItemsControl ItemsSource="{Binding Categorias}">
-                                    <ItemsControl.ItemContainerStyle>
-                                        <Style TargetType="ContentPresenter">
-                                            <Setter Property="Width" Value="120"/>
-                                            <Setter Property="Height" Value="220"/>
-                                            <Setter Property="Margin" Value="10,5"/>
-                                        </Style>
-                                    </ItemsControl.ItemContainerStyle>
+                        <TextBlock x:Name="nomDepartamento" Style="{StaticResource TituloTXB}" FontSize="40" Foreground="White" Margin="100 50"/>
+                        <Border Style="{StaticResource BordeBotonesUser}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Margin="20">
+                            <Button Content="Explorar Departamento" Width="250" Style="{StaticResource UserButtonStyle}" x:Name="btnVerDepartamento"/>
+                        </Border>
+                        <Button x:Name="btnIzquierdaDep" 
+           Content="❮"
+           Width="40"
+           Height="40"
+            Margin="20"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Center"
+           Style="{StaticResource CircleButtonStyle}" Click="btnIzquierdaDep_Click"
+           />
 
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border CornerRadius="10"
-                                                    Background="White"
-                                                    Effect="{StaticResource CardShadowEffect}">
-                                                <Button Style="{StaticResource TransparentButtonStyle}"
-                                                        Padding="0">
-                                                    <StackPanel>
-                                                        <Border Width="50" 
-                                                               Height="50"
-                                                               CornerRadius="25"
-                                                               Background="#E8F5E9"
-                                                               Margin="0,10,0,5"
-                                                               HorizontalAlignment="Center">
-                                                            <TextBlock Text="{Binding nombre_categoria, StringFormat={}{0:0}}"
-                                                              FontSize="20"
-                                                              FontWeight="Bold"
-                                                              Foreground="#2E7D32"
-                                                              HorizontalAlignment="Center"
-                                                              VerticalAlignment="Center"/>
-                                                        </Border>
-
-                                                        <TextBlock Text="{Binding nombre_categoria}"
-                                                              HorizontalAlignment="Center"
-                                                              TextWrapping="Wrap"
-                                                              TextAlignment="Center"
-                                                              FontSize="13"
-                                                              FontWeight="SemiBold"
-                                                              MaxWidth="100"
-                                                              Margin="5,0,5,10"/>
-                                                    </StackPanel>
-                                                </Button>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-
-                            <Button x:Name="btnIzquierdaDep" 
-                               Content="❮"
-                               Width="40"
-                               Height="40"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Center"
-                               Style="{StaticResource CircleButtonStyle}" Click="btnIzquierdaDep_Click"
-                              />
-
-                            <Button x:Name="btnDerechaDep" 
-                               Content="❯"
-                               Width="40"
-                               Height="40"
-                               HorizontalAlignment="Right"
-                               VerticalAlignment="Center"
-                               Style="{StaticResource CircleButtonStyle}" Click="btnDerechaDep_Click"
-                              />
-                        </Grid>
-                    </Border>
-                </StackPanel>
+                        <Button x:Name="btnDerechaDep" 
+           Content="❯"
+           Width="40"
+           Height="40"
+                Margin="20"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Center"
+           Style="{StaticResource CircleButtonStyle}" Click="btnDerechaDep_Click"
+           />
+                    </Grid>
+                </Border>
+            </StackPanel>
             </StackPanel>   
     </ScrollViewer>
 </UserControl>
