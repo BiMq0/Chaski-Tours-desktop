@@ -17,33 +17,32 @@
 
         <Grid VerticalAlignment="Center" Margin="20, 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Label Content="Sitios" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
 
             <Border Grid.Column="2" Style="{StaticResource BordeBotones}">
-                <Button Style="{StaticResource SecondaryButtonStyle}"/>
+                <Button Style="{StaticResource SecondaryButtonStyle}" Click="AddSitio_Click"/>
             </Border>
         </Grid>
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Sitios">
+            <DataGrid x:Name="tbl_Sitios" MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Codigo" Binding="{Binding id_sitio }" Width="110"/>
-                    <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="2*"/>
                     <DataGridTextColumn Header="Costo" Binding="{Binding costo_sitio}" Width="*"/>
-                    <DataGridTextColumn Header="Id_Ubicacion" Binding="{Binding id_ubicacion }" Width="*" />
-                    <DataGridTextColumn Header="Horario Ap" Binding="{Binding horario_apertura}" Width="*" />
+                    <DataGridTextColumn Header="Horario Ap" Binding="{Binding horario_apertura}" Width="2*" />
                     <DataGridTextColumn Header="Horario Cierre" Binding="{Binding horario_cierre}"
-                      Width="*" />
-                    <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="*" />
+                      Width="2*" />
+                    <DataGridTextColumn Header="Activo" Binding="{Binding Estado}"  Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>

@@ -12,21 +12,20 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <!-- Filtros superiores -->
-        <StackPanel Orientation="Horizontal" Margin="20,0" VerticalAlignment="Center">
-            <Label Content="Alojamientos" Style="{StaticResource Titulo}" MinWidth="400"/>
+        <Grid VerticalAlignment="Center" Margin="20, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <!-- CheckBoxes de estado -->
-            <StackPanel Orientation="Horizontal" Margin="20,0" VerticalAlignment="Center">
-                <CheckBox x:Name="chkActivos" Content="Activos" Style="{StaticResource CheckBoxFiltro}" IsChecked="True" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
-                <CheckBox x:Name="chkInactivos" Content="Inactivos" Style="{StaticResource CheckBoxFiltro}" Margin="10,0,0,0" Checked="Filtros_Changed" Unchecked="Filtros_Changed"/>
-            </StackPanel>
-
-            <!-- Barra de búsqueda -->
-            <Border Style="{StaticResource BordeBusqueda}" Margin="20,0">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" 
-         TextChanged="txbBusqueda_TextChanged"/>
+            <Label Content="Alojamientos" Style="{StaticResource Titulo}" HorizontalAlignment="Left" Width="Auto"/>
+            <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}"/>
             </Border>
 
             <!-- Botón agregar -->

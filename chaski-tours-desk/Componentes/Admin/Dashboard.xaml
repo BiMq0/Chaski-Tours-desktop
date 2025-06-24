@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="280">
     <StackPanel Background="#BF0A30">
-        <Label Content="CHASKI TOURS" FontSize="35" Margin="10, 40" FontWeight="Bold" Foreground="#FAE4AB"/>
+        <Image Source="/Images/titulo_blanco.png" Margin="10" />
         <ListBox x:Name="listaBtns" HorizontalAlignment="Center" Width="250" Background="Transparent" BorderThickness="0" SelectionChanged="listaBtns_SelectionChanged">
             <ListBoxItem Content="Inicio"/>
             <ListBoxItem Content="Reservas"/>
@@ -16,6 +16,7 @@
             <ListBoxItem Content="Sitios"/>
             <ListBoxItem Content="Transportes"/>
             <ListBoxItem Content="Alojamientos"/>
+            <ListBoxItem Content="Salidas"/>
         </ListBox>
     </StackPanel>
 </UserControl>

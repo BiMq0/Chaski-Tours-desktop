@@ -21,5 +21,9 @@ namespace chaski_tours_desk.Modelos
         public int Activo { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
+
+
+        // Extras para tabla
+        public string Estado => Activo == 1 ? "Activo" : "Inactivo";
     }
 }

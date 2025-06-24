@@ -9,7 +9,6 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Policy;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;

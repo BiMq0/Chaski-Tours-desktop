@@ -1,0 +1,103 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.User.Cuenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
+        mc:Ignorable="d" Background="#1B2A1F"  Height="700" Width="900"
+        Title="Cuenta">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Width="250" Margin="0 0 20 0">
+            <Border Background="{StaticResource BoliviaDarkGreen}" Style="{StaticResource BordeForms}" Padding="10">
+                <StackPanel HorizontalAlignment="Center">
+                    <Ellipse Width="120" Height="120" Fill="Gray" Stroke="White" StrokeThickness="2"/>
+                    <TextBlock Text="Turista" Style="{StaticResource SubtitleTXB}" 
+                               Foreground="{StaticResource BoliviaLightGreen}"
+                               Margin="10 20 0 0" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <!-- Información del turista -->
+            <Border Style="{StaticResource BordeForms}" Background="{StaticResource BoliviaDarkGreen}" Padding="20" Margin="0 0 0 10">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="MI PERFIL"
+                               Style="{StaticResource SubtitleTXB}"
+                               Foreground="{StaticResource BoliviaLightGreen}"
+                               HorizontalAlignment="Center" Margin="0 0 0 20"/>
+
+                    <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 10">
+                        <Border Background="{StaticResource BoliviaDarkGreen}" CornerRadius="15" Padding="15" Margin="10" Width="250" Style="{StaticResource BordeForms}">
+                            <StackPanel>
+                                <TextBlock Text="Nombre" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaLightGreen}"/>
+                                <TextBlock x:Name="txtNombre" Style="{StaticResource TextoTXB}" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="{StaticResource BoliviaDarkGreen}" CornerRadius="15" Padding="15" Margin="10" Width="250" Style="{StaticResource BordeForms}">
+                            <StackPanel>
+                                <TextBlock Text="Correo" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaLightGreen}"/>
+                                <TextBlock x:Name="txtCorreo" Style="{StaticResource TextoTXB}" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+
+                    <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 10">
+                        <Border Background="{StaticResource BoliviaDarkGreen}" CornerRadius="15" Padding="15" Margin="10" Width="250" Style="{StaticResource BordeForms}">
+                            <StackPanel>
+                                <TextBlock Text="Documento" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaLightGreen}"/>
+                                <TextBlock x:Name="txtDocumento" Style="{StaticResource TextoTXB}" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="{StaticResource BoliviaDarkGreen}" CornerRadius="15" Padding="15" Margin="10" Width="250" Style="{StaticResource BordeForms}">
+                            <StackPanel>
+                                <TextBlock Text="Teléfono" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaLightGreen}"/>
+                                <TextBlock x:Name="txtTelefono" Style="{StaticResource TextoTXB}" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+
+                    <WrapPanel HorizontalAlignment="Center">
+                        <Border Background="{StaticResource BoliviaDarkGreen}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock Text="Fecha de nacimiento" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaLightGreen}"/>
+                                <TextBlock x:Name="txtFechaNac" Style="{StaticResource TextoTXB}" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                </StackPanel>
+            </Border>
+
+            <GroupBox Header="Historial de Reservas"
+                      FontWeight="Bold"
+                      Foreground="{StaticResource BoliviaLightGreen}"
+                      FontSize="18"
+                      Margin="0">
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl x:Name="listaReservas" Margin="10">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{StaticResource BordeForms}" Background="{StaticResource BoliviaDarkGreen}" Margin="0 0 0 10">
+                                    <StackPanel>
+                                        <TextBlock Text="Reserva a: {Binding id_salida}" FontSize="16" FontWeight="Bold" Foreground="{StaticResource BoliviaLightGreen}"/>
+                                        <TextBlock Text="Cantidad de personas: {Binding cantidad_personas}" Foreground="White"/>
+                                        <TextBlock Text="Costo total: {Binding costo_total_reserva}" Foreground="White"/>
+                                        <TextBlock Text="Estado: {Binding estado}" Foreground="White"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

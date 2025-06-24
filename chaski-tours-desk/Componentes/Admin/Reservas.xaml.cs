@@ -16,6 +16,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using chaski_tours_desk.Modelos;
+using chaski_tours_desk.Componentes.Admin.FormsAgregar;
+using chaski_tours_desk.Componentes.Admin.FormsInfo;
 
 namespace chaski_tours_desk.Componentes.Admin
 {
@@ -64,10 +66,7 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             if (todaslasreservas == null) return;
 
-            var filtrados = todaslasreservas
-                .Where(t => t.fecha_reservacion != null &&
-                            t.fecha_reservacion.ToLower().Contains(texto.ToLower()))
-                .ToList();
+            var filtrados = todaslasreservas;
 
             tbl_Reserva.ItemsSource = filtrados;
         }

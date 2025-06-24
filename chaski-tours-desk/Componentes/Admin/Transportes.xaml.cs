@@ -16,6 +16,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using chaski_tours_desk.Modelos;
+using chaski_tours_desk.Componentes.Admin.FormsAgregar;
+using chaski_tours_desk.Componentes.Admin.FormsInfo;
 
 namespace chaski_tours_desk.Componentes.Admin
 {
@@ -34,15 +36,10 @@ namespace chaski_tours_desk.Componentes.Admin
 
         private async Task obtenerTransportes()
         {
-<<<<<<< HEAD
             var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
             todosLosTransportes = transportes;
             tbl_Transportes.ItemsSource = transportes;
-=======
-            // var transportes = await cliente.GetFromJsonAsync<List<Transporte>>(URL);
 
-            // tbl_Transportes.ItemsSource = transportes;
->>>>>>> main
         }
 
         private async void verTransportes()
@@ -63,27 +60,10 @@ namespace chaski_tours_desk.Componentes.Admin
             verDatos();
         }
 
-<<<<<<< HEAD
-        private void tbl_Transportes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
-            {
-                TransporteAdmin editar = new TransporteAdmin(transporteSeleccionado);
-
-                editar.Closed += async (s, args) =>
-                {
-                    await obtenerTransportes();
-                };
-
-
-                editar.Show();
-            }
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             TransporteNuevo crear = new TransporteNuevo();
             crear.Closed += async (s, args) =>
             {
@@ -109,11 +89,21 @@ namespace chaski_tours_desk.Componentes.Admin
         {
             FiltrarTransportes(txbBusqueda.Text);
         }
-=======
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
 
+        private void tbl_Transportes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (tbl_Transportes.SelectedItem is Transporte transporteSeleccionado)
+            {
+                TransporteAdmin editar = new TransporteAdmin(transporteSeleccionado);
+
+                editar.Closed += async (s, args) =>
+                {
+                    await obtenerTransportes();
+                };
+
+
+                editar.Show();
+            }
         }
->>>>>>> main
     }
 }

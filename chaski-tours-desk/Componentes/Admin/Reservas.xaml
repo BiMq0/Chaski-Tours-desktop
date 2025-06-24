@@ -18,12 +18,12 @@
 
         <Grid VerticalAlignment="Center" Margin="20, 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Reservas" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" />
+            <Label Content="Reservas" Style="{StaticResource Titulo}" HorizontalAlignment="Left" />
             <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
                 <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
             </Border>
@@ -38,12 +38,10 @@
             <DataGrid x:Name="tbl_Reserva" SelectionChanged="tbl_Reserva_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding id_reserva}" Width="80"/>
-                    <DataGridTextColumn Header="Fecha de Reserva" Binding="{Binding fecha_reservacion}" Width="*"/>
                     <DataGridTextColumn Header="Código de visitante" Binding="{Binding cod_visitante}" Width="*"/>
-                    <DataGridTextColumn Header="Nro. Alojamiento" Binding="{Binding id_alojamiento}" Width="*"/>
-                    <DataGridTextColumn Header="Nro. Salida" Binding="{Binding id_salida}" Width="150"/>
-                    <DataGridTextColumn Header="Costo Total" Binding="{Binding costo_total_reserva}" Width="160"/>
-                    <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="150" />
+                    <DataGridTextColumn Header="Nro. Salida" Binding="{Binding id_salida}" Width="*"/>
+                    <DataGridTextColumn Header="Costo Total" Binding="{Binding costo_total_reserva}" Width="*"/>
+                    <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
