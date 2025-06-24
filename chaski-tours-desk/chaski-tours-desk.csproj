@@ -130,6 +130,9 @@
     <Compile Include="Componentes\Admin\FormsAgregar\AgregarSitio.xaml.cs">
       <DependentUpon>AgregarSitio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\Admin\FormsAgregar\FormularioAlojamiento.xaml.cs">
+      <DependentUpon>FormularioAlojamiento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\Admin\FormsInfo\InfoSitio.xaml.cs">
       <DependentUpon>InfoSitio.xaml</DependentUpon>
     </Compile>
@@ -206,6 +209,10 @@
     <Page Include="Componentes\Admin\FormsAgregar\AgregarSitio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\Admin\FormsAgregar\FormularioAlojamiento.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Componentes\Admin\FormsInfo\InfoSitio.xaml">
       <SubType>Designer</SubType>
