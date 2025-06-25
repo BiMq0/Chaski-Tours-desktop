@@ -23,6 +23,8 @@ namespace chaski_tours_desk
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string codVisitanteActual { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
