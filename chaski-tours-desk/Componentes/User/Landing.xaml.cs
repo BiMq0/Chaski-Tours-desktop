@@ -160,5 +160,23 @@ namespace chaski_tours_desk.Componentes.User
             lstDECategorias.pasarAnterior();
             ActualizarCuadroCategorias(lstDECategorias.Actual.Valor as Categoria);
         }
+
+        private void btnVerCategoria_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirCategorias.Invoke();
+        }
+
+        private void btnVerDepartamento_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirDepartamentos.Invoke();
+        }
+
+        public event Action AbrirCategorias;
+
+        public event Action AbrirDepartamentos;
+
+        public event Action AbrirSitios;
+
+        public event Action AbrirTours;
     }
 }

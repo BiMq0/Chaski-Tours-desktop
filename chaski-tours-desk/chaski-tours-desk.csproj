@@ -177,6 +177,15 @@
     </Compile>
     <Compile Include="Componentes\User\ListaDE\LDE.cs" />
     <Compile Include="Componentes\User\ListaDE\Nodo.cs" />
+    <Compile Include="Componentes\User\navbar.xaml.cs">
+      <DependentUpon>navbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\User\VistaCategorias.xaml.cs">
+      <DependentUpon>VistaCategorias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\User\VistaDepartamentos.xaml.cs">
+      <DependentUpon>VistaDepartamentos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Alojamiento.cs" />
     <Compile Include="Modelos\CalendarioSalida.cs" />
     <Compile Include="Modelos\Institucion.cs" />
@@ -282,6 +291,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Componentes\User\navbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\User\VistaCategorias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\User\VistaDepartamentos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\LogSignWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -365,7 +386,13 @@
     <Resource Include="Images\titulo.png" />
     <Resource Include="Images\titulo_blanco.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\Iconos\categoria_solid.svg" />
+    <Content Include="Images\Iconos\departamento_solid.svg" />
+    <Content Include="Images\Iconos\house_solid.svg" />
+    <Content Include="Images\Iconos\sitio_solid.svg" />
+    <Content Include="Images\Iconos\tour_solid.svg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Images_Categorias\arqueologico.jpg" />
     <Resource Include="Images\Images_Categorias\arquitectonico.jpg" />
