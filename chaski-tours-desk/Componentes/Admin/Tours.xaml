@@ -34,7 +34,7 @@
 
 
         <ScrollViewer Margin="20 10" Grid.Row="1">
-            <DataGrid x:Name="tbl_Tours">
+            <DataGrid x:Name="tbl_Tours" MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Codigo" Binding="{Binding id_tour  }" Width="110"/>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre_tour}" Width="*"/>
