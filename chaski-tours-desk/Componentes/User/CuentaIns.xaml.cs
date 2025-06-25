@@ -23,22 +23,20 @@ namespace chaski_tours_desk.Componentes.User
     public partial class CuentaIns : Window
     {
         private HttpClient cliente = new HttpClient();
-        private string URL_Institucion = "http://localhost:8000/api/visitantes/instituciones/";
-        private string URL_Reserva = "http://localhost:8000/api/reservas/visitante/";
+        private string URL_Institucion = "http://localhost:8000/api/visitantes/instituciones/cod/";
+        private string URL_Reserva = "http://localhost:8000/api/reservas/cod/";
 
-        private string cod_visitante;
         public CuentaIns(string codVisitante)
         {
             InitializeComponent();
-            cod_visitante = codVisitante;
-            cargarPerfil();
-            cargarReservas();
+            cargarPerfil(codVisitante);
+            cargarReservas(codVisitante);
         }
-        private void cargarPerfil()
+        private void cargarPerfil(string cod)
         {
             try
             {
-                var institucion = cliente.GetFromJsonAsync<Institucion>(URL_Institucion + cod_visitante).Result;
+                var institucion = cliente.GetFromJsonAsync<Institucion>(URL_Institucion + cod).Result;
 
                 if (institucion != null)
                 {
@@ -61,26 +59,36 @@ namespace chaski_tours_desk.Componentes.User
             }
         }
 
-        private void cargarReservas()
+        private void cargarReservas(string cod)
         {
             try
             {
-                var reservas = cliente.GetFromJsonAsync<List<Reserva>>(URL_Reserva + cod_visitante).Result;
+                var reservas = cliente.GetFromJsonAsync<List<Reserva>>(URL_Reserva + cod).Result;
 
                 if (reservas != null && reservas.Any())
                 {
                     listaReservas.ItemsSource = reservas;
+                    listaReservas.Visibility = Visibility.Visible;
+                    txtNoReservas.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    listaReservas.ItemsSource = new List<Reserva> {
-                    new Reserva { id_salida = 0, cantidad_personas = 0, costo_total_reserva = 0, estado = "Aún no ha realizado reservas." }
-                };
+                    listaReservas.ItemsSource = null;
+                    listaReservas.Visibility = Visibility.Collapsed;
+                    txtNoReservas.Visibility = Visibility.Visible;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el historial de reservas: " + ex.Message);
+                if (ex.InnerException != null && ex.InnerException.Message.Contains("JSON"))
+                {
+                    MessageBox.Show("Aún no ha realizado reservas.");
+                    listaReservas.ItemsSource = null;
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar el historial de reservas: " + ex.Message);
+                }
             }
         }
     }

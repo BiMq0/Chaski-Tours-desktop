@@ -7,6 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Net.Http.Json;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Net.Http.Json;
+
 
 namespace chaski_tours_desk.Componentes.User
 {
@@ -16,22 +25,20 @@ namespace chaski_tours_desk.Componentes.User
     public partial class Cuenta : Window
     {
         HttpClient cliente = new HttpClient();
-        private string URL_Turista = "http://localhost:8000/visitantes/turistas/cod/";
-        private string URL_Reserva = "http://localhost:8000/reservas/cod/";
-        private string cod_visitante;
+        private string URL_Turista = "http://localhost:8000/api/visitantes/turistas/cod/";
+        private string URL_Reserva = "http://localhost:8000/api/reservas/cod/";
 
         public Cuenta(string codVisitante)
         {
             InitializeComponent();
-            cod_visitante = codVisitante;
-            cargarPerfil();
-            cargarReservas();
+            cargarPerfil(codVisitante);
+            cargarReservas(codVisitante);
         }
-        private void cargarPerfil()
+        private void cargarPerfil(string cod)
         {
             try
             {
-                var turista = cliente.GetFromJsonAsync<Turista>(URL_Turista + cod_visitante).Result;
+                var turista = cliente.GetFromJsonAsync<Turista>(URL_Turista + cod).Result;
                 if (turista != null)
                 {
                     txtNombre.Text = turista.nombre;
@@ -50,11 +57,11 @@ namespace chaski_tours_desk.Componentes.User
                 MessageBox.Show("Error al cargar el perfil: " + ex.Message);
             }
         }
-        private void cargarReservas()
+        private void cargarReservas(string cod)
         {
             try
             {
-                var reservas = cliente.GetFromJsonAsync<List<Reserva>>(URL_Reserva + cod_visitante).Result;
+                var reservas = cliente.GetFromJsonAsync<List<Reserva>>(URL_Reserva + cod).Result;
 
                 if (reservas != null && reservas.Any())
                 {
