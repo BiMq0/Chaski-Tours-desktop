@@ -79,7 +79,29 @@
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
 
         <StackPanel >
+<<<<<<< HEAD
             <Grid  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20 50" >
+=======
+            <Grid>
+                <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,20,0"
+            CornerRadius="20" Background="{StaticResource BoliviaGreen}" Padding="8"
+            Effect="{StaticResource CardShadowEffect}">
+                    <Button x:Name="btnMiPerfil"
+                Click="btnMiPerfil_Click"
+                Background="Transparent"
+                BorderThickness="0"
+                Style="{StaticResource TransparentButtonStyle}">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="Mi Perfil" 
+                           Foreground="White"
+                           FontWeight="Bold"
+                           FontSize="24"/>
+                        </StackPanel>
+                    </Button>
+                </Border>
+            </Grid>
+            <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Horizontal">
+>>>>>>> dcf9022 (añadido botoncito de Perfil)
                 <Image Source="/Images/icono.png" Width="250"/>
                 <Image Source="/Images/titulo_blanco.png" Width="1000">
                     <Image.Effect>

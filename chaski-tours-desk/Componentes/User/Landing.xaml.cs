@@ -176,6 +176,7 @@ namespace chaski_tours_desk.Componentes.User
             ActualizarCuadroCategorias(lstDECategorias.Actual.Valor as Categoria);
         }
 
+
         private void btnVerCategoria_Click(object sender, RoutedEventArgs e)
         {
             AbrirCategorias.Invoke();
@@ -193,5 +194,30 @@ namespace chaski_tours_desk.Componentes.User
         public event Action AbrirSitios;
 
         public event Action AbrirTours;
+        private void btnMiPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            string cod = MainWindow.codVisitanteActual;
+
+            if (string.IsNullOrEmpty(cod))
+            {
+                MessageBox.Show("No hay visitante logueado.");
+                return;
+            }
+
+            if (cod.StartsWith("TUR"))
+            {
+                Cuenta perfilTurista = new Cuenta(cod);
+                perfilTurista.Show();
+            }
+            else if (cod.StartsWith("INS"))
+            {
+                CuentaIns perfilInstitucion = new CuentaIns(cod);
+                perfilInstitucion.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tipo de visitante desconocido.");
+            }
+        }
     }
 }
