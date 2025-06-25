@@ -79,9 +79,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
 
         <StackPanel >
-<<<<<<< HEAD
-            <Grid  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20 50" >
-=======
+
             <Grid>
                 <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,20,0"
             CornerRadius="20" Background="{StaticResource BoliviaGreen}" Padding="8"
@@ -100,18 +98,19 @@
                     </Button>
                 </Border>
             </Grid>
-            <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Horizontal">
->>>>>>> dcf9022 (añadido botoncito de Perfil)
-                <Image Source="/Images/icono.png" Width="250"/>
+            <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Vertical">
+                <Grid>
+                    <Image Source="/Images/icono.png" Width="250"/>
                 <Image Source="/Images/titulo_blanco.png" Width="1000">
                     <Image.Effect>
                         <DropShadowEffect BlurRadius="10" Opacity="0.5" ShadowDepth="3"/>
                     </Image.Effect>
                 </Image>
-            </Grid>
-            <Grid Margin="0,0,0,30">
-                <navbar:navbar x:Name="navbar" HorizontalAlignment="Center"/>
-            </Grid>
+                </Grid>
+                <Grid Margin="0,0,0,30">
+                    <navbar:navbar x:Name="navbar" HorizontalAlignment="Center"/>
+                </Grid>
+            </StackPanel>
 
 
 
