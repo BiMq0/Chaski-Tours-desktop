@@ -17,6 +17,7 @@ using System.Net.Http.Json;
 using chaski_tours_desk.Modelos;
 using chaski_tours_desk;
 using System.IO;
+using chaski_tours_desk.Componentes.User;
 
 namespace chaski_tours_desk.Componentes
 {
@@ -112,6 +113,9 @@ namespace chaski_tours_desk.Componentes
                     MessageBox.Show("Bienvenido institución");
                 mainWindow.usuario.Visibility = Visibility.Visible;
                 mainWindow.logSign.Visibility = Visibility.Collapsed;
+                // MOSTRAR VENTANA DE RESERVA
+                var reservaWindow = new ReservaForm(tipo);
+                reservaWindow.ShowDialog(); // Bloquea hasta cerrar
             }
         }
         private void oscurecer()
