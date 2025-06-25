@@ -9,7 +9,7 @@
         Title="Información del Sitio" 
         Height="720" 
         Width="1280"
-        Background="{StaticResource BoliviaLightRed}">
+        Background="{StaticResource BoliviaLightRed}" >
 
     <Grid Margin="20">
         <Grid.ColumnDefinitions>

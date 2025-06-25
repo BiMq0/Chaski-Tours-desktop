@@ -1,5 +1,4 @@
 ﻿using chaski_tours_desk.Modelos;
-using Microsoft.Maps.MapControl.WPF;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -22,13 +21,23 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
         private HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/sitios/";
         private string URL_Ubi = "http://localhost:8000/api/ubicaciones/";
+
         public InfoSitio(int id_sitio)
         {
             InitializeComponent();
             cargarDepartamentos();
-            obtenerUbicacion(obtenerSitio(id_sitio));
-            cargarDatos(obtenerSitio(id_sitio));
             agregarHoraCmb();
+
+            try
+            {
+                var sitio = obtenerSitio(id_sitio);
+                cargarDatos(sitio);
+                obtenerUbicacion(sitio);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos: {ex.Message}");
+            }
         }
 
         private void cargarDatos(Sitio sitio)
@@ -70,24 +79,51 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
             txbLongitud.Text = ubicacion.longitud;
         }
 
-        private  void cargarMapa(Ubicacion ubi) {
-
-            var mapControl = new Map();
-            mapControl.Center = new Location(double.Parse(ubi.latitud), double.Parse(ubi.longitud));
-            //mapControl.Center = new Location(-17.383300, -66.166700);
-            mapControl.ZoomLevel = 20;
-
-
-            var pushpin = new Pushpin()
+        private void cargarMapa(Ubicacion ubi)
+        {
+            try
             {
-                Location = new Location(double.Parse(ubi.latitud), double.Parse(ubi.longitud)),
-                //Location = new Location(-17.383300, -66.166700),
-                Background = new SolidColorBrush(Colors.Red),
-            };
+                var browser = new WebBrowser();
 
-            mapControl.Children.Add(pushpin);
-            mapControl.Height = 500;
-            mapa.Child = mapControl;
+                if (double.TryParse(ubi.latitud, out double lat) &&
+                    double.TryParse(ubi.longitud, out double lng))
+                {
+                    string html = $@"
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <link rel=""stylesheet"" href=""https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"" />
+                        <script src=""https://unpkg.com/leaflet@1.7.1/dist/leaflet.js""></script>
+                        <style>
+                            #map {{ height: 500px; width: 100%; }}
+                            body {{ margin: 0; padding: 0; }}
+                        </style>
+                    </head>
+                    <body>
+                    <div id=""map""></div>
+                    <script>
+                        var map = L.map('map').setView([{lat}, {lng}], 15);
+                        L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png').addTo(map);
+                        L.marker([{lat}, {lng}]).addTo(map);
+                    </script>
+                    </body>
+                    </html>";
+
+                    browser.NavigateToString(html);
+                }
+                else
+                {
+                    browser.NavigateToString("<html><body><h3>Error en coordenadas</h3></body></html>");
+                }
+
+                browser.Height = 500;
+                mapa.Child = browser;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private int editUpdate = 0;
@@ -163,6 +199,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsInfo
                 btnEliminarSitio.Visibility = Visibility.Visible;
                 btnVolver.Visibility = Visibility.Visible;
                 brdBtnVolver.Visibility = Visibility.Visible;
+                
                 obtenerUbicacion(obtenerSitio(int.Parse(hiddenId.Text)));
 
                 editUpdate = 0;   
