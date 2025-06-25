@@ -59,14 +59,13 @@ namespace chaski_tours_desk.Componentes.Admin
         }
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            try
+            if (tbl_Tours.SelectedItem is Tour tourSeleccionado)
             {
-                new InfoTour(int.Parse(tbl_Tours.SelectedValue.ToString())).Show();
+                new InfoTour(tourSeleccionado.id_tour).Show();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("El sitio fue eliminado o no existe");
-                verTours();
+                MessageBox.Show("Seleccione un tour válido.");
             }
         }
 

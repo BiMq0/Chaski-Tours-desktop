@@ -25,6 +25,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
     {
         HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/tours/";
+        private string URL_crear = "http://localhost:8000/api/tours/crear";
         private string URL_sitio = "http://localhost:8000/api/sitios/";
         private string URL_aloja = "http://localhost:8000/api/alojamientos/";
 
@@ -78,7 +79,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 if (alojamientos != null)
                 {
                     cmbAlojamiento.ItemsSource = alojamientos;
-                    cmbAlojamiento.DisplayMemberPath = "nombre";
+                    cmbAlojamiento.DisplayMemberPath = "nombre_aloj";
                 }
             }
             catch (Exception ex)
@@ -151,7 +152,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 id_sitio_fin = ((Sitio)cmbSitioFinal.SelectedItem).id_sitio,
                 id_alojamiento = ((Alojamiento)cmbAlojamiento.SelectedItem).id_alojamiento
             };
-            var respuesta = await cliente.PostAsJsonAsync(URL, nuevoTour);
+            var respuesta = await cliente.PostAsJsonAsync(URL_crear, nuevoTour);
 
             if (respuesta.IsSuccessStatusCode)
             {

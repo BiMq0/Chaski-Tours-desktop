@@ -14,6 +14,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+        <componentes:Landing x:Name="landing" Grid.Column="1"/>
+        <componentes:ListadoSitios x:Name="listadoSitios" Grid.Column="0" Visibility="Hidden" Grid.ColumnSpan="3" />
+
+        <componentes:ListadoTours x:Name="listadoTours" Grid.Column="0" Visibility="Hidden" Grid.ColumnSpan="3" />
         <componentes:Landing x:Name="landing" Grid.Column="1" Visibility="Visible"/>
 
         <componentes:VistaCategorias x:Name="vistaCategorias" Grid.Column="1" Visibility="Collapsed"/>
