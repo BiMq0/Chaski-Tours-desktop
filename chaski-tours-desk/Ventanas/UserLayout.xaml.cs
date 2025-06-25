@@ -21,7 +21,12 @@ namespace chaski_tours_desk.Ventanas
     {
         public UserLayout()
         {
-            InitializeComponent();
+            InitializeComponent(); landing.MostrarListadoSitios += MostrarListadoSitios;
+            landing.MostrarListadoTours += MostrarListadoTours;
+            listadoSitios.CerrarListadoSitios += CerrarListadoSitios;
+            listadoTours.CerrarListadoTours += CerrarListadoTours;
+
+
         }
 
         private void btnReservar_Click(object sender, RoutedEventArgs e)
@@ -30,5 +35,26 @@ namespace chaski_tours_desk.Ventanas
         }
 
         public event Action abrirAdmin;
+
+        private void MostrarListadoSitios(object sender, EventArgs e)
+        {
+            listadoSitios.Visibility = Visibility.Visible;
+            landing.Visibility = Visibility.Collapsed;
+        }
+        private void MostrarListadoTours(object sender, EventArgs e)
+        {
+            listadoTours.Visibility = Visibility.Visible;
+            landing.Visibility = Visibility.Collapsed;
+        }
+        private void CerrarListadoSitios(object sender, EventArgs e)
+        {
+            listadoSitios.Visibility = Visibility.Collapsed;
+            landing.Visibility = Visibility.Visible;
+        }
+        private void CerrarListadoTours(object sender, EventArgs e)
+        {
+            listadoTours.Visibility = Visibility.Collapsed;
+            landing.Visibility = Visibility.Visible;
+        }
     }
 }

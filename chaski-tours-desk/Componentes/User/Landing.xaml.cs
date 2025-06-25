@@ -31,35 +31,50 @@ namespace chaski_tours_desk.Componentes.User
         LDE lstDECategorias = new LDE();
 
         LDE lstDEDepartamentos = new LDE();
-        private string URL_Sitios = "http://localhost:8000/api/sitios/";
-        private string URL_Tours = "http://localhost:8000/api/tour/";
+        private string URL_Sitios = "http://localhost:8000/api/sitios";
+        private string URL_Tours = "http://localhost:8000/api/tour";
+        List<Tour> tours = new List<Tour>();
+        List<Sitio> sitios = new List<Sitio>();
+
+        public event EventHandler MostrarListadoSitios;
+        public event EventHandler MostrarListadoTours;
+
+        public event EventHandler CerrarListadoTours;
         public Landing()
         {
             InitializeComponent();
         }
 
-        private async void cargarDatosaCarts()
+        private void cargarDatosaCarts()
         {
-            List<Tour> tours = new List<Tour>();
-            tours = await client.GetFromJsonAsync<List<Tour>>(URL_Tours);
-
-            List<Sitio> sitios = new List<Sitio>();
-            sitios = await client.GetFromJsonAsync<List<Sitio>>(URL_Sitios);
-
             tbx_nombresitio1.Text = sitios[1].nombre;
             tbx_descripcionsitio1.Text = sitios[1].desc_conceptual_sitio;
             tbx_nombresitio2.Text = sitios[2].nombre;
             tbx_descripcionsitio2.Text = sitios[2].desc_conceptual_sitio;
-
             tbx_nombretour1.Text = tours[1].nombre_tour;
             tbx_descripciontour1.Text = tours[1].descripcion_tour;
             tbx_nombretour2.Text = tours[2].nombre_tour;
             tbx_descripciontour2.Text = tours[2].descripcion_tour;
         }
+        private async void cargarListas()
+        {
+            await noborres();
+
+
+        }
+
+        private async Task noborres()
+        {
+            tours = await client.GetFromJsonAsync<List<Tour>>(URL_Tours);
+            sitios = await client.GetFromJsonAsync<List<Sitio>>(URL_Sitios);
+            cargarDatosaCarts();
+        }
+
+
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            cargarDatosaCarts();
+            cargarListas();
             cargarListasDE();
         }
 
@@ -67,19 +82,19 @@ namespace chaski_tours_desk.Componentes.User
         //estos nenes se dedican a entregar acciones a las imagenes
         private void Grid1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("imagen1");
+            MostrarListadoSitios?.Invoke(this, EventArgs.Empty);
         }
         private void Grid2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("imagen2");
+            MostrarListadoSitios?.Invoke(this, EventArgs.Empty);
         }
         private void Grid3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("imagen3");
+            MostrarListadoTours?.Invoke(this, EventArgs.Empty);
         }
         private void Grid4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("imagen4");
+            MostrarListadoTours?.Invoke(this, EventArgs.Empty);
         }
 
 
