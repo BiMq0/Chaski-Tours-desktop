@@ -33,6 +33,7 @@ namespace chaski_tours_desk.Ventanas
         {
             abrirAdmin.Invoke();
         }
+
         public event Action abrirAdmin;
 
         private void VerCategorias() { 
@@ -71,8 +72,6 @@ namespace chaski_tours_desk.Ventanas
         {
             MessageBox.Show($"Ver Sitios de {nombre} no implementado aún.");
         }
-
-        public event Action abrirAdmin;
 
         private void MostrarListadoSitios(object sender, EventArgs e)
         {

@@ -172,11 +172,23 @@
     <Compile Include="Componentes\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\User\Cuenta.xaml.cs">
+      <DependentUpon>Cuenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\User\CuentaIns.xaml.cs">
+      <DependentUpon>CuentaIns.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\User\Landing.xaml.cs">
       <DependentUpon>Landing.xaml</DependentUpon>
     </Compile>
     <Compile Include="Componentes\User\ListaDE\LDE.cs" />
     <Compile Include="Componentes\User\ListaDE\Nodo.cs" />
+    <Compile Include="Componentes\User\ListadoSitios.xaml.cs">
+      <DependentUpon>ListadoSitios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\User\ListadoTours.xaml.cs">
+      <DependentUpon>ListadoTours.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\User\navbar.xaml.cs">
       <DependentUpon>navbar.xaml</DependentUpon>
     </Compile>
@@ -287,9 +299,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Componentes\User\Cuenta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Componentes\User\CuentaIns.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Componentes\User\Landing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Componentes\User\ListadoSitios.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Componentes\User\ListadoTours.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Componentes\User\navbar.xaml">
       <SubType>Designer</SubType>
