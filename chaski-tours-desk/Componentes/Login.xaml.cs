@@ -26,6 +26,7 @@ namespace chaski_tours_desk.Componentes
     public partial class Login : UserControl
     {
         private string URL = "http://localhost:8000/api/visitantes/turistas/";
+        private string URL_inst = "http://localhost:8000/api/visitantes/instituciones/";
 
         private static readonly HttpClient cliente = new HttpClient();
         public Login()
@@ -46,8 +47,26 @@ namespace chaski_tours_desk.Componentes
         private async Task verificarUsuario()
         {
             oscurecer();
+
             if (!entradasValidas()) return;
-            validarUsuario(await obtenerUsuario());
+
+            var turista = await obtenerUsuario();
+            if (turista != null && turista.contrasenia == txtPassword.Password)
+            {
+                MainWindow.codVisitanteActual = turista.cod_visitante;
+                redirigirUsuarios("turista");
+                return;
+            }
+
+            var institucion = await obtenerUsuarioInst();
+            if (institucion != null && institucion.contrasenia == txtPassword.Password)
+            {
+                MainWindow.codVisitanteActual = institucion.cod_visitante;
+                redirigirUsuarios("institucion");
+                return;
+            }
+
+            MessageBox.Show("Correo o contraseña incorrectos.");
         }
         private bool entradasValidas()
         {
@@ -66,29 +85,31 @@ namespace chaski_tours_desk.Componentes
             }
             return usuario[0];
         }
-
-        private void validarUsuario(Turista usuario)
+        private async Task<Institucion> obtenerUsuarioInst()
         {
-            if (usuario != null && usuario.contrasenia == txtPassword.Password)
+            List<Institucion> usuario = await cliente.GetFromJsonAsync<List<Institucion>>(URL_inst + txtUsuario.Text);
+            if (usuario.Count == 0)
             {
-                MessageBox.Show("Bienvenido");
-                redirigirUsuarios();
+                return null;
             }
-            else {
-                MessageBox.Show("Correo o contraseña incorrectos");
-            }
+            return usuario[0];
         }
 
-        private void redirigirUsuarios() {
+        private void redirigirUsuarios(string tipo) {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             string[] correo = txtUsuario.Text.Split('@');
             if (correo[1] == "chaskitours.com")
             {
+                MessageBox.Show("Bienvenido administrador");
                 mainWindow.admin.Visibility = Visibility.Visible;
                 mainWindow.admin.Inicio.titulo.Content = txtUsuario.Text;
                 mainWindow.logSign.Visibility = Visibility.Collapsed;
             }
             else {
+                if (tipo == "turista")
+                    MessageBox.Show("Bienvenido turista");
+                else if (tipo == "institucion")
+                    MessageBox.Show("Bienvenido institución");
                 mainWindow.usuario.Visibility = Visibility.Visible;
                 mainWindow.logSign.Visibility = Visibility.Collapsed;
             }
