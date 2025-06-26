@@ -24,5 +24,28 @@ namespace chaski_tours_desk.Componentes.User
         {
             InitializeComponent();
         }
+
+        private void Grid_InicioEvento(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("si funca el boton inicio");
+        }
+        private void Grid_ToursEvento(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("si funca el boton tour");
+        }
+        private void Grid_CiudadesEvento(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("si funca el boton ciudades");
+        }
+        private void Grid_SitioEvento(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("si funca el boton sitio");
+        }
+        private void Grid_CategoriaEvento(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("si funca el boton categoria");
+        }
+
     }
+    
 }

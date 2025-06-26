@@ -1,14 +1,18 @@
-﻿using chaski_tours_desk.Modelos;
+﻿using chaski_tours_desk.Componentes.Admin;
+using chaski_tours_desk.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Net.Http.Json;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace chaski_tours_desk.Componentes.User
 {
@@ -20,12 +24,9 @@ namespace chaski_tours_desk.Componentes.User
         HttpClient client = new HttpClient();
         private string URLTours = "http://localhost:8000/api/tour/";
         public event EventHandler CerrarListadoTours;
-
-        public ObservableCollection<Tour> SitiosParaBinding { get; set; } = new ObservableCollection<Tour>();
         public ListadoTours()
         {
             InitializeComponent();
-            this.DataContext = this;
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -38,17 +39,130 @@ namespace chaski_tours_desk.Componentes.User
 
             tours = await client.GetFromJsonAsync<List<Tour>>(URLTours);
 
-
-
-            SitiosParaBinding.Clear();
             foreach (var tour in tours)
             {
-                SitiosParaBinding.Add(tour);
+                var contenidoGrid = new Grid
+                {
+                    Margin = new Thickness(20),
+                    Width = 1200,
+                    Height = 300,
+                    Background = (Brush)Application.Current.Resources["BoliviaDarkGreen"],
+                    Opacity = 0.9,
+                };
+
+                contenidoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                contenidoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                // Imagen del tour
+                var imagen = new Image
+                {
+                    Source = new BitmapImage(new Uri("pack://application:,,,/Images/Images_Departamentos/Beni.jpg")),
+                    Stretch = Stretch.UniformToFill,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(20),
+                };
+                Grid.SetColumn(imagen, 1);
+
+                // Columna de texto
+                var textoStack = new StackPanel
+                {
+                    Margin = new Thickness(30),
+                    VerticalAlignment = VerticalAlignment.Top
+                };
+                Grid.SetColumn(textoStack, 0);
+
+                textoStack.Children.Add(new TextBlock
+                {
+                    Text = tour.nombre_tour,
+                    FontSize = 32,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = Brushes.White,
+                    Margin = new Thickness(0, 0, 0, 8)
+                });
+
+                textoStack.Children.Add(new TextBlock
+                {
+                    Text = "DESCRIPCION",
+                    FontSize = 24,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = Brushes.White,
+                    TextWrapping = TextWrapping.Wrap,
+                    LineHeight = 20
+                });
+
+                textoStack.Children.Add(new TextBlock
+                {
+                    Text = tour.descripcion_tour,
+                    FontSize = 20,
+                    Foreground = Brushes.White,
+                    TextWrapping = TextWrapping.Wrap,
+                    LineHeight = 20
+                });
+
+                
+
+                // Stack horizontal para el precio
+                var stackPrecio = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    VerticalAlignment = VerticalAlignment.Bottom,
+                    Margin = new Thickness(30),
+                    HorizontalAlignment = HorizontalAlignment.Left
+
+                };
+                Grid.SetColumnSpan(stackPrecio, 2);
+
+                stackPrecio.Children.Add(new TextBlock
+                {
+                    Text = "Precio del Sitio: ",
+                    FontSize = 24,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = Brushes.White
+                });
+
+                stackPrecio.Children.Add(new TextBlock
+                {
+                    Text = tour.costo_tour.ToString("C"),
+                    FontSize = 24,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = Brushes.White
+                });
+
+                contenidoGrid.Children.Add(imagen);
+                contenidoGrid.Children.Add(textoStack);
+                contenidoGrid.Children.Add(stackPrecio);
+
+                contenidoGrid.Cursor = Cursors.Hand;
+
+
+
+                //evento del card
+                contenidoGrid.MouseLeftButtonDown += (s, e) =>
+                {
+                    MessageBox.Show("El sitio: " + tour.nombre_tour + " aún no está habilitado");
+                };
+
+                var borde = new Border
+                {
+                    CornerRadius = new CornerRadius(5),
+                    Margin = new Thickness(20),
+                    Height = 400,
+                    BorderThickness = new Thickness(1),
+                    BorderBrush = Brushes.Transparent,
+                    Child = contenidoGrid,
+                    Padding = new Thickness(20),
+                };
+
+                stackMain.Children.Add(borde);
             }
+
+
 
         }
 
-        private void btnReservar_Click(object sender, RoutedEventArgs e)
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             CerrarListadoTours?.Invoke(this, EventArgs.Empty);
         }
