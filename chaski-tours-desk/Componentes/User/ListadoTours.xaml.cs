@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,6 +28,11 @@ namespace chaski_tours_desk.Componentes.User
         public ListadoTours()
         {
             InitializeComponent();
+            navbar.toursIcon.Fill = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
+            navbar.toursIconText.Foreground = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
+
+            navbar.homeIcon.Fill = Brushes.White;
+            navbar.homeIconText.Foreground = Brushes.White;
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -140,7 +146,12 @@ namespace chaski_tours_desk.Componentes.User
                 //evento del card
                 contenidoGrid.MouseLeftButtonDown += (s, e) =>
                 {
-                    MessageBox.Show("El sitio: " + tour.nombre_tour + " aún no está habilitado");
+
+
+
+                    configurarCarasTour(tour);
+
+
                 };
 
                 var borde = new Border
@@ -161,7 +172,15 @@ namespace chaski_tours_desk.Componentes.User
 
         }
 
-
+        private void configurarCarasTour(Tour tour)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.listadoTours.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.datosTour.hiddenId.Text = tour.id_tour.ToString();
+            mainWindow.usuario.datosTour.cargarDatos();
+            mainWindow.usuario.btnReservar.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.datosTour.Visibility = Visibility.Visible;
+        }
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             CerrarListadoTours?.Invoke(this, EventArgs.Empty);

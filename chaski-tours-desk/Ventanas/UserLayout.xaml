@@ -25,6 +25,11 @@
         <componentes:VistaCategorias x:Name="vistaCategorias" Grid.Column="1" Visibility="Collapsed"/>
 
         <componentes:VistaDepartamentos x:Name="vistaDepartamentos" Grid.Column="1" Visibility="Collapsed"/>
+        
+        <componentes:DatosSitio x:Name="datosSitio" Grid.Column="0" Visibility="Hidden" Grid.ColumnSpan="3"/>
+        
+        
+        <componentes:DatosTour x:Name="datosTour" Grid.Column="0" Visibility="Hidden" Grid.ColumnSpan="3"/>
 
         <Border Style="{StaticResource BordeBotonesUser}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 40 20" Width="150" Grid.Column="2">
             <Button x:Name="btnReservar" Content="Reserva ahora!" Style="{StaticResource UserButtonStyle}" Width="150" Click="btnReservar_Click" FontWeight="Bold"/>

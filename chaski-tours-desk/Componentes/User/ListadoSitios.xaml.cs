@@ -1,10 +1,12 @@
-﻿using chaski_tours_desk.Modelos;
+﻿using chaski_tours_desk.Componentes.Admin;
+using chaski_tours_desk.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,8 +29,8 @@ namespace chaski_tours_desk.Componentes.User
         public ListadoSitios()
         {
             InitializeComponent();
-            navbar.categoryIcon.Fill = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
-            navbar.categoryIconText.Foreground = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
+            navbar.siteIcon.Fill = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
+            navbar.siteIconText.Foreground = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
 
             navbar.homeIcon.Fill = Brushes.White;
             navbar.homeIconText.Foreground = Brushes.White;
@@ -161,7 +163,10 @@ namespace chaski_tours_desk.Componentes.User
                 //evento del card
                 contenidoGrid.MouseLeftButtonDown += (s, e) =>
                 {
-                    MessageBox.Show("El sitio: " + sitio.nombre + " aún no está habilitado");
+
+
+                    configurarCarasSitio(sitio);
+
                 };
 
                 var borde = new Border
@@ -180,7 +185,16 @@ namespace chaski_tours_desk.Componentes.User
         }
 
 
+        private void configurarCarasSitio(Sitio sitio)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.listadoSitios.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.datosSitio.Visibility = Visibility.Visible;
+            mainWindow.usuario.datosSitio.hiddenId.Text = sitio.id_sitio.ToString();
+            mainWindow.usuario.datosSitio.cargarTodosDatos();
+            mainWindow.usuario.btnReservar.Visibility = Visibility.Hidden;
 
+        }
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             CerrarListadoSitios?.Invoke(this, EventArgs.Empty);
