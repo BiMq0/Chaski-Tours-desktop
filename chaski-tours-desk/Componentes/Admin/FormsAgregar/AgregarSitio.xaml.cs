@@ -1,6 +1,7 @@
 ﻿using chaski_tours_desk.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -27,6 +28,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         HttpClient cliente = new HttpClient();
         private string URL = "http://localhost:8000/api/sitios/";
         private string URL_Ubi = "http://localhost:8000/api/ubicaciones/";
+        private string URL_Imagenes = "http://localhost:8000/api/imagenes/crear";
         public AgregarSitio()
         {
             InitializeComponent();
@@ -52,6 +54,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             txbCalle.IsEnabled = valor;
             txbLatitud.IsEnabled = valor;
             txbLongitud.IsEnabled = valor;
+            txburl.IsEnabled = valor;
         }
 
         private async void btnGuardarSitio_Click(object sender, RoutedEventArgs e)
@@ -106,6 +109,26 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 MessageBox.Show("Error al crear el sitio.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 await cliente.DeleteFromJsonAsync<Ubicacion>(URL_Ubi + idNuevaUbicacion);
             };
+
+            var nuevaImagen = new Imagen
+            {
+                id_img = idNuevaUbicacion,
+                id_sitio = idNuevaUbicacion,
+                url_img = txburl.Text
+            };
+            MessageBox.Show(JsonSerializer.Serialize(nuevaImagen));
+
+            var reponseImg = await cliente.PostAsJsonAsync(URL_Imagenes, nuevaImagen);
+            string resultado = await reponseImg.Content.ReadAsStringAsync();
+            if (reponseImg.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Imagen creada correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error al crear la imagen." + resultado, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
         }
 
         private bool EntradasValidas()
@@ -118,6 +141,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 string.IsNullOrWhiteSpace(txbMunicipio.Text) ||
                 string.IsNullOrWhiteSpace(txbZona.Text) ||
                 string.IsNullOrWhiteSpace(txbCalle.Text) ||
+                string.IsNullOrWhiteSpace(txburl.Text) ||
                 string.IsNullOrWhiteSpace(txbLatitud.Text) ||
                 string.IsNullOrWhiteSpace(txbLongitud.Text))
             {
@@ -132,13 +156,13 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 return false;
             }
 
-            if (!double.TryParse(txbLatitud.Text, out double latitud) || latitud < -90 || latitud > 90)
+            if (!double.TryParse(txbLatitud.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitud) || latitud < -90 || latitud > 90)
             {
                 MessageBox.Show("La latitud debe ser un número válido entre -90 y 90", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
-            if (!double.TryParse(txbLongitud.Text, out double longitud) || longitud < -180 || longitud > 180)
+            if (!double.TryParse(txbLongitud.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitud) || longitud < -180 || longitud > 180)
             {
                 MessageBox.Show("La longitud debe ser un número válido entre -180 y 180", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
