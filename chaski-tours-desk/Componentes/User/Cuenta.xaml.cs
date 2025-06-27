@@ -1,12 +1,13 @@
-﻿using chaski_tours_desk.Modelos;
+﻿using chaski_tours_desk.Componentes.Admin.FormsAgregar;
+using chaski_tours_desk.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Net.Http.Json;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -218,6 +219,17 @@ namespace chaski_tours_desk.Componentes.User
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void listaReservas_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            if (listaReservas.SelectedItem is Reserva reservaSelect)
+            {
+                var reservaUsu = new ReservasUsuario(reservaSelect.id_reserva);
+
+                reservaUsu.Owner = Window.GetWindow(this);
+                reservaUsu.ShowDialog();
+            }
         }
     }
 }

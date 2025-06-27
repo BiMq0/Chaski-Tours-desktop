@@ -207,6 +207,9 @@
     <Compile Include="Componentes\User\ReservaForm.xaml.cs">
       <DependentUpon>ReservaForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\User\ReservasUsuario.xaml.cs">
+      <DependentUpon>ReservasUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\User\VistaCategorias.xaml.cs">
       <DependentUpon>VistaCategorias.xaml</DependentUpon>
     </Compile>
@@ -360,6 +363,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Componentes\User\ReservasUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Componentes\User\VistaCategorias.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -453,6 +460,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\fondo_perfil.jpg" />
+    <Resource Include="Images\fondo_reservas.jpg" />
     <Content Include="Images\Iconos\categoria_solid.svg" />
     <Content Include="Images\Iconos\departamento_solid.svg" />
     <Content Include="Images\Iconos\house_solid.svg" />

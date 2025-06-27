@@ -255,7 +255,7 @@
                       RowHeight="40"
                       FontSize="16"
                       SelectionMode="Single"
-                      SelectionUnit="FullRow">
+                      SelectionUnit="FullRow" MouseDoubleClick="listaReservas_MouseDoubleClick_1">
 
                         <DataGrid.Resources>
                             <Style TargetType="DataGridColumnHeader">
@@ -269,7 +269,7 @@
                         </DataGrid.Resources>
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tour" Binding="{Binding nombre_tour}" Width="*"/>
+                            <DataGridTextColumn Header="Nro Salida" Binding="{Binding id_salida}" Width="*"/>
                             <DataGridTextColumn Header="Cantidad de personas" Binding="{Binding cantidad_personas}" Width="*"/>
                             <DataGridTextColumn Header="Costo total" Binding="{Binding costo_total_reserva, StringFormat=Bs.{0:N2}}" Width="*" />
                             <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*"/>
