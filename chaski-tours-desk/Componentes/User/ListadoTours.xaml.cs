@@ -25,6 +25,16 @@ namespace chaski_tours_desk.Componentes.User
         HttpClient client = new HttpClient();
         private string URLTours = "http://localhost:8000/api/tour/";
         public event EventHandler CerrarListadoTours;
+        List<string> imgTour = new List<string>()
+
+        {
+            "pack://application:,,,/Images/Images_Departamentos/Beni.jpg",
+            "pack://application:,,,/Images/Images_Departamentos/SantaCruz.jpg",
+            "pack://application:,,,/Images/conejo.jpg",
+            "pack://application:,,,/Images/Images_Departamentos/LaPaz.jpg",
+            "pack://application:,,,/Images/Images_Departamentos/Tarija.jpg"
+        };
+        Random random = new Random();
         public ListadoTours()
         {
             InitializeComponent();
@@ -62,7 +72,7 @@ namespace chaski_tours_desk.Componentes.User
                 // Imagen del tour
                 var imagen = new Image
                 {
-                    Source = new BitmapImage(new Uri("pack://application:,,,/Images/Images_Departamentos/Beni.jpg")),
+                    Source = new BitmapImage(new Uri(imgTour[random.Next(0, 4)])),
                     Stretch = Stretch.UniformToFill,
                     VerticalAlignment = VerticalAlignment.Center,
                     HorizontalAlignment = HorizontalAlignment.Center,

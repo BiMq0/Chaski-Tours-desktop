@@ -225,6 +225,13 @@ Style="{StaticResource TextoEditableTXB}"/>
                             </StackPanel>
 
                         </Grid>
+                        <StackPanel Grid.Column="0" Margin="10,0,0,20">
+                            <TextBlock Text="URL de Imagen" 
+                             Style="{StaticResource SubtitleTXB}"
+        />
+                                    <TextBox x:Name="txburl" 
+                        Style="{StaticResource TextoEditableTXB}"/>
+                        </StackPanel>
 
                         <!-- Botones de acción -->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

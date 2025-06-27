@@ -25,6 +25,8 @@ namespace chaski_tours_desk.Componentes.User
     {
         HttpClient client = new HttpClient();
         private string URL_Sitios = "http://localhost:8000/api/sitios/";
+        private string URL_Imagenes = "http://localhost:8000/api/imagenes/";
+        int indice = 0;
         public event EventHandler CerrarListadoSitios;
         public ListadoSitios()
         {
@@ -46,6 +48,9 @@ namespace chaski_tours_desk.Componentes.User
             List<Sitio> sitios = new List<Sitio>();
             sitios = await client.GetFromJsonAsync<List<Sitio>>(URL_Sitios);
 
+            List<Imagen> imagenes = new List<Imagen>();
+            imagenes = await client.GetFromJsonAsync<List<Imagen>>(URL_Imagenes);
+
             foreach (var sitio in sitios)
             {
                 var contenidoGrid = new Grid
@@ -62,12 +67,13 @@ namespace chaski_tours_desk.Componentes.User
                 // Imagen del sitio
                 var imagen = new Image
                 {
-                    Source = new BitmapImage(new Uri("pack://application:,,,/Images/Images_Departamentos/Beni.jpg")),
+                    Source = new BitmapImage(new Uri(imagenes[indice].url_img)),
                     Stretch = Stretch.UniformToFill,
                     VerticalAlignment = VerticalAlignment.Center,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     Margin = new Thickness(20),
                 };
+                indice++;
                 Grid.SetColumn(imagen, 1);
 
                 // Columna de texto
