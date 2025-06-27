@@ -105,6 +105,5 @@ namespace chaski_tours_desk.Ventanas
             vistaCategorias.VerSitios += VerSitios;
             vistaDepartamentos.VerSitios += VerSitios;
         }
-
     }
 }

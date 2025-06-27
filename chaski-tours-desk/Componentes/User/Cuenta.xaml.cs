@@ -28,6 +28,7 @@ namespace chaski_tours_desk.Componentes.User
         private string URL_Turista = "http://localhost:8000/api/visitantes/turistas/cod/";
         private string URL_Reserva = "http://localhost:8000/api/reservas/cod/";
         private string URL_Turista_Update = "http://localhost:8000/api/visitantes/turistas/";
+        private string URL_Tour = "http://localhost:8000/api/tour/";
 
 
         public Cuenta(string codVisitante)

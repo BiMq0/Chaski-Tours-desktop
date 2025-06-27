@@ -452,11 +452,14 @@
     <Resource Include="Images\titulo_blanco.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\fondo_perfil.jpg" />
     <Content Include="Images\Iconos\categoria_solid.svg" />
     <Content Include="Images\Iconos\departamento_solid.svg" />
     <Content Include="Images\Iconos\house_solid.svg" />
     <Content Include="Images\Iconos\sitio_solid.svg" />
     <Content Include="Images\Iconos\tour_solid.svg" />
+    <Resource Include="Images\pfp_institu.png" />
+    <Resource Include="Images\pfp_turista.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Images_Categorias\arqueologico.jpg" />

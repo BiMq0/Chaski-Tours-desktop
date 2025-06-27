@@ -11,14 +11,23 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Width="250" Margin="0 0 20 0">
+        <Image Source="/Images/fondo_perfil.jpg" Grid.ColumnSpan="2" Stretch="UniformToFill" Opacity="0.7"/>
+        <StackPanel Grid.Column="0" Width="250" Margin="20">
             <Border Background="{StaticResource BoliviaDarkGreen}" Style="{StaticResource BordeForms}" Padding="10">
                 <StackPanel HorizontalAlignment="Center">
-                    <Ellipse Width="120" Height="120" Fill="Gray" Stroke="White" StrokeThickness="2"/>
+                    <Grid>
+                        <Ellipse Width="120" Height="120" Stroke="White" StrokeThickness="2" Fill="White"/>
+                        <Image Source="/Images/pfp_institu.png" Width="120" Height="120">
+                            <Image.Clip>
+                                <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60"/>
+                            </Image.Clip>
+                        </Image>
+                        <Ellipse Width="120" Height="120" Stroke="White" StrokeThickness="2" Fill="Transparent"/>
+                    </Grid>
+
                     <TextBlock Text="Institución" Style="{StaticResource SubtitleTXB}" 
-                               Foreground="{StaticResource BoliviaLightGreen}"
-                               Margin="10 20 0 0" HorizontalAlignment="Center"/>
+       Foreground="{StaticResource BoliviaLightGreen}"
+       Margin="0 20 0 0" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
             <Button x:Name="btnEditar" 
@@ -67,7 +76,7 @@
                     Width="150"/>
         </StackPanel>
         <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
-            <StackPanel >
+            <StackPanel Margin="20">
                 <Border Style="{StaticResource BordeForms}" Background="{StaticResource BoliviaDarkGreen}" Padding="20" Margin="0 0 0 10">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="MI PERFIL"
@@ -242,7 +251,7 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Número de Salida: " Binding="{Binding id_salida}" Width="*"/>
                                 <DataGridTextColumn Header="Cantidad de personas" Binding="{Binding cantidad_personas}" Width="*"/>
-                                <DataGridTextColumn Header="Costo total" Binding="{Binding costo_total_reserva, StringFormat={}{0:C}}" Width="*" />
+                                <DataGridTextColumn Header="Costo total" Binding="{Binding costo_total_reserva, StringFormat=Bs.{0:N2}}" Width="*" />
                                 <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>

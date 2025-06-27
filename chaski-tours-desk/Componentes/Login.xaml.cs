@@ -96,7 +96,6 @@ namespace chaski_tours_desk.Componentes
             }
             return usuario[0];
         }
-
         private void redirigirUsuarios(string tipo) {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             string[] correo = txtUsuario.Text.Split('@');
@@ -138,6 +137,11 @@ namespace chaski_tours_desk.Componentes
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.usuario.Visibility = Visibility.Visible;
             mainWindow.logSign.Visibility = Visibility.Collapsed;
+        }
+        public void LimpiarCampos()
+        {
+            txtUsuario.Text = "";
+            txtPassword.Password = "";
         }
     }
 }

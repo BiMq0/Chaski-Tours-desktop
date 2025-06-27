@@ -89,7 +89,16 @@
                         FontWeight="Bold"
                         Style="{StaticResource UserButtonStyle}"/>
                 </Border>
-                
+                <Border x:Name="logout" Style="{StaticResource BordeBotonesUser}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 25 0 0" Width="150" Visibility="Collapsed">
+                    <Button x:Name="btnCerrarSesion"
+                        Width="150"
+                        Click="btnCerrarSesion_Click"
+                        BorderThickness="0"
+                        Content="Cerrar Sesión"
+                        FontWeight="Bold"
+                        Style="{StaticResource UserButtonStyle}"/>
+                </Border>
+
             </Grid>
             
             <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Vertical">

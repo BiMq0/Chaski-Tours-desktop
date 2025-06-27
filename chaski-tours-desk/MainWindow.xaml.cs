@@ -23,8 +23,19 @@ namespace chaski_tours_desk
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static string codVisitanteActual { get; set; }
         public static bool sinLogueo { get; set; } = false;
+        public static event Action<string> codVisitanteCambio; 
+
+        private static string _codVisitanteActual;
+        public static string codVisitanteActual
+        {
+            get => _codVisitanteActual;
+            set
+            {
+                _codVisitanteActual = value;
+                codVisitanteCambio?.Invoke(_codVisitanteActual);
+            }
+        }
 
         public MainWindow()
         {

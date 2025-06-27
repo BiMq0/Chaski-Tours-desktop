@@ -43,6 +43,8 @@ namespace chaski_tours_desk.Componentes.User
         public Landing()
         {
             InitializeComponent();
+            MainWindow.codVisitanteCambio += MainWindow_codVisitanteCambio;
+
         }
 
         private void cargarDatosaCarts()
@@ -216,5 +218,30 @@ namespace chaski_tours_desk.Componentes.User
                 MessageBox.Show("Tipo de visitante desconocido.");
             }
         }
+        private void mostrarLogOut()
+        {
+            string cod = MainWindow.codVisitanteActual;
+
+            if (!string.IsNullOrEmpty(cod))
+            {
+                logout.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                logout.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void MainWindow_codVisitanteCambio(string cod)
+        {
+            Dispatcher.Invoke(() => mostrarLogOut());
+        }
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.codVisitanteActual = null;
+            MessageBox.Show("Sesión cerrada");
+        }
+
+
+
     }
 }
