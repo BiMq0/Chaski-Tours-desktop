@@ -26,6 +26,8 @@ namespace chaski_tours_desk.Componentes.User
         HttpClient client = new HttpClient();
         private string URL_Sitios = "http://localhost:8000/api/sitios/";
         public event EventHandler CerrarListadoSitios;
+
+        List<Sitio> sitios = new List<Sitio>();
         public ListadoSitios()
         {
             InitializeComponent();
@@ -42,8 +44,6 @@ namespace chaski_tours_desk.Componentes.User
         }
         private async void cargarDatosaCarts()
         {
-
-            List<Sitio> sitios = new List<Sitio>();
             sitios = await client.GetFromJsonAsync<List<Sitio>>(URL_Sitios);
 
             foreach (var sitio in sitios)
@@ -77,6 +77,17 @@ namespace chaski_tours_desk.Componentes.User
                     VerticalAlignment = VerticalAlignment.Top
                 };
                 Grid.SetColumn(textoStack, 0);
+
+                textoStack.Children.Add(new TextBlock
+                {
+                    Text = sitio.id_sitio.ToString(),
+                    Visibility = Visibility.Collapsed,
+                    FontSize = 32,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = Brushes.White,
+                    Margin = new Thickness(0, 0, 0, 8)
+                });
+
 
                 textoStack.Children.Add(new TextBlock
                 {
@@ -163,10 +174,7 @@ namespace chaski_tours_desk.Componentes.User
                 //evento del card
                 contenidoGrid.MouseLeftButtonDown += (s, e) =>
                 {
-
-
                     configurarCarasSitio(sitio);
-
                 };
 
                 var borde = new Border
@@ -198,6 +206,10 @@ namespace chaski_tours_desk.Componentes.User
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             CerrarListadoSitios?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void FiltrarSitios(string filtro) { 
+            
         }
     }
 }

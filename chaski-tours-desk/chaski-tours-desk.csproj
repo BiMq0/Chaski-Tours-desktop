@@ -70,8 +70,8 @@
     <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Drawing.Common.9.0.6\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO.Pipelines, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Pipelines.9.0.5\lib\net462\System.IO.Pipelines.dll</HintPath>
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.6, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.6\lib\net462\System.IO.Pipelines.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
@@ -132,6 +132,12 @@
     </Compile>
     <Compile Include="Componentes\Admin\FormsAgregar\FormularioAlojamiento.xaml.cs">
       <DependentUpon>FormularioAlojamiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\FormsAgregar\AgregarSalida.xaml.cs">
+      <DependentUpon>AgregarSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Admin\FormsInfo\InfoSalida.xaml.cs">
+      <DependentUpon>InfoSalida.xaml</DependentUpon>
     </Compile>
     <Compile Include="Componentes\Admin\FormsInfo\InfoSitio.xaml.cs">
       <DependentUpon>InfoSitio.xaml</DependentUpon>
@@ -214,6 +220,7 @@
     <Compile Include="Modelos\ModelosNoDB\Departamento.cs" />
     <Compile Include="Modelos\Nacionalidad.cs" />
     <Compile Include="Modelos\Reserva.cs" />
+    <Compile Include="Modelos\Salida.cs" />
     <Compile Include="Modelos\Sitio.cs" />
     <Compile Include="Modelos\Tour.cs" />
     <Compile Include="Modelos\Transporte.cs" />
@@ -243,6 +250,14 @@
     <Page Include="Componentes\Admin\FormsAgregar\FormularioAlojamiento.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Componentes\Admin\FormsAgregar\AgregarSalida.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Componentes\Admin\FormsInfo\InfoSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Componentes\Admin\FormsInfo\InfoSitio.xaml">
       <SubType>Designer</SubType>

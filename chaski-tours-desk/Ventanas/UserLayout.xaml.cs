@@ -60,17 +60,11 @@ namespace chaski_tours_desk.Ventanas
 
         private void VerSitios()
         {
-            MessageBox.Show("Ver Sitios no implementado aún.");
-        }
+            vistaCategorias.VerSitios += cargarSitiosFiltrados;
 
-        private void VerTours()
-        {
-            MessageBox.Show("Ver Tours no implementado aún.");
-        }
-
-        private void VerSitios(string nombre)
-        {
-            MessageBox.Show($"Ver Sitios de {nombre} no implementado aún.");
+            void cargarSitiosFiltrados(string filtro) {
+                listadoSitios.FiltrarSitios(filtro);
+            }
         }
 
         private void MostrarListadoSitios(object sender, EventArgs e)
