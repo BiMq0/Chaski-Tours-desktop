@@ -24,5 +24,56 @@ namespace chaski_tours_desk.Componentes.User
         {
             InitializeComponent();
         }
+
+        private void Grid_InicioEvento(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.landing.Visibility= Visibility.Visible;
+            mainWindow.usuario.listadoSitios.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoTours.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaCategorias.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaDepartamentos.Visibility = Visibility.Collapsed;
+        }
+        private void Grid_ToursEvento(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.listadoTours.Visibility = Visibility.Visible;
+            mainWindow.usuario.landing.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoSitios.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaCategorias.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaDepartamentos.Visibility = Visibility.Collapsed;
+        }
+        private void Grid_CiudadesEvento(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.vistaDepartamentos.Visibility = Visibility.Visible;
+            mainWindow.usuario.landing.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoSitios.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoTours.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaCategorias.Visibility = Visibility.Collapsed;
+            
+        }
+        private void Grid_SitioEvento(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            mainWindow.usuario.listadoSitios.Visibility = Visibility.Visible;
+            mainWindow.usuario.landing.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoTours.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaCategorias.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaDepartamentos.Visibility = Visibility.Collapsed;
+        }
+        private void Grid_CategoriaEvento(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            mainWindow.usuario.vistaCategorias.Visibility = Visibility.Visible;
+            mainWindow.usuario.landing.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoSitios.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.listadoTours.Visibility = Visibility.Collapsed;
+            mainWindow.usuario.vistaDepartamentos.Visibility = Visibility.Collapsed;
+        }
+
     }
+    
 }
