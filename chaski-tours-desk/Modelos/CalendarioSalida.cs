@@ -12,5 +12,16 @@ namespace chaski_tours_desk.Modelos
         public int id_tour { get; set; }
         public string fecha_salida { get; set; }
         public string fecha_regreso { get; set; }
+        public string FechaSalidaFormateada
+        {
+            get
+            {
+                if (DateTime.TryParse(fecha_salida, out var fecha))
+                {
+                    return fecha.ToString("dd/MM/yyyy");
+                }
+                return fecha_salida;
+            }
+        }
     }
 }

@@ -72,17 +72,15 @@
         <Grid VerticalAlignment="Center" Margin="20, 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Clientes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400"/>
-            <Border Style="{StaticResource BordeBusqueda}" Grid.Column="1">
-                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
-            </Border>
+            <Label Content="Clientes" Style="{StaticResource Titulo}" HorizontalAlignment="Left" MinWidth="400" Grid.Column="0"/>
 
-            <!-- Contenedor de CheckBox reorganizado -->
-            <Grid Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+            <!-- Contenedor de CheckBox movido después del título -->
+            <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,10,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -101,7 +99,11 @@
                 </StackPanel>
             </Grid>
 
-            <Border Grid.Column="2" Style="{StaticResource BordeBotones}" HorizontalAlignment="Right">
+            <Border Grid.Column="2" Style="{StaticResource BordeBusqueda}">
+                <TextBox x:Name="txbBusqueda" Style="{StaticResource txbBusqueda}" TextChanged="txbBusqueda_TextChanged"/>
+            </Border>
+
+            <Border Grid.Column="3" Style="{StaticResource BordeBotones}" HorizontalAlignment="Right">
                 <Button Content="Agregar" Style="{StaticResource PrimaryButtonStyle}" 
                         Click="AbrirFormulario_Click" Height="50" VerticalAlignment="Top"/>
             </Border>

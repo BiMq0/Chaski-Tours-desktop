@@ -9,12 +9,12 @@
         Height="750" Width="900"
         WindowStartupLocation="CenterScreen"
         MinWidth="900" MinHeight="650"
-        Background="#FFF5EDE0">
+        Background="White">
 
     <!-- Contenedor principal con sombra -->
     <Border CornerRadius="5"
             BorderThickness="0"
-            Background="#FFF5EDE0"
+            Background="{StaticResource BoliviaLightRed}"
             Margin="20"
             VerticalAlignment="Stretch">
         <Border.Effect>
@@ -486,3 +486,4 @@
         </Grid>
     </Border>
 </Window>
+

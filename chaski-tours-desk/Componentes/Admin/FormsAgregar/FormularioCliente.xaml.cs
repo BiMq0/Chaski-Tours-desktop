@@ -188,7 +188,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         }
         private bool ValidarTelefono(string telefono)
         {
-            
+
             return !string.IsNullOrWhiteSpace(telefono) && telefono.Length >= 7;
         }
         private async Task RegistrarTurista()
@@ -416,7 +416,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             ModoVisualizacion = true;
             cbTipo.SelectedIndex = 1;
 
-            panelTurista.Visibility = Visibility.Collapsed;
             panelInstitucion.Visibility = Visibility.Visible;
             await CargarNacionalidades();
 
@@ -441,10 +440,6 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             btnGuardar.Visibility = Visibility.Collapsed;
             btnEditar.Visibility = Visibility.Visible;
         }
-
-
-        /*txtContrasenia.Password = institucion.contrasenia;
-            txtContraseniaVisible.Text = institucion.contrasenia;*/
         private void HabilitarControles(bool habilitar)
         {
             // Habilitar/Deshabilitar todos los campos
@@ -481,7 +476,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
             {
                 // Mostrando datos, pero no en edición
                 btnEditar.Visibility = Visibility.Visible;
-                btnEliminar.Visibility = Visibility.Visible; 
+                btnEliminar.Visibility = Visibility.Visible;
             }
             else if (ModoVisualizacion && habilitar)
             {
@@ -524,7 +519,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 }
             }
         }
-    
+
         // boton de editicion
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
@@ -649,9 +644,9 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
         private async Task<bool> ActualizarInstitucion()
         {
             // Validar contraseña
-             string contrasenia = chkVerContrasenia.IsChecked == true
-            ? txtContraseniaInstVisible.Text
-            : txtContraseniaInst.Password;
+            string contrasenia = chkVerContrasenia.IsChecked == true
+           ? txtContraseniaInstVisible.Text
+           : txtContraseniaInst.Password;
 
             // Validar contraseña
             if (!ValidarContrasenia(txtContraseniaInst.Password))
@@ -675,7 +670,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                               "Teléfono inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
-            
+
             var institucionData = new
             {
                 nombre = txtNombreInst.Text,
@@ -709,7 +704,7 @@ namespace chaski_tours_desk.Componentes.Admin.FormsAgregar
                 var request = new HttpRequestMessage(new HttpMethod("PATCH"),
                     $"http://localhost:8000/api/visitante/desactivar{codigoClienteActual}");
 
-                request.Content = null; 
+                request.Content = null;
 
                 var response = await httpClient.SendAsync(request);
 

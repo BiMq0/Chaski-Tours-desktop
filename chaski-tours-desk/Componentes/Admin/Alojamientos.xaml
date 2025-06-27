@@ -25,7 +25,7 @@
                                 <Ellipse x:Name="outerCircle"
                                      Width="18"
                                      Height="18"
-                                     Stroke="#FF3F51B5"
+                                     Stroke="Black"
                                      StrokeThickness="2"
                                      Fill="Transparent"/>
                                 <Path x:Name="checkMark"
@@ -34,7 +34,7 @@
                                   Stretch="Fill"
                                   Fill="Transparent"
                                   Data="M 0 6 L 6 12 L 12 0"
-                                  Stroke="#FF3F51B5"
+                                  Stroke="#FF050505"
                                   StrokeThickness="2"
                                   Visibility="Collapsed"/>
                             </Grid>
@@ -48,7 +48,7 @@
                                 <Setter TargetName="outerCircle" Property="Fill" Value="#FFE8EAF6"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="outerCircle" Property="Stroke" Value="#FF5C6BC0"/>
+                                <Setter TargetName="outerCircle" Property="Stroke" Value="Black"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

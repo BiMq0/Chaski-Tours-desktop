@@ -38,7 +38,7 @@ namespace chaski_tours_desk.Componentes.Admin
             /*todosLosClientes = await cliente.GetFromJsonAsync<List<Visitante>>(URL);
             AplicarFiltros();*/
             todosLosClientes = await cliente.GetFromJsonAsync<List<Visitante>>(URL);
-                
+
             AplicarFiltros();
         }
 
@@ -137,25 +137,25 @@ namespace chaski_tours_desk.Componentes.Admin
                         formulario.CargarDatosTurista(turista);
                         formulario.Title = "Detalles del Turista";
 
-                        bool? resultado = formulario.ShowDialog(); 
+                        bool? resultado = formulario.ShowDialog();
                         if (resultado == true)
                         {
-                            verClientes(); 
+                            verClientes();
                         }
                     }
                     else if (selectedVisitante.tipo_visitante == "Institucion")
                     {
                         var institucion = await cliente.GetFromJsonAsync<Institucion>(
-                            $"http://localhost:8000/api/visitantes/instituciones/{selectedVisitante.cod_visitante}");
+                            $"http://localhost:8000/api/visitantes/instituciones/cod/{selectedVisitante.cod_visitante}");
 
                         var formulario = new FormularioCliente();
                         formulario.CargarDatosInstitucion(institucion);
                         formulario.Title = "Detalles de la Institución";
 
-                        bool? resultado = formulario.ShowDialog(); 
+                        bool? resultado = formulario.ShowDialog();
                         if (resultado == true)
                         {
-                            verClientes(); 
+                            verClientes();
                         }
                     }
                 }
@@ -168,6 +168,6 @@ namespace chaski_tours_desk.Componentes.Admin
         }
 
 
-
     }
 }
+
