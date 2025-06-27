@@ -10,23 +10,24 @@
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel>
-                <Grid  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20 50" >
-                    <Image Source="/Images/icono.png" Width="250"/>
-                    <Image Source="/Images/titulo_blanco.png" Width="1000">
-                        <Image.Effect>
-                            <DropShadowEffect BlurRadius="10" Opacity="0.5" ShadowDepth="3"/>
-                        </Image.Effect>
-                    </Image>
-                </Grid>
-                <navbar:navbar x:Name="navbar" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+                <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 88" Orientation="Vertical">
+                    <Grid>
+                        <Image Source="/Images/icono.png" Width="250"/>
+                        <Image Source="/Images/titulo_blanco.png" Width="1000">
+                            <Image.Effect>
+                                <DropShadowEffect BlurRadius="10" Opacity="0.5" ShadowDepth="3"/>
+                            </Image.Effect>
+                        </Image>
+                    </Grid>
+                    <Grid Margin="0,0,0,30">
+                        <navbar:navbar x:Name="navbar" HorizontalAlignment="Center"/>
+                    </Grid>
+                </StackPanel>
 
                 <StackPanel x:Name="stackMain">
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
 
-        <Border Style="{StaticResource BordeBotonesUser}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
-            <Button Style="{StaticResource UserButtonStyle}" Content="Volver" x:Name="btnVolver" Click="btnVolver_Click" />
-        </Border>
     </Grid>
 </UserControl>

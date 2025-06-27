@@ -178,6 +178,12 @@
     <Compile Include="Componentes\User\CuentaIns.xaml.cs">
       <DependentUpon>CuentaIns.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\User\DatosSitio.xaml.cs">
+      <DependentUpon>DatosSitio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\User\DatosTour.xaml.cs">
+      <DependentUpon>DatosTour.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\User\Landing.xaml.cs">
       <DependentUpon>Landing.xaml</DependentUpon>
     </Compile>
@@ -307,6 +313,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Componentes\User\CuentaIns.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Componentes\User\DatosSitio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Componentes\User\DatosTour.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

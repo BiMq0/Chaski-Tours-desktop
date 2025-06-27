@@ -98,6 +98,7 @@
                     </Button>
                 </Border>
             </Grid>
+            
             <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Vertical">
                 <Grid>
                     <Image Source="/Images/icono.png" Width="250"/>
@@ -123,12 +124,10 @@
                         FontSize="24" 
                         FontWeight="Bold" 
                         HorizontalAlignment="Left" 
-                        Margin="0,20,0,30" Foreground="{StaticResource BoliviaLightGreen}"/>
+                        Margin="0,20,0,30" Foreground="{StaticResource BoliviaLightGreen}" />
 
 
-
-
-                <Border Style="{StaticResource CardSitio}" >
+                <Border Style="{StaticResource CardSitio}" Cursor="Hand">
                     <Grid MouseLeftButtonDown="Grid1_MouseLeftButtonDown">
 
                         <Image Source="/Images/Images_Categorias/batalla.png"
@@ -143,7 +142,7 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Border Style="{StaticResource CardSitio}">
+                <Border Style="{StaticResource CardSitio}" Cursor="Hand">
                     <Grid MouseLeftButtonDown="Grid2_MouseLeftButtonDown">
 
                         <Image Source="/Images/Images_Departamentos/Chuquisaca.jpg"
@@ -170,7 +169,7 @@
                        HorizontalAlignment="Right" 
                        Margin="0,20,0,30" 
                        Foreground="{StaticResource BoliviaLightGreen}"/>
-                <Border Style="{StaticResource CardSitio}">
+                <Border Style="{StaticResource CardSitio}" Cursor="Hand">
                     <Grid MouseLeftButtonDown="Grid3_MouseLeftButtonDown">
 
                         <Image Source="/Images/Images_Departamentos/Cochabamba.png"
@@ -185,7 +184,7 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Border Style="{StaticResource CardSitio}">
+                <Border Style="{StaticResource CardSitio}" Cursor="Hand">
                     <Grid MouseLeftButtonDown="Grid4_MouseLeftButtonDown">
 
                         <Image Source="/Images/Images_Departamentos/SantaCruz.jpg"
