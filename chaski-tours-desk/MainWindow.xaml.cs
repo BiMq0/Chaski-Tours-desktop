@@ -24,6 +24,7 @@ namespace chaski_tours_desk
     public partial class MainWindow : Window
     {
         public static string codVisitanteActual { get; set; }
+        public static bool sinLogueo { get; set; } = false;
 
         public MainWindow()
         {

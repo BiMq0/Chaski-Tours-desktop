@@ -18,6 +18,7 @@ using chaski_tours_desk.Modelos;
 using chaski_tours_desk;
 using System.IO;
 using chaski_tours_desk.Componentes.User;
+using System.ComponentModel.Design;
 
 namespace chaski_tours_desk.Componentes
 {
@@ -113,9 +114,12 @@ namespace chaski_tours_desk.Componentes
                     MessageBox.Show("Bienvenido institución");
                 mainWindow.usuario.Visibility = Visibility.Visible;
                 mainWindow.logSign.Visibility = Visibility.Collapsed;
-                // MOSTRAR VENTANA DE RESERVA
-                var reservaWindow = new ReservaForm(tipo);
-                reservaWindow.ShowDialog(); // Bloquea hasta cerrar
+                if (MainWindow.sinLogueo)
+                {
+                    MainWindow.sinLogueo = false;
+                    var reservaWindow = new ReservaForm(tipo);
+                    reservaWindow.ShowDialog();
+                }
             }
         }
         private void oscurecer()
@@ -127,6 +131,13 @@ namespace chaski_tours_desk.Componentes
         private void aclarar() {
             brdMail.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
             brdPass.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF"));
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.Visibility = Visibility.Visible;
+            mainWindow.logSign.Visibility = Visibility.Collapsed;
         }
     }
 }

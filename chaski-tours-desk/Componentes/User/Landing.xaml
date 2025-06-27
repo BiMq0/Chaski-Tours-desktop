@@ -81,22 +81,15 @@
         <StackPanel >
 
             <Grid>
-                <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,20,0"
-            CornerRadius="20" Background="{StaticResource BoliviaGreen}" Padding="8"
-            Effect="{StaticResource CardShadowEffect}">
+                <Border Style="{StaticResource BordeBotonesUser}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 25 0 0">
                     <Button x:Name="btnMiPerfil"
-                Click="btnMiPerfil_Click"
-                Background="Transparent"
-                BorderThickness="0"
-                Style="{StaticResource TransparentButtonStyle}">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Mi Perfil" 
-                           Foreground="White"
-                           FontWeight="Bold"
-                           FontSize="24"/>
-                        </StackPanel>
-                    </Button>
+                        Click="btnMiPerfil_Click"
+                        BorderThickness="0"
+                        Content="Mi Perfil"
+                        FontWeight="Bold"
+                        Style="{StaticResource UserButtonStyle}"/>
                 </Border>
+                
             </Grid>
             
             <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Orientation="Vertical">
@@ -113,21 +106,13 @@
                 </Grid>
             </StackPanel>
 
-
-
-
-
-
-
             <StackPanel x:Name="spSitios" Margin="0,60,0,0">
                 <TextBlock Text="LOS SITIOS MEJOR VALORADOS" 
                         FontSize="24" 
                         FontWeight="Bold" 
                         HorizontalAlignment="Left" 
                         Margin="0,20,0,30" Foreground="{StaticResource BoliviaLightGreen}" />
-
-
-                <Border Style="{StaticResource CardSitio}" Cursor="Hand">
+                <Border Style="{StaticResource CardSitio}" >
                     <Grid MouseLeftButtonDown="Grid1_MouseLeftButtonDown">
 
                         <Image Source="/Images/Images_Categorias/batalla.png"

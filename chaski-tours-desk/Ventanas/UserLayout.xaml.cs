@@ -1,4 +1,5 @@
-﻿using chaski_tours_desk.Modelos.ModelosNoDB;
+using chaski_tours_desk.Modelos.ModelosNoDB;
+﻿using chaski_tours_desk.Componentes.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,10 +30,19 @@ namespace chaski_tours_desk.Ventanas
 
 
         }
-
         private void btnReservar_Click(object sender, RoutedEventArgs e)
         {
-            abrirAdmin.Invoke();
+            if (string.IsNullOrEmpty(MainWindow.codVisitanteActual))
+            {
+                MainWindow.sinLogueo = true;
+                abrirAdmin.Invoke(); 
+            }
+            else
+            {
+                var reservaWindow = new ReservaForm("turista"); 
+                reservaWindow.ShowDialog();
+            }
+
         }
 
         public event Action abrirAdmin;

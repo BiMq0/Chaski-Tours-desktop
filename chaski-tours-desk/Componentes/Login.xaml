@@ -70,28 +70,43 @@
 
                     <Border CornerRadius="20"                         Background="White" x:Name="brdPass">
                         <PasswordBox x:Name="txtPassword" 
-             Height="35" 
-             Padding="10,0"
-                   VerticalContentAlignment="Center"
-                     FontSize="15"
-             Background="Transparent"
-             BorderBrush="#FFD3C9B8"
-             BorderThickness="0"/>
+                             Height="35" 
+                             Padding="10,0"
+                                   VerticalContentAlignment="Center"
+                                     FontSize="15"
+                             Background="Transparent"
+                             BorderBrush="#FFD3C9B8"
+                             BorderThickness="0"/>
 
                     </Border>
 
-                    <Border CornerRadius="15" Width="120"  Height="50" Margin="0,25,0,0" Background="#E3D3C9">
-                        <Button x:Name="btnLogin" 
-                Content="Ingresar"
-                    FontSize="14"
-                    Width="120" 
-                Background="Transparent"
-                BorderThickness="0"
-                Foreground="#FF5A4A3A"
-                FontWeight="Medium"
-                Cursor="Hand" Click="btnLogin_Click"
-                  />
-                    </Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,25,0,0">
+                        <Border CornerRadius="15" Width="120" Height="50" Margin="0,0,10,0" Background="#E3D3C9">
+                            <Button x:Name="btnLogin" 
+                            Content="Ingresar"
+                            FontSize="14"
+                            Width="120" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#FF5A4A3A"
+                            FontWeight="Medium"
+                            Cursor="Hand" 
+                            Click="btnLogin_Click"/>
+                        </Border>
+
+                        <Border CornerRadius="15" Width="120" Height="50" Margin="10,0,0,0" Background="#E3D3C9">
+                            <Button x:Name="btnVolver" 
+                            Content="Volver"
+                            FontSize="14"
+                            Width="120" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#FF5A4A3A"
+                            FontWeight="Medium"
+                            Cursor="Hand" Click="btnVolver_Click" 
+                            />
+                        </Border>
+                    </StackPanel>
                     <TextBlock 
                    HorizontalAlignment="Center"
                    Margin="0,15,0,0"

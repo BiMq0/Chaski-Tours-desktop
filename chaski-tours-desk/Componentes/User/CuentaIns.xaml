@@ -21,64 +21,199 @@
                                Margin="10 20 0 0" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
+            <Button x:Name="btnEditar" 
+                    Content="Editar perfil"
+                    Margin="0 20 0 0"
+                    HorizontalAlignment="Center"
+                    Width="150"
+                    Click="btnEditar_Click"
+                    Background="{StaticResource White}"
+                    Style="{StaticResource UserButtonStyle}"
+                    Foreground="{StaticResource BoliviaDarkGreen}"
+                    FontWeight="Bold"/>
+
+            <Button x:Name="btnGuardar" 
+                    Click="btnGuardar_Click"
+                    Content="Guardar cambios"
+                    Margin="0 20 0 0"
+                    HorizontalAlignment="Center"
+                    Width="170"
+                    Background="{StaticResource White}"
+                    Style="{StaticResource UserButtonStyle}"
+                    Foreground="{StaticResource BoliviaDarkGreen}"
+                    FontWeight="Bold"
+                    Visibility="Collapsed"/>
+
+            <Button x:Name="btnCancelar" 
+                    Click="btnCancelar_Click"
+                    Content="Cancelar"
+                    Margin="0 20 0 0"
+                    HorizontalAlignment="Center"
+                    Width="150"
+                    Background="{StaticResource White}"
+                    Style="{StaticResource UserButtonStyle}"
+                    Foreground="{StaticResource BoliviaDarkGreen}"
+                    FontWeight="Bold"
+                    Visibility="Collapsed"/>
+            <Button Content="Volver" 
+                    x:Name="btnVolver" 
+                    Click="btnVolver_Click"
+                    Margin="20" 
+                    FontWeight="Bold"
+                    Background="{StaticResource White}"
+                    Style="{StaticResource UserButtonStyle}"
+                    Foreground="{StaticResource BoliviaDarkGreen}"
+                    Padding="10 5" 
+                    Width="150"/>
         </StackPanel>
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel >
+                <Border Style="{StaticResource BordeForms}" Background="{StaticResource BoliviaDarkGreen}" Padding="20" Margin="0 0 0 10">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="MI PERFIL"
+                                  Style="{StaticResource SubtitleTXB}"
+                                  Foreground="{StaticResource BoliviaLightGreen}"
+                                  HorizontalAlignment="Center" Margin="0 0 0 20"/>
 
-        <StackPanel Grid.Column="1">
-            <Border Style="{StaticResource BordeForms}" Background="{StaticResource BoliviaDarkGreen}" Padding="20" Margin="0 0 0 10">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="MI PERFIL"
-                               Style="{StaticResource SubtitleTXB}"
-                               Foreground="{StaticResource BoliviaLightGreen}"
-                               HorizontalAlignment="Center" Margin="0 0 0 20"/>
+                        <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 10">
+                            <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                                <StackPanel>
+                                    <TextBlock Text="Nombre" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
+                                    <TextBox x:Name="txtNombre" 
+                                            Foreground="{StaticResource BoliviaGreen}" 
+                                            BorderThickness="0"
+                                            Background="Transparent"
+                                            FontSize="20"
+                                            FontWeight="DemiBold"
+                                            Padding="5"
+                                            Margin="10 5"
+                                            TextWrapping="Wrap"
+                                            IsReadOnly="True"/>
+                                </StackPanel>
+                            </Border>
 
-                    <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 10">
-                        <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
-                            <StackPanel>
-                                <TextBlock Text="Nombre" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
-                                <TextBlock x:Name="txtNombre" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
-                            </StackPanel>
-                        </Border>
+                            <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                                <StackPanel>
+                                    <TextBlock Text="Correo" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
+                                    <TextBox x:Name="txtCorreo" 
+                                            Foreground="{StaticResource BoliviaGreen}" 
+                                            BorderThickness="0"
+                                            Background="Transparent"
+                                            FontSize="20"
+                                            FontWeight="DemiBold"
+                                            Padding="5"
+                                            Margin="10 5"
+                                            TextWrapping="Wrap"
+                                            IsReadOnly="True"/>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
 
-                        <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
-                            <StackPanel>
-                                <TextBlock Text="Correo" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
-                                <TextBlock x:Name="txtCorreo" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
-                            </StackPanel>
-                        </Border>
-                    </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 10">
+                            <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                                <StackPanel>
+                                    <TextBlock Text="Nacionalidad" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
+                                    <TextBlock x:Name="txtNacionalidad" 
+                                              Foreground="{StaticResource BoliviaGreen}"
+                                              FontSize="20"
+                                              FontWeight="DemiBold"
+                                              Padding="5"
+                                              Margin="10 5"/>
+                                </StackPanel>
+                            </Border>
 
-                    <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 10">
-                        <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
-                            <StackPanel>
-                                <TextBlock Text="Nacionalidad" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
-                                <TextBlock x:Name="txtNacionalidad" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
-                            </StackPanel>
-                        </Border>
+                            <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                                <StackPanel>
+                                    <TextBlock Text="Teléfono" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
+                                    <TextBox x:Name="txtTelefono" 
+                                            Foreground="{StaticResource BoliviaGreen}" 
+                                            BorderThickness="0"
+                                            Background="Transparent"
+                                            FontSize="20"
+                                            FontWeight="DemiBold"
+                                            Padding="5"
+                                            Margin="10 5"
+                                            TextWrapping="Wrap"
+                                            IsReadOnly="True"/>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
 
-                        <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
-                            <StackPanel>
-                                <TextBlock Text="Teléfono" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
-                                <TextBlock x:Name="txtTelefono" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
-                            </StackPanel>
-                        </Border>
-                    </WrapPanel>
-
-                    <WrapPanel HorizontalAlignment="Center">
                         <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="500" Style="{StaticResource BordeForms}">
                             <StackPanel>
                                 <TextBlock Text="Representante" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
-                                <TextBlock x:Name="txtRepresentante" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
-                                <TextBlock x:Name="txtCorreoRep" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
-                                <TextBlock x:Name="txtTelefonoRep" Style="{StaticResource TextoTXB}" Foreground="{StaticResource BoliviaGreen}"/>
+
+                                <Label Content="Nombre:" FontSize="16"/>
+                                <TextBox x:Name="txtNombreRepresentante"
+                                        Foreground="{StaticResource BoliviaGreen}" 
+                                        BorderThickness="0"
+                                        Background="Transparent"
+                                        FontSize="20"
+                                        FontWeight="DemiBold"
+                                        Padding="5"
+                                        Margin="10 5"
+                                        TextWrapping="Wrap"
+                                        IsReadOnly="True"/>
+
+                                <WrapPanel x:Name="panelApellidosRepresentante" Visibility="Collapsed">
+                                    <TextBox x:Name="txtApellidoPaternoRepresentante"
+                                            Foreground="{StaticResource BoliviaGreen}" 
+                                            BorderThickness="0"
+                                            Background="Transparent"
+                                            FontSize="20"
+                                            FontWeight="DemiBold"
+                                            Padding="5"
+                                            Margin="10 5"
+                                            TextWrapping="Wrap"
+                                            IsReadOnly="True"/>
+                                </WrapPanel>
+
+                                <Label Content="Correo:" FontSize="16"/>
+                                <TextBox x:Name="txtCorreoRep" 
+                                        Foreground="{StaticResource BoliviaGreen}" 
+                                        BorderThickness="0"
+                                        Background="Transparent"
+                                        FontSize="20"
+                                        FontWeight="DemiBold"
+                                        Padding="5"
+                                        Margin="10 5"
+                                        TextWrapping="Wrap"
+                                        IsReadOnly="True"/>
+
+                                <Label Content="Teléfono:" FontSize="16"/>
+                                <TextBox x:Name="txtTelefonoRep" 
+                                        Foreground="{StaticResource BoliviaGreen}" 
+                                        BorderThickness="0"
+                                        Background="Transparent"
+                                        FontSize="20"
+                                        FontWeight="DemiBold"
+                                        Padding="5"
+                                        Margin="10 5"
+                                        TextWrapping="Wrap"
+                                        IsReadOnly="True"/>
                             </StackPanel>
                         </Border>
-                    </WrapPanel>
-                </StackPanel>
-            </Border>
 
-            <GroupBox Header="Historial de Reservas" FontWeight="Bold" Foreground="{StaticResource BoliviaLightGreen}" FontSize="18" Margin="0">
-                <Grid Margin="10">
-                    <DataGrid x:Name="listaReservas"
+                        <WrapPanel x:Name="panelContrasenias" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0 20 0 0">
+                            <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                                <StackPanel>
+                                    <TextBlock Text="Contraseña" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
+                                    <PasswordBox x:Name="txtPassword" FontSize="16" Margin="10 5"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Background="{StaticResource White}" CornerRadius="15" Padding="15" Margin="10" Width="300" Style="{StaticResource BordeForms}">
+                                <StackPanel>
+                                    <TextBlock Text="Confirmar contraseña" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaDarkGreen}"/>
+                                    <PasswordBox x:Name="txtConfirmarPassword" FontSize="16" Margin="10 5"/>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+
+                <GroupBox Header="Historial de Reservas" FontWeight="Bold" Foreground="{StaticResource BoliviaLightGreen}" FontSize="18" Margin="0">
+                    <Grid Margin="10">
+                        <DataGrid x:Name="listaReservas"
                   AutoGenerateColumns="False"
                   HeadersVisibility="Column"
                   CanUserAddRows="False"
@@ -93,34 +228,35 @@
                   SelectionMode="Single"
                   SelectionUnit="FullRow">
 
-                        <DataGrid.Resources>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="Background" Value="{StaticResource BoliviaLightGreen}" />
-                                <Setter Property="Foreground" Value="{StaticResource BoliviaDarkGreen}"/>
-                                <Setter Property="FontWeight" Value="Bold"/>
-                                <Setter Property="FontSize" Value="16"/>
-                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                <Setter Property="Padding" Value="10"/>
-                            </Style>
-                        </DataGrid.Resources>
+                            <DataGrid.Resources>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="{StaticResource BoliviaLightGreen}" />
+                                    <Setter Property="Foreground" Value="{StaticResource BoliviaDarkGreen}"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="FontSize" Value="16"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Padding" Value="10"/>
+                                </Style>
+                            </DataGrid.Resources>
 
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Reserva a" Binding="{Binding id_salida}" Width="*"/>
-                            <DataGridTextColumn Header="Cantidad de personas" Binding="{Binding cantidad_personas}" Width="*"/>
-                            <DataGridTextColumn Header="Costo total" Binding="{Binding costo_total_reserva, StringFormat={}{0:C}}" Width="*" />
-                            <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Número de Salida: " Binding="{Binding id_salida}" Width="*"/>
+                                <DataGridTextColumn Header="Cantidad de personas" Binding="{Binding cantidad_personas}" Width="*"/>
+                                <DataGridTextColumn Header="Costo total" Binding="{Binding costo_total_reserva, StringFormat={}{0:C}}" Width="*" />
+                                <DataGridTextColumn Header="Estado" Binding="{Binding estado}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
-                    <TextBlock x:Name="txtNoReservas"
+                        <TextBlock x:Name="txtNoReservas"
                    Text="Aún no ha realizado reservas."
                    Foreground="{StaticResource BoliviaLightGreen}"
                    FontSize="16"
                    HorizontalAlignment="Center"
                    Visibility="Collapsed"
                    Margin="10" />
-                </Grid>
-            </GroupBox>
-        </StackPanel>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

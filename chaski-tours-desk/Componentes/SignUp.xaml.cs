@@ -235,5 +235,11 @@ namespace chaski_tours_desk.Componentes
                 brdTelRep.Background = claro;
             }
         }
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.usuario.Visibility = Visibility.Visible;
+            mainWindow.logSign.Visibility = Visibility.Collapsed;
+        }
     }
 }
