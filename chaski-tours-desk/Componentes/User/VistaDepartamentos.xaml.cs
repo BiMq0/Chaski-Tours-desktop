@@ -25,7 +25,6 @@ namespace chaski_tours_desk.Componentes.User
         public VistaDepartamentos()
         {
             InitializeComponent();
-            MostrarDepartamentos();
 
             navbar.cityIcon.Fill = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
             navbar.cityIconText.Foreground = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;

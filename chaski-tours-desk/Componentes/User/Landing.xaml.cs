@@ -191,9 +191,6 @@ namespace chaski_tours_desk.Componentes.User
 
         public event Action AbrirDepartamentos;
 
-        public event Action AbrirSitios;
-
-        public event Action AbrirTours;
         private void btnMiPerfil_Click(object sender, RoutedEventArgs e)
         {
             string cod = MainWindow.codVisitanteActual;

@@ -215,6 +215,7 @@
     </Compile>
     <Compile Include="Modelos\Alojamiento.cs" />
     <Compile Include="Modelos\CalendarioSalida.cs" />
+    <Compile Include="Modelos\Imagen.cs" />
     <Compile Include="Modelos\Institucion.cs" />
     <Compile Include="Modelos\ModelosNoDB\Categoria.cs" />
     <Compile Include="Modelos\ModelosNoDB\Departamento.cs" />

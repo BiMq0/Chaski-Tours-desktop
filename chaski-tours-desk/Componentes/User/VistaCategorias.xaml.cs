@@ -24,7 +24,6 @@ namespace chaski_tours_desk.Componentes.User
         public VistaCategorias()
         {
             InitializeComponent();
-            MostrarCategorias();
             navbar.categoryIcon.Fill = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
             navbar.categoryIconText.Foreground = Application.Current.Resources["BoliviaLightGreen"] as SolidColorBrush;
 

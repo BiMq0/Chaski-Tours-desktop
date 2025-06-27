@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chaski_tours_desk.Modelos.ModelosNoDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,14 +59,11 @@ namespace chaski_tours_desk.Ventanas
 
         //aun no implementados
 
-        private void VerSitios()
+        private void VerSitios(string filtro)
         {
-            vistaCategorias.VerSitios += cargarSitiosFiltrados;
-
-            void cargarSitiosFiltrados(string filtro) {
-                listadoSitios.FiltrarSitios(filtro);
-            }
+            listadoSitios.FiltrarSitios(filtro);
         }
+
 
         private void MostrarListadoSitios(object sender, EventArgs e)
         {
@@ -93,10 +91,6 @@ namespace chaski_tours_desk.Ventanas
             landing.AbrirCategorias += VerCategorias;
             vistaCategorias.volverLanding += VerLanding;
             vistaDepartamentos.volverLanding += VerLanding;
-
-            //Pruebas no implementadas
-            landing.AbrirSitios += VerSitios;
-            landing.AbrirTours += VerTours;
 
             vistaCategorias.VerSitios += VerSitios;
             vistaDepartamentos.VerSitios += VerSitios;
